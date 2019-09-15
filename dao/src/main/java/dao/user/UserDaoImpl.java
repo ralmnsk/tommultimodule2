@@ -1,44 +1,29 @@
 package dao.user;
 
+import dao.connection.SingletonConnection;
 import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.sql.*;
-import java.util.Properties;
+
 
 public class UserDaoImpl implements UserDao{
+    private static Logger logger= LoggerFactory.getLogger(UserDaoImpl.class);
+    private SingletonConnection singletonConnection;
 
-    private static Logger logger= LoggerFactory.getLogger(UserDao.class);
-
-    static {
+    {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException ex) {
-            logger.error("Prblem loadng DB dDiver!", ex);
+            singletonConnection = SingletonConnection.getInstance();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
     private Connection getConnection() throws SQLException{
-        Properties properties=new Properties();
-        try {
-            properties
-                    .load(getClass()
-                            .getClassLoader()
-                            .getResourceAsStream("dao.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return DriverManager.getConnection(
-                properties.getProperty("jdbc"),
-                properties.getProperty("user"),
-                properties.getProperty("password"));
-
+    return singletonConnection.getConnection();
     }
 
-    private void closeConnection(Connection connection) {
+    public void closeConnection(Connection connection) {
         if (connection == null) {
             return;
         }
@@ -77,12 +62,51 @@ public class UserDaoImpl implements UserDao{
 
     }
 
-    public void readUser(User user) {
-
+    public User readUser(User user) {
+        Connection connection = null;
+        User newUser=new User();
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("select * from usrtab where name=?",Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, user.getName());
+            statement.execute();
+            ResultSet rs = statement.executeQuery();     //   getGeneratedKeys();
+            while(rs.next()){
+                newUser.setId(rs.getLong(1));
+                newUser.setName(rs.getString(2));
+                newUser.setPass(rs.getString(3));
+                newUser.setJoinDate(rs.getDate(4));
+                newUser.setRole(rs.getString(5));
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Problem executing UPDATE", ex);
+        } finally {
+            closeConnection(connection);
+        }
+        return newUser;
     }
 
     public void updateUser(User user) {
-
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("update usrtab set name=?,pass=?,join_date=?,role=? where name=?");
+            statement.setString(1, user.getName());
+            statement.setString(2, user.getPass());
+            statement.setDate(3, user.getJoinDate());
+            statement.setString(4, user.getRole());
+            statement.setString(5, user.getName());
+            statement.execute();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Problem executing UPDATE", ex);
+        } finally {
+            closeConnection(connection);
+        }
     }
 
     public void deleteUser(User user) {
