@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebFilter({"/topsecret","/topsecret2"})
+@WebFilter({"/site/topsecret","/site/topsecret2"})
 public class TopSecretFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebFilter({"/*"})
+@WebFilter({"/site/*"})
 public class FirstFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -37,11 +37,12 @@ public class FirstFilter implements Filter {
         if (clientType==null){
             //clientType=ClientType.GUEST;
             session.setAttribute("userType", clientType);
-            RequestDispatcher dispatcher = request.getServletContext()
-                    .getRequestDispatcher("/login");
-            dispatcher.forward(req, resp);
-            return true;
+                    RequestDispatcher dispatcher = request.getServletContext()
+                            .getRequestDispatcher("/login");
+                    dispatcher.forward(req, resp);
+                    return true;
         }
+
         return false;
     }
 

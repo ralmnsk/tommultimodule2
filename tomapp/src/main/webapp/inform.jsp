@@ -9,6 +9,6 @@ PRECIOUS INFORMATION ONLY WITH GRANTED PRIVILEGES
 </br>
 <a href="/tomapp/topsecret2">Superpuper secret information</a>
 </br>
-<a href="/tomapp/logout">Logout</a>
+<a href="/tomapp/site/logout">Logout</a>
 <hr/>
 </body></html>

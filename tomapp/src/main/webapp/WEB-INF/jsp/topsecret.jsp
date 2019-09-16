@@ -7,8 +7,8 @@ TOP SECRET (This page was put in WEB-INF/jsp)
 </br>
 <a href="/tomapp/topsecret2">Secret information 2</a>
 </br>
-<a href="/tomapp/inform">Information</a>
+<a href="/tomapp/site/inform">Information</a>
 </br>
-<a href="/tomapp/logout">Logout</a>
+<a href="/tomapp/site/logout">Logout</a>
 <hr/>
 </body></html>
