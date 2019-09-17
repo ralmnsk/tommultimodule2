@@ -1,6 +1,5 @@
 package dao.connection;
 
-import dao.user.UserDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
