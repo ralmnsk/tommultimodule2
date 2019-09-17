@@ -5,8 +5,9 @@
 </head>
 <body>
 <h2>Main page</h2>
-До свидания, ${userForGoodBuy}
+До свидания, ${bye}
 </br>
 <a href="/tomapp/site/login">Login</a>
+
 </body>
 </html>

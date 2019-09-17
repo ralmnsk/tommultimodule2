@@ -1,7 +1,12 @@
 package my.tomcat.app.controllers;
 
+import dao.user.UserDao;
+import dao.user.UserDaoImpl;
+import model.user.User;
 import my.tomcat.app.DBEmul.DBemulation;
 import my.tomcat.app.clienttype.ClientType;
+import service.user.UserService;
+import service.user.UserServiceImpl;
 
 
 import javax.servlet.ServletException;
@@ -32,15 +37,26 @@ public class LoginServlet extends HttpServlet {
         String login =req.getParameter("login");
         String password=req.getParameter("password");
         System.out.println(login+" "+password);
-        DBemulation db=new DBemulation();
+        //DBemulation db=new DBemulation();
+        User user=new User();
+        user.setName(login);
+        user.setPass(password);
+
+        UserDao userDao=new UserDaoImpl();
+        UserService userService=new UserServiceImpl();
+        userService.setUserDao(userDao);
+
+        User readUser=userService.readUser(user);
+
         HttpSession session = req.getSession();
         ClientType clientType=(ClientType)session.getAttribute("userType");
-        if((login!=null)&&(login.equals(db.getLogin())&&(password.equals(db.getPassword())))){
+        if((login!=null)&&(login.equals(readUser.getName())&&(password.equals(readUser.getPass())))){
 
-                session.setAttribute("login",login);
-                session.setAttribute("password",password);
-                session.setAttribute("userType", setClientType(db.getRole()));
-                System.out.println("role" +db.getRole());
+//                session.setAttribute("login",login);
+//                session.setAttribute("password",password);
+                session.setAttribute("user",readUser);
+                session.setAttribute("userType", setClientType(readUser.getRole()));
+                System.out.println("user "+login+" has role: " +readUser.getRole());
                 req.getRequestDispatcher("/welcome.jsp").forward(req, resp);
 
         } else {
@@ -52,7 +68,7 @@ public class LoginServlet extends HttpServlet {
     private ClientType setClientType(String role) {
         ClientType type=ClientType.GUEST;
         switch (role){
-            case "user":type=ClientType.USER;
+            case "usr":type=ClientType.USER;
             break;
             case "admin":type=ClientType.ADMIN;
             break;

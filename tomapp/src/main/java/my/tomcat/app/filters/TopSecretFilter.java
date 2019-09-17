@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebFilter({"/site/topsecret","/site/topsecret2"})
+@WebFilter({"/topsecret","/topsecret2"})
 public class TopSecretFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -23,9 +23,9 @@ public class TopSecretFilter implements Filter {
         request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         out.print("filter is invoked before");
-
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         if (authorization(request, response)) return;
-
         chain.doFilter(request, response);
         out.print("filter is invoked after");
     }
@@ -39,7 +39,7 @@ public class TopSecretFilter implements Filter {
         if (clientType!=ClientType.ADMIN){
 
             RequestDispatcher dispatcher = request.getServletContext()
-                    .getRequestDispatcher("/inform");
+                    .getRequestDispatcher("/site/inform");
             dispatcher.forward(req, resp);
             return true;
         }

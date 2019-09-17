@@ -16,8 +16,6 @@ public class UserServiceImpl implements UserService{
         this.userDao=userDao;
     }
 
-
-
     public void createUser(User user) {
         userDao.createUser(user);
     }

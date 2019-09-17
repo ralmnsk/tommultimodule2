@@ -1,6 +1,7 @@
 package my.tomcat.app.controllers;
 
-import my.tomcat.app.DBEmul.DBemulation;
+import model.user.User;
+
 import my.tomcat.app.clienttype.ClientType;
 
 import javax.servlet.ServletException;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 
 @WebServlet("/site/logout")
 public class LogoutServlet extends HttpServlet {
@@ -30,12 +31,11 @@ public class LogoutServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
         ClientType clientType = (ClientType) session.getAttribute("userType");
-        String userForGoodBuy=(String)session.getAttribute("login");
+        User user=(User)session.getAttribute("user");
 
-        session.setAttribute("login", null);
-        session.setAttribute("password", null);
+        session.setAttribute("bye",user.getName());
+        session.setAttribute("user", null);
         session.setAttribute("userType", null);
-        session.setAttribute("userForGoodBuy",userForGoodBuy);
         req.getRequestDispatcher("/logout.jsp").forward(req, resp);
 
 
