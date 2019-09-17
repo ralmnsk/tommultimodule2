@@ -19,6 +19,8 @@ public class TopSecretFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         out.print("filter is invoked before");
 

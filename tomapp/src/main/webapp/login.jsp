@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Login</title>
-
+    <meta charset="utf-8">
 </head>
 <body>
     <h2>Пожалуйста, войдите:</h2>
@@ -16,8 +16,10 @@
 
     <input type="submit" value="Log in"/>
     </form><hr/>
+
+    </br>
+    ${errorLoginPassMessage}
     </br>
     <a href="/tomapp/goregistrate">Регистация</a>
-    ${errorLoginPassMessage}
 </body>
 </html>

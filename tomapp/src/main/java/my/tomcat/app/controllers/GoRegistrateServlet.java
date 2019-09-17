@@ -21,6 +21,8 @@ public class GoRegistrateServlet extends HttpServlet {
     }
 
     private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
         session.setAttribute("registration","yes");
         req.getRequestDispatcher("/registration.jsp").forward(req, resp);

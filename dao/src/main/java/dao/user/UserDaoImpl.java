@@ -55,9 +55,10 @@ public class UserDaoImpl implements UserDao{
             statement.close();
         } catch (SQLException ex) {
             logger.error("Prblem executing INSERT", ex);
-        } finally {
-            closeConnection(connection);
         }
+//        finally {
+//            closeConnection(connection);
+//        }
 
 
     }
@@ -68,7 +69,7 @@ public class UserDaoImpl implements UserDao{
         try {
             connection = getConnection();
             PreparedStatement statement = connection.prepareStatement
-                    ("select * from usrtab where name=?",Statement.RETURN_GENERATED_KEYS);
+                    ("select * from USRTAB where name=?",Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, user.getName());
             statement.execute();
             ResultSet rs = statement.executeQuery();     //   getGeneratedKeys();
@@ -83,9 +84,10 @@ public class UserDaoImpl implements UserDao{
             statement.close();
         } catch (SQLException ex) {
             logger.error("Problem executing UPDATE", ex);
-        } finally {
-            closeConnection(connection);
         }
+//        finally {
+//            closeConnection(connection);
+//        }
         return newUser;
     }
 
@@ -94,7 +96,7 @@ public class UserDaoImpl implements UserDao{
         try {
             connection = getConnection();
             PreparedStatement statement = connection.prepareStatement
-                    ("update usrtab set name=?,pass=?,join_date=?,role=? where name=?");
+                    ("update USRTAB set name=?,pass=?,join_date=?,role=? where name=?");
             statement.setString(1, user.getName());
             statement.setString(2, user.getPass());
             statement.setDate(3, user.getJoinDate());
@@ -104,9 +106,10 @@ public class UserDaoImpl implements UserDao{
             statement.close();
         } catch (SQLException ex) {
             logger.error("Problem executing UPDATE", ex);
-        } finally {
-            closeConnection(connection);
         }
+//        finally {
+//            closeConnection(connection);
+//        }
     }
 
     public void deleteUser(User user) {
@@ -114,15 +117,16 @@ public class UserDaoImpl implements UserDao{
         try {
             connection = getConnection();
             PreparedStatement statement = connection.prepareStatement
-                    ("delete from usrtab where name=?");
+                    ("delete from USRTAB where name=?");
             statement.setString(1, user.getName());
             statement.execute();
             statement.close();
         } catch (SQLException ex) {
             logger.error("Prblem executing DELETE", ex);
-        } finally {
-            closeConnection(connection);
         }
+//        finally {
+//            closeConnection(connection);
+//        }
 
     }
 }
