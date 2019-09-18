@@ -6,8 +6,9 @@
     </head>
     <body>
         <div class="container">
-            Информация пользователя</br>
+            <h2>Страница пользователя ${user.name}</h2>
 
+            </br>
             </br>
              <a href="/tomapp/">Главная</a>
             </br>
@@ -17,6 +18,7 @@
             </br>
             <a href="/tomapp/site/logout">Logout</a>
             <hr/>
+            <a href="/tomapp/site/addnews">Добавить новость</a>
         </div>
     </body>
 </html>

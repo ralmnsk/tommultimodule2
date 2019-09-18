@@ -6,14 +6,14 @@
     </head>
     <body>
         <div class="container">
-            Информация администратора 2
+            <h2>Информация администратора 2</h2>
             </br>
             </br>
             <a href="/tomapp/">Главная</a>
             </br>
-            <a href="/tomapp/topsecret">Информация администратора</a>
+            <a href="/tomapp/topsecret">Страница администратора</a>
             </br>
-            <a href="/tomapp/site/inform">Информация пользователя</a>
+            <a href="/tomapp/site/inform">Страница пользователя</a>
             </br>
             <a href="/tomapp/site/logout">Logout</a>
             <hr/>

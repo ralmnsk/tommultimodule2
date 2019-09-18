@@ -7,14 +7,14 @@
     </head>
     <body>
         <div class="container">
-            Информация администратора
+            <h>Информация администратора</h2>
             </br>
             </br>
             <a href="/tomapp/">Главная</a>
             </br>
-            <a href="/tomapp/topsecret2">Информация администратора 2</a>
+            <a href="/tomapp/topsecret2">Страница администратора 2</a>
             </br>
-            <a href="/tomapp/site/inform">Информация пользователя</a>
+            <a href="/tomapp/site/inform">Страница пользователя</a>
             </br>
             <a href="/tomapp/site/logout">Logout</a>
             <hr/>
