@@ -1,19 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
-<head>
-<title>INFORMATION</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-</head>
-<body>
-
-TOP SECRET (This page was put in WEB-INF/jsp)
-</br>
-</br>
-<a href="/tomapp/topsecret2">Secret information 2</a>
-</br>
-<a href="/tomapp/site/inform">Information</a>
-</br>
-<a href="/tomapp/site/logout">Logout</a>
-<hr/>
-</body></html>
+    <head>
+        <title>INFORMATION</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            Информация администратора
+            </br>
+            </br>
+            <a href="/tomapp/">Главная</a>
+            </br>
+            <a href="/tomapp/topsecret2">Информация администратора 2</a>
+            </br>
+            <a href="/tomapp/site/inform">Информация пользователя</a>
+            </br>
+            <a href="/tomapp/site/logout">Logout</a>
+            <hr/>
+        </div>
+    </body>
+</html>

@@ -47,6 +47,7 @@ public class LoginServlet extends HttpServlet {
         userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);
+        System.out.println(readUser);
 
         HttpSession session = req.getSession();
         ClientType clientType=(ClientType)session.getAttribute("userType");

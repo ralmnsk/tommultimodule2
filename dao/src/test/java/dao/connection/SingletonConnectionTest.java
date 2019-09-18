@@ -29,14 +29,6 @@ public class SingletonConnectionTest {
     @Mock
     private Connection mockConnection;
 
-//    {
-//        try {
-//            mockConnection = SingletonConnection.getInstance().getConnection();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     @Mock private Statement mockStatement;
 
     @Before
@@ -48,7 +40,7 @@ public class SingletonConnectionTest {
     public void getConnectionTest() throws SQLException {
         Mockito.when(mockConnection.createStatement()).thenReturn(mockStatement);
         Mockito.when(mockConnection.createStatement().executeUpdate((String)Mockito.any())).thenReturn(1);
-        int value = dbConnection.getConnection().createStatement().executeQuery("select * from USRTAB where name='Apple'")     .prepareStatement("select * from USRTAB where name=?").executeUpdate();  //executeQuery("");
+        int value = dbConnection.getConnection().createStatement().executeQuery("select * from USRTAB").findColumn("ID");     //.prepareStatement("select * from USRTAB where name=?").executeUpdate();  //executeQuery("");
         Assert.assertEquals(value, 1);
         Mockito.verify(mockConnection.createStatement(), Mockito.times(1));
     }
