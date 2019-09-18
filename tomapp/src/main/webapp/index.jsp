@@ -9,7 +9,7 @@
         <h2>Главная станица</h2>
         main page (index page)
         </br>
-        <a href="/tomapp/site/login">Вход</a>
+        <a href="/tomapp/login">Вход</a>
         </br>
         <a href="/tomapp/goregistrate">Регистрация</a>
         <hr/>

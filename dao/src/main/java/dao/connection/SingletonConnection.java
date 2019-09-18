@@ -24,6 +24,7 @@ public class SingletonConnection {
                         .load(getClass()
                                 .getClassLoader()
                                 .getResourceAsStream("dao.properties"));
+                logger.info("properties in "+this.getClass()+": "+properties.get("jdbc")+" "+properties.get("user")+" "+properties.get("password"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -32,6 +33,7 @@ public class SingletonConnection {
                     properties.getProperty("jdbc"),
                     properties.getProperty("user"),
                     properties.getProperty("password"));
+            logger.info("connection:"+this.connection);
         } catch (ClassNotFoundException ex) {
             logger.error("Prblem loadng DB dDiver!", ex);
         } catch (SQLException e) {
