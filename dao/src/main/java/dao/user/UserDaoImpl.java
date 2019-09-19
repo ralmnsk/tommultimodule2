@@ -59,8 +59,6 @@ public class UserDaoImpl implements UserDao{
 //        finally {
 //            closeConnection(connection);
 //        }
-
-
     }
 
     public User readUser(User user) {
