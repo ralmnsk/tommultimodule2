@@ -4,25 +4,25 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class News implements Serializable {
-    private long idNews;
-    private long idUser;
+    private Long idNews;
+    private Long idUser;
     private String nameNews;
     private String dataNews;
     private Date dateNews;
 
-    public long getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(long idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 
-    public long getIdNews() {
+    public Long getIdNews() {
         return idNews;
     }
 
-    public void setIdNews(long idNews) {
+    public void setIdNews(Long idNews) {
         this.idNews = idNews;
     }
 
@@ -59,5 +59,23 @@ public class News implements Serializable {
         this.nameNews = nameNews;
         this.dataNews = dataNews;
         this.dateNews = dateNews;
+    }
+
+    public News(Long idUser, String nameNews, String dataNews, Date dateNews) {
+        this.idUser = idUser;
+        this.nameNews = nameNews;
+        this.dataNews = dataNews;
+        this.dateNews = dateNews;
+    }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "idNews=" + idNews +
+                ", idUser=" + idUser +
+                ", nameNews='" + nameNews + '\'' +
+                ", dataNews='" + dataNews + '\'' +
+                ", dateNews=" + dateNews +
+                '}';
     }
 }

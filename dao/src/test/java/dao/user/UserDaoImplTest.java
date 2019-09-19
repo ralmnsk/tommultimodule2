@@ -29,14 +29,14 @@ public class UserDaoImplTest {
         return user;
     }
 
-    @Test
+
     public void createUser() {
         User user=userInTestCreate();
         UserDao userDao=new UserDaoImpl();
         userDao.createUser(user);
     }
 
-    @Test
+
     public void readUser() {
         User user=userInTestCreate();
         System.out.println(user);
@@ -50,7 +50,7 @@ public class UserDaoImplTest {
         assertEquals(newUser.getPass(),user.getPass());
     }
 
-    @Test
+
     public void updateUser() {
         User user=userInTestCreate();
         User userChanging=new User(user.getName(),
@@ -61,11 +61,19 @@ public class UserDaoImplTest {
         userDao.updateUser(userChanging);
     }
 
-    @Test
+
     public void deleteUser() {
         User user=userInTestCreate();
         UserDao userDao=new UserDaoImpl();
         userDao.deleteUser(user);
+    }
+
+    @Test
+    public void UserDaoImplTest(){
+        createUser();
+        readUser();
+        updateUser();
+        deleteUser();
     }
 
 }

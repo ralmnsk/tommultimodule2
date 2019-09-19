@@ -21,7 +21,7 @@
         </div>
 
             </br>
-            <form name="createNewsForm" method="POST" action="site/createnews">
+            <form name="createNewsForm" method="POST" action="createnews">
                 <div class="form-group">
                     <label for="exampleInputText1">Название новости</label>
                     <input type="text" class="form-control" name="nameNews">

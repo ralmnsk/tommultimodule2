@@ -1,5 +1,7 @@
 package my.tomcat.app.controllers;
 
+import my.tomcat.app.news.creator.NewsCreator;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +24,8 @@ public class CreateNewsServlet extends HttpServlet {
     }
 
     private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        NewsCreator newsCreator=new NewsCreator(req,resp);
+        newsCreator.newsCreate();
         req.getRequestDispatcher("/inform.jsp").forward(req, resp);
     }
 }
