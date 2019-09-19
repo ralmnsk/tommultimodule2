@@ -16,15 +16,8 @@ import static org.junit.Assert.*;
 
 public class SingletonConnectionTest {
     //@InjectMocks
-    private SingletonConnection dbConnection;
+    private SingletonConnection dbConnection = SingletonConnection.getInstance();
 
-    {
-        try {
-            dbConnection = SingletonConnection.getInstance();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Mock
     private Connection mockConnection;

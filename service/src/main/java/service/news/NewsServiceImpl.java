@@ -3,6 +3,8 @@ package service.news;
 import dao.news.NewsDao;
 import model.news.News;
 
+import java.util.List;
+
 public class NewsServiceImpl implements NewsService{
 
     private NewsDao newsDao;
@@ -25,5 +27,9 @@ public class NewsServiceImpl implements NewsService{
 
     public void setNewsDao(NewsDao newsDao) {
         this.newsDao=newsDao;
+    }
+
+    public List<News> findAllNews() {
+        return newsDao.findAllNews();
     }
 }

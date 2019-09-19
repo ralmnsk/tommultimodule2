@@ -3,25 +3,18 @@ package dao.news;
 import dao.connection.SingletonConnection;
 import dao.user.UserDaoImpl;
 import model.news.News;
+import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
+import java.util.List;
 
 public class NewsDaoImpl implements NewsDao {
     private static Logger logger= LoggerFactory.getLogger(UserDaoImpl.class);
-    private SingletonConnection singletonConnection;
-
-    {
-        try {
-            singletonConnection = SingletonConnection.getInstance();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     private Connection getConnection() throws SQLException{
-        return singletonConnection.getConnection();
+        return SingletonConnection.getInstance().getConnection();
     }
 
     public void closeConnection(Connection connection) {
@@ -61,7 +54,29 @@ public class NewsDaoImpl implements NewsDao {
     }
 
     public News readNews(News news) {
-        return null;
+        Connection connection= null;
+
+        News newNews=new News();
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("select * from newstab where name=?",Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, news.getNameNews());
+            statement.execute();
+            ResultSet rs = statement.executeQuery();     //   getGeneratedKeys();
+
+            while(rs.next()){
+                newNews.setIdNews(rs.getLong(1));
+                newNews.setNameNews(rs.getString(2));
+                newNews.setDataNews(rs.getString(3));
+                newNews.setDateNews(rs.getDate(4));
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Problem executing readNews", ex);
+        }
+        return newNews;
     }
 
     public void updateNews(News news) {
@@ -70,5 +85,9 @@ public class NewsDaoImpl implements NewsDao {
 
     public void deleteNews(News news) {
 
+    }
+
+    public List<News> findAllNews() {
+        return null;
     }
 }

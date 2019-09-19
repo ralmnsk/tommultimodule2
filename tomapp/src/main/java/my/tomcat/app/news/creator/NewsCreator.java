@@ -39,10 +39,13 @@ public class NewsCreator {
             news=new News(user.getId(), req.getParameter("nameNews"), dataNews, new Date(new java.util.Date().getTime()));
             logger.info("news created:"+news.toString());
             newsService.createNews(news);
+
         } else {
             logger.info("news created:"+news.toString()+" is empty");
         }
 
     return news;
     }
+
+
 }

@@ -21,5 +21,10 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPost(req, resp);
+        viewNews(req,resp);
+    }
+
+    private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
+
     }
 }

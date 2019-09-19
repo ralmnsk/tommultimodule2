@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class SingletonConnection {
-    private static SingletonConnection INSTANCE=null;
+    private static SingletonConnection INSTANCE;
     private Connection connection;
 
     private static Logger logger= LoggerFactory.getLogger(SingletonConnection.class);
@@ -41,10 +41,9 @@ public class SingletonConnection {
         }
     }
 
-    public synchronized static SingletonConnection getInstance() throws SQLException {
+    public synchronized static SingletonConnection getInstance(){
         if (INSTANCE == null) {
             INSTANCE = new SingletonConnection();
-            INSTANCE.getConnection();
         }
         return INSTANCE;
     }

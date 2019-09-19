@@ -16,27 +16,27 @@ public class User implements Serializable {
     private String pass;
     private Date joinDate;
     private String role;
-    private List<News> newsList;
+    private List<Long> newsList;
 
-    public List<News> getNewsList() {
+    public List<Long> getNewsList() {
         return newsList;
     }
 
-    public void setNewsList(List<News> newsList) {
+    public void setNewsList(List<Long> newsList) {
         this.newsList = newsList;
     }
 
-    public boolean addNews(News news) {
+    public boolean addNews(Long idUsrNews) {
         if (newsList == null) {
             newsList = new ArrayList();
-            newsList.add(news);
+            newsList.add(idUsrNews);
             return true;
         } else {
-            if (newsList.contains(news)) {
+            if (newsList.contains(idUsrNews)) {
                 return false;
             }
         }
-        newsList.add(news);
+        newsList.add(idUsrNews);
         return true;
     }
 
