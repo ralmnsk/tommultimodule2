@@ -3,7 +3,6 @@ package dao.news;
 import dao.connection.SingletonConnection;
 import dao.user.UserDaoImpl;
 import model.news.News;
-import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,7 +59,7 @@ public class NewsDaoImpl implements NewsDao {
         try {
             connection = getConnection();
             PreparedStatement statement = connection.prepareStatement
-                    ("select * from newstab where name=?",Statement.RETURN_GENERATED_KEYS);
+                    ("select * from newstab where namenews=?",Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, news.getNameNews());
             statement.execute();
             ResultSet rs = statement.executeQuery();     //   getGeneratedKeys();
