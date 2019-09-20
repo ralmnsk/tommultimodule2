@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,7 +13,18 @@
         <a href="/tomapp/login">Вход</a>
         </br>
         <a href="/tomapp/goregistrate">Регистрация</a>
-        <hr/>
+        </br>
+        <a href="/tomapp/news">Новости</a>
+        <hr/>   <table>
+                    <c:forEach var="news" items="${newsList}">
+                        <tr><td><p><h4>${news.nameNews}</h4></br>
+                                        ${news.dataNews}<p>
+                                Дата: ${news.dateNews}</br>
+
+                                </p>
+                                    <hr/>
+                    </c:forEach>
+                </table>
         </div>
     </body>
 </html>

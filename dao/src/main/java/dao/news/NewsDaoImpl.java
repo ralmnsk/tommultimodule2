@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class NewsDaoImpl implements NewsDao {
@@ -79,14 +80,60 @@ public class NewsDaoImpl implements NewsDao {
     }
 
     public void updateNews(News news) {
-
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("update newstab set datanews=?,date=? where namenews=?");
+            statement.setString(1, news.getDataNews());
+            statement.setDate(2, news.getDateNews());
+            statement.setString(3, news.getNameNews());
+            statement.execute();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Problem executing UPDATE", ex);
+        }
     }
 
     public void deleteNews(News news) {
-
+        Connection connection = null;
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("delete from newstab where namenews=?");
+            statement.setString(1, news.getNameNews());
+            statement.execute();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Prblem executing DELETE", ex);
+        }
     }
 
     public List<News> findAllNews() {
-        return null;
+        Connection connection= null;
+
+        List<News> newsList=new ArrayList<News>();
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("select * from newstab ",Statement.RETURN_GENERATED_KEYS);
+            statement.execute();
+            ResultSet rs = statement.executeQuery();     //   getGeneratedKeys();
+
+            while(rs.next()){
+                News news=new News();
+                news.setIdNews(rs.getLong(1));
+                news.setNameNews(rs.getString(2));
+                news.setDataNews(rs.getString(3));
+                news.setDateNews(rs.getDate(4));
+                newsList.add(news);
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Problem executing readNews", ex);
+        }
+
+        return newsList;
     }
 }

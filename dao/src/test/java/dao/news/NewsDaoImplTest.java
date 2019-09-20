@@ -3,10 +3,13 @@ package dao.news;
 import model.news.News;
 import org.junit.Before;
 import org.junit.Test;
+import org.omg.IOP.Encoding;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.sql.Date;
+import java.util.List;
 import java.util.Properties;
 
 import static org.junit.Assert.*;
@@ -27,41 +30,60 @@ public class NewsDaoImplTest {
         }
         String nameNews=properties.getProperty("namenews");
         String dataNews=properties.getProperty("datanews");
-        try {
-            nameNews= new String(nameNews.getBytes("UTF-8"), "windows-1251");
-            dataNews= new String(dataNews.getBytes("windows-1251"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-        news=new News(1l,nameNews,
-                dataNews,
-                new Date(new java.util.Date().getTime()));
+        news=new News(1l,nameNews,dataNews,new Date(new java.util.Date().getTime()));
     }
 
-    @Test
+
+
     public void createNews() {
         NewsDaoImpl newsDao=new NewsDaoImpl();
         newsDao.createNews(news);
     }
 
-    @Test
+
     public void readNews() {
         NewsDaoImpl newsDao=new NewsDaoImpl();
         News readNews = newsDao.readNews(this.news);
         System.out.println(readNews.toString());
-
+        assertNotNull(readNews);
+        assertEquals(readNews.getNameNews(),news.getNameNews());
+        assertEquals(readNews.getDataNews(),news.getDataNews());
     }
 
-    @Test
+
     public void updateNews() {
+        News newsChanging=new News(1000L,news.getNameNews(),"new news data 1234567", new Date(new java.util.Date().getTime()));
+        System.out.println(newsChanging);
+        NewsDaoImpl newsDao=new NewsDaoImpl();
+
+        System.out.println(newsChanging);
+        newsDao.updateNews(newsChanging);
+
+        assertNotNull(newsChanging);
+        assertEquals(newsChanging.getNameNews(),news.getNameNews());
+        assertNotEquals(newsChanging.getDataNews(),news.getDataNews());
+    }
+
+
+    public void deleteNews() {
+        NewsDaoImpl newsDao=new NewsDaoImpl();
+        newsDao.deleteNews(news);
     }
 
     @Test
-    public void deleteNews() {
+    public void testing(){
+       createNews();
+       readNews();
+       updateNews();
+       deleteNews();
     }
 
     @Test
     public void findAllNews() {
+        NewsDaoImpl newsDao=new NewsDaoImpl();
+        List<News> newsList=newsDao.findAllNews();
+        for (News n:newsList) {
+            System.out.println(n.toString());
+        }
     }
 }
