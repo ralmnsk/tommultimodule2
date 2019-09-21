@@ -10,3 +10,4 @@ It is the multi module project consists of submodules: dao, models, service, web
 *Testing libraries are junit and mokito.
 *Models: user, news.
 
+The fourth trying to change smth.
