@@ -22,7 +22,8 @@ Map and navigation on the site.
 There is a main (index) page of application.
 The page has links to login(Вход), registration(Регистрация) and news pages(Новости).
 You can use existing user login-"qwe" and password-"123", role:"user" or 
-create your own in the registration form of the registration page.
+create your own in the registration form of the registration page or
+ test web application by entrance of admin login-"admin" and password-"admin".
 
 On the news page(Новости) you can see titles, creation dates and news data
 that were added in a database some time before.
