@@ -10,6 +10,7 @@ public class UserServiceImpl implements UserService{
 
     public void setUser(User user) {
         this.user = user;
+        System.out.println("userServiceImpl: user was set");
     }
 
     public void setUserDao(UserDao userDao){
