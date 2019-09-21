@@ -5,4 +5,5 @@ It is the multi module project consists of submodules: dao, models, service, web
 *Web servlets use login and password registration.
 *The access to user's pages is controlled by filter.
 *The topsecret pages is controlled by second level filter.
+*The type of database is mysql.
 
