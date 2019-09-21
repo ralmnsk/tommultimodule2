@@ -7,4 +7,5 @@ It is the multi module project consists of submodules: dao, models, service, web
 *The topsecret pages is controlled by second level filter.
 *The type of database is mysql.
 *It is userd cobertura for viewing testing coverage of the project.
+*Testing libraries are junit and mokito.
 
