@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @WebServlet("/topsecret2")
 public class TopSecretSecondServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processReq(req,resp);
@@ -22,7 +23,6 @@ public class TopSecretSecondServlet extends HttpServlet {
     }
 
     private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         req.getRequestDispatcher("WEB-INF/jsp/topsecret2.jsp").forward(req, resp);
     }
 }

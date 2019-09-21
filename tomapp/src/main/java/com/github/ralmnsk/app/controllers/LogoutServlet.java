@@ -14,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet("/site/logout")
 public class LogoutServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processReq(req,resp);
@@ -36,7 +37,5 @@ public class LogoutServlet extends HttpServlet {
         session.setAttribute("user", null);
         session.setAttribute("userType", null);
         req.getRequestDispatcher("/logout.jsp").forward(req, resp);
-
-
     }
 }

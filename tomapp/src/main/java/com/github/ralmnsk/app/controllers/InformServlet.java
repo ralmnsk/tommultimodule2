@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @WebServlet("/site/inform")
 public class InformServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processReq(req,resp);
@@ -22,11 +23,6 @@ public class InformServlet extends HttpServlet {
     }
 
     private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //req.getRequestDispatcher("/jsp/login.jsp").forward(req, resp);
-//        RequestDispatcher dispatcher = getServletContext()
-//                .getRequestDispatcher("/jsp/login.jsp");
-//        dispatcher.forward(req, resp);
-        //resp.sendRedirect(req.getContextPath()+"/jsp/login.jsp");
         req.getRequestDispatcher("/inform.jsp").forward(req, resp);
     }
 }

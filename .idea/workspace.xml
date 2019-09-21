@@ -2,145 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f983650a-0680-4d72-b91c-5ce6987677b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/connection/SingletonConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/SingletonConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/user/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/dao/news/NewsDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/dao/user/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/connection/SingletonConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/news/NewsDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/news/NewsDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/user/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/user/UserDaoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.connection.SingletonConnection.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.connection.SingletonConnection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDaoImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDaoImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDaoImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDaoImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.connection.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.connection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.connection.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.connection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/model.news.News.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/model.news.News.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/model.user.User.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/model.user.User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/test-classes/dao/news/NewsDaoImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/test-classes/dao/user/UserDaoImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/news/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/model/news/News.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/classes/model/user/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/model.news.News.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/model.news.News.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/model.user.User.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/model.user.User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/news/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/news/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/service/user/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/user/UserServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/service/news/NewsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/service/news/NewsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/service/user/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/classes/service/user/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/dao.user.UserDaoImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/dao.user.UserDaoImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-dao.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-model.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-dao.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-model.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/model.user.User.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/model.user.User.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsService.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserService.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserServiceImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/test-classes/service/user/UserServiceImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/DBEmul/DBemulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/DBemulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/DBEmul/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/Testing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/clienttype/ClientType.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/clienttype/ClientType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/AddNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/CreateNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/GoRegistrateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/InformServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretSecondServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/filters/FirstFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/FirstFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/filters/TopSecretFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/TopSecretFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/news/creator/NewsCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/DBEmul/DBemulation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/DBEmul/Testing.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/clienttype/ClientType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/AddNewsServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/CreateNewsServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/GoRegistrateServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/IndexServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/InformServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/LoginServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/LogoutServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/RegistrationServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/TopSecretSecondServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/TopSecretServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/filters/FirstFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/filters/TopSecretFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/news/creator/NewsCreator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.DBEmul.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.DBEmul.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.clienttype.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.clienttype.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.controllers.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.controllers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.filters.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.filters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.news.creator.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.news.creator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.DBEmul.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.DBEmul.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.clienttype.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.clienttype.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.controllers.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.controllers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.filters.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.filters.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.news.creator.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.news.creator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.DBemulation.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.DBemulation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.Testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.Testing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.clienttype.ClientType.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.clienttype.ClientType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.AddNewsServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.AddNewsServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.CreateNewsServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.CreateNewsServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.GoRegistrateServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.GoRegistrateServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.IndexServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.IndexServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.InformServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.InformServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LoginServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LoginServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LogoutServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LogoutServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.RegistrationServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.RegistrationServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretSecondServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretSecondServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretServlet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.FirstFilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.FirstFilter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.TopSecretFilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.TopSecretFilter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.news.creator.NewsCreator.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.news.creator.NewsCreator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -162,10 +37,22 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
+        <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="157">
+              <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-86">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -179,8 +66,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit4 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -204,13 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dao/pom.xml" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/webapp/login.jsp" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/webapp/reg_succsses.jsp" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/webapp/registration.jsp" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/HelloServlet.java" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/GoRegistrateServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/InformServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretSecondServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretServlet.java" />
@@ -247,14 +127,21 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/tomapp/pom.xml" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/clienttype/ClientType.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/FirstFilter.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/TopSecretFilter.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" />
       </list>
     </option>
   </component>
@@ -587,6 +474,7 @@
       <recent name="dao.user" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.github.ralmnsk.service.authorization" />
       <recent name="com.github.ralmnsk.service.news.creator" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -839,7 +727,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569067325548</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Rename packages&#10;NewsCreator and Authorization removed in service module.">
+      <created>1569093231743</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1569093231743</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -887,7 +782,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23851351" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23851351" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -896,8 +791,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="DB Browser" order="7" weight="0.32972974" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932432" visible="true" weight="0.32547864" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932432" weight="0.32547864" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20029455" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1001,16 +896,10 @@
     <MESSAGE value="model cobertura" />
     <MESSAGE value="read me file addition" />
     <MESSAGE value="read me file addition2" />
-    <option name="LAST_COMMIT_MESSAGE" value="read me file addition2" />
+    <MESSAGE value="Rename packages&#10;NewsCreator and Authorization removed in service module." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename packages&#10;NewsCreator and Authorization removed in service module." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1364,10 +1253,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="-194">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1376,15 +1265,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="157">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-383">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="-356">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1393,25 +1295,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+        <state relative-caret-position="108">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-86">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="130">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1420,8 +1312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="211">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1430,8 +1322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="-1085">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1440,25 +1332,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+        <state relative-caret-position="346">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        <state relative-caret-position="268">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

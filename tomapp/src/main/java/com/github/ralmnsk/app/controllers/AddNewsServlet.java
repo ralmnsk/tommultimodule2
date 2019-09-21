@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @WebServlet("/site/addnews")
 public class AddNewsServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         processReq(req,resp);
@@ -22,7 +23,6 @@ public class AddNewsServlet extends HttpServlet {
     }
 
     private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         req.getRequestDispatcher("/addnews.jsp").forward(req, resp);
     }
 }
