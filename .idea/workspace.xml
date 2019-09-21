@@ -1,71 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f983650a-0680-4d72-b91c-5ce6987677b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/classes/dao.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/classes/dao/connection/SingletonConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/classes/dao/news/NewsDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/classes/dao/news/NewsDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/classes/dao/user/UserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/classes/dao/user/UserDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/test-classes/dao/user/UserDaoImplTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/test-classes/daotest.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/classes/model/news/News.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/classes/model/user/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/classes/service/news/NewsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/classes/service/news/NewsServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/classes/service/user/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/classes/service/user/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/test-classes/service/user/UserServiceImplTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/login.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/DBEmul/DBemulation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/DBEmul/Testing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/clienttype/ClientType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/AddNewsServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/CreateNewsServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/GoRegistrateServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/IndexServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/InformServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/LogoutServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/RegistrationServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/TopSecretSecondServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/TopSecretServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/filters/FirstFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/filters/TopSecretFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/news/creator/NewsCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/conf/logging.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/conf/tomcat-users.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/conf/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/logs/access_log.2019-09-18" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/logs/access_log.2019-09-19" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/addnews_jsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/addnews_jsp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/inform_jsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/inform_jsp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/login_jsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/login_jsp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/reg_005fsuccsses_jsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/reg_005fsuccsses_jsp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/registration_jsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/registration_jsp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/welcome_jsp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/welcome_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/dao/connection/SingletonConnectionTest.java" beforeDir="false" />
+    <list default="true" id="f983650a-0680-4d72-b91c-5ce6987677b6" name="Default Changelist" comment="NewsDaoImpl stop here">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -86,41 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/news/NewsDaoImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1134">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/user/UserDaoImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/service/user/UserServiceImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="127" column="35" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
+            <state relative-caret-position="264">
+              <caret line="109" column="1" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -150,7 +57,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model/src/main/java/mygroup/user/User.java" />
         <option value="$PROJECT_DIR$/model/dao/pom.xml" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/all/news/AllNews.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/news/News.java" />
@@ -201,6 +107,7 @@
         <option value="$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDaoImpl.java" />
         <option value="$PROJECT_DIR$/dao/src/test/java/dao/connection/SingletonConnectionTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -353,6 +260,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
@@ -513,6 +426,13 @@
               <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
@@ -862,7 +782,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568918758016</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="NewsDaoImpl stop here">
+      <created>1569045113989</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1569045113989</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -908,8 +835,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2716216" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23851351" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1381,9 +1309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1420,20 +1345,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/news/NewsDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1134">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/user/UserDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
+        <state relative-caret-position="210">
           <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="117" column="12" lean-forward="true" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1444,10 +1369,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/news/NewsDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="127" column="35" selection-start-line="127" selection-start-column="35" selection-end-line="127" selection-end-column="35" />
+        <state relative-caret-position="-1134">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="109" column="1" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
         </state>
       </provider>
     </entry>

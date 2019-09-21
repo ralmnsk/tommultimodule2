@@ -107,6 +107,6 @@ fabric.properties
 
 ### Java-Web ###
 ## ignoring target file
-target/
+#target/
 
 # End of https://www.gitignore.io/api/git,java-web,intellij
