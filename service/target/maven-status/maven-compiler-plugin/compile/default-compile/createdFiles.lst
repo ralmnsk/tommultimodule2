@@ -1,2 +1,3 @@
-service\news\NewsServiceImpl.class
-service\news\NewsService.class
+com\github\ralmnsk\service\clienttype\ClientType.class
+com\github\ralmnsk\service\authorization\Authorization.class
+com\github\ralmnsk\service\news\creator\NewsCreatorImpl.class

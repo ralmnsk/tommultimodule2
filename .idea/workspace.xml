@@ -2,176 +2,145 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f983650a-0680-4d72-b91c-5ce6987677b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dao/target/cobertura/cobertura.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/dao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/cobertura.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/dao.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/dao/connection/SingletonConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/dao/news/NewsDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/dao/news/NewsDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/dao/user/UserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/dao/user/UserDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/generated-classes/cobertura/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/surefire-reports/2019-09-21T08-37-31_251-jvmRun1.dump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/surefire-reports/TEST-dao.news.NewsDaoImplTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/surefire-reports/TEST-dao.user.UserDaoImplTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/surefire-reports/dao.news.NewsDaoImplTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/surefire-reports/dao.user.UserDaoImplTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/test-classes/META-INF/dao.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/target/test-classes/dao/news/NewsDaoImplTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/cobertura/cobertura.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/generated-classes/cobertura/cobertura.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/generated-classes/cobertura/model/news/News.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/generated-classes/cobertura/model/user/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/cobertura/cobertura.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/generated-classes/cobertura/cobertura.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/generated-classes/cobertura/service/news/NewsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/generated-classes/cobertura/service/news/NewsServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/generated-classes/cobertura/service/user/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/generated-classes/cobertura/service/user/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/surefire-reports/TEST-service.user.UserServiceImplTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/target/surefire-reports/service.user.UserServiceImplTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/cobertura/cobertura.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/cobertura.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/login.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/DBEmul/DBemulation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/DBEmul/Testing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/clienttype/ClientType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/AddNewsServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/CreateNewsServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/GoRegistrateServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/IndexServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/InformServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/LogoutServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/RegistrationServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/TopSecretSecondServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/controllers/TopSecretServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/filters/FirstFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/filters/TopSecretFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/generated-classes/cobertura/my/tomcat/app/news/creator/NewsCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/css/help.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/css/sortabletable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/css/source-viewer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/css/tooltip.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-packages.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.DBEmul.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.clienttype.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.controllers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.filters.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.news.creator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.DBEmul.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.clienttype.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.controllers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.filters.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.news.creator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/help.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/images/blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/images/downsimple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/images/upsimple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/js/customsorttypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/js/popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/js/sortabletable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/js/stringbuilder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.DBemulation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.Testing.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.clienttype.ClientType.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.AddNewsServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.CreateNewsServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.GoRegistrateServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.IndexServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.InformServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LoginServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LogoutServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.RegistrationServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretSecondServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretServlet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.FirstFilter.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.TopSecretFilter.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.news.creator.NewsCreator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/css/maven-base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/css/maven-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/css/print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/dependencies.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/dependency-info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/close.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/collapsed.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/expanded.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/external.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/icon_error_sml.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/icon_info_sml.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/icon_success_sml.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/icon_warning_sml.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/logos/build-by-maven-black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/logos/build-by-maven-white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/logos/maven-feather.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/images/newwindow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/licenses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/plugin-management.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/plugins.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/project-info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/project-reports.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/site/summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/cobertura.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/login.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/DBEmul/DBemulation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/DBEmul/Testing.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/clienttype/ClientType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/AddNewsServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/CreateNewsServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/GoRegistrateServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/IndexServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/InformServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/LogoutServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/RegistrationServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/TopSecretSecondServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/controllers/TopSecretServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/filters/FirstFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/filters/TopSecretFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/classes/my/tomcat/app/news/creator/NewsCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/jsp/topsecret.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/jsp/topsecret2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/dao-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/log4j-1.2.14.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/model-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/mysql-connector-java-8.0.16.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/protobuf-java-3.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/service-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/slf4j-api-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/lib/slf4j-log4j12-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/addnews.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/inform.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/logout.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/reg_succsses.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/registration.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/target/tom.app/welcome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/connection/SingletonConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/SingletonConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/dao/user/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/test/java/dao/news/NewsDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/test/java/dao/user/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/connection/SingletonConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/news/NewsDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/news/NewsDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/user/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/classes/dao/user/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.connection.SingletonConnection.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.connection.SingletonConnection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDaoImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.news.NewsDaoImpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDao.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDaoImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/dao.user.UserDaoImpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.connection.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.connection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-dao.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles-model.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.connection.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.connection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-dao.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/frame-summary-model.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/model.news.News.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/model.news.News.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/site/cobertura/model.user.User.html" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/site/cobertura/model.user.User.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/test-classes/dao/news/NewsDaoImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/test-classes/dao/user/UserDaoImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/news/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/java/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/model/news/News.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/classes/model/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles-model.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/frame-summary-model.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/model.news.News.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/model.news.News.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/site/cobertura/model.user.User.html" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/site/cobertura/model.user.User.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/news/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/news/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/service/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/service/user/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/user/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/classes/service/news/NewsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/classes/service/news/NewsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/classes/service/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/classes/service/user/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/dao.user.UserDaoImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/dao.user.UserDaoImpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-dao.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-model.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles-service.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-dao.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-dao.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-model.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-model.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.news.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.user.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/frame-summary-service.user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/model.user.User.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/model.user.User.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsService.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.news.NewsServiceImpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserService.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserServiceImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/site/cobertura/service.user.UserServiceImpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/test-classes/service/user/UserServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/DBEmul/DBemulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/DBemulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/DBEmul/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/clienttype/ClientType.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/clienttype/ClientType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/AddNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/CreateNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/GoRegistrateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/InformServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretSecondServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/filters/FirstFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/FirstFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/filters/TopSecretFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/TopSecretFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/news/creator/NewsCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/DBEmul/DBemulation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/DBEmul/Testing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/clienttype/ClientType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/AddNewsServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/CreateNewsServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/GoRegistrateServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/IndexServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/InformServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/LogoutServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/RegistrationServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/TopSecretSecondServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/controllers/TopSecretServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/filters/FirstFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/filters/TopSecretFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/classes/my/tomcat/app/news/creator/NewsCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.DBEmul.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.DBEmul.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.clienttype.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.clienttype.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.controllers.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.controllers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.filters.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.filters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.news.creator.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles-my.tomcat.app.news.creator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-sourcefiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.DBEmul.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.DBEmul.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.clienttype.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.clienttype.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.controllers.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.controllers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.filters.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.filters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.news.creator.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/frame-summary-my.tomcat.app.news.creator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.DBemulation.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.DBemulation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.Testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.DBEmul.Testing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.clienttype.ClientType.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.clienttype.ClientType.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.AddNewsServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.AddNewsServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.CreateNewsServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.CreateNewsServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.GoRegistrateServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.GoRegistrateServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.IndexServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.IndexServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.InformServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.InformServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LoginServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LoginServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LogoutServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.LogoutServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.RegistrationServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.RegistrationServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretSecondServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretSecondServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretServlet.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.controllers.TopSecretServlet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.FirstFilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.FirstFilter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.TopSecretFilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.filters.TopSecretFilter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.news.creator.NewsCreator.html" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/site/cobertura/my.tomcat.app.news.creator.NewsCreator.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -193,13 +162,13 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="194">
-                <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-194">
+              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,9 +178,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -235,18 +204,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model/src/main/java/model/all/news/AllNews.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/news/News.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/resource/log4j.properties" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/user/UserDaoJdbcDemo.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/user/UserDaoJdbcDemo.kt" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/dao/user/UserDao.java" />
-        <option value="$PROJECT_DIR$/dao/src/test/resource/daotest.properties" />
-        <option value="$PROJECT_DIR$/dao/src/test/java/dao/user/UserDaoImplTest.java" />
-        <option value="$PROJECT_DIR$/tomapp/pom.xml" />
-        <option value="$PROJECT_DIR$/model/pom.xml" />
         <option value="$PROJECT_DIR$/dao/pom.xml" />
-        <option value="$PROJECT_DIR$/service/pom.xml" />
         <option value="$PROJECT_DIR$/tomapp/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/tomapp/src/main/webapp/login.jsp" />
         <option value="$PROJECT_DIR$/tomapp/src/main/webapp/reg_succsses.jsp" />
@@ -283,9 +241,20 @@
         <option value="$PROJECT_DIR$/service/src/main/java/service/news/NewsServiceImpl.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDaoImpl.java" />
         <option value="$PROJECT_DIR$/dao/src/test/java/dao/connection/SingletonConnectionTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/service/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/tomapp/pom.xml" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/clienttype/ClientType.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/FirstFilter.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/TopSecretFilter.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" />
       </list>
     </option>
   </component>
@@ -317,13 +286,143 @@
             <path>
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
               <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
               <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
@@ -334,7 +433,72 @@
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
               <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="clienttype" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+              <item name="creator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
@@ -345,14 +509,59 @@
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
               <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
               <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -366,7 +575,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tomapp/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -377,13 +586,18 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="dao.user" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="my.tomcat.app.controllers" />
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.github.ralmnsk.service.news.creator" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.github.ralmnsk.service.news.creator" />
+      <recent name="my.tomcat.app.controllers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\iland\tommultimodule\service\src\main\java\com\github\ralmnsk\service" />
       <recent name="C:\Users\iland\tommultimodule\tomapp\src\main\webapp" />
       <recent name="C:\Users\iland\tommultimodule\dao\src\test\resource" />
     </key>
@@ -611,7 +825,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569046258423</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="read me file addition">
+      <created>1569066972545</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1569066972545</updated>
+    </task>
+    <task id="LOCAL-00013" summary="read me file addition2">
+      <created>1569067325548</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1569067325548</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -669,7 +897,7 @@
       <window_info id="DB Browser" order="7" weight="0.32972974" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932432" visible="true" weight="0.47275406" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932432" visible="true" weight="0.32547864" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20029455" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -771,91 +999,33 @@
     <MESSAGE value="NewsDaoImpl stop here" />
     <MESSAGE value="dao cobertura" />
     <MESSAGE value="model cobertura" />
-    <option name="LAST_COMMIT_MESSAGE" value="model cobertura" />
+    <MESSAGE value="read me file addition" />
+    <MESSAGE value="read me file addition2" />
+    <option name="LAST_COMMIT_MESSAGE" value="read me file addition2" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/HelloServlet.java" />
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/webapp/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="74" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/webapp/reg_succsses.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="73" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretServlet.java">
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/TopSecretSecondServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/GoRegistrateServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/user/UserDao.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/service/user/UserService.java">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/service/user/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
@@ -890,34 +1060,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/DBEmul/Testing.java">
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/Testing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/DBEmul/DBemulation.java">
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/DBemulation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/filters/FirstFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/RegistrationServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -935,37 +1088,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/filters/TopSecretFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/LogoutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/webapp/logout.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/InformServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -997,20 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/AddNewsServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/CreateNewsServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-370">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/webapp/addnews.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -1018,7 +1130,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/user/User.java">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-586">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
@@ -1048,7 +1160,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/connection/SingletonConnection.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/SingletonConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1213">
           <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
@@ -1060,14 +1172,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/news/creator/NewsCreator.java">
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/news/creator/NewsCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/service/news/NewsServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
@@ -1078,14 +1190,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/service/news/NewsService.java">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDao.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="29" />
@@ -1095,7 +1207,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/news/NewsDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
@@ -1106,7 +1218,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/news/News.java">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
           <caret line="55" column="92" selection-start-line="55" selection-start-column="92" selection-end-line="55" selection-end-column="92" />
@@ -1116,27 +1228,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/dao/user/UserDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/IndexServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1158,7 +1256,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/user/UserDaoImplTest.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
@@ -1168,21 +1266,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="117" column="12" lean-forward="true" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/test/java/service/user/UserServiceImplTest.java">
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/user/UserServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/news/NewsDaoImplTest.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1134">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
@@ -1199,13 +1290,180 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="194">
-            <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <first_editor relative-caret-position="27">
+            <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
       <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="633" column="19" selection-start-line="633" selection-start-column="19" selection-end-line="633" selection-end-column="19" />
+          <folding>
+            <element signature="e#23072#23073#0" expanded="true" />
+            <element signature="e#23112#23113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/clienttype/ClientType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/FirstFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/filters/TopSecretFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/Authorization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-356">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-518">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1728">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="31" column="74" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-194">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
