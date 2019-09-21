@@ -23,11 +23,15 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="543e4f50-5d16-46be-80e5-8be491b83425">
+        <schema name="eYcooOkOuh" object-types="column, procedure, dataset trigger, table, view, constraint, function, index" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="543e4f50-5d16-46be-80e5-8be491b83425">
-      <console name="remotemysql" type="STANDARD" schema="eYcooOkOuh" session="Main"><![CDATA[select * from USRTAB;]]></console>
+      <console name="remotemysql" type="STANDARD" schema="eYcooOkOuh" session="Main">select * from USRTAB;</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
