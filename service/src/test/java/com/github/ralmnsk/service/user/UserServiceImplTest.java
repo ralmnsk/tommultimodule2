@@ -42,7 +42,7 @@ public class UserServiceImplTest {
 
     private User getMeTestUser() {
         User user=new User();
-        user.setId(10L);
+        user.setId(1000L);
         user.setName("Apple");
         user.setPass("pass");
         user.setJoinDate(new Date(new java.util.Date().getTime()));
