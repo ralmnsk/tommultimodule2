@@ -2,9 +2,10 @@ package com.github.ralmnsk.model.news;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import java.sql.Date;
 
+
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class NewsTest {
@@ -77,7 +78,12 @@ public class NewsTest {
 
     @Test
     public void setDateNews() {
-        fail();
+        String str="2015-03-31";
+        Date date=Date.valueOf(str);
+        testNews.setDateNews(date);
+        Date testDate=testNews.getDateNews();
+        System.out.println("date:"+date+" =?"+testDate);
+        assertThat("2015-03-31",is(testDate.toString()));
     }
 
     @Test
