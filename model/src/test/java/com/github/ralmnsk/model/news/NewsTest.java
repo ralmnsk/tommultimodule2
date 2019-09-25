@@ -15,13 +15,13 @@ public class NewsTest {
     @Before
     public void setUp() throws Exception {
         date=new Date(new java.util.Date().getTime());
-        testNews=new News(1l,2l,"nameNews", "dataNews",date);
+        testNews=new News(1L,2L,"nameNews", "dataNews",date);
     }
 
     @Test
     public void getIdUser() {
         long idUser=testNews.getIdUser();
-        assertEquals(2l,idUser);
+        assertEquals(2L,idUser);
     }
 
     @Test
@@ -88,6 +88,7 @@ public class NewsTest {
 
     @Test
     public void toString1() {
-        fail();
+        String str="News{idNews=1, idUser=2, nameNews='nameNews', dataNews='dataNews', dateNews=2019-09-25}";
+        assertThat(str, is(testNews.toString()));
     }
 }
