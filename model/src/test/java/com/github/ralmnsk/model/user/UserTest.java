@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -12,23 +14,48 @@ import static org.junit.Assert.*;
 public class UserTest {
     private User testUser;
     private Date date;
+    private List<Long> newsList;
+    private List<Long> testNewsList;
 
     @Before
     public void setUp() throws Exception {
         date=new Date(new java.util.Date().getTime());
         testUser=new User(100L,"testUser", "testPass",date,"testRole");
+
+        newsList=new ArrayList<>();
+        newsList.add(1L);
+        newsList.add(2L);
+        newsList.add(3L);
+        testUser.setNewsList(newsList);
+
+        testNewsList=new ArrayList<>();
+        testNewsList.add(3L);
+        testNewsList.add(4L);
+        testNewsList.add(5L);
     }
 
     @Test
     public void getNewsList() {
+        assertThat(3,is(testUser.getNewsList().size()));
+        assertThat(1L,is(testUser.getNewsList().get(0)));
+        assertThat(2L,is(testUser.getNewsList().get(1)));
+        assertThat(3L,is(testUser.getNewsList().get(2)));
     }
 
     @Test
     public void setNewsList() {
+        testUser.setNewsList(testNewsList);
+        assertThat(3, is(testUser.getNewsList().size()));
+        assertThat(3L,is(testUser.getNewsList().get(0)));
+        assertThat(4L,is(testUser.getNewsList().get(1)));
+        assertThat(5L,is(testUser.getNewsList().get(2)));
     }
 
     @Test
     public void addNews() {
+        User testUserForAddNews=new User(100L,"testUser", "testPass",date,"testRole");
+        testUserForAddNews.addNews(545L);
+        assertThat(545L,is(testUserForAddNews.getNewsList().get(0)));
     }
 
     @Test

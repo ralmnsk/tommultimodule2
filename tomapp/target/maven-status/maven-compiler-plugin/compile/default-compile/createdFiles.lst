@@ -1,0 +1,14 @@
+com\github\ralmnsk\app\filters\FirstFilter.class
+com\github\ralmnsk\app\DBEmul\DBemulation.class
+com\github\ralmnsk\app\DBEmul\Testing.class
+com\github\ralmnsk\app\filters\TopSecretFilter.class
+com\github\ralmnsk\app\controllers\CreateNewsServlet.class
+com\github\ralmnsk\app\controllers\LoginServlet.class
+com\github\ralmnsk\app\controllers\AddNewsServlet.class
+com\github\ralmnsk\app\controllers\TopSecretServlet.class
+com\github\ralmnsk\app\controllers\LogoutServlet.class
+com\github\ralmnsk\app\controllers\InformServlet.class
+com\github\ralmnsk\app\controllers\GoRegistrateServlet.class
+com\github\ralmnsk\app\controllers\TopSecretSecondServlet.class
+com\github\ralmnsk\app\controllers\RegistrationServlet.class
+com\github\ralmnsk\app\controllers\IndexServlet.class

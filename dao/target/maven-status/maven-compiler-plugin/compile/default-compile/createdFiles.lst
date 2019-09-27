@@ -1,0 +1,5 @@
+com\github\ralmnsk\dao\user\UserDao.class
+com\github\ralmnsk\dao\connection\SingletonConnection.class
+com\github\ralmnsk\dao\news\NewsDao.class
+com\github\ralmnsk\dao\news\NewsDaoImpl.class
+com\github\ralmnsk\dao\user\UserDaoImpl.class

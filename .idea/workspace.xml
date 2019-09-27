@@ -2,11 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f983650a-0680-4d72-b91c-5ce6987677b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/news/NewsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/authorization/AuthorizationImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tomapp/src/test/java/com/github/ralmnsk/app/controllers/IndexServletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/user/UserServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/user/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/target/test-classes/META-INF/dao.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/user/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/user/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/inform_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/inform_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/login_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/login_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/welcome_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/welcome_jsp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,10 +41,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java">
+        <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+            <state relative-caret-position="175">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,16 +52,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/news/NewsTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomapp/src/test/java/com/github/ralmnsk/app/controllers/IndexServletTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+            <state relative-caret-position="100">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/user/UserTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="32" />
               <folding>
-                <element signature="e#1759#1760#0" expanded="true" />
-                <element signature="e#1779#1780#0" expanded="true" />
-                <element signature="e#1822#1823#0" expanded="true" />
-                <element signature="e#1843#1844#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,9 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/filters/FirstFilter.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/service/user/UserService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/service/user/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/RegistrationServlet.java" />
         <option value="543e4f50-5d16-46be-80e5-8be491b83425/consoles/remotemysql" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/my/tomcat/app/controllers/LogoutServlet.java" />
@@ -136,6 +161,9 @@
         <option value="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/authorization/AuthorizationImplTest.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/user/UserServiceImplTest.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/news/NewsTest.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/resources/dao.properties" />
+        <option value="$PROJECT_DIR$/tomapp/src/test/java/com/github/ralmnsk/app/controllers/IndexServletTest.java" />
+        <option value="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/user/UserTest.java" />
       </list>
     </option>
   </component>
@@ -146,10 +174,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
-    <option name="width" value="1750" />
-    <option name="height" value="980" />
+    <option name="x" value="259" />
+    <option name="y" value="237" />
+    <option name="width" value="1119" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -157,66 +185,43 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -224,8 +229,8 @@
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -234,8 +239,8 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -244,40 +249,34 @@
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -285,8 +284,8 @@
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -295,8 +294,8 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -305,118 +304,78 @@
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="clienttype" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -424,8 +383,8 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -434,8 +393,8 @@
               <item name="authorization" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -444,34 +403,34 @@
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -479,8 +438,8 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -489,8 +448,18 @@
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="DBEmul" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -499,19 +468,17 @@
               <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -527,6 +494,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.github.ralmnsk.app.controllers" />
       <recent name="com.github.ralmnsk.model.news" />
       <recent name="com.github.ralmnsk.service.authorization" />
       <recent name="dao.user" />
@@ -535,12 +503,12 @@
       <recent name="com.github.ralmnsk.service.authorization" />
       <recent name="com.github.ralmnsk.service.news.creator" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.github.ralmnsk.service.news.creator" />
       <recent name="my.tomcat.app.controllers" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\iland\tommultimodule\service\src\main\java\com\github\ralmnsk\service" />
@@ -560,66 +528,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.NewsTest.toString1">
-    <configuration name="NewsTest.getDataNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model" />
+  <component name="RunManager" selected="JUnit.UserTest.addNews">
+    <configuration name="NewsDaoImplTest.findAllNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dao" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.model.news.*" />
+          <option name="PATTERN" value="com.github.ralmnsk.dao.news.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.news.NewsTest" />
-      <option name="METHOD_NAME" value="getDataNews" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NewsTest.getDateNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.model.news.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.news.NewsTest" />
-      <option name="METHOD_NAME" value="getDateNews" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NewsTest.setDataNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.model.news.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.news.NewsTest" />
-      <option name="METHOD_NAME" value="setDataNews" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NewsTest.setDateNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.model.news.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.news.NewsTest" />
-      <option name="METHOD_NAME" value="setDateNews" />
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.news" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.news.NewsDaoImplTest" />
+      <option name="METHOD_NAME" value="findAllNews" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -636,6 +556,54 @@
       <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.news" />
       <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.news.NewsTest" />
       <option name="METHOD_NAME" value="toString1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.addNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.ralmnsk.model.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.user" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.user.UserTest" />
+      <option name="METHOD_NAME" value="addNews" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.getNewsList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.ralmnsk.model.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.user" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.user.UserTest" />
+      <option name="METHOD_NAME" value="getNewsList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.setNewsList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.ralmnsk.model.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.model.user" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.model.user.UserTest" />
+      <option name="METHOD_NAME" value="setNewsList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -667,20 +635,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Maven.tomcat" />
-      <item itemvalue="JUnit.NewsTest.getDataNews" />
-      <item itemvalue="JUnit.NewsTest.setDataNews" />
-      <item itemvalue="JUnit.NewsTest.getDateNews" />
-      <item itemvalue="JUnit.NewsTest.setDateNews" />
       <item itemvalue="JUnit.NewsTest.toString1" />
+      <item itemvalue="JUnit.NewsDaoImplTest.findAllNews" />
+      <item itemvalue="Maven.tomcat" />
+      <item itemvalue="JUnit.UserTest.getNewsList" />
+      <item itemvalue="JUnit.UserTest.setNewsList" />
+      <item itemvalue="JUnit.UserTest.addNews" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserTest.addNews" />
+        <item itemvalue="JUnit.UserTest.setNewsList" />
+        <item itemvalue="JUnit.UserTest.getNewsList" />
+        <item itemvalue="JUnit.NewsDaoImplTest.findAllNews" />
         <item itemvalue="JUnit.NewsTest.toString1" />
-        <item itemvalue="JUnit.NewsTest.setDateNews" />
-        <item itemvalue="JUnit.NewsTest.getDateNews" />
-        <item itemvalue="JUnit.NewsTest.setDataNews" />
-        <item itemvalue="JUnit.NewsTest.getDataNews" />
       </list>
     </recent_temporary>
   </component>
@@ -804,35 +772,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NewsTest_getIdNews - 2019.09.22 at 17h 21m 09s.xml">
-      <configuration name="NewsTest.getIdNews" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewsTest_setIdNews - 2019.09.22 at 17h 21m 22s.xml">
-      <configuration name="NewsTest.setIdNews" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewsTest_getNameNews - 2019.09.22 at 17h 23m 07s.xml">
-      <configuration name="NewsTest.getNameNews" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewsTest_setNameNews - 2019.09.22 at 17h 24m 36s.xml">
-      <configuration name="NewsTest.setNameNews" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewsTest_getDataNews - 2019.09.22 at 17h 25m 37s.xml">
-      <configuration name="NewsTest.getDataNews" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewsTest_getDataNews - 2019.09.22 at 17h 26m 58s.xml">
-      <configuration name="NewsTest.getDataNews" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewsTest_setDataNews - 2019.09.22 at 17h 27m 56s.xml">
-      <configuration name="NewsTest.setDataNews" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewsTest_getDateNews - 2019.09.22 at 17h 28m 10s.xml">
-      <configuration name="NewsTest.getDateNews" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="NewsTest_setDateNews - 2019.09.22 at 17h 28m 54s.xml">
       <configuration name="NewsTest.setDateNews" configurationId="JUnit" />
     </history-entry>
     <history-entry file="NewsTest_toString1 - 2019.09.22 at 17h 30m 07s.xml">
       <configuration name="NewsTest.toString1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsDaoImplTest_findAllNews - 2019.09.25 at 15h 30m 18s.xml">
+      <configuration name="NewsDaoImplTest.findAllNews" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsDaoImplTest_findAllNews - 2019.09.25 at 15h 31m 20s.xml">
+      <configuration name="NewsDaoImplTest.findAllNews" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsDaoImplTest_findAllNews - 2019.09.25 at 15h 41m 53s.xml">
+      <configuration name="NewsDaoImplTest.findAllNews" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NewsDaoImplTest_findAllNews - 2019.09.25 at 15h 43m 09s.xml">
+      <configuration name="NewsDaoImplTest.findAllNews" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_getNewsList - 2019.09.27 at 09h 47m 00s.xml">
+      <configuration name="UserTest.getNewsList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_getNewsList - 2019.09.27 at 09h 47m 56s.xml">
+      <configuration name="UserTest.getNewsList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_getNewsList - 2019.09.27 at 09h 57m 00s.xml">
+      <configuration name="UserTest.getNewsList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_setNewsList - 2019.09.27 at 09h 57m 43s.xml">
+      <configuration name="UserTest.setNewsList" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -845,9 +813,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23851351" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15789473" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -857,16 +826,16 @@
       <window_info id="DB Browser" order="7" weight="0.32972974" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932432" weight="0.32547864" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932432" visible="true" weight="0.2360179" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.20029455" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298969" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49864864" weight="0.33578792" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49864864" weight="0.27293065" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" weight="0.3298969" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.38586158" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.38547486" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50135136" side_tool="true" weight="0.539028" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3298969" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -966,59 +935,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Authorization + interface. Delete useless imports." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://543e4f50-5d16-46be-80e5-8be491b83425/session_browsers/remotemysql Sessions">
-      <provider selected="true" editor-type-id="0.SESSION_BROWSER">
-        <state>
-          <refresh-interval value="0" />
-          <sorting />
-          <filter>
-            <user value="eYcooOkOuh" />
-            <host value="" />
-            <status value="" />
-          </filter>
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://543e4f50-5d16-46be-80e5-8be491b83425/consoles/remotemysql">
-      <provider selected="true" editor-type-id="0.CONSOLE">
-        <state line="0" column="4" selection-start="4" selection-end="4" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/Testing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/DBEmul/DBemulation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
           <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/test/resource/daotest.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1033,13 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/resource/dao.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1071,55 +984,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-586">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#969#970#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1130#1131#0" expanded="true" />
-            <element signature="e#1157#1158#0" expanded="true" />
-            <element signature="e#1201#1202#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1301#1302#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
-            <element signature="e#1410#1411#0" expanded="true" />
-            <element signature="e#1437#1438#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/SingletonConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1213">
-          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1798#1799#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/news/creator/NewsCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/news/creator/NewsCreator.java" />
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -1148,17 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="e#1954#1955#0" expanded="true" />
-            <element signature="e#1981#1982#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1176,17 +1030,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/connection/SingletonConnectionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="35" column="105" selection-start-line="35" selection-start-column="105" selection-end-line="35" selection-end-column="105" />
-          <folding>
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/dao/connection/SingletonConnectionTest.java" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1195,14 +1039,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="27">
-            <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
@@ -1311,13 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -1402,10 +1231,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/test/resource/daotest.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        <state relative-caret-position="25">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/resources/login.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/resources/dao.properties" />
+    <entry file="file://$PROJECT_DIR$/dao/src/main/resource/dao.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/SingletonConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1414,7 +1278,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="1800">
           <caret line="72" column="19" lean-forward="true" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1424,21 +1288,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1301">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="1875">
+          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/news/NewsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="2000">
           <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/test/java/com/github/ralmnsk/app/controllers/IndexServletTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
           <folding>
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1779#1780#0" expanded="true" />
-            <element signature="e#1822#1823#0" expanded="true" />
-            <element signature="e#1843#1844#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/user/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
         </state>
       </provider>
     </entry>

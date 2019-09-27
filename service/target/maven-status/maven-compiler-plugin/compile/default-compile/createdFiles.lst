@@ -1,4 +1,9 @@
+com\github\ralmnsk\service\news\NewsService.class
+com\github\ralmnsk\service\user\UserServiceImpl.class
 com\github\ralmnsk\service\authorization\AuthorizationImpl.class
+com\github\ralmnsk\service\user\UserService.class
 com\github\ralmnsk\service\clienttype\ClientType.class
+com\github\ralmnsk\service\news\NewsServiceImpl.class
 com\github\ralmnsk\service\authorization\Authorization.class
+com\github\ralmnsk\service\news\creator\NewsCreator.class
 com\github\ralmnsk\service\news\creator\NewsCreatorImpl.class
