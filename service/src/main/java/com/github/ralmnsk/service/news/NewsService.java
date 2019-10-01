@@ -8,6 +8,7 @@ import java.util.List;
 public interface NewsService {
     void createNews(News news);
     News readNews(News news);
+    News getById(Long id);
     void updateNews(News news);
     void deleteNews(News news);
     void setNewsDao(NewsDao newsDao);

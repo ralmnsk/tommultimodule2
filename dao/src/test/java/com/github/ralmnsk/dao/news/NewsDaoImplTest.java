@@ -1,6 +1,9 @@
 package com.github.ralmnsk.dao.news;
 
+import com.github.ralmnsk.dao.storage.StorageDao;
+import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.storage.Storage;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -81,5 +84,13 @@ public class NewsDaoImplTest {
         for (News n:newsList) {
             System.out.println(n.toString());
         }
+    }
+
+    @Test
+    public void getById() {
+        NewsDao newsDao=new NewsDaoImpl();
+        News news=newsDao.getById(19L);
+
+        System.out.println(news);
     }
 }

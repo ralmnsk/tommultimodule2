@@ -8,7 +8,7 @@ It is the multi module project consists of submodules: dao, models, service, web
 
 *The topsecret pages is controlled by second level filter.*
 
-*The type of application database is mysql.*
+*The type of an application database is mysql.*
 
 *It is used cobertura for viewing testing coverage of the project.*
 

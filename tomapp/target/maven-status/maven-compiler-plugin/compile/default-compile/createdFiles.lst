@@ -1,3 +1,4 @@
+com\github\ralmnsk\app\controllers\NewsServlet.class
 com\github\ralmnsk\app\filters\FirstFilter.class
 com\github\ralmnsk\app\DBEmul\DBemulation.class
 com\github\ralmnsk\app\DBEmul\Testing.class

@@ -136,4 +136,31 @@ public class NewsDaoImpl implements NewsDao {
 
         return newsList;
     }
+
+    @Override
+    public News getById(Long id) {
+        Connection connection= null;
+
+        News news=new News();
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("select * from newstab where idnews=?",Statement.RETURN_GENERATED_KEYS);
+            statement.setLong(1,id);
+            statement.execute();
+            ResultSet rs = statement.executeQuery();     //   getGeneratedKeys();
+
+            while(rs.next()){
+                news.setIdNews(rs.getLong(1));
+                news.setNameNews(rs.getString(2));
+                news.setDataNews(rs.getString(3));
+                news.setDateNews(rs.getTimestamp(4));
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Problem executing readNews", ex);
+        }
+        return news;
+    }
 }

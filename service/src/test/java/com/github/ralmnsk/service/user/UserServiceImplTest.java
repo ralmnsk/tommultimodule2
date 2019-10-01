@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
@@ -31,7 +31,7 @@ public class UserServiceImplTest {
     @Test
     public void readUser() {
         initMocks(this);
-        User user=new User("Apple","pass",new Date(new java.util.Date().getTime()),"usr");
+        User user=new User("Apple","pass",new Timestamp(new java.util.Date().getTime()),"usr");
         user.setId(10L);
         when(userDao.readUser(user)).thenReturn(getMeTestUser());
         User testUser = userService.readUser(user);
@@ -45,7 +45,7 @@ public class UserServiceImplTest {
         user.setId(1000L);
         user.setName("Apple");
         user.setPass("pass");
-        user.setJoinDate(new Date(new java.util.Date().getTime()));
+        user.setJoinDate(new Timestamp(new java.util.Date().getTime()));
         user.setRole("usr");
         return user;
     }

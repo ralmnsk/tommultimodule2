@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(urlPatterns ="/home")
+@WebServlet(urlPatterns ="")
 public class IndexServlet extends HttpServlet {
     private static Logger logger= LoggerFactory.getLogger(IndexServlet.class);
 

@@ -11,4 +11,5 @@ public interface NewsDao {
     void updateNews(News news);
     void deleteNews(News news);
     List<News> findAllNews();
+    News getById(Long id);
 }

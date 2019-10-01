@@ -17,6 +17,11 @@ public class NewsServiceImpl implements NewsService{
         return newsDao.readNews(news);
     }
 
+    @Override
+    public News getById(Long id) {
+        return newsDao.getById(id);
+    }
+
     public void updateNews(News news) {
         newsDao.updateNews(news);
     }
