@@ -3,6 +3,7 @@ package com.github.ralmnsk.model.news;
 import org.junit.Before;
 import org.junit.Test;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 
 import static org.hamcrest.core.Is.is;
@@ -10,11 +11,11 @@ import static org.junit.Assert.*;
 
 public class NewsTest {
     private News testNews;
-    private Date date;
+    private Timestamp date;
 
     @Before
     public void setUp() throws Exception {
-        date=new Date(new java.util.Date().getTime());
+        date=new Timestamp(new java.util.Date().getTime());
         testNews=new News(1L,2L,"nameNews", "dataNews",date);
     }
 
@@ -72,23 +73,23 @@ public class NewsTest {
 
     @Test
     public void getDateNews() {
-        Date testDate=testNews.getDateNews();
+        Timestamp testDate=testNews.getDateNews();
         assertEquals(date,testDate);
     }
 
     @Test
     public void setDateNews() {
-        String str="2015-03-31";
-        Date date=Date.valueOf(str);
+        String str="2015-03-31 01:01:10.0";
+        Timestamp date=Timestamp.valueOf(str);
         testNews.setDateNews(date);
-        Date testDate=testNews.getDateNews();
+        Timestamp testDate=testNews.getDateNews();
         System.out.println("date:"+date+" =?"+testDate);
-        assertThat("2015-03-31",is(testDate.toString()));
+        assertThat(str,is(testDate.toString()));
     }
 
     @Test
     public void toString1() {
-        String str="News{idNews=1, idUser=2, nameNews='nameNews', dataNews='dataNews', dateNews=2019-09-25}";
+        String str="News{idNews=1, idUser=2, nameNews='nameNews', dataNews='dataNews', dateNews="+date+"}";
         assertThat(str, is(testNews.toString()));
     }
 }

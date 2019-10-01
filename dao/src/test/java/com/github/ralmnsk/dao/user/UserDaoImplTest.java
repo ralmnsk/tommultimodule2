@@ -4,7 +4,7 @@ import com.github.ralmnsk.model.user.User;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Properties;
 
 import static org.junit.Assert.*;
@@ -23,7 +23,7 @@ public class UserDaoImplTest {
         }
         User user=new User(properties.getProperty("user"),
                 properties.getProperty("password"),
-                new Date(new java.util.Date().getTime()),
+                new Timestamp(new java.util.Date().getTime()),
                 "usr");
         return user;
     }
@@ -54,7 +54,7 @@ public class UserDaoImplTest {
         User user=userInTestCreate();
         User userChanging=new User(user.getName(),
                 "1234567",
-                new Date(new java.util.Date().getTime()),
+                new Timestamp(new java.util.Date().getTime()),
                 "user");
         UserDao userDao=new UserDaoImpl();
         userDao.updateUser(userChanging);

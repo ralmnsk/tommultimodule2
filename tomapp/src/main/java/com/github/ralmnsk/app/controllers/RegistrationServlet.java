@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
@@ -43,7 +43,7 @@ public class RegistrationServlet extends HttpServlet {
         User user=new User();
         user.setName(login);
         user.setPass(password);
-        user.setJoinDate(new Date(new java.util.Date().getTime()));
+        user.setJoinDate(new Timestamp(new java.util.Date().getTime()));
         user.setRole("usr");
 
         UserDao userDao=new UserDaoImpl();

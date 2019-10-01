@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class NewsCreatorImpl implements NewsCreator {
     private User user;
@@ -34,7 +34,7 @@ public class NewsCreatorImpl implements NewsCreator {
         newsService.setNewsDao(newsDao);
 
         if (!dataNews.isEmpty()){
-            news=new News(user.getId(), nameNews, dataNews, new Date(new java.util.Date().getTime()));
+            news=new News(user.getId(), nameNews, dataNews, new Timestamp(new java.util.Date().getTime()));
             logger.info("news created:"+news.toString());
             newsService.createNews(news);
 

@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao{
                                     , Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, user.getName());
             statement.setString(2, user.getPass());
-            statement.setDate(3, user.getJoinDate());
+            statement.setTimestamp(3, user.getJoinDate());
             statement.setString(4, user.getRole());
             statement.execute();
             ResultSet generatedKeys = statement.getGeneratedKeys();
@@ -62,7 +62,7 @@ public class UserDaoImpl implements UserDao{
                 newUser.setId(rs.getLong(1));
                 newUser.setName(rs.getString(2));
                 newUser.setPass(rs.getString(3));
-                newUser.setJoinDate(rs.getDate(4));
+                newUser.setJoinDate(rs.getTimestamp(4));
                 newUser.setRole(rs.getString(5));
             }
             rs.close();
@@ -88,7 +88,7 @@ public class UserDaoImpl implements UserDao{
                     ("update usrtab set name=?,pass=?,join_date=?,role=? where name=?");
             statement.setString(1, user.getName());
             statement.setString(2, user.getPass());
-            statement.setDate(3, user.getJoinDate());
+            statement.setTimestamp(3, user.getJoinDate());
             statement.setString(4, user.getRole());
             statement.setString(5, user.getName());
             statement.execute();

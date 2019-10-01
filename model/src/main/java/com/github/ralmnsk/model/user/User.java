@@ -3,7 +3,7 @@ package com.github.ralmnsk.model.user;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -12,7 +12,7 @@ public class User implements Serializable {
     private Long id;
     private String name;
     private String pass;
-    private Date joinDate;
+    private Timestamp joinDate;
     private String role;
     private List<Long> newsList;
 
@@ -62,11 +62,11 @@ public class User implements Serializable {
         this.pass = password;
     }
 
-    public Date getJoinDate() {
+    public Timestamp getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(Date date) {
+    public void setJoinDate(Timestamp date) {
         this.joinDate = date;
     }
 
@@ -78,14 +78,14 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    public User(String name, String password, Date date, String role) {
+    public User(String name, String password, Timestamp date, String role) {
         this.name = name;
         this.pass = password;
         this.joinDate = date;
         this.role = role;
     }
 
-    public User(Long id,String name, String password, Date date, String role) {
+    public User(Long id,String name, String password, Timestamp date, String role) {
         this.id=id;
         this.name = name;
         this.pass = password;

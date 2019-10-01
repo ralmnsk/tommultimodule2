@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,13 +14,13 @@ import static org.junit.Assert.*;
 
 public class UserTest {
     private User testUser;
-    private Date date;
+    private Timestamp date;
     private List<Long> newsList;
     private List<Long> testNewsList;
 
     @Before
     public void setUp() throws Exception {
-        date=new Date(new java.util.Date().getTime());
+        date=new Timestamp(new java.util.Date().getTime());
         testUser=new User(100L,"testUser", "testPass",date,"testRole");
 
         newsList=new ArrayList<>();
@@ -99,16 +100,16 @@ public class UserTest {
 
     @Test
     public void getJoinDate() {
-        Date userDate=testUser.getJoinDate();
+        Timestamp userDate=testUser.getJoinDate();
         assertEquals(date,userDate);
     }
 
     @Test
     public void setJoinDate() {
         String str="2015-03-31";
-        Date date=Date.valueOf(str);
+        Timestamp date=Timestamp.valueOf(str);
         testUser.setJoinDate(date);
-        Date testDate=testUser.getJoinDate();
+        Timestamp testDate=testUser.getJoinDate();
         System.out.println("date:"+date+" =?"+testDate);
         assertThat("2015-03-31",is(testDate.toString()));
     }

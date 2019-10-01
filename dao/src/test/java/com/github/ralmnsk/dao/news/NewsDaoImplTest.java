@@ -5,10 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
-
 import static org.junit.Assert.*;
 
 public class NewsDaoImplTest {
@@ -27,7 +26,7 @@ public class NewsDaoImplTest {
         }
         String nameNews=properties.getProperty("namenews");
         String dataNews=properties.getProperty("datanews");
-        news=new News(1l,nameNews,dataNews,new Date(new java.util.Date().getTime()));
+        news=new News(1l,nameNews,dataNews,new Timestamp(new java.util.Date().getTime()));
     }
 
 
@@ -49,7 +48,7 @@ public class NewsDaoImplTest {
 
 
     public void updateNews() {
-        News newsChanging=new News(1000L,news.getNameNews(),"new news data 1234567", new Date(new java.util.Date().getTime()));
+        News newsChanging=new News(1000L,news.getNameNews(),"new news data 1234567", new Timestamp(new java.util.Date().getTime()));
         System.out.println(newsChanging);
         NewsDaoImpl newsDao=new NewsDaoImpl();
 

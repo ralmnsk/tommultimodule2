@@ -1,14 +1,14 @@
 package com.github.ralmnsk.model.news;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class News implements Serializable {
     private Long idNews;
     private Long idUser;
     private String nameNews;
     private String dataNews;
-    private Date dateNews;
+    private Timestamp dateNews;
 
     public Long getIdUser() {
         return idUser;
@@ -42,18 +42,18 @@ public class News implements Serializable {
         this.dataNews = dataNews;
     }
 
-    public Date getDateNews() {
+    public Timestamp getDateNews() {
         return dateNews;
     }
 
-    public void setDateNews(Date dateNews) {
+    public void setDateNews(Timestamp dateNews) {
         this.dateNews = dateNews;
     }
 
     public News() {
     }
 
-    public News(long idNews, long idUser, String nameNews, String dataNews, Date dateNews) {
+    public News(long idNews, long idUser, String nameNews, String dataNews, Timestamp dateNews) {
         this.idNews = idNews;
         this.idUser = idUser;
         this.nameNews = nameNews;
@@ -61,7 +61,7 @@ public class News implements Serializable {
         this.dateNews = dateNews;
     }
 
-    public News(Long idUser, String nameNews, String dataNews, Date dateNews) {
+    public News(Long idUser, String nameNews, String dataNews, Timestamp dateNews) {
         this.idUser = idUser;
         this.nameNews = nameNews;
         this.dataNews = dataNews;

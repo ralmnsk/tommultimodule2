@@ -38,7 +38,7 @@ public class NewsDaoImpl implements NewsDao {
                                     , Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, news.getNameNews());
             statement.setString(2, news.getDataNews());
-            statement.setDate(3, news.getDateNews());
+            statement.setTimestamp(3, news.getDateNews());
             statement.execute();
             ResultSet generatedKeys = statement.getGeneratedKeys();
             if (generatedKeys.next()) {
@@ -69,7 +69,7 @@ public class NewsDaoImpl implements NewsDao {
                 newNews.setIdNews(rs.getLong(1));
                 newNews.setNameNews(rs.getString(2));
                 newNews.setDataNews(rs.getString(3));
-                newNews.setDateNews(rs.getDate(4));
+                newNews.setDateNews(rs.getTimestamp(4));
             }
             rs.close();
             statement.close();
@@ -86,7 +86,7 @@ public class NewsDaoImpl implements NewsDao {
             PreparedStatement statement = connection.prepareStatement
                     ("update newstab set datanews=?,date=? where namenews=?");
             statement.setString(1, news.getDataNews());
-            statement.setDate(2, news.getDateNews());
+            statement.setTimestamp(2, news.getDateNews());
             statement.setString(3, news.getNameNews());
             statement.execute();
             statement.close();
@@ -125,7 +125,7 @@ public class NewsDaoImpl implements NewsDao {
                 news.setIdNews(rs.getLong(1));
                 news.setNameNews(rs.getString(2));
                 news.setDataNews(rs.getString(3));
-                news.setDateNews(rs.getDate(4));
+                news.setDateNews(rs.getTimestamp(4));
                 newsList.add(news);
             }
             rs.close();
