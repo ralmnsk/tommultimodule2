@@ -8,14 +8,19 @@
     </head>
     <body>
         <div class="container">
-        <h2>Главная станица</h2>
-        main page (index page)
+        <h2>Новости пользователя ${user.name}</h2>
         </br>
-        <a href="/tomapp/login">Вход</a>
-        </br>
-        <a href="/tomapp/goregistrate">Регистрация</a>
-        </br>
-        <a href="/tomapp/news">Новости</a>
+                     <a href="/tomapp/">Главная</a>
+                    </br>
+                    <a href="/tomapp/topsecret">Страница администратора</a>
+                    </br>
+                    <a href="/tomapp/topsecret2">Страница администратора 2</a>
+                    </br>
+                    <a href="/tomapp/site/logout">Logout</a>
+                    <hr/>
+                    <a href="/tomapp/site/addnews">Добавить новость</a>
+                    </br>
+                    <a href="/tomapp/site/mynews">Мои новости</a>
         <hr/>   <table>
                     <c:forEach var="entry" items="${map}">
                         <tr><td><p><h4>${entry.key.nameNews}</h4></br>

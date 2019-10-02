@@ -32,6 +32,8 @@ public class CreateNewsServlet extends HttpServlet {
         String nameNews=req.getParameter("nameNews");
         NewsCreator newsCreator=new NewsCreatorImpl(user,dataNews,nameNews);
         newsCreator.newsCreate();
+
+
         req.getRequestDispatcher("/inform.jsp").forward(req, resp);
     }
 }

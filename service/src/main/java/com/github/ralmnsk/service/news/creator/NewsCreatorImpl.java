@@ -2,15 +2,16 @@ package com.github.ralmnsk.service.news.creator;
 
 import com.github.ralmnsk.dao.news.NewsDao;
 import com.github.ralmnsk.dao.news.NewsDaoImpl;
+import com.github.ralmnsk.dao.storage.StorageDao;
+import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
+import com.github.ralmnsk.service.storage.StorageService;
+import com.github.ralmnsk.service.storage.StorageServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.sql.Timestamp;
 
 public class NewsCreatorImpl implements NewsCreator {
@@ -37,6 +38,11 @@ public class NewsCreatorImpl implements NewsCreator {
             news=new News(user.getId(), nameNews, dataNews, new Timestamp(new java.util.Date().getTime()));
             logger.info("news created:"+news.toString());
             newsService.createNews(news);
+            News newsFromBase=newsService.readNews(news);
+            StorageDao storageDao=new StorageDaoImpl();
+            StorageService storageService=new StorageServiceImpl();
+            storageService.setStorageDao(storageDao);
+            storageService.createStorage(user.getId(),newsFromBase.getIdNews());
 
         } else {
             logger.info("news created:"+news.toString()+" is empty");
