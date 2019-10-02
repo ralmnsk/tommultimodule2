@@ -29,11 +29,16 @@ public class StorageServiceImplTest {
     @Test
     public void getNewsIdByUserId() {
         storageService.getNewsIdByUserId(storage.getUsrId())
-                .stream()
+                .stream().map(id->"user id:"+storage.getUsrId()+" news id:"+id)
                 .forEach(System.out::println);
     }
 
     @Test
     public void deleteStorage() {
+    }
+
+    @Test
+    public void getUserIdByNewsId() {
+        System.out.println("user id: "+storageService.getUserIdByNewsId(19L));
     }
 }

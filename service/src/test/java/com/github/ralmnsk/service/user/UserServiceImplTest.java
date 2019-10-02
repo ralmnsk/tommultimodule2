@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.user;
 
+import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.user.User;
 import org.junit.Test;
@@ -56,5 +57,15 @@ public class UserServiceImplTest {
 
     @Test
     public void deleteUser() {
+    }
+
+    @Test
+    public void getById() {
+        UserDao userDao1=new UserDaoImpl();
+        UserService userService=new UserServiceImpl();
+        userService.setUserDao(userDao1);
+        User user=userService.getById(29L);
+
+        System.out.println(user);
     }
 }

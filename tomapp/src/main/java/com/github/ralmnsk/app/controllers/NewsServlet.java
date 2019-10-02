@@ -2,7 +2,12 @@ package com.github.ralmnsk.app.controllers;
 
 import com.github.ralmnsk.dao.news.NewsDao;
 import com.github.ralmnsk.dao.news.NewsDaoImpl;
+import com.github.ralmnsk.dao.user.UserDao;
+import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.user.UserService;
+import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.github.ralmnsk.service.news.NewsService;
@@ -14,7 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns ={"/news"})
 public class NewsServlet extends HttpServlet {
@@ -41,11 +47,23 @@ public class NewsServlet extends HttpServlet {
         NewsDao newsDao=new NewsDaoImpl();
         NewsService newsService=new NewsServiceImpl();
         newsService.setNewsDao(newsDao);
+        UserDao userDao=new UserDaoImpl();
+        UserService userService=new UserServiceImpl();
+        userService.setUserDao(userDao);
+
         List<News> newsList=newsService.findAllNews();
+        Map<News,User> map=new HashMap<>();
+        for (News news:newsList){
+            Long id=news.getIdUser();
+            User user=userService.getById(id);
+            System.out.println(user+" "+news);
+            map.put(news,user);
+        }
+
         for (News n:newsList) {
             logger.info("news from database:"+n.toString());
         }
         HttpSession session=req.getSession();
-        session.setAttribute("newsList",newsList);
+        session.setAttribute("map",map);
     }
 }

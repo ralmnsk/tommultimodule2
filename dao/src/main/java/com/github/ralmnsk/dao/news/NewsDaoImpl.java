@@ -1,6 +1,8 @@
 package com.github.ralmnsk.dao.news;
 
 import com.github.ralmnsk.dao.connection.SingletonConnection;
+import com.github.ralmnsk.dao.storage.StorageDao;
+import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import org.slf4j.Logger;
@@ -122,19 +124,28 @@ public class NewsDaoImpl implements NewsDao {
 
             while(rs.next()){
                 News news=new News();
-                news.setIdNews(rs.getLong(1));
+                Long id=rs.getLong(1);
+                news.setIdNews(id);
                 news.setNameNews(rs.getString(2));
                 news.setDataNews(rs.getString(3));
                 news.setDateNews(rs.getTimestamp(4));
+                news.setIdUser(getUserId(id));
                 newsList.add(news);
             }
             rs.close();
             statement.close();
+
         } catch (SQLException ex) {
             logger.error("Problem executing readNews", ex);
         }
 
         return newsList;
+    }
+
+    public Long getUserId(Long newsId){
+        StorageDao storageDao=new StorageDaoImpl();
+        Long userId=storageDao.getUserIdByNewsId(newsId);
+        return userId;
     }
 
     @Override
@@ -158,6 +169,7 @@ public class NewsDaoImpl implements NewsDao {
             }
             rs.close();
             statement.close();
+            news.setIdUser(getUserId(id));
         } catch (SQLException ex) {
             logger.error("Problem executing readNews", ex);
         }

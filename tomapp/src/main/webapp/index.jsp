@@ -20,10 +20,14 @@
         </br>
         <a href="/tomapp/news">Новости</a>
         <hr/>   <table>
-                    <c:forEach var="news" items="${newsList}">
-                        <tr><td><p><h4>${news.nameNews}</h4></br>
-                                        ${news.dataNews}<p>
-                                Дата: ${news.dateNews}</br>
+                    <c:forEach var="entry" items="${map}">
+                        <tr><td><p><h4>${entry.key.nameNews}</h4></br>
+                                        ${entry.key.dataNews}<p>
+                                                        </br>
+                                Автор: ${entry.value.name}
+
+                                                        </br>
+                                Дата: ${entry.key.dateNews}</br>
 
                                 </p>
                                     <hr/>

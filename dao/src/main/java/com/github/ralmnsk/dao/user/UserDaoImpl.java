@@ -126,4 +126,38 @@ public class UserDaoImpl implements UserDao{
 //        }
 
     }
+
+    @Override
+    public User getById(Long id) {
+        User user=new User();
+        Connection connection= null;
+
+        try {
+            connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("select * from usrtab where id=?",Statement.RETURN_GENERATED_KEYS);
+            statement.setLong(1, id);
+            statement.execute();
+            ResultSet rs = statement.executeQuery();     //   getGeneratedKeys();
+            while(rs.next()){
+                user.setId(rs.getLong(1));
+                user.setName(rs.getString(2));
+                user.setPass(rs.getString(3));
+                user.setJoinDate(rs.getTimestamp(4));
+                user.setRole(rs.getString(5));
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException ex) {
+            logger.error("Problem executing UserServiceImpl().getById():", ex);
+        }
+//        finally {
+//            try {
+//                connection.close();
+//            } catch (SQLException e) {
+//                logger.info("Exception in readUser(): connection.close():"+e);
+//            }
+//        }
+        return user;
+    }
 }

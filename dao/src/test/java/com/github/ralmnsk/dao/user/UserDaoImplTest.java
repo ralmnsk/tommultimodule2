@@ -71,8 +71,18 @@ public class UserDaoImplTest {
     public void UserDaoImplTest(){
         createUser();
         readUser();
+        getById();
         updateUser();
         deleteUser();
     }
 
+
+    @Test
+    public void getById() {
+        Long id=29L;
+        User user=new User();
+        UserDao userDao=new UserDaoImpl();
+        user=userDao.getById(id);
+        System.out.println(user);
+    }
 }

@@ -35,7 +35,7 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
-    public User getUserIdByNewsId(Long newsId) {
+    public Long getUserIdByNewsId(Long newsId) {
         return storageDao.getUserIdByNewsId(newsId);
     }
 }

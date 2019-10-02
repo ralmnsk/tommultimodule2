@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface StorageService {
     List<Long> getNewsIdByUserId(Long userId);
-    User getUserIdByNewsId(Long newsId);
+    Long getUserIdByNewsId(Long newsId);
     void createStorage(Long userId,Long newsId);
     void deleteStorage(Long userId,Long newsId);
     void setStorageDao(StorageDao storageDao);
