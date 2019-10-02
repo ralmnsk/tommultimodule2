@@ -19,6 +19,8 @@
             <a href="/tomapp/site/logout">Logout</a>
             <hr/>
             <a href="/tomapp/site/addnews">Добавить новость</a>
+            </br>
+            <a href="/tomapp/site/mynews">Мои новости</a>
         </div>
     </body>
 </html>

@@ -6,6 +6,7 @@ import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.news.comparator.SortByTime;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
@@ -52,6 +53,7 @@ public class NewsServlet extends HttpServlet {
         userService.setUserDao(userDao);
 
         List<News> newsList=newsService.findAllNews();
+        Collections.sort(newsList,new SortByTime());
         Map<News,User> map=new HashMap<>();
         for (News news:newsList){
             Long id=news.getIdUser();
