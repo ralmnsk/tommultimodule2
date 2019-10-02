@@ -86,10 +86,11 @@ public class NewsDaoImpl implements NewsDao {
         try {
             connection = getConnection();
             PreparedStatement statement = connection.prepareStatement
-                    ("update newstab set datanews=?,date=? where namenews=?");
-            statement.setString(1, news.getDataNews());
-            statement.setTimestamp(2, news.getDateNews());
-            statement.setString(3, news.getNameNews());
+                    ("update newstab set namenews=?,datanews=?,date=? where idnews=?");
+            statement.setString(1, news.getNameNews());
+            statement.setString(2, news.getDataNews());
+            statement.setTimestamp(3, news.getDateNews());
+            statement.setLong(4, news.getIdNews());
             statement.execute();
             statement.close();
         } catch (SQLException ex) {

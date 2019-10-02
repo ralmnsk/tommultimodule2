@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="model" />
-        <module name="dao" />
-        <module name="tomapp" />
         <module name="service" />
+        <module name="tomapp" />
+        <module name="dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

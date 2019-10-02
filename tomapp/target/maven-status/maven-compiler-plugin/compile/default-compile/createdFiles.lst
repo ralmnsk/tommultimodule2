@@ -1,7 +1,10 @@
 com\github\ralmnsk\app\controllers\NewsServlet.class
 com\github\ralmnsk\app\filters\FirstFilter.class
 com\github\ralmnsk\app\DBEmul\DBemulation.class
+com\github\ralmnsk\app\controllers\UpdateNewsServlet.class
+com\github\ralmnsk\app\controllers\MyNewsServlet.class
 com\github\ralmnsk\app\DBEmul\Testing.class
+com\github\ralmnsk\app\controllers\EditNewsServlet.class
 com\github\ralmnsk\app\filters\TopSecretFilter.class
 com\github\ralmnsk\app\controllers\CreateNewsServlet.class
 com\github\ralmnsk\app\controllers\LoginServlet.class
