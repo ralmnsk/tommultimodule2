@@ -2,6 +2,8 @@ package com.github.ralmnsk.app.controllers;
 
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.clienttype.ClientType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,7 @@ import java.io.IOException;
 
 @WebServlet("/site/logout")
 public class LogoutServlet extends HttpServlet {
+    private static Logger logger= LoggerFactory.getLogger(IndexServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,5 +40,6 @@ public class LogoutServlet extends HttpServlet {
         session.setAttribute("user", null);
         session.setAttribute("userType", null);
         req.getRequestDispatcher("/logout.jsp").forward(req, resp);
+        logger.info(this.getClass()+" processReq /logout.jsp");
     }
 }

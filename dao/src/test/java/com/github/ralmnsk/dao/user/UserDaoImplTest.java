@@ -1,13 +1,16 @@
 package com.github.ralmnsk.dao.user;
 
 import com.github.ralmnsk.model.user.User;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Properties;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 public class UserDaoImplTest {
 

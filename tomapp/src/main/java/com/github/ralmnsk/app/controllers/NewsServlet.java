@@ -32,7 +32,7 @@ public class NewsServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        System.out.println("message from get");
+        //System.out.println("message from get");
         viewNews(req,resp);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
@@ -40,7 +40,6 @@ public class NewsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         viewNews(req,resp);
-        System.out.println("message from post");
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
@@ -58,7 +57,6 @@ public class NewsServlet extends HttpServlet {
         for (News news:newsList){
             Long id=news.getIdUser();
             User user=userService.getById(id);
-            System.out.println(user+" "+news);
             map.put(news,user);
         }
 

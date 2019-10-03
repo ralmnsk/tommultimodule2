@@ -43,7 +43,7 @@ public class NewsCreatorImpl implements NewsCreator {
             StorageService storageService=new StorageServiceImpl();
             storageService.setStorageDao(storageDao);
             storageService.createStorage(user.getId(),newsFromBase.getIdNews());
-
+            logger.info(this.getClass()+" newsCreate()");
         } else {
             logger.info("news created:"+news.toString()+" is empty");
         }

@@ -3,6 +3,8 @@ package com.github.ralmnsk.app.controllers;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.creator.NewsCreator;
 import com.github.ralmnsk.service.news.creator.NewsCreatorImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +15,7 @@ import java.io.IOException;
 
 @WebServlet("/site/createnews")
 public class CreateNewsServlet extends HttpServlet {
+    private static Logger logger= LoggerFactory.getLogger(CreateNewsServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,5 +38,6 @@ public class CreateNewsServlet extends HttpServlet {
 
 
         req.getRequestDispatcher("/inform.jsp").forward(req, resp);
+        logger.info(this.getClass()+" processReq" + "/inform.jsp");
     }
 }

@@ -57,7 +57,7 @@ public class StorageDaoImpl implements StorageDao {
             if (generatedKeys.next()) {
                 storage.setId(generatedKeys.getLong(1));
                 //logger.info
-                  System.out.println("StorageDaoImpl: create storage"+storage.getId()+" "+storage.getUsrId()+" "+storage.getNewsId());
+                  logger.info("StorageDaoImpl: create storage: "+storage.getId()+" "+storage.getUsrId()+" "+storage.getNewsId());
             }
             statement.close();
         } catch (SQLException ex) {
@@ -83,6 +83,7 @@ public class StorageDaoImpl implements StorageDao {
             statement.setLong(2, newsId);
             statement.execute();
             statement.close();
+            logger.info(this.getClass()+" deleteStorage()");
         } catch (SQLException ex) {
             logger.error("Problem executing StorageDaoImpl().deleteStorage():", ex);
         }
@@ -111,6 +112,7 @@ public class StorageDaoImpl implements StorageDao {
             }
             rs.close();
             statement.close();
+            logger.info(this.getClass()+" getUserIdByNewsId()");
         } catch (SQLException ex) {
             logger.error("Problem executing StorageDaoImpl().getNewsIdByUserId():", ex);
         }

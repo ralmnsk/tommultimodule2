@@ -1,9 +1,9 @@
 package com.github.ralmnsk.app.controllers;
 
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +16,10 @@ import java.io.IOException;
 public class IndexServlet extends HttpServlet {
     private static Logger logger= LoggerFactory.getLogger(IndexServlet.class);
 
+    public IndexServlet() {
+        super();
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setCharacterEncoding("UTF-8");
@@ -25,13 +29,16 @@ public class IndexServlet extends HttpServlet {
 //        req.getRequestDispatcher(req.getContextPath() +"/news").forward(req,resp);
 //        System.out.println(req.getContextPath() +"/news");
         getServletContext().getRequestDispatcher("/news").forward(req, resp);
+        IndexServlet.logger.info(this.getClass()+" doGet() /news");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 //        req.getRequestDispatcher(req.getContextPath() +"/news").forward(req,resp);
 //        System.out.println(req.getContextPath() +"/news");
         getServletContext().getRequestDispatcher("/news").forward(req, resp);
+        IndexServlet.logger.info(this.getClass()+" doPost() /news");
     }
 
 }

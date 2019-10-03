@@ -1,5 +1,8 @@
 package com.github.ralmnsk.app.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +13,7 @@ import java.io.IOException;
 
 @WebServlet("/goregistrate")
 public class GoRegistrateServlet extends HttpServlet {
+    private static Logger logger= LoggerFactory.getLogger(EditNewsServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,6 +32,8 @@ public class GoRegistrateServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
         session.setAttribute("registration","yes");
+
         req.getRequestDispatcher("/registration.jsp").forward(req, resp);
+        logger.info(this.getClass()+" processReq /registration.jsp");
     }
 }

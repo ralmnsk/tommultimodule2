@@ -5,10 +5,13 @@ import com.github.ralmnsk.dao.news.NewsDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpSession;
 
 public class NewsUpdatorImpl implements NewsUpdator {
+    private static Logger logger= LoggerFactory.getLogger(NewsUpdatorImpl.class);
     private HttpSession session;
     private News news;
 
@@ -35,5 +38,6 @@ public class NewsUpdatorImpl implements NewsUpdator {
         newsService.setNewsDao(newsDao);
         newsService.updateNews(news);
         session.setAttribute("news",news);
+        logger.info(this.getClass()+ " newsUpdate");
     }
 }

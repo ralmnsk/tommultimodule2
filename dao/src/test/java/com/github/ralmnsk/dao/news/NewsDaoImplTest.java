@@ -1,22 +1,23 @@
 package com.github.ralmnsk.dao.news;
 
-import com.github.ralmnsk.dao.storage.StorageDao;
-import com.github.ralmnsk.dao.storage.StorageDaoImpl;
+
 import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.model.storage.Storage;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Properties;
-import static org.junit.Assert.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class NewsDaoImplTest {
     private News news;
 
-    @Before
+    @BeforeAll
     public void setUp(){
         Properties properties=new Properties();
         try {

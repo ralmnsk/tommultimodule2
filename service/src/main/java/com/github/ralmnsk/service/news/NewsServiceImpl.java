@@ -2,11 +2,13 @@ package com.github.ralmnsk.service.news;
 
 import com.github.ralmnsk.dao.news.NewsDao;
 import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.service.news.updator.NewsUpdatorImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class NewsServiceImpl implements NewsService{
-
     private NewsDao newsDao;
 
     public void createNews(News news) {

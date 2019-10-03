@@ -1,19 +1,21 @@
 package com.github.ralmnsk.model.news;
 
-import org.junit.Before;
-import org.junit.Test;
-import java.sql.Date;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+
 import java.sql.Timestamp;
 
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class NewsTest {
     private News testNews;
     private Timestamp date;
 
-    @Before
+    @BeforeAll
     public void setUp() throws Exception {
         date=new Timestamp(new java.util.Date().getTime());
         testNews=new News(1L,2L,"nameNews", "dataNews",date);
@@ -84,12 +86,12 @@ public class NewsTest {
         testNews.setDateNews(date);
         Timestamp testDate=testNews.getDateNews();
         System.out.println("date:"+date+" =?"+testDate);
-        assertThat(str,is(testDate.toString()));
+        assertSame(str, (testDate.toString()));
     }
 
     @Test
     public void toString1() {
         String str="News{idNews=1, idUser=2, nameNews='nameNews', dataNews='dataNews', dateNews="+date+"}";
-        assertThat(str, is(testNews.toString()));
+        assertSame(str, (testNews.toString()));
     }
 }

@@ -6,10 +6,13 @@ import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.clienttype.ClientType;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class
 AuthorizationImpl implements Authorization {
+    private static Logger logger= LoggerFactory.getLogger(UserDaoImpl.class);
     private ClientType clientType;
     private User userInLoginServlet;
 
@@ -34,7 +37,7 @@ AuthorizationImpl implements Authorization {
         userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);
-        System.out.println(readUser);
+        //System.out.println(readUser);
 
 
         if((login!=null)&&(login.equals(readUser.getName())&&(password.equals(readUser.getPass())))){
@@ -42,7 +45,7 @@ AuthorizationImpl implements Authorization {
             clientType=setClientType(readUser.getRole());
             return true;
         }
-
+        logger.info(this.getClass()+" process()");
         return false;
     }
 

@@ -5,6 +5,8 @@ import com.github.ralmnsk.service.news.creator.NewsCreator;
 import com.github.ralmnsk.service.news.creator.NewsCreatorImpl;
 import com.github.ralmnsk.service.news.editor.NewsEditor;
 import com.github.ralmnsk.service.news.editor.NewsEditorImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +18,7 @@ import java.io.IOException;
 
 @WebServlet("/site/edit")
 public class EditNewsServlet extends HttpServlet {
+    private static Logger logger= LoggerFactory.getLogger(EditNewsServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,5 +40,6 @@ public class EditNewsServlet extends HttpServlet {
         newsEditor.newsEdit();
 
         req.getRequestDispatcher("/editnews.jsp").forward(req, resp);
+        logger.info(this.getClass()+" processReq /editnews.jsp");
     }
 }

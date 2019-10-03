@@ -6,6 +6,9 @@ import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +20,7 @@ import java.sql.Timestamp;
 
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
+    private static Logger logger= LoggerFactory.getLogger(IndexServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,6 +39,7 @@ public class RegistrationServlet extends HttpServlet {
         session.setAttribute("registration",null);
         registration(req,resp);
         req.getRequestDispatcher("/reg_succsses.jsp").forward(req, resp);
+        logger.info(this.getClass()+" /reg_succsses.jsp");
     }
 
     private void registration(HttpServletRequest req, HttpServletResponse resp) {
@@ -51,7 +56,7 @@ public class RegistrationServlet extends HttpServlet {
         userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);
-        System.out.println("read user:"+readUser);
+        //System.out.println("read user:"+readUser);
         HttpSession session=req.getSession();
         if(!user.getName().equals(readUser.getName())){
             userService.createUser(user);

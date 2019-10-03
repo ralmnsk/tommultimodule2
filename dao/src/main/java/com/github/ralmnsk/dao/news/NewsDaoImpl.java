@@ -15,6 +15,21 @@ import java.util.List;
 public class NewsDaoImpl implements NewsDao {
     private static Logger logger= LoggerFactory.getLogger(UserDaoImpl.class);
 
+    private static volatile NewsDao instance;
+
+    public static NewsDao getInstance() {
+        NewsDao localInstance = instance;
+        if (localInstance == null) {
+            synchronized (NewsDao.class) {
+                localInstance = instance;
+                if (localInstance == null) {
+                    instance = localInstance = new NewsDaoImpl();
+                }
+            }
+        }
+        return localInstance;
+    }
+
     private Connection getConnection() throws SQLException{
         return SingletonConnection.getInstance().getConnection();
     }
@@ -47,6 +62,7 @@ public class NewsDaoImpl implements NewsDao {
                 news.setIdNews(generatedKeys.getLong(1));
             }
             statement.close();
+            logger.info(this.getClass()+" createNews");
         } catch (SQLException ex) {
             logger.error("Prblem executing INSERT", ex);
         }
@@ -75,6 +91,7 @@ public class NewsDaoImpl implements NewsDao {
             }
             rs.close();
             statement.close();
+            logger.info(this.getClass()+" readNews");
         } catch (SQLException ex) {
             logger.error("Problem executing readNews", ex);
         }
@@ -93,6 +110,7 @@ public class NewsDaoImpl implements NewsDao {
             statement.setLong(4, news.getIdNews());
             statement.execute();
             statement.close();
+            logger.info(this.getClass()+" udateNews");
         } catch (SQLException ex) {
             logger.error("Problem executing UPDATE", ex);
         }
@@ -107,6 +125,7 @@ public class NewsDaoImpl implements NewsDao {
             statement.setString(1, news.getNameNews());
             statement.execute();
             statement.close();
+            logger.info(this.getClass()+" deleteNews");
         } catch (SQLException ex) {
             logger.error("Prblem executing DELETE", ex);
         }
@@ -135,7 +154,7 @@ public class NewsDaoImpl implements NewsDao {
             }
             rs.close();
             statement.close();
-
+            logger.info(this.getClass()+"findAllNews");
         } catch (SQLException ex) {
             logger.error("Problem executing readNews", ex);
         }
@@ -171,6 +190,7 @@ public class NewsDaoImpl implements NewsDao {
             rs.close();
             statement.close();
             news.setIdUser(getUserId(id));
+            logger.info(this.getClass()+"News getById");
         } catch (SQLException ex) {
             logger.error("Problem executing readNews", ex);
         }

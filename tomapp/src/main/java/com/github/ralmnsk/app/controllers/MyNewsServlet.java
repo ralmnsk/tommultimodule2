@@ -2,6 +2,8 @@ package com.github.ralmnsk.app.controllers;
 
 import com.github.ralmnsk.dao.news.NewsDao;
 import com.github.ralmnsk.dao.news.NewsDaoImpl;
+import com.github.ralmnsk.dao.storage.StorageDao;
+import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.news.News;
@@ -9,6 +11,8 @@ import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
 import com.github.ralmnsk.service.news.comparator.SortByTime;
+import com.github.ralmnsk.service.storage.StorageService;
+import com.github.ralmnsk.service.storage.StorageServiceImpl;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
@@ -25,6 +29,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns ={"/site/mynews"})
 public class MyNewsServlet extends HttpServlet {
@@ -52,12 +57,18 @@ public class MyNewsServlet extends HttpServlet {
         UserDao userDao=new UserDaoImpl();
         UserService userService=new UserServiceImpl();
         userService.setUserDao(userDao);
+        StorageDao storageDao=new StorageDaoImpl();
+        StorageService storageService=new StorageServiceImpl();
+        storageService.setStorageDao(storageDao);
 
-        List<News> newsList=newsService.findAllNews();
+        User user=(User)req.getSession().getAttribute("user");
+        List<Long> list=storageDao.getNewsIdByUserId(user.getId());
+        List<News> newsList=list.stream().map(newsId->newsService.getById(newsId)).collect(Collectors.toList());
+
         Collections.sort(newsList,new SortByTime());
         Map<News,User> map=new LinkedHashMap();
         HttpSession session=req.getSession();
-        User user=(User)session.getAttribute("user");
+
         for (News news:newsList){
             map.put(news,user);
         }
