@@ -37,6 +37,7 @@ public class IndexServlet extends HttpServlet {
 
 //        req.getRequestDispatcher(req.getContextPath() +"/news").forward(req,resp);
 //        System.out.println(req.getContextPath() +"/news");
+        req.getSession().setAttribute("errorLoginPassMessage","");
         getServletContext().getRequestDispatcher("/news").forward(req, resp);
         IndexServlet.logger.info(this.getClass()+" doPost() /news");
     }
