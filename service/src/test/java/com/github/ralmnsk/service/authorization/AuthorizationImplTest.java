@@ -1,9 +1,12 @@
 package com.github.ralmnsk.service.authorization;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class AuthorizationImplTest {
@@ -17,7 +20,7 @@ public class AuthorizationImplTest {
         authorization = Mockito.mock(Authorization.class);
         authorizationImpl = new AuthorizationImpl();
         when(authorization.process(username, password))
-                .thenReturn(false);
+                .thenReturn(true);
         boolean actual = authorizationImpl.process(username, password);
         assertFalse(actual);
 

@@ -50,7 +50,9 @@ public class LoginServlet extends HttpServlet {
             page="/welcome.jsp";
         }else {
             page="/login.jsp";
+            if(login!=null){
             req.setAttribute("errorLoginPassMessage","Incorrect login or password");
+            }
         }
         req.getRequestDispatcher(page).forward(req, resp);
         logger.info(this.getClass()+ " processReq "+page);
