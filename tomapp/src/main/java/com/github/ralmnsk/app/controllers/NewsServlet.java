@@ -44,12 +44,12 @@ public class NewsServlet extends HttpServlet {
     }
 
     private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
-        NewsDao newsDao=new NewsDaoImpl();
+//        NewsDao newsDao=new NewsDaoImpl();
         NewsService newsService=new NewsServiceImpl();
-        newsService.setNewsDao(newsDao);
-        UserDao userDao=new UserDaoImpl();
+//        newsService.setNewsDao(newsDao);
+//        UserDao userDao=new UserDaoImpl();
         UserService userService=new UserServiceImpl();
-        userService.setUserDao(userDao);
+//        userService.setUserDao(userDao);
 
         List<News> newsList=newsService.findAllNews();
         Collections.sort(newsList,new SortByTime());

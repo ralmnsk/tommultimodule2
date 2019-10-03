@@ -32,13 +32,11 @@ AuthorizationImpl implements Authorization {
         user.setName(login);
         user.setPass(password);
 
-        UserDao userDao=new UserDaoImpl();
+        //UserDao userDao=new UserDaoImpl();
         UserService userService=new UserServiceImpl();
-        userService.setUserDao(userDao);
+        //userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);
-        //System.out.println(readUser);
-
 
         if((login!=null)&&(login.equals(readUser.getName())&&(password.equals(readUser.getPass())))){
             userInLoginServlet=readUser;

@@ -51,18 +51,18 @@ public class MyNewsServlet extends HttpServlet {
     }
 
     private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
-        NewsDao newsDao=new NewsDaoImpl();
+//        NewsDao newsDao=new NewsDaoImpl();
         NewsService newsService=new NewsServiceImpl();
-        newsService.setNewsDao(newsDao);
-        UserDao userDao=new UserDaoImpl();
+//        newsService.setNewsDao(newsDao);
+//        UserDao userDao=new UserDaoImpl();
         UserService userService=new UserServiceImpl();
-        userService.setUserDao(userDao);
-        StorageDao storageDao=new StorageDaoImpl();
+//        userService.setUserDao(userDao);
+//        StorageDao storageDao=new StorageDaoImpl();
         StorageService storageService=new StorageServiceImpl();
-        storageService.setStorageDao(storageDao);
+//        storageService.setStorageDao(storageDao);
 
         User user=(User)req.getSession().getAttribute("user");
-        List<Long> list=storageDao.getNewsIdByUserId(user.getId());
+        List<Long> list=storageService.getNewsIdByUserId(user.getId());
         List<News> newsList=list.stream().map(newsId->newsService.getById(newsId)).collect(Collectors.toList());
 
         Collections.sort(newsList,new SortByTime());

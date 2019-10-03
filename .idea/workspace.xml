@@ -2,52 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f983650a-0680-4d72-b91c-5ce6987677b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/TestingLog4j.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/storage/StorageDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/storage/StorageDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/resource/dao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/dao.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/resource/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/news/NewsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/news/NewsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/user/UserTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/NewsEditorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/NewsEditorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/generator/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdatorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/EditNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/EditNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/storage/StorageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/storage/StorageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/NewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/NewsServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/UpdateNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/UpdateNewsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/target/tomcat/work/Tomcat/localhost/tomapp/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,14 +39,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="200">
+              <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dao/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -119,12 +114,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/storage/StorageService.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/storage/StorageServiceImplTest.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDao.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/github/ralmnsk/service/user/UserServiceImplTest.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/webapp/inform.jsp" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/comparator/SortByTime.java" />
@@ -134,8 +126,6 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/Editor.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdator.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/webapp/editnews.jsp" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/generator/Generator.java" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java" />
         <option value="$PROJECT_DIR$/dao/src/main/resource/log4j.properties" />
         <option value="$PROJECT_DIR$/tomapp/pom.xml" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
@@ -148,11 +138,6 @@
         <option value="$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/user/UserTest.java" />
         <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java" />
         <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/storage/StorageDaoImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/NewsEditorImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdatorImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/EditNewsServlet.java" />
@@ -160,16 +145,26 @@
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/UpdateNewsServlet.java" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/NewsServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/storage/StorageDaoImpl.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/storage/StorageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/NewsEditorImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/generator/Generator.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdatorImpl.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/NewsServlet.java" />
+        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/service/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/model/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/dao/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -341,6 +336,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
@@ -887,7 +891,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570013342898</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Logger.">
+      <created>1570103027205</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1570103027205</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -935,7 +946,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22556391" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24113856" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1054,7 +1065,8 @@
     <MESSAGE value="Timestamp instead of sql.Date changed." />
     <MESSAGE value="idnex page show Author" />
     <MESSAGE value="index page. Descendent news sorting on the page." />
-    <option name="LAST_COMMIT_MESSAGE" value="index page. Descendent news sorting on the page." />
+    <MESSAGE value="Logger." />
+    <option name="LAST_COMMIT_MESSAGE" value="Logger." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/webapp/welcome.jsp">
@@ -1120,13 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/generator/Generator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -1212,44 +1217,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/SingletonConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        <state relative-caret-position="47">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        <state relative-caret-position="125">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        <state relative-caret-position="368">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/resources/log4j.properties">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/storage/StorageDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        <state relative-caret-position="418">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/comparator/SortByTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/storage/StorageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdatorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/generator/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/NewsEditorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="45" column="57" lean-forward="true" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/AddNewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="-107">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/CreateNewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
+        <state relative-caret-position="-107">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1259,43 +1372,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/EditNewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="-232">
           <caret line="20" column="81" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/GoRegistrateServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="347">
           <caret line="36" column="69" selection-start-line="36" selection-start-column="69" selection-end-line="36" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/UpdateNewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        <state relative-caret-position="455">
+          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
+        <state relative-caret-position="93">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/TopSecretSecondServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
+        <state relative-caret-position="-57">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+        <state relative-caret-position="22">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1304,8 +1417,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/NewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-163">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+        <state relative-caret-position="493">
+          <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1314,8 +1427,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="68" column="47" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+        <state relative-caret-position="40">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1334,8 +1447,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
+        <state relative-caret-position="222">
           <caret line="48" column="32" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1344,7 +1467,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-370">
+        <state relative-caret-position="-200">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1354,126 +1477,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/SingletonConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/storage/StorageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="37" column="26" lean-forward="true" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-          <folding>
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdatorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/NewsEditorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="14" column="80" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/comparator/SortByTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/storage/StorageDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="114" column="12" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="64" />
+          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/model/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
         </state>
       </provider>
     </entry>

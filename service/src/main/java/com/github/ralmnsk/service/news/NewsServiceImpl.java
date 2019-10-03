@@ -1,6 +1,7 @@
 package com.github.ralmnsk.service.news;
 
 import com.github.ralmnsk.dao.news.NewsDao;
+import com.github.ralmnsk.dao.news.NewsDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.updator.NewsUpdatorImpl;
 import org.slf4j.Logger;
@@ -9,7 +10,22 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class NewsServiceImpl implements NewsService{
-    private NewsDao newsDao;
+    private NewsDao newsDao= NewsDaoImpl.getInstance();
+
+    private static volatile NewsService instance;
+
+    public static NewsService getInstance() {
+        NewsService localInstance = instance;
+        if (localInstance == null) {
+            synchronized (NewsService.class) {
+                localInstance = instance;
+                if (localInstance == null) {
+                    instance = localInstance = new NewsServiceImpl();
+                }
+            }
+        }
+        return localInstance;
+    }
 
     public void createNews(News news) {
         newsDao.createNews(news);

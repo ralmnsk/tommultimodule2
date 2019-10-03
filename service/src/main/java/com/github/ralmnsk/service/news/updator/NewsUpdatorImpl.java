@@ -33,9 +33,9 @@ public class NewsUpdatorImpl implements NewsUpdator {
 
     @Override
     public void newsUpdate() {
-        NewsDao newsDao=new NewsDaoImpl();
+        //NewsDao newsDao=new NewsDaoImpl();
         NewsService newsService=new NewsServiceImpl();
-        newsService.setNewsDao(newsDao);
+        //newsService.setNewsDao(newsDao);
         newsService.updateNews(news);
         session.setAttribute("news",news);
         logger.info(this.getClass()+ " newsUpdate");

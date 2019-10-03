@@ -14,6 +14,21 @@ import java.util.List;
 public class StorageDaoImpl implements StorageDao {
     private static Logger logger= LoggerFactory.getLogger(StorageDaoImpl.class);
 
+    private static volatile StorageDao instance;
+
+    public static StorageDao getInstance() {
+        StorageDao localInstance = instance;
+        if (localInstance == null) {
+            synchronized (StorageDao.class) {
+                localInstance = instance;
+                if (localInstance == null) {
+                    instance = localInstance = new StorageDaoImpl();
+                }
+            }
+        }
+        return localInstance;
+    }
+
     private Connection getConnection() throws SQLException {
         return SingletonConnection.getInstance().getConnection();
     }

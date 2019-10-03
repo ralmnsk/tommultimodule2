@@ -24,12 +24,12 @@ public class Generator {
     private News news;
 
     public void generateUserAndNews(){
-        NewsDao newsDao=new NewsDaoImpl();
+        //NewsDao newsDao=new NewsDaoImpl();
         NewsService newsService=new NewsServiceImpl();
-        newsService.setNewsDao(newsDao);
+        //newsService.setNewsDao(newsDao);
         StorageDao storageDao=new StorageDaoImpl();
         StorageService storageService=new StorageServiceImpl();
-        storageService.setStorageDao(storageDao);
+        //storageService.setStorageDao(storageDao);
         //29L put number from database manually
         for(int i=0;i<9;i++){
             News news=new News(29L,"TestNews "+i,"Text of news number "+i, new Timestamp(new java.util.Date().getTime()));

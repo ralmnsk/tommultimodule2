@@ -10,6 +10,20 @@ import java.sql.*;
 public class UserDaoImpl implements UserDao{
     private static Logger logger= LoggerFactory.getLogger(UserDaoImpl.class);
 
+    private static volatile UserDao instance;
+
+    public static UserDao getInstance() {
+        UserDao localInstance = instance;
+        if (localInstance == null) {
+            synchronized (UserDao.class) {
+                localInstance = instance;
+                if (localInstance == null) {
+                    instance = localInstance = new UserDaoImpl();
+                }
+            }
+        }
+        return localInstance;
+    }
 
     private Connection getConnection() throws SQLException{
     return SingletonConnection.getInstance().getConnection();

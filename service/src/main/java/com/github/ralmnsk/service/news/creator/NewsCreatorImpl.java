@@ -30,18 +30,18 @@ public class NewsCreatorImpl implements NewsCreator {
     @Override
     public News newsCreate(){
         News news=new News();
-        NewsDao newsDao=new NewsDaoImpl();
+        //NewsDao newsDao=new NewsDaoImpl();
         NewsService newsService=new NewsServiceImpl();
-        newsService.setNewsDao(newsDao);
+        //newsService.setNewsDao(newsDao);
 
         if (!dataNews.isEmpty()){
             news=new News(user.getId(), nameNews, dataNews, new Timestamp(new java.util.Date().getTime()));
             logger.info("news created:"+news.toString());
             newsService.createNews(news);
             News newsFromBase=newsService.readNews(news);
-            StorageDao storageDao=new StorageDaoImpl();
+            //StorageDao storageDao=new StorageDaoImpl();
             StorageService storageService=new StorageServiceImpl();
-            storageService.setStorageDao(storageDao);
+            //storageService.setStorageDao(storageDao);
             storageService.createStorage(user.getId(),newsFromBase.getIdNews());
             logger.info(this.getClass()+" newsCreate()");
         } else {
