@@ -2,9 +2,12 @@ package com.github.ralmnsk.dao.news;
 
 
 import com.github.ralmnsk.model.news.News;
-import org.junit.jupiter.api.BeforeAll;
+import com.github.ralmnsk.model.user.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -12,12 +15,13 @@ import java.util.List;
 import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.MockitoAnnotations.initMocks;
 
 
 public class NewsDaoImplTest {
     private News news;
 
-    @BeforeAll
+
     public void setUp(){
         Properties properties=new Properties();
         try {
@@ -36,42 +40,41 @@ public class NewsDaoImplTest {
 
 
     public void createNews() {
-        NewsDaoImpl newsDao=new NewsDaoImpl();
+        NewsDao newsDao=NewsDaoImpl.getInstance();
         newsDao.createNews(news);
     }
 
 
     public void readNews() {
-        NewsDaoImpl newsDao=new NewsDaoImpl();
+        NewsDao newsDao=NewsDaoImpl.getInstance();
         News readNews = newsDao.readNews(this.news);
-        System.out.println(readNews.toString());
         assertNotNull(readNews);
         assertEquals(readNews.getNameNews(),news.getNameNews());
         assertEquals(readNews.getDataNews(),news.getDataNews());
     }
 
 
+
+    @Mock
+    private NewsDao newsDao;
+
+    @Test
     public void updateNews() {
-        News newsChanging=new News(1000L,news.getNameNews(),"new news data 1234567", new Timestamp(new java.util.Date().getTime()));
-        System.out.println(newsChanging);
-        NewsDaoImpl newsDao=new NewsDaoImpl();
-
-        System.out.println(newsChanging);
-        newsDao.updateNews(newsChanging);
-
-        assertNotNull(newsChanging);
-        assertEquals(newsChanging.getNameNews(),news.getNameNews());
-        assertNotEquals(newsChanging.getDataNews(),news.getDataNews());
+        initMocks(this);
+        NewsDao mockNewsDao=Mockito.mock(NewsDaoImpl.class);
+        mockNewsDao.updateNews(news);
+        Mockito.verify(mockNewsDao).updateNews(news);
     }
 
 
     public void deleteNews() {
-        NewsDaoImpl newsDao=new NewsDaoImpl();
+        NewsDao newsDao=NewsDaoImpl.getInstance();
         newsDao.deleteNews(news);
     }
 
     @Test
     public void testing(){
+        setUp();
        createNews();
        readNews();
        updateNews();
@@ -80,18 +83,16 @@ public class NewsDaoImplTest {
 
     @Test
     public void findAllNews() {
-        NewsDaoImpl newsDao=new NewsDaoImpl();
+        NewsDao newsDao=NewsDaoImpl.getInstance();
         List<News> newsList=newsDao.findAllNews();
-        for (News n:newsList) {
-            System.out.println(n.toString());
-        }
+        Assertions.assertTrue(newsList.size()>0);
     }
 
     @Test
     public void getById() {
-        NewsDao newsDao=new NewsDaoImpl();
-        News news=newsDao.getById(19L);
-
-        System.out.println(news);
+        setUp();
+        NewsDaoImpl newsDao= Mockito.mock(NewsDaoImpl.class);
+        Mockito.when(newsDao.getById(1L)).thenReturn(news);
+        assertEquals("News text 333.News text 333.",newsDao.getById(1L).getDataNews());
     }
 }

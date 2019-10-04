@@ -154,7 +154,7 @@ public class NewsDaoImpl implements NewsDao {
             }
             rs.close();
             statement.close();
-            logger.info(this.getClass()+"findAllNews");
+            logger.info(this.getClass()+" findAllNews");
         } catch (SQLException ex) {
             logger.error("Problem executing readNews", ex);
         }

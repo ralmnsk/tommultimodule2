@@ -1,12 +1,15 @@
 com\github\ralmnsk\service\news\editor\NewsEditorImpl.class
 com\github\ralmnsk\service\news\NewsService.class
 com\github\ralmnsk\service\authorization\AuthorizationImpl.class
+com\github\ralmnsk\service\storage\StorageServiceImpl.class
 com\github\ralmnsk\service\clienttype\ClientType.class
 com\github\ralmnsk\service\news\updator\NewsUpdatorImpl.class
 com\github\ralmnsk\service\authorization\Authorization.class
 com\github\ralmnsk\service\news\creator\NewsCreatorImpl.class
+com\github\ralmnsk\service\storage\StorageService.class
 com\github\ralmnsk\service\news\editor\NewsEditor.class
 com\github\ralmnsk\service\user\UserServiceImpl.class
+com\github\ralmnsk\service\news\generator\Generator.class
 com\github\ralmnsk\service\user\UserService.class
 com\github\ralmnsk\service\news\comparator\SortByTime.class
 com\github\ralmnsk\service\news\NewsServiceImpl.class
