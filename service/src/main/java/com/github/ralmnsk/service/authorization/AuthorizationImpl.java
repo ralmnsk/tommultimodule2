@@ -1,6 +1,6 @@
 package com.github.ralmnsk.service.authorization;
 
-import com.github.ralmnsk.dao.user.UserDao;
+
 import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.clienttype.ClientType;
@@ -33,7 +33,7 @@ AuthorizationImpl implements Authorization {
         user.setPass(password);
 
         //UserDao userDao=new UserDaoImpl();
-        UserService userService=new UserServiceImpl();
+        UserService userService=UserServiceImpl.getInstance();
         //userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);

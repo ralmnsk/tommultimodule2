@@ -52,7 +52,7 @@ public class RegistrationServlet extends HttpServlet {
         user.setRole("usr");
 
 //        UserDao userDao=new UserDaoImpl();
-        UserService userService=new UserServiceImpl();
+        UserService userService=UserServiceImpl.getInstance();
 //        userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);

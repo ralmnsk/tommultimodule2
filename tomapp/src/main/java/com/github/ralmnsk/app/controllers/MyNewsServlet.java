@@ -52,13 +52,13 @@ public class MyNewsServlet extends HttpServlet {
 
     private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
 //        NewsDao newsDao=new NewsDaoImpl();
-        NewsService newsService=new NewsServiceImpl();
+        NewsService newsService=NewsServiceImpl.getInstance();
 //        newsService.setNewsDao(newsDao);
 //        UserDao userDao=new UserDaoImpl();
-        UserService userService=new UserServiceImpl();
+        UserService userService=UserServiceImpl.getInstance();
 //        userService.setUserDao(userDao);
 //        StorageDao storageDao=new StorageDaoImpl();
-        StorageService storageService=new StorageServiceImpl();
+        StorageService storageService=StorageServiceImpl.getInstance();
 //        storageService.setStorageDao(storageDao);
 
         User user=(User)req.getSession().getAttribute("user");

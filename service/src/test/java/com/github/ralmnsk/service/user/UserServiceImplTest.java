@@ -27,25 +27,34 @@ public class UserServiceImplTest {
 
     @Test
     public void createUser() {
+        User user=new User("Apple333","pass333",new Timestamp(new java.util.Date().getTime()),"usr");
+        user.setId(1000L);
+        userService.createUser(getMeTestUser());
+        when(userService.readUser(user)).thenReturn(getMeTestUser());
+        User testUser = userService.readUser(user);
+        assertNotNull(testUser);
+        assertEquals("Apple333", testUser.getName());
+        assertEquals("pass333", user.getPass());
     }
 
     @Test
     public void readUser() {
         initMocks(this);
-        User user=new User("Apple","pass",new Timestamp(new java.util.Date().getTime()),"usr");
-        user.setId(10L);
-        when(userDao.readUser(user)).thenReturn(getMeTestUser());
+        User user=new User("Apple333","pass333",new Timestamp(new java.util.Date().getTime()),"usr");
+        user.setId(1000L);
+        when(userService.readUser(user)).thenReturn(getMeTestUser());
         User testUser = userService.readUser(user);
         assertNotNull(testUser);
-        assertEquals("Apple", testUser.getName());
-        assertEquals("pass", user.getPass());
+        assertEquals("Apple333", testUser.getName());
+        assertEquals("pass333", user.getPass());
     }
+
 
     private User getMeTestUser() {
         User user=new User();
         user.setId(1000L);
-        user.setName("Apple");
-        user.setPass("pass");
+        user.setName("Apple333");
+        user.setPass("pass333");
         user.setJoinDate(new Timestamp(new java.util.Date().getTime()));
         user.setRole("usr");
         return user;
@@ -61,11 +70,10 @@ public class UserServiceImplTest {
 
     @Test
     public void getById() {
-        UserDao userDao1=new UserDaoImpl();
+        //UserDao userDao1=new UserDaoImpl();
         UserService userService=new UserServiceImpl();
-        userService.setUserDao(userDao1);
-        User user=userService.getById(29L);
+//        userService.setUserDao(userDao1);
+        User user=userService.getById(1000L);
 
-        System.out.println(user);
     }
 }

@@ -31,7 +31,7 @@ public class NewsCreatorImpl implements NewsCreator {
     public News newsCreate(){
         News news=new News();
         //NewsDao newsDao=new NewsDaoImpl();
-        NewsService newsService=new NewsServiceImpl();
+        NewsService newsService=NewsServiceImpl.getInstance();
         //newsService.setNewsDao(newsDao);
 
         if (!dataNews.isEmpty()){
@@ -40,7 +40,7 @@ public class NewsCreatorImpl implements NewsCreator {
             newsService.createNews(news);
             News newsFromBase=newsService.readNews(news);
             //StorageDao storageDao=new StorageDaoImpl();
-            StorageService storageService=new StorageServiceImpl();
+            StorageService storageService=StorageServiceImpl.getInstance();
             //storageService.setStorageDao(storageDao);
             storageService.createStorage(user.getId(),newsFromBase.getIdNews());
             logger.info(this.getClass()+" newsCreate()");

@@ -45,10 +45,10 @@ public class NewsServlet extends HttpServlet {
 
     private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
 //        NewsDao newsDao=new NewsDaoImpl();
-        NewsService newsService=new NewsServiceImpl();
+        NewsService newsService=NewsServiceImpl.getInstance();
 //        newsService.setNewsDao(newsDao);
 //        UserDao userDao=new UserDaoImpl();
-        UserService userService=new UserServiceImpl();
+        UserService userService=UserServiceImpl.getInstance();
 //        userService.setUserDao(userDao);
 
         List<News> newsList=newsService.findAllNews();
