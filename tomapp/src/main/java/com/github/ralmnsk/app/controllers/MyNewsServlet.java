@@ -73,9 +73,9 @@ public class MyNewsServlet extends HttpServlet {
             map.put(news,user);
         }
 
-        for (News n:newsList) {
-            logger.info("news from database:"+n.toString());
-        }
+//        for (News n:newsList) {
+//            logger.info("news from database:"+n.toString());
+//        }
         session.setAttribute("map",map);
     }
 }

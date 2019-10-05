@@ -33,13 +33,13 @@
 
 	<dependencies>
 
-		<!-- OPTIONAL 
-			<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-extensions</artifactId>
-			<version>${wicket.version}</version>
-			</dependency>
-		-->
+		<!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
+
 
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
 
@@ -48,6 +48,14 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.github.leeyazhou/cobertura -->
+		<dependency>
+			<groupId>com.github.leeyazhou</groupId>
+			<artifactId>cobertura</artifactId>
+			<version>2.1.2.RELEASE</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
