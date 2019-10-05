@@ -15,4 +15,5 @@ com\github\ralmnsk\app\controllers\InformServlet.class
 com\github\ralmnsk\app\controllers\GoRegistrateServlet.class
 com\github\ralmnsk\app\controllers\TopSecretSecondServlet.class
 com\github\ralmnsk\app\controllers\RegistrationServlet.class
+com\github\ralmnsk\app\controllers\DelNewsServlet.class
 com\github\ralmnsk\app\controllers\IndexServlet.class

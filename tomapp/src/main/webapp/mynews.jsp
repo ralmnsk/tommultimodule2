@@ -31,9 +31,12 @@
                                                         </br>
                                 Дата: ${entry.key.dateNews}</br>
                                 <form name="editNewsForm" method="POST" action="edit">
+                                <div class="form=group">
                                 <input type="hidden" name="editNewsId" value="${entry.key.idNews}">
                                 <input type="submit" value="Редактировать"/>
+                                </div>
                                 </form>
+
                                 </p>
                                     <hr/>
                     </c:forEach>
