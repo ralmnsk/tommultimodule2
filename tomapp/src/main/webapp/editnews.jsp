@@ -32,5 +32,10 @@
                     <button type="submit" class="btn btn-primary"> Редактировать новость </button>
                 </div>
             </form>
+            <form name="deleteNewsForm" method="POST" action="deletenews">
+            <div class="form=group">
+                <button type="submit" class="btn btn-primary"> Удалить новость ${user.name} </button>
+            </div>
+            </form>
     </body>
 </html>

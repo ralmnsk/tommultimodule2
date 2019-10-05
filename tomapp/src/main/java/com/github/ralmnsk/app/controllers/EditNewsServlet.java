@@ -1,13 +1,10 @@
 package com.github.ralmnsk.app.controllers;
 
-import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.news.creator.NewsCreator;
-import com.github.ralmnsk.service.news.creator.NewsCreatorImpl;
+
 import com.github.ralmnsk.service.news.editor.NewsEditor;
 import com.github.ralmnsk.service.news.editor.NewsEditorImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
