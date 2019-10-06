@@ -2,6 +2,7 @@ package com.github.ralmnsk.dao.news;
 
 
 import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
 
 import java.util.List;
 
@@ -12,4 +13,5 @@ public interface NewsDao {
     void deleteNews(News news);
     List<News> findAllNews();
     News getById(Long id);
+    Long getUserId(Long userId);
 }

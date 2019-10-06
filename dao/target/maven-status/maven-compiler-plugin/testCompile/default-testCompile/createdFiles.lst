@@ -1,2 +1,3 @@
 com\github\ralmnsk\dao\news\NewsDaoImplTest.class
 com\github\ralmnsk\dao\user\UserDaoImplTest.class
+com\github\ralmnsk\dao\connection\DataSourceTest.class

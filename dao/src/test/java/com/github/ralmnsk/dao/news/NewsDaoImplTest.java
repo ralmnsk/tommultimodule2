@@ -1,98 +1,106 @@
 package com.github.ralmnsk.dao.news;
 
-
+import com.github.ralmnsk.dao.storage.StorageDao;
+import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.model.user.User;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.MockitoAnnotations.initMocks;
 
 
-public class NewsDaoImplTest {
-    private News news;
+class NewsDaoImplTest {
+    private NewsDao newsDao=NewsDaoImpl.getInstance();
 
-
-    public void setUp(){
-        Properties properties=new Properties();
-        try {
-            properties
-                    .load(getClass()
-                            .getClassLoader()
-                            .getResourceAsStream("daotest.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String nameNews=properties.getProperty("namenews");
-        String dataNews=properties.getProperty("datanews");
-        news=new News(1l,nameNews,dataNews,new Timestamp(new java.util.Date().getTime()));
-    }
-
-
-
-    public void createNews() {
-        NewsDao newsDao=NewsDaoImpl.getInstance();
-        newsDao.createNews(news);
-    }
-
-
-    public void readNews() {
-        NewsDao newsDao=NewsDaoImpl.getInstance();
-        News readNews = newsDao.readNews(this.news);
-        assertNotNull(readNews);
-        assertEquals(readNews.getNameNews(),news.getNameNews());
-        assertEquals(readNews.getDataNews(),news.getDataNews());
-    }
-
-
-
-    @Mock
-    private NewsDao newsDao;
 
     @Test
-    public void updateNews() {
-        initMocks(this);
-        NewsDao mockNewsDao=Mockito.mock(NewsDaoImpl.class);
-        mockNewsDao.updateNews(news);
-        Mockito.verify(mockNewsDao).updateNews(news);
+    void getInstance() {
+        assertNotNull(newsDao);
     }
 
 
-    public void deleteNews() {
-        NewsDao newsDao=NewsDaoImpl.getInstance();
+    @Test
+    void createNews() {
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        newsDao.createNews(news);
+        News foundNews=newsDao.readNews(news);
+        System.out.println(foundNews);
+        assertEquals(news.getNameNews(),foundNews.getNameNews());
+        newsDao.deleteNews(foundNews);
+    }
+
+    @Test
+    void readNews() {
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        newsDao.createNews(news);
+        News foundNews=newsDao.readNews(news);
+        assertEquals(news.getNameNews(),foundNews.getNameNews());
+        newsDao.deleteNews(foundNews);
+    }
+
+    @Test
+    void updateNews() {
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        newsDao.createNews(news);
+        News foundNews=newsDao.readNews(news);
+        foundNews.setDataNews("changedTestData");
+        newsDao.updateNews(foundNews);
+        News updagtedNews=newsDao.readNews(foundNews);
+        assertEquals("changedTestData",updagtedNews.getDataNews());
+        newsDao.deleteNews(updagtedNews);
+    }
+
+    @Test
+    void deleteNews() {
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        newsDao.createNews(news);
+        News foundNews=newsDao.readNews(news);
+        System.out.println(foundNews);
+        assertEquals(news.getNameNews(),foundNews.getNameNews());
+        newsDao.deleteNews(foundNews);
+        News deletedNews=newsDao.readNews(foundNews);
+        assertNull(deletedNews.getIdNews());
+        assertNull(deletedNews.getNameNews());
+        assertNull(deletedNews.getDataNews());
+
+    }
+
+    @Test
+    void findAllNews() {
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        newsDao.createNews(news);
+        List<News> list=newsDao.findAllNews();
+        assertTrue(list.size()>0);
         newsDao.deleteNews(news);
     }
 
     @Test
-    public void testing(){
-        setUp();
-       createNews();
-       readNews();
-       updateNews();
-       deleteNews();
+    void getUserId() {
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        newsDao.createNews(news);
+        News testNews=newsDao.readNews(news);
+        StorageDao storageDao= StorageDaoImpl.getInstance();
+        storageDao.createStorage(333L,testNews.getIdNews());
+        Long userId=newsDao.getUserId(testNews.getIdNews());
+        assertEquals(333L,userId);
+        storageDao.deleteStorage(333L,testNews.getIdNews());
+        newsDao.deleteNews(testNews);
     }
 
     @Test
-    public void findAllNews() {
-        NewsDao newsDao=NewsDaoImpl.getInstance();
-        List<News> newsList=newsDao.findAllNews();
-        Assertions.assertTrue(newsList.size()>0);
-    }
-
-    @Test
-    public void getById() {
-        setUp();
-        NewsDaoImpl newsDao= Mockito.mock(NewsDaoImpl.class);
-        Mockito.when(newsDao.getById(1L)).thenReturn(news);
-        assertEquals("News text 333.News text 333.",newsDao.getById(1L).getDataNews());
+    void getById() {
+        News news=new News(1000L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        newsDao.createNews(news);
+        News testNews=newsDao.readNews(news);
+        Long newsId=testNews.getIdNews();
+        News newsGetById=newsDao.getById(newsId);
+        assertEquals(testNews.getNameNews(),newsGetById.getNameNews());
+        assertEquals(testNews.getDataNews(),newsGetById.getDataNews());
+        newsDao.deleteNews(testNews);
     }
 }

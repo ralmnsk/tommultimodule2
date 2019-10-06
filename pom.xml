@@ -21,6 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+		<jacoco.version>0.8.2</jacoco.version>
     </properties>
 
 	<licenses>
@@ -47,13 +48,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.github.leeyazhou/cobertura -->
-		<dependency>
-			<groupId>com.github.leeyazhou</groupId>
-			<artifactId>cobertura</artifactId>
-			<version>2.1.2.RELEASE</version>
 		</dependency>
 
 
@@ -144,19 +138,7 @@
 					<version>3.0.0</version>
 				</plugin>
 
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>cobertura-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>site</id>
-							<phase>pre-site</phase>
-							<goals>
-								<goal>cobertura</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
+
 
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
@@ -177,18 +159,34 @@
 						</execution>
 					</executions>
 				</plugin>
+
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${jacoco.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>prepare-agent</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>jacoco-report</id>
+							<phase>test</phase>
+							<goals>
+								<goal>report</goal>
+							</goals>
+							<!-- default target/jscoco/site/* -->
+							<configuration>
+								<outputDirectory>target/jacoco-report</outputDirectory>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
 			</plugins>
 		</pluginManagement>
-	</build>
 
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.7</version>
-			</plugin>
-		</plugins>
-	</reporting>
+	</build>
 
 </project>

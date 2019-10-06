@@ -2,90 +2,73 @@ package com.github.ralmnsk.dao.user;
 
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.Test;
-
-
-import java.io.IOException;
 import java.sql.Timestamp;
-import java.util.Properties;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class UserDaoImplTest {
+    private UserDao userDao=UserDaoImpl.getInstance();
 
     public User userInTestCreate(){
-        Properties properties=new Properties();
-        try {
-            properties
-                    .load(getClass()
-                            .getClassLoader()
-                            .getResourceAsStream("daotest.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        User user=new User(properties.getProperty("user"),
-                properties.getProperty("password"),
-                new Timestamp(new java.util.Date().getTime()),
-                "usr");
+        User user=new User(3333L,"testName","testPassword",new Timestamp(new java.util.Date().getTime()),"usr");
         return user;
     }
 
-
+    @Test
     public void createUser() {
         User user=userInTestCreate();
-        UserDao userDao=new UserDaoImpl();
         userDao.createUser(user);
-    }
-
-
-    public void readUser() {
-        User user=userInTestCreate();
-        System.out.println(user);
-
-        UserDao newUserDao=new UserDaoImpl();
-        User newUser=newUserDao.readUser(user);
-        System.out.println("read User:"+newUser.toString());
-
-        assertNotNull(newUser);
-        assertEquals(newUser.getName(),user.getName());
-        assertEquals(newUser.getPass(),user.getPass());
-    }
-
-
-    public void updateUser() {
-        User user=userInTestCreate();
-        User userChanging=new User(user.getName(),
-                "1234567",
-                new Timestamp(new java.util.Date().getTime()),
-                "user");
-        UserDao userDao=new UserDaoImpl();
-        userDao.updateUser(userChanging);
-    }
-
-
-    public void deleteUser() {
-        User user=userInTestCreate();
-        UserDao userDao=new UserDaoImpl();
-        userDao.deleteUser(user);
+        User testUser=userDao.readUser(user);
+        assertEquals(user.getName(),testUser.getName());
+        assertEquals(user.getPass(),testUser.getPass());
+        userDao.deleteUser(testUser);
     }
 
     @Test
-    public void UserDaoImplTest(){
-        createUser();
-        readUser();
-        getById();
-        updateUser();
-        deleteUser();
+    public void readUser() {
+        User user=userInTestCreate();
+        userDao.createUser(user);
+        User testUser=userDao.readUser(user);
+        assertEquals(user.getName(),testUser.getName());
+        assertEquals(user.getPass(),testUser.getPass());
+        userDao.deleteUser(testUser);
     }
 
+    @Test
+    public void updateUser() {
+        User user=userInTestCreate();
+        userDao.createUser(user);
+
+        User updateUser=userDao.readUser(user);
+        updateUser.setPass("ChangedPass");
+        System.out.println(updateUser);
+        userDao.updateUser(updateUser);
+        User testUser=userDao.readUser(updateUser);
+        assertEquals("ChangedPass",testUser.getPass());
+        userDao.deleteUser(testUser);
+    }
+
+    @Test
+    public void deleteUser() {
+        User user=userInTestCreate();
+        userDao.createUser(user);
+        User testUser=userDao.readUser(user);
+        assertEquals(user.getName(),testUser.getName());
+        userDao.deleteUser(testUser);
+        User deletedUser=userDao.readUser(testUser);
+        assertNull(deletedUser.getName());
+        assertNull(deletedUser.getPass());
+    }
 
     @Test
     public void getById() {
-        Long id=29L;
-        User user=new User();
-        UserDao userDao=new UserDaoImpl();
-        user=userDao.getById(id);
-        System.out.println(user);
+        User user=userInTestCreate();
+        userDao.createUser(user);
+        User testUser=userDao.readUser(user);
+        Long userId=testUser.getId();
+        User userById=userDao.getById(userId);
+        assertEquals(testUser.getName(),userById.getName());
+        assertEquals(testUser.getPass(),userById.getPass());
+        userDao.deleteUser(userById);
     }
 }
