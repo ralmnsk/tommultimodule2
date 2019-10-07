@@ -4,7 +4,6 @@ import com.github.ralmnsk.dao.connection.DataSource;
 import com.github.ralmnsk.model.storage.Storage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
