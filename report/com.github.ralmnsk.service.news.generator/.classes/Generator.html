@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Generator</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.github.ralmnsk.service.news.generator</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Generator (com.github.ralmnsk.service.news.generator)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Generator</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.github.ralmnsk.service.news.generator;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.github.ralmnsk.dao.news.NewsDao;
+<i>4</i>&nbsp;import com.github.ralmnsk.dao.news.NewsDaoImpl;
+<i>5</i>&nbsp;import com.github.ralmnsk.dao.storage.StorageDao;
+<i>6</i>&nbsp;import com.github.ralmnsk.dao.storage.StorageDaoImpl;
+<i>7</i>&nbsp;import com.github.ralmnsk.dao.user.UserDao;
+<i>8</i>&nbsp;import com.github.ralmnsk.dao.user.UserDaoImpl;
+<i>9</i>&nbsp;import com.github.ralmnsk.model.news.News;
+<i>10</i>&nbsp;import com.github.ralmnsk.model.user.User;
+<i>11</i>&nbsp;import com.github.ralmnsk.service.news.NewsService;
+<i>12</i>&nbsp;import com.github.ralmnsk.service.news.NewsServiceImpl;
+<i>13</i>&nbsp;import com.github.ralmnsk.service.storage.StorageService;
+<i>14</i>&nbsp;import com.github.ralmnsk.service.storage.StorageServiceImpl;
+<i>15</i>&nbsp;import com.github.ralmnsk.service.user.UserService;
+<i>16</i>&nbsp;import com.github.ralmnsk.service.user.UserServiceImpl;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;import java.sql.Timestamp;
+<i>19</i>&nbsp;
+<b class="nc"><i>20</i>&nbsp;public class Generator {</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    private UserDao userDao;
+<i>23</i>&nbsp;    private UserService userService;
+<i>24</i>&nbsp;    private News news;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public void generateUserAndNews(){
+<i>27</i>&nbsp;        //NewsDao newsDao=new NewsDaoImpl();
+<b class="nc"><i>28</i>&nbsp;        NewsService newsService=new NewsServiceImpl();</b>
+<i>29</i>&nbsp;        //newsService.setNewsDao(newsDao);
+<b class="nc"><i>30</i>&nbsp;        StorageDao storageDao=new StorageDaoImpl();</b>
+<b class="nc"><i>31</i>&nbsp;        StorageService storageService=new StorageServiceImpl();</b>
+<i>32</i>&nbsp;        //storageService.setStorageDao(storageDao);
+<i>33</i>&nbsp;        //29L put number from database manually
+<b class="nc"><i>34</i>&nbsp;        for(int i=0;i&lt;9;i++){</b>
+<b class="nc"><i>35</i>&nbsp;            News news=new News(29L,&quot;TestNews &quot;+i,&quot;Text of news number &quot;+i, new Timestamp(new java.util.Date().getTime()));</b>
+<b class="nc"><i>36</i>&nbsp;            newsService.createNews(news);</b>
+<b class="nc"><i>37</i>&nbsp;            storageDao.createStorage(29L, news.getIdNews());</b>
+<i>38</i>&nbsp;        }
+<b class="nc"><i>39</i>&nbsp;    }</b>
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    public static void main(String[] hello){
+<b class="nc"><i>42</i>&nbsp;        Generator generator=new Generator();</b>
+<b class="nc"><i>43</i>&nbsp;        generator.generateUserAndNews();</b>
+<b class="nc"><i>44</i>&nbsp;    }</b>
+<i>45</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-10-07 09:31</div>
+</div>
+</body>
+</html>

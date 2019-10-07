@@ -4,5 +4,4 @@ com\github\ralmnsk\dao\connection\DataSource.class
 com\github\ralmnsk\dao\news\NewsDao.class
 com\github\ralmnsk\dao\news\NewsDaoImpl.class
 com\github\ralmnsk\dao\storage\StorageDao.class
-com\github\ralmnsk\dao\connection\TestingLog4j.class
 com\github\ralmnsk\dao\user\UserDaoImpl.class
