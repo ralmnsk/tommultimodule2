@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 12)
+    (0/ 15)
   </span>
 </td>
 </tr>
@@ -88,38 +88,38 @@
 <i>14</i>&nbsp;import java.io.IOException;
 <i>15</i>&nbsp;
 <i>16</i>&nbsp;@WebServlet(&quot;/site/edit&quot;)
-<i>17</i>&nbsp;public class EditNewsServlet extends HttpServlet {
-<i>18</i>&nbsp;    private static Logger logger= LoggerFactory.getLogger(EditNewsServlet.class);
+<b class="nc"><i>17</i>&nbsp;public class EditNewsServlet extends HttpServlet {</b>
+<b class="nc"><i>18</i>&nbsp;    private static Logger logger= LoggerFactory.getLogger(EditNewsServlet.class);</b>
 <i>19</i>&nbsp;
-<b class="nc"><i>20</i>&nbsp;    @Override</b>
-<b class="nc"><i>21</i>&nbsp;    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</b>
-<i>22</i>&nbsp;        processReq(req,resp);
-<i>23</i>&nbsp;    }
+<i>20</i>&nbsp;    @Override
+<i>21</i>&nbsp;    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+<b class="nc"><i>22</i>&nbsp;        processReq(req,resp);</b>
+<b class="nc"><i>23</i>&nbsp;    }</b>
 <i>24</i>&nbsp;
-<b class="nc"><i>25</i>&nbsp;    @Override</b>
+<i>25</i>&nbsp;    @Override
 <i>26</i>&nbsp;    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<i>27</i>&nbsp;        resp.setCharacterEncoding(&quot;UTF-8&quot;);
-<i>28</i>&nbsp;        req.setCharacterEncoding(&quot;UTF-8&quot;);
-<i>29</i>&nbsp;        processReq(req,resp);
+<b class="nc"><i>27</i>&nbsp;        resp.setCharacterEncoding(&quot;UTF-8&quot;);</b>
+<b class="nc"><i>28</i>&nbsp;        req.setCharacterEncoding(&quot;UTF-8&quot;);</b>
+<b class="nc"><i>29</i>&nbsp;        processReq(req,resp);</b>
 <b class="nc"><i>30</i>&nbsp;    }</b>
-<b class="nc"><i>31</i>&nbsp;</b>
-<b class="nc"><i>32</i>&nbsp;    private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <i>33</i>&nbsp;        //User user=(User)req.getSession().getAttribute(&quot;user&quot;);
-<i>34</i>&nbsp;        Long editNewsId=Long.parseLong(req.getParameter(&quot;editNewsId&quot;));
-<i>35</i>&nbsp;        HttpSession session = req.getSession();
-<i>36</i>&nbsp;        NewsEditor newsEditor=new NewsEditorImpl(session,editNewsId);
+<b class="nc"><i>34</i>&nbsp;        Long editNewsId=Long.parseLong(req.getParameter(&quot;editNewsId&quot;));</b>
+<b class="nc"><i>35</i>&nbsp;        HttpSession session = req.getSession();</b>
+<b class="nc"><i>36</i>&nbsp;        NewsEditor newsEditor=new NewsEditorImpl(session,editNewsId);</b>
 <b class="nc"><i>37</i>&nbsp;        newsEditor.newsEdit();</b>
-<b class="nc"><i>38</i>&nbsp;</b>
+<i>38</i>&nbsp;
 <b class="nc"><i>39</i>&nbsp;        req.getRequestDispatcher(&quot;/editnews.jsp&quot;).forward(req, resp);</b>
 <b class="nc"><i>40</i>&nbsp;        logger.info(this.getClass()+&quot; processReq /editnews.jsp&quot;);</b>
-<i>41</i>&nbsp;    }
-<b class="nc"><i>42</i>&nbsp;}</b>
+<b class="nc"><i>41</i>&nbsp;    }</b>
+<i>42</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-10-07 09:31</div>
+    <div style="float:right;">generated on 2019-10-07 13:47</div>
 </div>
 </body>
 </html>
