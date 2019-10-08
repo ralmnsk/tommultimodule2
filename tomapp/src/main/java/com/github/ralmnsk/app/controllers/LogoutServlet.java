@@ -35,7 +35,7 @@ public class LogoutServlet extends HttpServlet {
         HttpSession session = req.getSession();
         ClientType clientType = (ClientType) session.getAttribute("userType");
         User user=(User)session.getAttribute("user");
-
+        logger.info(this.getClass()+" user:"+user.getName()+" logout");
         session.setAttribute("bye",user.getName());
         session.setAttribute("user", null);
         session.setAttribute("userType", null);
