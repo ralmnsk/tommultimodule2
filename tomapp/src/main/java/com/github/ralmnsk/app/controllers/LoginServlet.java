@@ -48,10 +48,12 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("userType", authorization.getClientType());
             //System.out.println("user "+login+" has role: " +authorization.getUserInLoginServlet().getRole());
             page="/welcome.jsp";
+            logger.info("User: "+login+" passed authorization");
         }else {
             page="/login.jsp";
             if(login!=null){
             req.setAttribute("errorLoginPassMessage","Incorrect login or password");
+                logger.info("User: "+login+" :incorrect login or password");
             }
         }
         req.getRequestDispatcher(page).forward(req, resp);

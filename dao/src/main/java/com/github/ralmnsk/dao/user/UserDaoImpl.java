@@ -48,6 +48,7 @@ public class UserDaoImpl implements UserDao{
                     user.setId(generatedKeys.getLong(1));
                 }
                     generatedKeys.close();
+                logger.info("User was created:" +user.getId()+" login: "+user.getName());
         } catch (SQLException ex) {
             logger.error("Prblem executing INSERT", ex);
         } finally {
@@ -123,6 +124,7 @@ public class UserDaoImpl implements UserDao{
         {
             statement.setString(1, user.getName());
             statement.execute();
+            logger.info("User was deleted:" +user.getId()+" login: "+user.getName());
         } catch (SQLException ex) {
             logger.error("Prblem executing DELETE", ex);
         }

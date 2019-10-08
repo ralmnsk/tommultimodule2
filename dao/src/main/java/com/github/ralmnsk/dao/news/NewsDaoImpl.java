@@ -55,7 +55,7 @@ public class NewsDaoImpl implements NewsDao {
                 news.setIdNews(generatedKeys.getLong(1));
             }
             generatedKeys.close();
-            logger.info(this.getClass()+" createNews");
+            logger.info(this.getClass()+": News was created:" +news.getIdNews()+" nameNews: "+news.getNameNews());
         } catch (SQLException ex) {
             logger.error("Problem executing createNews", ex);
         }finally {
@@ -131,7 +131,7 @@ public class NewsDaoImpl implements NewsDao {
             statement.setString(1, news.getNameNews());
             statement.execute();
             //statement.close();
-            logger.info(this.getClass()+" deleteNews");
+            logger.info(this.getClass()+": News was created:" +news.getIdNews()+" nameNews: "+news.getNameNews());
         } catch (SQLException ex) {
             logger.error("Prblem executing DELETE", ex);
         }
