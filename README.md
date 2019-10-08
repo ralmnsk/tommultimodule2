@@ -10,11 +10,11 @@ It is the multi module project consists of submodules: dao, models, service, web
 
 *The type of an application database is mysql.*
 
-*It is used cobertura for viewing testing coverage of the project.*
+*It is used intelliji idea for viewing testing coverage of the project.*
 
-*Testing libraries are junit and mokito.*
+*Testing libraries are junit 5 and mokito.*
 
-*Models: user, news.*
+*Models: user, news, storage.*
 
 Map and navigation on the site.
 ------------------------------
@@ -31,6 +31,8 @@ that were added in a database some time before.
 You appear on the welcome page after positive authorization.
 There are links to the main page(Главная), user page(Страница пользователя) and logout.
 In case you have administrator role you can visit administrator pages(Страница администратора, Страница администратора2).
-User page has a link to addition of user news on a page of web application.
+User page has a link to addition of user news on a page of web application and edition page for changing name or text of news and deleting.
+
+The test coverage report was generated with intelliji idea. Results are located in the report folder. The general application test coverage is more than thirty percents.
  
 

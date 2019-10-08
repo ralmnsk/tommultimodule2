@@ -1,16 +1,14 @@
 package com.github.ralmnsk.app.controllers;
+
 import com.mockrunner.mock.web.WebMockObjectFactory;
 import com.mockrunner.servlet.ServletTestModule;
 import org.junit.Before;
 import org.junit.Test;
-
 import javax.servlet.ServletException;
 import java.io.IOException;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static com.sun.javaws.JnlpxArgs.verify;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class IndexServletTest {
+public class AddNewsServletTest {
     private ServletTestModule tester;
     private WebMockObjectFactory factory;
 
@@ -25,8 +23,8 @@ public class IndexServletTest {
     public void doGet(){
         int expectedCode = 200;
 
-         // instantiate the servlet
-        tester.createServlet(IndexServlet.class);
+        // instantiate the servlet
+        tester.createServlet(AddNewsServlet.class);
 
         // call doGet
         tester.doGet();
@@ -37,7 +35,7 @@ public class IndexServletTest {
 
     @Test
     public void doPostReq() throws ServletException, IOException {
-        tester.createServlet(IndexServlet.class);
+        tester.createServlet(AddNewsServlet.class);
         tester.doPost();
         assertEquals(200, factory.getMockResponse().getStatusCode());
 

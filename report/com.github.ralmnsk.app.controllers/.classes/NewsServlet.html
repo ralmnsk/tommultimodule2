@@ -109,13 +109,13 @@
 <i>35</i>&nbsp;        //System.out.println(&quot;message from get&quot;);
 <b class="nc"><i>36</i>&nbsp;        viewNews(req,resp);</b>
 <b class="nc"><i>37</i>&nbsp;        req.getRequestDispatcher(&quot;/index.jsp&quot;).forward(req, resp);</b>
-<i>38</i>&nbsp;    }
+<b class="nc"><i>38</i>&nbsp;    }</b>
 <i>39</i>&nbsp;
 <i>40</i>&nbsp;    @Override
 <i>41</i>&nbsp;    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <b class="nc"><i>42</i>&nbsp;        viewNews(req,resp);</b>
 <b class="nc"><i>43</i>&nbsp;        req.getRequestDispatcher(&quot;/index.jsp&quot;).forward(req, resp);</b>
-<i>44</i>&nbsp;    }
+<b class="nc"><i>44</i>&nbsp;    }</b>
 <i>45</i>&nbsp;
 <i>46</i>&nbsp;    private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
 <i>47</i>&nbsp;//        NewsDao newsDao=new NewsDaoImpl();
@@ -134,19 +134,19 @@
 <b class="nc"><i>60</i>&nbsp;            map.put(news,user);</b>
 <b class="nc"><i>61</i>&nbsp;        }</b>
 <i>62</i>&nbsp;
-<b class="nc"><i>63</i>&nbsp;//        for (News n:newsList) {</b>
-<b class="nc"><i>64</i>&nbsp;//            logger.info(&quot;news from database:&quot;+n.toString());</b>
-<b class="nc"><i>65</i>&nbsp;//        }</b>
+<i>63</i>&nbsp;//        for (News n:newsList) {
+<i>64</i>&nbsp;//            logger.info(&quot;news from database:&quot;+n.toString());
+<i>65</i>&nbsp;//        }
 <b class="nc"><i>66</i>&nbsp;        HttpSession session=req.getSession();</b>
 <b class="nc"><i>67</i>&nbsp;        session.setAttribute(&quot;map&quot;,map);</b>
-<i>68</i>&nbsp;    }
+<b class="nc"><i>68</i>&nbsp;    }</b>
 <i>69</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-10-07 09:31</div>
+    <div style="float:right;">generated on 2019-10-07 13:47</div>
 </div>
 </body>
 </html>

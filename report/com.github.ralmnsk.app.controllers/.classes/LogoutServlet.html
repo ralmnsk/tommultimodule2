@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 14)
+    (0/ 17)
   </span>
 </td>
 </tr>
@@ -95,14 +95,14 @@
 <i>21</i>&nbsp;    @Override
 <i>22</i>&nbsp;    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <b class="nc"><i>23</i>&nbsp;        processReq(req,resp);</b>
-<i>24</i>&nbsp;    }
+<b class="nc"><i>24</i>&nbsp;    }</b>
 <i>25</i>&nbsp;
 <i>26</i>&nbsp;    @Override
 <i>27</i>&nbsp;    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <b class="nc"><i>28</i>&nbsp;        resp.setCharacterEncoding(&quot;UTF-8&quot;);</b>
 <b class="nc"><i>29</i>&nbsp;        req.setCharacterEncoding(&quot;UTF-8&quot;);</b>
 <b class="nc"><i>30</i>&nbsp;        processReq(req,resp);</b>
-<i>31</i>&nbsp;    }
+<b class="nc"><i>31</i>&nbsp;    }</b>
 <i>32</i>&nbsp;
 <i>33</i>&nbsp;    private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <i>34</i>&nbsp;
@@ -115,14 +115,14 @@
 <b class="nc"><i>41</i>&nbsp;        session.setAttribute(&quot;userType&quot;, null);</b>
 <b class="nc"><i>42</i>&nbsp;        req.getRequestDispatcher(&quot;/logout.jsp&quot;).forward(req, resp);</b>
 <b class="nc"><i>43</i>&nbsp;        logger.info(this.getClass()+&quot; processReq /logout.jsp&quot;);</b>
-<i>44</i>&nbsp;    }
+<b class="nc"><i>44</i>&nbsp;    }</b>
 <i>45</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-10-07 09:31</div>
+    <div style="float:right;">generated on 2019-10-07 13:47</div>
 </div>
 </body>
 </html>

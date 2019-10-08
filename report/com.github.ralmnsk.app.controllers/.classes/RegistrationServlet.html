@@ -61,7 +61,7 @@
     0%
   </span>
   <span class="absValue">
-    (0/ 28)
+    (0/ 32)
   </span>
 </td>
 </tr>
@@ -99,12 +99,12 @@
 <i>25</i>&nbsp;    @Override
 <i>26</i>&nbsp;    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <b class="nc"><i>27</i>&nbsp;        processReq(req,resp);</b>
-<i>28</i>&nbsp;    }
+<b class="nc"><i>28</i>&nbsp;    }</b>
 <i>29</i>&nbsp;
 <i>30</i>&nbsp;    @Override
 <i>31</i>&nbsp;    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <b class="nc"><i>32</i>&nbsp;        processReq(req,resp);</b>
-<i>33</i>&nbsp;    }
+<b class="nc"><i>33</i>&nbsp;    }</b>
 <i>34</i>&nbsp;
 <i>35</i>&nbsp;    private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 <b class="nc"><i>36</i>&nbsp;        resp.setCharacterEncoding(&quot;UTF-8&quot;);</b>
@@ -114,7 +114,7 @@
 <b class="nc"><i>40</i>&nbsp;        registration(req,resp);</b>
 <b class="nc"><i>41</i>&nbsp;        req.getRequestDispatcher(&quot;/reg_succsses.jsp&quot;).forward(req, resp);</b>
 <b class="nc"><i>42</i>&nbsp;        logger.info(this.getClass()+&quot; /reg_succsses.jsp&quot;);</b>
-<i>43</i>&nbsp;    }
+<b class="nc"><i>43</i>&nbsp;    }</b>
 <i>44</i>&nbsp;
 <i>45</i>&nbsp;    private void registration(HttpServletRequest req, HttpServletResponse resp) {
 <b class="nc"><i>46</i>&nbsp;        String login = req.getParameter(&quot;login&quot;);</b>
@@ -140,7 +140,7 @@
 <b class="nc"><i>66</i>&nbsp;            String msg=user.getName()+&quot; уже зарегистрирован.&quot;;</b>
 <b class="nc"><i>67</i>&nbsp;            session.setAttribute(&quot;message&quot;, msg);</b>
 <i>68</i>&nbsp;        }
-<i>69</i>&nbsp;    }
+<b class="nc"><i>69</i>&nbsp;    }</b>
 <i>70</i>&nbsp;
 <i>71</i>&nbsp;
 <i>72</i>&nbsp;}
@@ -149,7 +149,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2019-10-07 09:31</div>
+    <div style="float:right;">generated on 2019-10-07 13:47</div>
 </div>
 </body>
 </html>
