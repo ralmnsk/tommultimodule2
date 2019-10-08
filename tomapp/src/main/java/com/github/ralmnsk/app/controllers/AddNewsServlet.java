@@ -1,9 +1,8 @@
 package com.github.ralmnsk.app.controllers;
 
-import com.github.ralmnsk.service.news.updator.NewsUpdatorImpl;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
