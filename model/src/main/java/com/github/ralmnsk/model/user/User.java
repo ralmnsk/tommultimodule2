@@ -1,50 +1,68 @@
 package com.github.ralmnsk.model.user;
 
 
+import com.github.ralmnsk.model.news.News;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.sql.Timestamp;
 import java.util.List;
 
-
+@Entity
+@Table(name="usr")
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="usr_id")
     private Long id;
+
+    @Column(name="usr_name")
     private String name;
+
+    @Column(name="usr_pass")
     private String pass;
+
+    @Column(name="usr_join_date")
     private Timestamp joinDate;
+
+    @Column(name="role")
     private String role;
-    private List<Long> newsList;
 
-    public List<Long> getNewsList() {
-        return newsList;
-    }
+//    private List<News> newsList;
 
-    public void setNewsList(List<Long> newsList) {
-        this.newsList = newsList;
-    }
 
-    public boolean addNews(Long idUsrNews) {
-        if (newsList == null) {
-            newsList = new ArrayList();
-            newsList.add(idUsrNews);
-            return true;
-        } else {
-            if (newsList.contains(idUsrNews)) {
-                return false;
-            }
-        }
-        newsList.add(idUsrNews);
-        return true;
-    }
+//    public List<News> getNewsList() {
+//        return newsList;
+//    }
+//
+//    public void setNewsList(List<News> newsList) {
+//        this.newsList = newsList;
+//    }
+//
+//    public boolean addNews(News news) {
+//        if (newsList == null) {
+//            newsList = new ArrayList();
+//            newsList.add(news);
+//            return true;
+//        } else {
+//            if (newsList.contains(news)) {
+//                return false;
+//            }
+//        }
+//        newsList.add(news);
+//        return true;
+//    }
 
-        public Long getId() {
+    public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
+
 
     public String getName() {
         return name;
@@ -54,6 +72,7 @@ public class User implements Serializable {
         this.name = name;
     }
 
+
     public String getPass() {
         return pass;
     }
@@ -62,6 +81,7 @@ public class User implements Serializable {
         this.pass = password;
     }
 
+
     public Timestamp getJoinDate() {
         return joinDate;
     }
@@ -69,6 +89,7 @@ public class User implements Serializable {
     public void setJoinDate(Timestamp date) {
         this.joinDate = date;
     }
+
 
     public String getRole() {
         return role;
