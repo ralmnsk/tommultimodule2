@@ -1,7 +1,5 @@
 package com.github.ralmnsk.service.news;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

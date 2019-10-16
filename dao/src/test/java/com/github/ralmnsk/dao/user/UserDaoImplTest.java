@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class UserDaoImplTest {
-    private UserDao userDao=UserDaoImpl.getInstance();
+    private UserDao userDao=UserDaoHiberImpl.getInstance();
 
     public User userInTestCreate(){
         User user=new User(3333L,"testName","testPassword",new Timestamp(new java.util.Date().getTime()),"usr");

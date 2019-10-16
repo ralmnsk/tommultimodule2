@@ -1,7 +1,5 @@
 package com.github.ralmnsk.service.news.updator;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;

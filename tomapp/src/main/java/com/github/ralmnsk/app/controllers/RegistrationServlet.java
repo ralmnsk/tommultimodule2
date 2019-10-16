@@ -1,8 +1,6 @@
 package com.github.ralmnsk.app.controllers;
 
 
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;

@@ -1,9 +1,5 @@
 package com.github.ralmnsk.app.controllers;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoImpl;
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.comparator.SortByTime;
@@ -21,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns ={"/news"})
 public class NewsServlet extends HttpServlet {

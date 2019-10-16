@@ -1,11 +1,8 @@
 package com.github.ralmnsk.service.news.editor;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
-import com.github.ralmnsk.service.news.creator.NewsCreatorImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

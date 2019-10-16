@@ -11,7 +11,7 @@ public interface NewsDao {
     News readNews(News news);
     void updateNews(News news);
     void deleteNews(News news);
-    List<News> findAllNews();
+    List<News> findAllNews(Long start, Long end);
     News getById(Long id);
     Long getUserId(Long userId);
 }

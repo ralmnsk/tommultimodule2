@@ -1,7 +1,6 @@
 package com.github.ralmnsk.service.authorization;
 
 
-import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.clienttype.ClientType;
 import com.github.ralmnsk.service.user.UserService;

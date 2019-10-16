@@ -1,9 +1,5 @@
 package com.github.ralmnsk.service.news.creator;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoImpl;
-import com.github.ralmnsk.dao.storage.StorageDao;
-import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;

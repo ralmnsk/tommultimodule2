@@ -29,9 +29,9 @@ public class UserDaoHiberImpl implements UserDao{
         return localInstance;
     }
 
-    private Connection getConnection() throws SQLException{
-    return DataSource.getInstance().getConnection();
-    }
+//    private Connection getConnection() throws SQLException{
+//    return DataSource.getInstance().getConnection();
+//    }
 
 
     public void createUser(User user) {  //retrofitted
@@ -70,49 +70,24 @@ public class UserDaoHiberImpl implements UserDao{
         session.close();
     }
 
-    public void deleteUser(User user) {
+    public void deleteUser(User user) { //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Query<User> query=session.createQuery("delete from User where usr_name = :paramName");
-        query.setParameter("paramName", user.getName());
-//        session.delete(user);
+//        Query<User> query=session.createQuery("delete from User where usr_name = :paramName");
+//        query.setParameter("paramName", user.getName());
+        User readUser=session.get(User.class,user.getId());
+        session.delete(readUser);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public User getById(Long id) {
-        User user=new User();
-        ResultSet rs=null;
-        try(
-            Connection connection = getConnection();
-            PreparedStatement statement = connection.prepareStatement
-                    ("select * from usrtab where id=?",Statement.RETURN_GENERATED_KEYS);
-                )
-        {
-
-            statement.setLong(1, id);
-            rs = statement.executeQuery();     //   getGeneratedKeys();
-//            statement.execute();
-            while(rs.next()){
-                user.setId(rs.getLong(1));
-                user.setName(rs.getString(2));
-                user.setPass(rs.getString(3));
-                user.setJoinDate(rs.getTimestamp(4));
-                user.setRole(rs.getString(5));
-            }
-            rs.close();
-        } catch (SQLException ex) {
-            logger.error("Problem executing UserServiceImpl().getById():", ex);
-        } finally {
-            if(rs!=null){
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    logger.error("Problem executing UserServiceImpl().getById().close rs:", e);
-                }
-            }
-        }
+    public User getById(Long id) {   //retrofitted
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        User user=session.get(User.class,id);
+        session.getTransaction().commit();
+        session.close();
         return user;
     }
 }

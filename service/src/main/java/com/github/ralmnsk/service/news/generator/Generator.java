@@ -1,19 +1,14 @@
 package com.github.ralmnsk.service.news.generator;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoImpl;
 import com.github.ralmnsk.dao.storage.StorageDao;
 import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
 import com.github.ralmnsk.service.storage.StorageService;
 import com.github.ralmnsk.service.storage.StorageServiceImpl;
 import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceImpl;
 
 import java.sql.Timestamp;
 

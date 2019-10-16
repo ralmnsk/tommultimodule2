@@ -3,19 +3,16 @@ package com.github.ralmnsk.dao.news;
 import com.github.ralmnsk.dao.storage.StorageDao;
 import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.model.news.News;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.test.annotation.Rollback;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class NewsDaoImplTest {
-    private NewsDao newsDao=NewsDaoImpl.getInstance();
+class NewsDaoHiberImplTest {
+    private NewsDao newsDao=NewsDaoHiberImpl.getInstance();
 
 
     @Test
@@ -26,17 +23,17 @@ class NewsDaoImplTest {
 
     @Test
     void createNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         System.out.println(foundNews);
         assertEquals(news.getNameNews(),foundNews.getNameNews());
-        newsDao.deleteNews(foundNews);
+        //newsDao.deleteNews(foundNews);
     }
 
     @Test
     void readNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         assertEquals(news.getNameNews(),foundNews.getNameNews());
@@ -45,7 +42,7 @@ class NewsDaoImplTest {
 
     @Test
     void updateNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         foundNews.setDataNews("changedTestData");
@@ -57,7 +54,7 @@ class NewsDaoImplTest {
 
     @Test
     void deleteNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         System.out.println(foundNews);
@@ -72,16 +69,16 @@ class NewsDaoImplTest {
 
     @Test
     void findAllNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
-        List<News> list=newsDao.findAllNews();
+        List<News> list=newsDao.findAllNews(5L,10L);
         assertTrue(list.size()>0);
         newsDao.deleteNews(news);
     }
 
     @Test
     void getUserId() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News testNews=newsDao.readNews(news);
         StorageDao storageDao= StorageDaoImpl.getInstance();
@@ -94,7 +91,7 @@ class NewsDaoImplTest {
 
     @Test
     void getById() {
-        News news=new News(1000L,"nameNews","dataNews",new Timestamp(new java.util.Date().getTime()));
+        News news=new News(1000L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News testNews=newsDao.readNews(news);
         Long newsId=testNews.getIdNews();

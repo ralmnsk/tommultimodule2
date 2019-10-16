@@ -1,14 +1,30 @@
 package com.github.ralmnsk.model.news;
 
+import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.util.Date;
 
+
+@Entity
+@Table(name="nws")
 public class News implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="nws_id")
     private Long idNews;
+
+    @Column(name="usr_id")
     private Long idUser;
+
+    @Column(name="nws_name")
     private String nameNews;
+
+    @Column(name="nws_data")
     private String dataNews;
-    private Timestamp dateNews;
+
+    @Column(name="nws_date")
+    @Temporal(value=TemporalType.TIMESTAMP)
+    private Date dateNews;
 
     public Long getIdUser() {
         return idUser;
@@ -42,18 +58,18 @@ public class News implements Serializable {
         this.dataNews = dataNews;
     }
 
-    public Timestamp getDateNews() {
+    public Date getDateNews() {
         return dateNews;
     }
 
-    public void setDateNews(Timestamp dateNews) {
+    public void setDateNews(Date dateNews) {
         this.dateNews = dateNews;
     }
 
     public News() {
     }
 
-    public News(long idNews, long idUser, String nameNews, String dataNews, Timestamp dateNews) {
+    public News(long idNews, long idUser, String nameNews, String dataNews, Date dateNews) {
         this.idNews = idNews;
         this.idUser = idUser;
         this.nameNews = nameNews;
@@ -61,7 +77,7 @@ public class News implements Serializable {
         this.dateNews = dateNews;
     }
 
-    public News(Long idUser, String nameNews, String dataNews, Timestamp dateNews) {
+    public News(Long idUser, String nameNews, String dataNews, Date dateNews) {
         this.idUser = idUser;
         this.nameNews = nameNews;
         this.dataNews = dataNews;

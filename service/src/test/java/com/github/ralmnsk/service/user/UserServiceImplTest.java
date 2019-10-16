@@ -1,6 +1,5 @@
 package com.github.ralmnsk.service.user;
 
-import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

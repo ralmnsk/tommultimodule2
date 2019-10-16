@@ -13,7 +13,7 @@ public class UserDaoHiberImplTest {
     private UserDao userDao=UserDaoHiberImpl.getInstance();
 
     public User userInTestCreate(){
-        User user=new User(3333L,"testName","testPassword",new Timestamp(new java.util.Date().getTime()),"usr");
+        User user=new User("testName","testPassword",new Timestamp(new java.util.Date().getTime()),"usr");
         return user;
     }
 
@@ -55,11 +55,12 @@ public class UserDaoHiberImplTest {
     @Test
     public void deleteUser() {
         User user=userInTestCreate();
-        User newUser=userInTestCreate();
-        userDao.deleteUser(user);
-        User readUser=userDao.readUser(newUser);
-        assertNull(readUser);
-
+        userDao.createUser(user);
+        User readUser=userDao.readUser(user);
+//        System.out.println("Testing: "+readUser);
+        userDao.deleteUser(readUser);
+        User afterTestUser=userDao.readUser(user);
+        assertNull(afterTestUser);
     }
 
     @Test

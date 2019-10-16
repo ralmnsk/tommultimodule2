@@ -1,7 +1,6 @@
 package com.github.ralmnsk.service.user;
 
 import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoImpl;
 import com.github.ralmnsk.model.user.User;
 
 public class UserServiceImpl implements UserService{
