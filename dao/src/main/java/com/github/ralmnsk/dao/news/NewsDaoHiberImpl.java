@@ -1,8 +1,6 @@
 package com.github.ralmnsk.dao.news;
 
 import com.github.ralmnsk.dao.connection.HibernateUtil;
-import com.github.ralmnsk.dao.storage.StorageDao;
-import com.github.ralmnsk.dao.storage.StorageDaoImpl;
 import com.github.ralmnsk.model.news.News;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -29,6 +27,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         return localInstance;
     }
 
+    @Override
     public void createNews(News news) {    //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
@@ -37,6 +36,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         session.close();
     }
 
+    @Override
     public News readNews(News news) {   //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
@@ -47,6 +47,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         return readNews;
     }
 
+    @Override
     public void updateNews(News news) {   //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
@@ -57,6 +58,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         session.close();
     }
 
+    @Override
     public void deleteNews(News news) {     //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
@@ -66,6 +68,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         session.close();
     }
 
+    @Override
     public List<News> findAllNews(int firstResult, int maxResults) {//retrofitted , the first result index equals zero
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
@@ -78,17 +81,6 @@ public class NewsDaoHiberImpl implements NewsDao {
         session.getTransaction().commit();
         session.close();
         return newsList;
-    }
-
-    public Long getUserId(Long newsId){ //retrofitted
-        Session session = HibernateUtil.getSession();
-        session.beginTransaction();
-        News news=null;
-        news=session.get(News.class,newsId);
-        session.getTransaction().commit();
-        session.close();
-
-        return news.getIdUser();
     }
 
     @Override

@@ -6,6 +6,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.github.ralmnsk.model.user.User</class>
         <class>com.github.ralmnsk.model.news.News</class>
+        <class>com.github.ralmnsk.model.msg.Msg</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
@@ -13,7 +14,7 @@
             <property name="javax.persistence.jdbc.user" value="eYcooOkOuh"/>
             <property name="javax.persistence.jdbc.password" value="OPDoegkjHh"/>
             <property name="hibernate.dialect.storage_engine" value="innodb"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             <property name="hibernate.use_sql_comments" value="true"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.connection.pool_size" value="10"/>

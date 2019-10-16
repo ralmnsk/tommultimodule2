@@ -13,5 +13,4 @@ public interface NewsDao {
     void deleteNews(News news);
     List<News> findAllNews(int firstResult, int maxResults);
     News getById(Long id);
-    Long getUserId(Long userId);
 }

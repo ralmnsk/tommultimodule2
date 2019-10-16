@@ -13,9 +13,6 @@ public class News implements Serializable {
     @Column(name="nws_id")
     private Long idNews;
 
-    @Column(name="usr_id")
-    private Long idUser;
-
     @Column(name="nws_name")
     private String nameNews;
 
@@ -25,14 +22,6 @@ public class News implements Serializable {
     @Column(name="nws_date")
     @Temporal(value=TemporalType.TIMESTAMP)
     private Date dateNews;
-
-    public Long getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
-    }
 
     public Long getIdNews() {
         return idNews;
@@ -69,16 +58,14 @@ public class News implements Serializable {
     public News() {
     }
 
-    public News(long idNews, long idUser, String nameNews, String dataNews, Date dateNews) {
+    public News(long idNews, String nameNews, String dataNews, Date dateNews) {
         this.idNews = idNews;
-        this.idUser = idUser;
         this.nameNews = nameNews;
         this.dataNews = dataNews;
         this.dateNews = dateNews;
     }
 
-    public News(Long idUser, String nameNews, String dataNews, Date dateNews) {
-        this.idUser = idUser;
+    public News(String nameNews, String dataNews, Date dateNews) {
         this.nameNews = nameNews;
         this.dataNews = dataNews;
         this.dateNews = dateNews;
@@ -88,7 +75,6 @@ public class News implements Serializable {
     public String toString() {
         return "News{" +
                 "idNews=" + idNews +
-                ", idUser=" + idUser +
                 ", nameNews='" + nameNews + '\'' +
                 ", dataNews='" + dataNews + '\'' +
                 ", dateNews=" + dateNews +

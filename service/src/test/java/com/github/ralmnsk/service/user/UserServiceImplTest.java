@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import java.sql.Timestamp;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
@@ -27,23 +29,23 @@ public class UserServiceImplTest {
 
     @Test
     public void createUser() {
-        User user=getMeTestUser();
+        User user = getMeTestUser();
         userService.createUser(user);
         when(userService.readUser(user)).thenReturn(user);
-        assertSame("Apple333",userService.readUser(user).getName());
+        assertSame("Apple333", userService.readUser(user).getName());
     }
 
     @Test
     public void readUser() {
-        User user=getMeTestUser();
+        User user = getMeTestUser();
         when(userService.readUser(user)).thenReturn(user);
         assertNotNull(userService.readUser(user));
-        assertSame("Apple333",userService.readUser(user).getName());
+        assertSame("Apple333", userService.readUser(user).getName());
     }
 
 
     private User getMeTestUser() {
-        User user=new User();
+        User user = new User();
         user.setId(1000L);
         user.setName("Apple333");
         user.setPass("pass333");
@@ -54,7 +56,7 @@ public class UserServiceImplTest {
 
     @Test
     public void updateUser() {
-        User user=getMeTestUser();
+        User user = getMeTestUser();
         user.setPass("pass222");
         userService.updateUser(user);
         when(userService.readUser(user)).thenReturn(user);
@@ -63,7 +65,7 @@ public class UserServiceImplTest {
 
     @Test
     public void deleteUser() {
-        User user=getMeTestUser();
+        User user = getMeTestUser();
         userService.deleteUser(user);
         when(userService.readUser(user)).thenReturn(null);
         assertNull(userService.readUser(user));
@@ -71,10 +73,10 @@ public class UserServiceImplTest {
 
     @Test
     public void getById() {
-        User user=getMeTestUser();
-        User testUser=userService.getById(1000L);
+        User user = getMeTestUser();
+        User testUser = userService.getById(1000L);
         when(userService.getById(1000L)).thenReturn(user);
-        assertSame("Apple333",userService.getById(1000L).getName());
+        assertSame("Apple333", userService.getById(1000L).getName());
 
     }
 }

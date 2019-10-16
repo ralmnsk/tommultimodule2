@@ -41,7 +41,7 @@ public class NewsCreatorImpl implements NewsCreator {
             storageService.createStorage(user.getId(),newsFromBase.getIdNews());
             logger.info(this.getClass()+" newsCreate()");
         } else {
-            logger.info("news created:"+news.toString()+" is empty");
+            logger.info("news created: {} is empty", news);
         }
 
     return news;
