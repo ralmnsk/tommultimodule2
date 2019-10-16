@@ -23,17 +23,17 @@ class NewsDaoHiberImplTest {
 
     @Test
     void createNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
+        News news=new News(1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         System.out.println(foundNews);
         assertEquals(news.getNameNews(),foundNews.getNameNews());
-        //newsDao.deleteNews(foundNews);
+        newsDao.deleteNews(foundNews);
     }
 
     @Test
     void readNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
+        News news=new News(1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         assertEquals(news.getNameNews(),foundNews.getNameNews());
@@ -42,7 +42,7 @@ class NewsDaoHiberImplTest {
 
     @Test
     void updateNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
+        News news=new News(1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         foundNews.setDataNews("changedTestData");
@@ -54,38 +54,35 @@ class NewsDaoHiberImplTest {
 
     @Test
     void deleteNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
+        News news=new News(1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News foundNews=newsDao.readNews(news);
         System.out.println(foundNews);
         assertEquals(news.getNameNews(),foundNews.getNameNews());
         newsDao.deleteNews(foundNews);
         News deletedNews=newsDao.readNews(foundNews);
-        assertNull(deletedNews.getIdNews());
-        assertNull(deletedNews.getNameNews());
-        assertNull(deletedNews.getDataNews());
-
+        assertNull(deletedNews);
     }
 
     @Test
     void findAllNews() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
-        newsDao.createNews(news);
-        List<News> list=newsDao.findAllNews(5L,10L);
-        assertTrue(list.size()>0);
-        newsDao.deleteNews(news);
+        for (int i=0; i<20;i++){
+            News news=new News(1000L+i,1001L,"nameNews"+i,"dataNews"+i,new Date());
+            newsDao.createNews(news);
+        }
+        List<News> list=newsDao.findAllNews(0,10);
+        assertTrue(list.size()>20);
+        list.stream().forEach(System.out::println);
+        //list.stream().forEach(news->newsDao.deleteNews(news));
     }
 
     @Test
     void getUserId() {
-        News news=new News(1000L,1001L,"nameNews","dataNews",new Date());
+        News news=new News(1001L,"nameNews","dataNews",new Date());
         newsDao.createNews(news);
         News testNews=newsDao.readNews(news);
-        StorageDao storageDao= StorageDaoImpl.getInstance();
-        storageDao.createStorage(333L,testNews.getIdNews());
         Long userId=newsDao.getUserId(testNews.getIdNews());
-        assertEquals(333L,userId);
-        storageDao.deleteStorage(333L,testNews.getIdNews());
+        assertEquals(1001L,userId);
         newsDao.deleteNews(testNews);
     }
 
