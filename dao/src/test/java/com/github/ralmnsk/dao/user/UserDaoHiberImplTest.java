@@ -1,9 +1,16 @@
 package com.github.ralmnsk.dao.user;
 
+import com.github.ralmnsk.dao.msg.MsgDao;
+import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
+import com.github.ralmnsk.dao.news.NewsDao;
+import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
+import com.github.ralmnsk.model.msg.Msg;
+import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -13,7 +20,7 @@ public class UserDaoHiberImplTest {
     private UserDao userDao=UserDaoHiberImpl.getInstance();
 
     public User userInTestCreate(){
-        User user=new User("testName","testPassword",new Timestamp(new java.util.Date().getTime()),"usr");
+        User user=new User("testName","testPassword",new Date(),"usr");
         return user;
     }
 
@@ -73,5 +80,31 @@ public class UserDaoHiberImplTest {
         assertEquals(testUser.getName(),userById.getName());
         assertEquals(testUser.getPass(),userById.getPass());
         userDao.deleteUser(userById);
+    }
+
+    @Test
+    public void createNewsInUser(){
+        User user=userInTestCreate();
+        userDao.createUser(user);
+
+        NewsDao newsDao=NewsDaoHiberImpl.getInstance();
+        News news=new News("nameNews1","dataNews1",new Date());
+        newsDao.createNews(news);
+
+        Msg msg=new Msg(new Date(),"first message");
+        MsgDao msgDao= MsgDaoHiberImpl.getInstance();
+        msgDao.create(msg);
+
+        msg.setUser(user);
+        msg.setNews(news);
+
+        news.addMsg(msg);
+        news.setUser(user);
+
+        user.addNews(news);
+        user.addMsg(msg);
+
+        userDao.updateUser(user);
+
     }
 }

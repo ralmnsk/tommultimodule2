@@ -1,5 +1,8 @@
 package com.github.ralmnsk.model.msg;
 
+import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -17,6 +20,30 @@ public class Msg {
 
     @Column(name="msg_text")
     private String text;
+
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "nws_id")
+    private News news;
+
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "usr_id")
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public News getNews() {
+        return news;
+    }
+
+    public void setNews(News news) {
+        this.news = news;
+    }
 
     public Long getId() {
         return id;

@@ -1,8 +1,13 @@
 package com.github.ralmnsk.model.news;
 
+import com.github.ralmnsk.model.msg.Msg;
+import com.github.ralmnsk.model.user.User;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -22,6 +27,46 @@ public class News implements Serializable {
     @Column(name="nws_date")
     @Temporal(value=TemporalType.TIMESTAMP)
     private Date dateNews;
+
+    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+        //@JoinColumn(name = "usr_id", insertable = false)
+    private User user;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "nws_msg",
+            joinColumns = { @JoinColumn(name = "nws_id") },
+            inverseJoinColumns =  @JoinColumn(name = "msg_id") )
+    private List<Msg> msgList;
+
+    public List<Msg> getMsgList() {
+        return msgList;
+    }
+
+    public void setMsgList(List<Msg> msgList) {
+        this.msgList = msgList;
+    }
+
+    public boolean addMsg(Msg msg) {
+        if (msgList == null) {
+            msgList = new ArrayList();
+            msgList.add(msg);
+            return true;
+        } else {
+            if (msgList.contains(msg)) {
+                return false;
+            }
+        }
+        msgList.add(msg);
+        return true;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Long getIdNews() {
         return idNews;
