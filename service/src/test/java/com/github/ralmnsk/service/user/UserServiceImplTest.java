@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.user;
 
+import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ public class UserServiceImplTest {
 
 
     @Mock
-    private UserDaoImpl userDao;
+    private UserDaoHiberImpl userDao;
 
     @InjectMocks
     private UserServiceImpl userService;

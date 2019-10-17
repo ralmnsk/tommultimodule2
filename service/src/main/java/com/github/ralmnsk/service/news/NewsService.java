@@ -6,11 +6,12 @@ import com.github.ralmnsk.model.news.News;
 import java.util.List;
 
 public interface NewsService {
+
+    void setNewsDao(NewsDao newsDao);
     void createNews(News news);
     News readNews(News news);
-    News getById(Long id);
     void updateNews(News news);
     void deleteNews(News news);
-    void setNewsDao(NewsDao newsDao);
-    List<News> findAllNews();
+    List<News> findAllNews(int firstResult, int maxResults);
+    News getById(Long id);
 }

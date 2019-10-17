@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class
 AuthorizationImpl implements Authorization {
-    private static Logger logger= LoggerFactory.getLogger(UserDaoImpl.class);
+    private static Logger logger= LoggerFactory.getLogger(AuthorizationImpl.class);
     private ClientType clientType;
     private User userInLoginServlet;
 
@@ -36,8 +36,9 @@ AuthorizationImpl implements Authorization {
         //userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);
+        System.out.println("checkout user:"+readUser);
 
-        if((login!=null)&&(login.equals(readUser.getName())&&(password.equals(readUser.getPass())))){
+        if((readUser!=null)&&(login!=null)&&(login.equals(readUser.getName())&&(password.equals(readUser.getPass())))){
             userInLoginServlet=readUser;
             clientType=setClientType(readUser.getRole());
             return true;

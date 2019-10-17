@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.news;
 
+import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
 import com.github.ralmnsk.model.news.News;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,7 +19,7 @@ import static org.mockito.Mockito.*;
 
 class NewsServiceImplTest {
     @Mock
-    public NewsDaoImpl newsDao; //=NewsDaoImpl.getInstance();
+    public NewsDaoHiberImpl newsDao; //=NewsDaoImpl.getInstance();
 
     @InjectMocks
     public NewsServiceImpl newsService; //=NewsServiceImpl.getInstance();
@@ -27,10 +29,10 @@ class NewsServiceImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
-    public Timestamp time=new Timestamp(0);
+    public Date time=new Date();
 
     public News getMeTestNews(){
-        News news=new News(1000L,1001L,"nameNews","dataNews",time);
+        News news=new News("nameNews","dataNews",time);
         return news;
     }
 
@@ -59,7 +61,7 @@ class NewsServiceImplTest {
     @Test
     public void updateNews() {
         News news=getMeTestNews();
-        NewsDaoImpl newsDao=mock(NewsDaoImpl.class);
+        NewsDaoHiberImpl newsDao=mock(NewsDaoHiberImpl.class);
         NewsService newsService=NewsServiceImpl.getInstance();
         newsService.setNewsDao(newsDao);
         news.setDataNews("dataNews222");
@@ -71,7 +73,7 @@ class NewsServiceImplTest {
 
     @Test
     public void deleteNews() {
-        News newsOne=new News(1000L,1001L,"nameNews","dataNews",time);
+        News newsOne=new News("nameNews","dataNews",time);
 //        News newsTwo=new News(1000L,1001L,"nameNews","dataNews",time);
 //        when(newsDao.readNews(newsOne)).thenReturn(newsTwo);
         newsService.deleteNews(newsOne);
@@ -84,14 +86,14 @@ class NewsServiceImplTest {
     @Test
     public void findAllNews() {
         List<News> list=new ArrayList<News>();
-        News newsOne=new News(1000L,1001L,"nameNews","dataNews",time);
-        News newsTwo=new News(1001L,1001L,"nameNews2","dataNews2",time);
+        News newsOne=new News("nameNews","dataNews",time);
+        News newsTwo=new News("nameNews2","dataNews2",time);
         list.add(newsOne);
         list.add(newsTwo);
-        when(newsService.findAllNews()).thenReturn(list);
-        List<News> newsList=newsService.findAllNews();
+        when(newsService.findAllNews(0,10)).thenReturn(list);
+        List<News> newsList=newsService.findAllNews(0,10);
         assertEquals(2,newsList.size());
         assertEquals(newsOne,newsList.get(0));
-        verify(newsDao,times(1)).findAllNews();
+        verify(newsDao,times(1)).findAllNews(0,10);
     }
 }

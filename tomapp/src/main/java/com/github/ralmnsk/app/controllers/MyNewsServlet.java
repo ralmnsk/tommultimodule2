@@ -5,8 +5,6 @@ import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
 import com.github.ralmnsk.service.news.comparator.SortByTime;
-import com.github.ralmnsk.service.storage.StorageService;
-import com.github.ralmnsk.service.storage.StorageServiceImpl;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
@@ -52,24 +50,24 @@ public class MyNewsServlet extends HttpServlet {
         UserService userService=UserServiceImpl.getInstance();
 //        userService.setUserDao(userDao);
 //        StorageDao storageDao=new StorageDaoImpl();
-        StorageService storageService=StorageServiceImpl.getInstance();
+//        -StorageService storageService=StorageServiceImpl.getInstance();
 //        storageService.setStorageDao(storageDao);
 
         User user=(User)req.getSession().getAttribute("user");
-        List<Long> list=storageService.getNewsIdByUserId(user.getId());
-        List<News> newsList=list.stream().map(newsId->newsService.getById(newsId)).collect(Collectors.toList());
+//        List<Long> list=storageService.getNewsIdByUserId(user.getId());
+//        List<News> newsList=list.stream().map(newsId->newsService.getById(newsId)).collect(Collectors.toList());
+        //List<News> newsList=newsService.findAllNews(0,10);
+        userService.readUser(user);
+        List<News> newsList=user.getNewsList();
+        if ((newsList!=null)&&(newsList.size()>0)){
+            Collections.sort(newsList,new SortByTime());
+            Map<News,User> map=new LinkedHashMap();
+            HttpSession session=req.getSession();
 
-        Collections.sort(newsList,new SortByTime());
-        Map<News,User> map=new LinkedHashMap();
-        HttpSession session=req.getSession();
-
-        for (News news:newsList){
-            map.put(news,user);
+            for (News news:newsList){
+                map.put(news,user);
+            }
+            session.setAttribute("map",map);
         }
-
-//        for (News n:newsList) {
-//            logger.info("news from database:"+n.toString());
-//        }
-        session.setAttribute("map",map);
     }
 }

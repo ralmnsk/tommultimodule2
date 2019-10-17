@@ -3,9 +3,6 @@ package com.github.ralmnsk.app.controllers;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
-import com.github.ralmnsk.service.storage.StorageService;
-import com.github.ralmnsk.service.storage.StorageServiceImpl;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,10 +28,5 @@ public class DelNewsServlet extends HttpServlet {
         News news=(News)req.getSession().getAttribute("news");
         NewsService newsService= NewsServiceImpl.getInstance();
         newsService.deleteNews(news);
-        StorageService storageService= StorageServiceImpl.getInstance();
-        Long userId=storageService.getUserIdByNewsId(news.getIdNews());
-        storageService.deleteStorage(userId,news.getIdNews());
     }
-
-
 }

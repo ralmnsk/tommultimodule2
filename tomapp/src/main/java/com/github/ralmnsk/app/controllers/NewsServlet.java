@@ -46,19 +46,22 @@ public class NewsServlet extends HttpServlet {
         UserService userService=UserServiceImpl.getInstance();
 //        userService.setUserDao(userDao);
 
-        List<News> newsList=newsService.findAllNews();
+        List<News> newsList=newsService.findAllNews(0,10);
         Collections.sort(newsList,new SortByTime());
         Map<News,User> map=new LinkedHashMap();
-        for (News news:newsList){
-            Long id=news.getIdUser();
-            User user=userService.getById(id);
-            map.put(news,user);
-        }
+        if (newsList.size()>0){
 
-//        for (News n:newsList) {
-//            logger.info("news from database:"+n.toString());
-//        }
+        for (News news:newsList){
+            User user=news.getUser();
+            if(user!=null){
+                Long id=user.getId();
+                User readUser=userService.getById(id);
+                map.put(news,readUser);
+
+            }
+        }
         HttpSession session=req.getSession();
         session.setAttribute("map",map);
+        }
     }
 }

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
@@ -46,7 +47,7 @@ public class RegistrationServlet extends HttpServlet {
         User user=new User();
         user.setName(login);
         user.setPass(password);
-        user.setJoinDate(new Timestamp(new java.util.Date().getTime()));
+        user.setJoinDate(new Date());
         user.setRole("usr");
 
 //        UserDao userDao=new UserDaoImpl();
@@ -56,7 +57,7 @@ public class RegistrationServlet extends HttpServlet {
         User readUser=userService.readUser(user);
         //System.out.println("read user:"+readUser);
         HttpSession session=req.getSession();
-        if(!user.getName().equals(readUser.getName())){
+        if(readUser==null/*!user.getName().equals(readUser.getName())*/){
             userService.createUser(user);
             String msg="Регистация "+user.getName()+" прошла успешно.";
             session.setAttribute("message", msg);

@@ -4,11 +4,11 @@ import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
-import com.github.ralmnsk.service.storage.StorageService;
-import com.github.ralmnsk.service.storage.StorageServiceImpl;
+import com.github.ralmnsk.service.user.UserService;
+import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class NewsCreatorImpl implements NewsCreator {
     private User user;
@@ -28,17 +28,20 @@ public class NewsCreatorImpl implements NewsCreator {
         News news=new News();
         //NewsDao newsDao=new NewsDaoImpl();
         NewsService newsService=NewsServiceImpl.getInstance();
+        UserService userService= UserServiceImpl.getInstance();
         //newsService.setNewsDao(newsDao);
 
         if (!dataNews.isEmpty()){
-            news=new News(user.getId(), nameNews, dataNews, new Timestamp(new java.util.Date().getTime()));
+            news=new News(user.getId(), nameNews, dataNews, new Date());
             logger.info("news created:"+news.toString());
             newsService.createNews(news);
-            News newsFromBase=newsService.readNews(news);
+            user.addNews(news);
+            userService.updateUser(user);
+//            News newsFromBase=newsService.readNews(news);
             //StorageDao storageDao=new StorageDaoImpl();
-            StorageService storageService=StorageServiceImpl.getInstance();
+//            -StorageService storageService=StorageServiceImpl.getInstance();
             //storageService.setStorageDao(storageDao);
-            storageService.createStorage(user.getId(),newsFromBase.getIdNews());
+//            -storageService.createStorage(user.getId(),newsFromBase.getIdNews());
             logger.info(this.getClass()+" newsCreate()");
         } else {
             logger.info("news created: {} is empty", news);
