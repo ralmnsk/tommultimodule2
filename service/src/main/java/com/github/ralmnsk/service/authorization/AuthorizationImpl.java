@@ -36,7 +36,7 @@ AuthorizationImpl implements Authorization {
         //userService.setUserDao(userDao);
 
         User readUser=userService.readUser(user);
-        System.out.println("checkout user:"+readUser);
+       // System.out.println("checkout user:"+readUser);
 
         if((readUser!=null)&&(login!=null)&&(login.equals(readUser.getName())&&(password.equals(readUser.getPass())))){
             userInLoginServlet=readUser;

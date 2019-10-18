@@ -31,6 +31,7 @@ public class CreateNewsServlet extends HttpServlet {
 
     private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user=(User)req.getSession().getAttribute("user");
+
         String dataNews=req.getParameter("dataNews");
         String nameNews=req.getParameter("nameNews");
         NewsCreator newsCreator=new NewsCreatorImpl(user,dataNews,nameNews);

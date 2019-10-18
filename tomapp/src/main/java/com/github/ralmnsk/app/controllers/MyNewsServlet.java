@@ -43,31 +43,25 @@ public class MyNewsServlet extends HttpServlet {
     }
 
     private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
-//        NewsDao newsDao=new NewsDaoImpl();
-        NewsService newsService=NewsServiceImpl.getInstance();
-//        newsService.setNewsDao(newsDao);
-//        UserDao userDao=new UserDaoImpl();
-        UserService userService=UserServiceImpl.getInstance();
-//        userService.setUserDao(userDao);
-//        StorageDao storageDao=new StorageDaoImpl();
-//        -StorageService storageService=StorageServiceImpl.getInstance();
-//        storageService.setStorageDao(storageDao);
 
+        NewsService newsService=NewsServiceImpl.getInstance();
+        UserService userService=UserServiceImpl.getInstance();
         User user=(User)req.getSession().getAttribute("user");
-//        List<Long> list=storageService.getNewsIdByUserId(user.getId());
-//        List<News> newsList=list.stream().map(newsId->newsService.getById(newsId)).collect(Collectors.toList());
-        //List<News> newsList=newsService.findAllNews(0,10);
-        userService.readUser(user);
-        List<News> newsList=user.getNewsList();
-        if ((newsList!=null)&&(newsList.size()>0)){
-            Collections.sort(newsList,new SortByTime());
+        User readUser=userService.readUser(user);
+
+        if (readUser!=null){
+            List<News> newsList=readUser.getNewsList();
             Map<News,User> map=new LinkedHashMap();
             HttpSession session=req.getSession();
+            if ((newsList!=null)&&(newsList.size()>0)){
+                Collections.sort(newsList,new SortByTime());
 
-            for (News news:newsList){
-                map.put(news,user);
+                for (News news:newsList){
+                    map.put(news,readUser);
+                }
             }
-            session.setAttribute("map",map);
+                session.setAttribute("map",map);
+
         }
     }
 }

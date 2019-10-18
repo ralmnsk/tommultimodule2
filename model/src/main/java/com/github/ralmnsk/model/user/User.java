@@ -32,13 +32,13 @@ public class User implements Serializable {
     @Column(name="role")
     private String role;
 
-    @OneToMany(/*mappedBy = "usr",*/cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinTable(name = "usr_nws",
-            joinColumns = { @JoinColumn(name = "usr_id") },
-            inverseJoinColumns =  @JoinColumn(name = "nws_id") )
+    @OneToMany (/*fetch = FetchType.LAZY, */cascade = CascadeType.ALL)
+//    @JoinTable(name = "usr_nws",
+//            joinColumns = { @JoinColumn(name = "usr_id") },
+//            inverseJoinColumns =  @JoinColumn(name = "nws_id") )
     private List<News> newsList;
 
-    @OneToMany(/*mappedBy = "usr",*/cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "usr_msg",
             joinColumns = { @JoinColumn(name = "usr_id") },
             inverseJoinColumns =  @JoinColumn(name = "msg_id") )

@@ -26,22 +26,23 @@ public class NewsCreatorImpl implements NewsCreator {
     @Override
     public News newsCreate(){
         News news=new News();
-        //NewsDao newsDao=new NewsDaoImpl();
+
         NewsService newsService=NewsServiceImpl.getInstance();
         UserService userService= UserServiceImpl.getInstance();
-        //newsService.setNewsDao(newsDao);
 
         if (!dataNews.isEmpty()){
-            news=new News(user.getId(), nameNews, dataNews, new Date());
-            logger.info("news created:"+news.toString());
+            news=new News(nameNews, dataNews, new Date());
             newsService.createNews(news);
-            user.addNews(news);
-            userService.updateUser(user);
-//            News newsFromBase=newsService.readNews(news);
-            //StorageDao storageDao=new StorageDaoImpl();
-//            -StorageService storageService=StorageServiceImpl.getInstance();
-            //storageService.setStorageDao(storageDao);
-//            -storageService.createStorage(user.getId(),newsFromBase.getIdNews());
+            User readUser=userService.readUser(user);
+
+            news.setUser(readUser);
+            readUser.addNews(news);
+
+            logger.info("news created:"+news.toString());
+
+            newsService.updateNews(news);
+            userService.updateUser(readUser);
+//
             logger.info(this.getClass()+" newsCreate()");
         } else {
             logger.info("news created: {} is empty", news);

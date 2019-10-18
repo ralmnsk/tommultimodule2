@@ -1,8 +1,14 @@
 package com.github.ralmnsk.app.controllers;
 
 import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.deleter.NewsDeleter;
+import com.github.ralmnsk.service.deleter.NewsDeleterImpl;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
+import com.github.ralmnsk.service.user.UserService;
+import com.github.ralmnsk.service.user.UserServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +32,8 @@ public class DelNewsServlet extends HttpServlet {
 
     private void process(HttpServletRequest req, HttpServletResponse resp) {
         News news=(News)req.getSession().getAttribute("news");
-        NewsService newsService= NewsServiceImpl.getInstance();
-        newsService.deleteNews(news);
+        User user=(User)req.getSession().getAttribute("user");
+        NewsDeleter deleter=new NewsDeleterImpl(news, user);
+        deleter.delete();
     }
 }

@@ -28,8 +28,8 @@ public class News implements Serializable {
     @Temporal(value=TemporalType.TIMESTAMP)
     private Date dateNews;
 
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-        //@JoinColumn(name = "usr_id", insertable = false)
+    @ManyToOne(/*fetch=FetchType.LAZY,*/ cascade = CascadeType.ALL)
+        //@JoinColumn(name = "usr_id")
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
