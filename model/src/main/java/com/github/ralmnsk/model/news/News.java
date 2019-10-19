@@ -28,14 +28,14 @@ public class News implements Serializable {
     @Temporal(value=TemporalType.TIMESTAMP)
     private Date dateNews;
 
-    @ManyToOne(/*fetch=FetchType.LAZY,*/ cascade = CascadeType.ALL)
-        //@JoinColumn(name = "usr_id")
+    @ManyToOne
+        @JoinColumn(name = "usr_id")
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinTable(name = "nws_msg",
-            joinColumns = { @JoinColumn(name = "nws_id") },
-            inverseJoinColumns =  @JoinColumn(name = "msg_id") )
+//    @JoinTable(name = "nws_msg",
+//            joinColumns = { @JoinColumn(name = "nws_id") },
+//            inverseJoinColumns =  @JoinColumn(name = "msg_id") )
     private List<Msg> msgList;
 
     public List<Msg> getMsgList() {

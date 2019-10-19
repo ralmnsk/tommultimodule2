@@ -1,7 +1,8 @@
 C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\user\UserDao.java
+C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\user\UserDaoHiberImpl.java
 C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\news\NewsDao.java
-C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\storage\StorageDaoImpl.java
-C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\news\NewsDaoImpl.java
+C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\msg\MsgDao.java
+C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\connection\HibernateUtil.java
+C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\news\NewsDaoHiberImpl.java
 C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\connection\DataSource.java
-C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\user\UserDaoImpl.java
-C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\storage\StorageDao.java
+C:\Users\iland\tommultimodule\dao\src\main\java\com\github\ralmnsk\dao\msg\MsgDaoHiberImpl.java

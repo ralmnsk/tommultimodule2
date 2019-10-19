@@ -1,7 +1,8 @@
-com\github\ralmnsk\dao\storage\StorageDaoImpl.class
+com\github\ralmnsk\dao\user\UserDaoHiberImpl.class
 com\github\ralmnsk\dao\user\UserDao.class
+com\github\ralmnsk\dao\news\NewsDaoHiberImpl.class
 com\github\ralmnsk\dao\connection\DataSource.class
 com\github\ralmnsk\dao\news\NewsDao.class
-com\github\ralmnsk\dao\news\NewsDaoImpl.class
-com\github\ralmnsk\dao\storage\StorageDao.class
-com\github\ralmnsk\dao\user\UserDaoImpl.class
+com\github\ralmnsk\dao\msg\MsgDao.class
+com\github\ralmnsk\dao\msg\MsgDaoHiberImpl.class
+com\github\ralmnsk\dao\connection\HibernateUtil.class

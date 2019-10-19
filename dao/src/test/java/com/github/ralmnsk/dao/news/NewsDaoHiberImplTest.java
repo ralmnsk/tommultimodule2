@@ -106,35 +106,34 @@ class NewsDaoHiberImplTest {
     }
 
     @Test
-    public void deleteNewsOfUser(){
-        User user=new User("testUser","123", new Date(),"usr"); //user=firstnews+second news
-        User userSecond=new User("testUser2","123", new Date(),"usr"); //userSecond=thirdNews
+    public void createNewsInUser(){
+        for (int i=1;i<4;i++){
+
+            UserDao userDao=UserDaoHiberImpl.getInstance();
+            User user=new User("testUser"+i,"123", new Date(),"usr"); //user=firstnews+second news
+            userDao.createUser(user);
+
+            News news=new News("nameNews"+i,"dataNews"+i,new Date());
+            news.setUser(user);
+
+            user.addNews(news);
+            newsDao.createNews(news);
+            userDao.updateUser(user);
+
+//        newsDao.updateNews(news);
+        }
+    }
+
+    @Test
+    public void deleteNewsInUser(){
+        createNewsInUser();
+
         UserDao userDao=UserDaoHiberImpl.getInstance();
-        userDao.createUser(user);
-        userDao.createUser(userSecond);
+        User user=userDao.getById(2L);
+        News news=newsDao.getById(2L);
 
-        News firstNews=new News("nameNews1","dataNews1",new Date());
-        News secondNews=new News("nameNews2","dataNews2",new Date());
-        News thirdNews=new News("nameNews3","dataNews3",new Date());
-
-        user.addNews(firstNews);
-        user.addNews(secondNews);
-        userSecond.addNews(thirdNews);
-
-//        userDao.updateUser(user);
-//        userDao.updateUser(userSecond);
-
-        firstNews.setUser(user);
-        newsDao.createNews(firstNews);
-
-        secondNews.setUser(user);
-        newsDao.createNews(secondNews);
-
-        thirdNews.setUser(userSecond);
-        newsDao.createNews(thirdNews);
-
-        //newsDao.deleteNews(thirdNews);
-
-        //userDao.deleteUser(userSecond);
+        user.getNewsList().remove(0);
+        userDao.updateUser(user);
+        newsDao.deleteNews(news);
     }
 }
