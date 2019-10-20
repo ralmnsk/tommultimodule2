@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns ={"/site/mynews"})
@@ -50,14 +47,17 @@ public class MyNewsServlet extends HttpServlet {
         User readUser=userService.readUser(user);
 
         if (readUser!=null){
-            List<News> newsList=readUser.getNewsList();
+            Set<News> newsSet=readUser.getNewsSet();
             Map<News,User> map=new LinkedHashMap();
             HttpSession session=req.getSession();
-            if ((newsList!=null)&&(newsList.size()>0)){
+            if ((newsSet!=null)&&(newsSet.size()>0)){
+                List<News> newsList=new ArrayList<News>();
+                for (News news:newsSet){
+                    newsList.add(news);
+                }
                 Collections.sort(newsList,new SortByTime());
-
-                for (News news:newsList){
-                    map.put(news,readUser);
+                for (News n:newsList){
+                    map.put(n,readUser);
                 }
             }
                 session.setAttribute("map",map);

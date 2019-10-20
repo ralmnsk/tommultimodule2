@@ -6,9 +6,7 @@ import com.github.ralmnsk.model.news.News;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name="usr")
@@ -33,59 +31,30 @@ public class User implements Serializable {
     private String role;
 
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usr_nws",
-            joinColumns = { @JoinColumn(name = "usr_id") },
-            inverseJoinColumns =  @JoinColumn(name = "nws_id",nullable = false) )
-    private List<News> newsList;
+    @OneToMany(mappedBy = "user")
+    private Set<News> newsSet;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinTable(name = "usr_msg",
-            joinColumns = { @JoinColumn(name = "usr_id") },
-            inverseJoinColumns =  @JoinColumn(name = "msg_id") )
-    private List<Msg> msgList;
 
-    public List<Msg> getMsgList() {
-        return msgList;
-    }
-
-    public void setMsgList(List<Msg> msgList) {
-        this.msgList = msgList;
-    }
-
-    public boolean addMsg(Msg msg) {
-        if (msgList == null) {
-            msgList = new ArrayList();
-            msgList.add(msg);
-            return true;
-        } else {
-            if (msgList.contains(msg)) {
-                return false;
-            }
-        }
-        msgList.add(msg);
-        return true;
-    }
 //---------------------------------------------
-    public List<News> getNewsList() {
-        return newsList;
+    public Set<News> getNewsSet() {
+        return newsSet;
     }
 
-    public void setNewsList(List<News> newsList) {
-        this.newsList = newsList;
+    public void setNewsSet(Set<News> newsSet) {
+        this.newsSet = newsSet;
     }
 
     public boolean addNews(News news) {
-        if (newsList == null) {
-            newsList = new ArrayList();
-            newsList.add(news);
+        if (newsSet == null) {
+            newsSet = new HashSet<News>();
+            newsSet.add(news);
             return true;
         } else {
-            if (newsList.contains(news)) {
+            if (newsSet.contains(news)) {
                 return false;
             }
         }
-        newsList.add(news);
+        newsSet.add(news);
         return true;
     }
 

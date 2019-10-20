@@ -70,7 +70,7 @@ class NewsDaoHiberImplTest {
         News readNews=newsDao.readNews(news);
         assertEquals(readNews.getNameNews(),news.getNameNews());
         assertEquals(readUser.getName(),user.getName());
-        readUser.getNewsList().remove(readNews);
+        readUser.getNewsSet().remove(readNews);
         userDao.updateUser(readUser);
         newsDao.deleteNews(readNews);
 
@@ -128,12 +128,13 @@ class NewsDaoHiberImplTest {
     public void deleteNewsInUser(){
         createNewsInUser();
 
-        UserDao userDao=UserDaoHiberImpl.getInstance();
-        User user=userDao.getById(2L);
+//        UserDao userDao=UserDaoHiberImpl.getInstance();
+//        User user=userDao.getById(2L);
         News news=newsDao.getById(2L);
 
-        user.getNewsList().remove(0);
-        userDao.updateUser(user);
+//        user.getNewsSet().remove(0);
+//        userDao.updateUser(user);
         newsDao.deleteNews(news);
+
     }
 }

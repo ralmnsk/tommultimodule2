@@ -5,9 +5,7 @@ import com.github.ralmnsk.model.user.User;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @Entity
@@ -28,35 +26,38 @@ public class News implements Serializable {
     @Temporal(value=TemporalType.TIMESTAMP)
     private Date dateNews;
 
-    @ManyToOne
-        @JoinColumn(name = "usr_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+//        @JoinColumn(name = "usr_id")
+    @JoinTable(name = "usr_nws",
+            joinColumns = { @JoinColumn(name = "usr_id") },
+            inverseJoinColumns =  @JoinColumn(name = "nws_id",nullable = false) )
     private User user;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JoinTable(name = "nws_msg",
-//            joinColumns = { @JoinColumn(name = "nws_id") },
+    @OneToMany//(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinTable(name = "usr_msg",
+//            joinColumns = { @JoinColumn(name = "usr_id") },
 //            inverseJoinColumns =  @JoinColumn(name = "msg_id") )
-    private List<Msg> msgList;
+    private Set<Msg> msgSet;
 
-    public List<Msg> getMsgList() {
-        return msgList;
+    public Set<Msg> getMsgSet() {
+        return msgSet;
     }
 
-    public void setMsgList(List<Msg> msgList) {
-        this.msgList = msgList;
+    public void setMsgList(Set<Msg> msgSet) {
+        this.msgSet = msgSet;
     }
 
     public boolean addMsg(Msg msg) {
-        if (msgList == null) {
-            msgList = new ArrayList();
-            msgList.add(msg);
+        if (msgSet == null) {
+            msgSet = new HashSet<Msg>();
+            msgSet.add(msg);
             return true;
         } else {
-            if (msgList.contains(msg)) {
+            if (msgSet.contains(msg)) {
                 return false;
             }
         }
-        msgList.add(msg);
+        msgSet.add(msg);
         return true;
     }
 

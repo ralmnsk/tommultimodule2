@@ -102,9 +102,9 @@ public class UserDaoHiberImplTest {
         news.setUser(user);
 
         user.addNews(news);
-        user.addMsg(msg);
+        //user.addMsg(msg);
 
         userDao.updateUser(user);
-
+        newsDao.updateNews(news);
     }
 }

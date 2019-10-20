@@ -12,6 +12,7 @@ import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
 
 import java.util.List;
+import java.util.Set;
 
 public class NewsDeleterImpl implements NewsDeleter {
     private News news;
@@ -37,14 +38,14 @@ public class NewsDeleterImpl implements NewsDeleter {
         NewsDao newsDao= NewsDaoHiberImpl.getInstance();
         News readNews=newsDao.readNews(news);   //.getById(news.getIdNews());
 
-        List<News> newsList=readUser.getNewsList(); //.remove(0);
-        if ((newsList!=null)&&(newsList.size()>0)){
-            for(News n:newsList){
+        Set<News> newsSet=readUser.getNewsSet(); //.remove(0);
+        if ((newsSet!=null)&&(newsSet.size()>0)){
+            for(News n:newsSet){
                 if (n.getIdNews()==readNews.getIdNews()){
                     System.out.println("LOOK: "+n);
-                    readUser.getNewsList().remove(n);
-                    userDao.updateUser(readUser);
+                    //readUser.getNewsSet().remove(n);
                     newsDao.deleteNews(readNews);
+                    userDao.updateUser(readUser);
                 }
             }
 
