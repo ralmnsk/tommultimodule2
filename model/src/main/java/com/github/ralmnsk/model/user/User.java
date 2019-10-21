@@ -31,7 +31,7 @@ public class User implements Serializable {
     private String role;
 
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private Set<News> newsSet;
 
 

@@ -95,7 +95,7 @@ public class UserDaoHiberImplTest {
         MsgDao msgDao= MsgDaoHiberImpl.getInstance();
         msgDao.create(msg);
 
-        msg.setUser(user);
+        //msg.setUser(user);
         msg.setNews(news);
 
         news.addMsg(msg);

@@ -1,14 +1,18 @@
 package com.github.ralmnsk.dao.news;
 
 
+import com.github.ralmnsk.dao.msg.MsgDao;
+import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
 import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
+import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -128,13 +132,40 @@ class NewsDaoHiberImplTest {
     public void deleteNewsInUser(){
         createNewsInUser();
 
-//        UserDao userDao=UserDaoHiberImpl.getInstance();
-//        User user=userDao.getById(2L);
         News news=newsDao.getById(2L);
-
-//        user.getNewsSet().remove(0);
-//        userDao.updateUser(user);
         newsDao.deleteNews(news);
+    }
 
+    @Test
+    public void createMsgInNews(){
+        createNewsInUser();
+        for (int i=1;i<4;i++){
+            Msg msg=new Msg(new Date(),"test message"+i);
+            MsgDao msgDao= MsgDaoHiberImpl.getInstance();
+            UserDao userDao=UserDaoHiberImpl.getInstance();
+            News news=newsDao.getById(2L);
+            User user=userDao.getById(3L);
+            msg.setNews(news);
+            msg.setUser(user);
+            news.addMsg(msg);
+            newsDao.updateNews(news);
+
+        }
+    }
+
+    @Test
+    public void deleteMsgInNews(){
+        createMsgInNews();
+        MsgDao msgDao= MsgDaoHiberImpl.getInstance();
+        msgDao.delete(2L);
+    }
+
+    @Test
+    public void deleteUser(){
+        createMsgInNews();
+        UserDao userDao=UserDaoHiberImpl.getInstance();
+        User user=userDao.getById(2L);
+        userDao.deleteUser(user);
+        System.out.println();
     }
 }

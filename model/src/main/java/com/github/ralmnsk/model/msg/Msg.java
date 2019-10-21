@@ -21,12 +21,10 @@ public class Msg {
     @Column(name="msg_text")
     private String text;
 
-    @ManyToOne//(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "nws_id")
+    @ManyToOne
     private News news;
 
-    @OneToOne//(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "usr_id")
+    @OneToOne
     private User user;
 
     public User getUser() {
