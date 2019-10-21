@@ -155,7 +155,7 @@ class NewsDaoHiberImplTest {
 
     @Test
     public void deleteMsgInNews(){
-        createMsgInNews();
+        createMsgInNews(); //validate or create
         MsgDao msgDao= MsgDaoHiberImpl.getInstance();
         msgDao.delete(2L);
     }

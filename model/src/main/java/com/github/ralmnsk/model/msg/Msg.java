@@ -24,7 +24,7 @@ public class Msg {
     @ManyToOne
     private News news;
 
-    @OneToOne
+    @ManyToOne
     private User user;
 
     public User getUser() {

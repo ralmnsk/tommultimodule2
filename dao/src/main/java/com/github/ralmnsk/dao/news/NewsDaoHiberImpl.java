@@ -89,6 +89,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         session.beginTransaction();
         News news=null;
         news=session.get(News.class,id);
+        news.getMsgSet().size();
         session.getTransaction().commit();
         session.close();
 

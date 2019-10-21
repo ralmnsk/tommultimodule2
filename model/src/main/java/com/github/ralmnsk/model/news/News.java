@@ -29,7 +29,7 @@ public class News implements Serializable {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "news",cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
+    @OneToMany(mappedBy = "news",cascade = CascadeType.ALL)
     private Set<Msg> msgSet;
 
     public Set<Msg> getMsgSet() {

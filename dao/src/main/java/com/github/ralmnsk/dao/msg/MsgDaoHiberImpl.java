@@ -61,6 +61,7 @@ public class MsgDaoHiberImpl implements MsgDao{
         session.beginTransaction();
         Msg msg=session.get(Msg.class,id);
         session.delete(msg);
+//        msg.getNews().getMsgSet().remove(msg);
         session.getTransaction().commit();
         session.close();
     }
