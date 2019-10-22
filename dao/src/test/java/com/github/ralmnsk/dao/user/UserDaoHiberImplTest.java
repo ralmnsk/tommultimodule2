@@ -91,7 +91,7 @@ public class UserDaoHiberImplTest {
 //        News news=new News("nameNews1","dataNews1",new Date());
 //        newsDao.createNews(news);
 //
-//        Msg msg=new Msg(new Date(),"first message");
+//        msg msg=new msg(new Date(),"first message");
 //        MsgDao msgDao= MsgDaoHiberImpl.getInstance();
 //        msgDao.create(msg);
 //

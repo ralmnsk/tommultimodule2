@@ -150,7 +150,7 @@ class NewsDaoHiberImplTest {
 //    public void createMsgInNews(){
 //        createNewsInUser();
 //        for (int i=1;i<4;i++){
-//            Msg msg=new Msg(new Date(),"test message"+i);
+//            msg msg=new msg(new Date(),"test message"+i);
 //            MsgDao msgDao= MsgDaoHiberImpl.getInstance();
 //            UserDao userDao=UserDaoHiberImpl.getInstance();
 //            News news=newsDao.getById(2L);

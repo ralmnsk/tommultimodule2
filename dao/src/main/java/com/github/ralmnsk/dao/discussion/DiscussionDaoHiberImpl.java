@@ -63,7 +63,7 @@ public class DiscussionDaoHiberImpl implements DiscussionDao{
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-        Query<Discussion> query=session.createQuery("from disc ");
+        Query<Discussion> query=session.createQuery("from Discussion ");
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResults);
         List<Discussion> discussionList=query.list();

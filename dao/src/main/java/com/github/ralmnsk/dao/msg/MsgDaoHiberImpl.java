@@ -71,7 +71,7 @@ public class MsgDaoHiberImpl implements MsgDao{
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-        Query<Msg> query=session.createQuery("from Msg ");
+        Query<Msg> query=session.createQuery("from msg ");
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResults);
         List<Msg> msgList=query.list();
