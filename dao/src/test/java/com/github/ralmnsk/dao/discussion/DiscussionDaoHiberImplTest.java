@@ -38,6 +38,7 @@ class DiscussionDaoHiberImplTest {
         userDao.createUser(user);
         News news=new News("nameNews","dataNews",new Date());
         news.setUser(user);
+        user.addNews(news);
         NewsDao newsDao= NewsDaoHiberImpl.getInstance();
         newsDao.createNews(news);
 
@@ -46,14 +47,40 @@ class DiscussionDaoHiberImplTest {
         discussion.getUserSet().add(user);
         user.getDiscussionSet().add(discussion);
         discussionDao.create(discussion);
+        userDao.updateUser(user);
+
+        assertEquals(discussion.getId(),discussionDao.read(discussion.getId()).getId());
     }
 
     @Test
     void read() {
+        create();
     }
 
     @Test
     void delete() {
+        UserDao userDao= UserDaoHiberImpl.getInstance();
+        User user=new User("testName","testPassword",new Date(),"usr");
+        userDao.createUser(user);
+        News news=new News("nameNews","dataNews",new Date());
+        news.setUser(user);
+        user.addNews(news);
+        NewsDao newsDao= NewsDaoHiberImpl.getInstance();
+        newsDao.createNews(news);
+
+        Discussion discussion=new Discussion();
+        discussion.setNews(news);
+        discussion.getUserSet().add(user);
+        user.getDiscussionSet().add(discussion);
+        discussionDao.create(discussion);
+        userDao.updateUser(user);
+        Long discussionId=discussion.getId();
+
+        user.getDiscussionSet().remove(discussion);
+        discussion.getUserSet().remove(user);
+        userDao.updateUser(user);
+        discussionDao.delete(discussionId);
+        assertNull(discussionDao.read(discussionId));
     }
 
     @Test
