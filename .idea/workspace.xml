@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f983650a-0680-4d72-b91c-5ce6987677b6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/discussion/DiscussionDaoHiberImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoHiberImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoHiberImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/msg/MsgDaoHiberImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/msg/MsgDaoHiberImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoHiberImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoHiberImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/msg/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/msg/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/deleter/NewsDeleterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/deleter/NewsDeleterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,12 +28,63 @@
   </component>
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tomapp/pom.xml">
+        <entry file="file://$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="225">
+              <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="23" column="71" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/discussion/DiscussionDaoHiberImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+              <folding>
+                <element signature="e#969#970#0" expanded="true" />
+                <element signature="e#993#994#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/discussion/Discussion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#654#655#0" expanded="true" />
+                <element signature="e#684#685#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#977#978#0" expanded="true" />
+                <element signature="e#1002#1003#0" expanded="true" />
+                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1120#1121#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
+                <element signature="e#1190#1191#0" expanded="true" />
+                <element signature="e#1226#1227#0" expanded="true" />
+                <element signature="e#1258#1259#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,26 +92,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="-725">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#987#988#0" expanded="true" />
-                <element signature="e#1017#1018#0" expanded="true" />
-                <element signature="e#1066#1067#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
+                <element signature="e#1085#1086#0" expanded="true" />
+                <element signature="e#1121#1122#0" expanded="true" />
+                <element signature="e#1188#1189#0" expanded="true" />
+                <element signature="e#1238#1239#0" expanded="true" />
+                <element signature="e#1328#1329#0" expanded="true" />
+                <element signature="e#1358#1359#0" expanded="true" />
+                <element signature="e#1407#1408#0" expanded="true" />
+                <element signature="e#1445#1446#0" expanded="true" />
+                <element signature="e#1810#1811#0" expanded="true" />
+                <element signature="e#1835#1836#0" expanded="true" />
+                <element signature="e#1869#1870#0" expanded="true" />
+                <element signature="e#1897#1898#0" expanded="true" />
+                <element signature="e#1929#1930#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+                <element signature="e#1996#1997#0" expanded="true" />
+                <element signature="e#2028#2029#0" expanded="true" />
+                <element signature="e#2060#2061#0" expanded="true" />
+                <element signature="e#2087#2088#0" expanded="true" />
+                <element signature="e#2131#2132#0" expanded="true" />
+                <element signature="e#2167#2168#0" expanded="true" />
+                <element signature="e#2201#2202#0" expanded="true" />
+                <element signature="e#2232#2233#0" expanded="true" />
+                <element signature="e#2274#2275#0" expanded="true" />
+                <element signature="e#2310#2311#0" expanded="true" />
+                <element signature="e#2342#2343#0" expanded="true" />
+                <element signature="e#2369#2370#0" expanded="true" />
+                <element signature="e#2409#2410#0" expanded="true" />
+                <element signature="e#2441#2442#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4">
-              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+            <state relative-caret-position="175">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
+                <element signature="e#916#917#0" expanded="true" />
+                <element signature="e#972#973#0" expanded="true" />
+                <element signature="e#1016#1017#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,38 +147,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/msg/Msg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/deleter/NewsDeleterImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            <state relative-caret-position="125">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -117,8 +160,8 @@
       <list>
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -151,6 +194,9 @@
       <find>News{</find>
       <find>Hibernate:</find>
       <find>LOOK</find>
+      <find>delet</find>
+      <find>Msg</find>
+      <find>query</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,13 +252,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/UpdateNewsServlet.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/NewsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/authorization/AuthorizationImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/storage/StorageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/editor/NewsEditorImpl.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/generator/Generator.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/updator/NewsUpdatorImpl.java" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/RegistrationServlet.java" />
@@ -247,16 +286,23 @@
         <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java" />
         <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java" />
         <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDao.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoHiberImpl.java" />
         <option value="$PROJECT_DIR$/tomapp/pom.xml" />
         <option value="$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/deleter/NewsDeleterImpl.java" />
-        <option value="$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoHiberImplTest.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/msg/Msg.java" />
-        <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/category/Category.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/discussion/Category.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/discussion/DiscussionDao.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/discussion/DiscussionDaoHiberImpl.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/discussion/Discussion.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/msg/Msg.java" />
+        <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoHiberImplTest.java" />
+        <option value="$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoHiberImpl.java" />
+        <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/msg/MsgDaoHiberImplTest.java" />
+        <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java" />
+        <option value="$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/discussion/DiscussionDaoHiberImplTest.java" />
       </list>
     </option>
   </component>
@@ -281,11 +327,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="310" />
-    <option name="y" value="135" />
-    <option name="width" value="1195" />
-    <option name="height" value="885" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="162" />
+    <option name="y" value="83" />
+    <option name="width" value="1496" />
+    <option name="height" value="965" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -293,52 +339,51 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -347,8 +392,18 @@
               <item name="connection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="discussion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -357,8 +412,8 @@
               <item name="msg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -367,8 +422,8 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -377,16 +432,16 @@
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -394,42 +449,32 @@
               <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="connection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -438,8 +483,8 @@
               <item name="msg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -448,8 +493,8 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
@@ -458,42 +503,34 @@
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -501,8 +538,18 @@
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="discussion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -511,8 +558,8 @@
               <item name="msg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -521,8 +568,8 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -531,51 +578,51 @@
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -584,28 +631,8 @@
               <item name="authorization" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="clienttype" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="deleter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -614,19 +641,8 @@
               <item name="news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-              <item name="comparator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -636,120 +652,34 @@
               <item name="creator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-              <item name="editor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-              <item name="updator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="news" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -757,8 +687,8 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -767,75 +697,18 @@
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="filters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
+              <item name="tommultimodule21" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tommultimodule21" type="462c0819:PsiDirectoryNode" />
               <item name="tomapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tommultimodule" type="462c0819:PsiDirectoryNode" />
-              <item name="tomapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tommultimodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -853,25 +726,25 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.github.ralmnsk.dao.discussion" />
       <recent name="com.github.ralmnsk.dao.news" />
       <recent name="com.github.ralmnsk.dao.connection" />
       <recent name="com.github.ralmnsk.app.controllers" />
       <recent name="com.github.ralmnsk.model.news" />
-      <recent name="com.github.ralmnsk.service.authorization" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.github.ralmnsk.service.authorization" />
       <recent name="com.github.ralmnsk.service.news.creator" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.github.ralmnsk.dao.discussion" />
       <recent name="com.github.ralmnsk.dao.news" />
       <recent name="com.github.ralmnsk.dao.user" />
       <recent name="com.github.ralmnsk.app.controllers" />
       <recent name="com.github.ralmnsk.service.news.creator" />
-      <recent name="my.tomcat.app.controllers" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rashkevich\IdeaProjects\tommultimodule21\service\src\main\resources" />
@@ -893,82 +766,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.NewsDaoHiberImplTest.deleteNewsInUser">
-    <configuration name="NewsDaoHiberImplTest.createNewsInUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DiscussionDaoHiberImplTest.create">
+    <configuration name="DiscussionDaoHiberImplTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.dao.news.*" />
+          <option name="PATTERN" value="com.github.ralmnsk.dao.discussion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.news.NewsDaoHiberImplTest" />
-      <option name="METHOD_NAME" value="createNewsInUser" />
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.discussion" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImplTest" />
+      <option name="METHOD_NAME" value="create" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewsDaoHiberImplTest.deleteNewsInUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiscussionDaoHiberImplTest.getInstance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.dao.news.*" />
+          <option name="PATTERN" value="com.github.ralmnsk.dao.discussion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.news.NewsDaoHiberImplTest" />
-      <option name="METHOD_NAME" value="deleteNewsInUser" />
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.discussion" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImplTest" />
+      <option name="METHOD_NAME" value="getInstance" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewsDaoHiberImplTest.findAllNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MsgDaoHiberImplTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.dao.news.*" />
+          <option name="PATTERN" value="com.github.ralmnsk.dao.msg.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.news.NewsDaoHiberImplTest" />
-      <option name="METHOD_NAME" value="findAllNews" />
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.msg" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.msg.MsgDaoHiberImplTest" />
+      <option name="METHOD_NAME" value="delete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewsDaoHiberImplTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MsgDaoHiberImplTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.dao.news.*" />
+          <option name="PATTERN" value="com.github.ralmnsk.dao.msg.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.news.NewsDaoHiberImplTest" />
-      <option name="METHOD_NAME" value="getById" />
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.msg" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.msg.MsgDaoHiberImplTest" />
+      <option name="METHOD_NAME" value="findAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewsDaoHiberImplTest.getUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MsgDaoHiberImplTest.setUserInMsg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dao" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.ralmnsk.dao.news.*" />
+          <option name="PATTERN" value="com.github.ralmnsk.dao.msg.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.news" />
-      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.news.NewsDaoHiberImplTest" />
-      <option name="METHOD_NAME" value="getUserId" />
+      <option name="PACKAGE_NAME" value="com.github.ralmnsk.dao.msg" />
+      <option name="MAIN_CLASS_NAME" value="com.github.ralmnsk.dao.msg.MsgDaoHiberImplTest" />
+      <option name="METHOD_NAME" value="setUserInMsg" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1002,20 +875,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.NewsDaoHiberImplTest.getUserId" />
-      <item itemvalue="JUnit.NewsDaoHiberImplTest.getById" />
-      <item itemvalue="JUnit.NewsDaoHiberImplTest.findAllNews" />
       <item itemvalue="Maven.tomcat" />
-      <item itemvalue="JUnit.NewsDaoHiberImplTest.createNewsInUser" />
-      <item itemvalue="JUnit.NewsDaoHiberImplTest.deleteNewsInUser" />
+      <item itemvalue="JUnit.MsgDaoHiberImplTest.delete" />
+      <item itemvalue="JUnit.MsgDaoHiberImplTest.findAll" />
+      <item itemvalue="JUnit.MsgDaoHiberImplTest.setUserInMsg" />
+      <item itemvalue="JUnit.DiscussionDaoHiberImplTest.getInstance" />
+      <item itemvalue="JUnit.DiscussionDaoHiberImplTest.create" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NewsDaoHiberImplTest.deleteNewsInUser" />
-        <item itemvalue="JUnit.NewsDaoHiberImplTest.createNewsInUser" />
-        <item itemvalue="JUnit.NewsDaoHiberImplTest.findAllNews" />
-        <item itemvalue="JUnit.NewsDaoHiberImplTest.getById" />
-        <item itemvalue="JUnit.NewsDaoHiberImplTest.getUserId" />
+        <item itemvalue="JUnit.DiscussionDaoHiberImplTest.create" />
+        <item itemvalue="JUnit.DiscussionDaoHiberImplTest.getInstance" />
+        <item itemvalue="JUnit.MsgDaoHiberImplTest.setUserInMsg" />
+        <item itemvalue="JUnit.MsgDaoHiberImplTest.findAll" />
+        <item itemvalue="JUnit.MsgDaoHiberImplTest.delete" />
       </list>
     </recent_temporary>
   </component>
@@ -1219,39 +1092,46 @@
       <option name="project" value="LOCAL" />
       <updated>1571225009214</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Discussion Entity">
+      <created>1571737266922</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1571737266922</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NewsDaoHiberImplTest_findAllNews - 2019.10.16 at 16h 47m 46s.xml">
-      <configuration name="NewsDaoHiberImplTest.findAllNews" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_create - 2019.10.22 at 14h 57m 45s.xml">
+      <configuration name="MsgDaoHiberImplTest.create" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_createNewsInUser - 2019.10.20 at 17h 02m 58s.xml">
-      <configuration name="NewsDaoHiberImplTest.createNewsInUser" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_create - 2019.10.22 at 15h 17m 41s.xml">
+      <configuration name="MsgDaoHiberImplTest.create" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_createNewsInUser - 2019.10.20 at 17h 09m 52s.xml">
-      <configuration name="NewsDaoHiberImplTest.createNewsInUser" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_read - 2019.10.22 at 15h 36m 17s.xml">
+      <configuration name="MsgDaoHiberImplTest.read" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_createNewsInUser - 2019.10.20 at 17h 21m 40s.xml">
-      <configuration name="NewsDaoHiberImplTest.createNewsInUser" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_update - 2019.10.22 at 15h 38m 44s.xml">
+      <configuration name="MsgDaoHiberImplTest.update" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_createNewsInUser - 2019.10.20 at 17h 41m 22s.xml">
-      <configuration name="NewsDaoHiberImplTest.createNewsInUser" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_delete - 2019.10.22 at 15h 39m 34s.xml">
+      <configuration name="MsgDaoHiberImplTest.delete" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_deleteNewsInUser - 2019.10.20 at 17h 46m 20s.xml">
-      <configuration name="NewsDaoHiberImplTest.deleteNewsInUser" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_findAll - 2019.10.22 at 15h 41m 06s.xml">
+      <configuration name="MsgDaoHiberImplTest.findAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_deleteNewsInUser - 2019.10.20 at 17h 48m 39s.xml">
-      <configuration name="NewsDaoHiberImplTest.deleteNewsInUser" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_findAll - 2019.10.22 at 16h 18m 39s.xml">
+      <configuration name="MsgDaoHiberImplTest.findAll" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_deleteNewsInUser - 2019.10.20 at 17h 57m 18s.xml">
-      <configuration name="NewsDaoHiberImplTest.deleteNewsInUser" configurationId="JUnit" />
+    <history-entry file="MsgDaoHiberImplTest_setUserInMsg - 2019.10.22 at 16h 24m 49s.xml">
+      <configuration name="MsgDaoHiberImplTest.setUserInMsg" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_deleteNewsInUser - 2019.10.20 at 17h 59m 57s.xml">
-      <configuration name="NewsDaoHiberImplTest.deleteNewsInUser" configurationId="JUnit" />
+    <history-entry file="DiscussionDaoHiberImplTest_getInstance - 2019.10.22 at 16h 37m 26s.xml">
+      <configuration name="DiscussionDaoHiberImplTest.getInstance" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="NewsDaoHiberImplTest_deleteNewsInUser - 2019.10.20 at 18h 02m 26s.xml">
-      <configuration name="NewsDaoHiberImplTest.deleteNewsInUser" configurationId="JUnit" />
+    <history-entry file="DiscussionDaoHiberImplTest_create - 2019.10.22 at 16h 42m 21s.xml">
+      <configuration name="DiscussionDaoHiberImplTest.create" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1264,10 +1144,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="162" y="83" width="1496" height="965" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22837839" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22573839" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1276,13 +1156,13 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="DB Browser" order="7" weight="0.32972974" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49864864" visible="true" weight="0.4874816" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.48098433" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49864864" visible="true" weight="0.4645081" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5559284" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49864864" weight="0.4591978" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49864864" weight="0.45760432" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" weight="0.3298969" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49864864" weight="0.38291606" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50135136" side_tool="true" weight="0.38291606" />
@@ -1394,57 +1274,15 @@
     <MESSAGE value="LogoutServlet" />
     <MESSAGE value="Mockrunner &lt;scope&gt;test&lt;/scope&gt;" />
     <MESSAGE value="HibernateUtil,UserDaoHiberImpl,persistence, UserDaoHiberImplTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="HibernateUtil,UserDaoHiberImpl,persistence, UserDaoHiberImplTest" />
+    <MESSAGE value="Discussion Entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Discussion Entity" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tommultimodule21$NewsDaoHiberImplTest_deleteNewsInUser.ic" NAME="NewsDaoHiberImplTest.deleteNewsInUser Coverage Results" MODIFIED="1571655411260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.github.ralmnsk.dao.news.*</FILTER>
+    </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/news/creator/NewsCreatorImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="45" column="57" lean-forward="true" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/InformServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/test/java/com/github/ralmnsk/model/news/NewsTest.java" />
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/TestingLog4j.java" />
-    <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/IndexServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/github/ralmnsk/service/user/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/NewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -1634,13 +1472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="354" selection-start-line="354" selection-end-line="354" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -1652,16 +1483,6 @@
     <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoImplTest.java" />
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoImpl.java" />
     <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoImplTest.java" />
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoHiberImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/connection/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -1679,13 +1500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoHiberImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1700,23 +1514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoHiberImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tomapp/src/main/java/com/github/ralmnsk/app/controllers/MyNewsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -1728,17 +1525,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/msg/Msg.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/msg/MsgDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state relative-caret-position="122">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java">
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/discussion/DiscussionDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="200">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/msg/MsgDaoHiberImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1250">
+          <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/user/UserDaoHiberImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1747,24 +1558,154 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/user/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="-725">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#1085#1086#0" expanded="true" />
+            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#1188#1189#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+            <element signature="e#1358#1359#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1810#1811#0" expanded="true" />
+            <element signature="e#1835#1836#0" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+            <element signature="e#1897#1898#0" expanded="true" />
+            <element signature="e#1929#1930#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
+            <element signature="e#2028#2029#0" expanded="true" />
+            <element signature="e#2060#2061#0" expanded="true" />
+            <element signature="e#2087#2088#0" expanded="true" />
+            <element signature="e#2131#2132#0" expanded="true" />
+            <element signature="e#2167#2168#0" expanded="true" />
+            <element signature="e#2201#2202#0" expanded="true" />
+            <element signature="e#2232#2233#0" expanded="true" />
+            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="e#2310#2311#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2369#2370#0" expanded="true" />
+            <element signature="e#2409#2410#0" expanded="true" />
+            <element signature="e#2441#2442#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/msg/Msg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/user/UserDaoHiberImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/news/News.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+        <state relative-caret-position="175">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/news/NewsDaoHiberImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/msg/MsgDaoHiberImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/github/ralmnsk/dao/discussion/DiscussionDaoHiberImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/news/NewsDaoHiberImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="23" column="71" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/com/github/ralmnsk/model/discussion/Discussion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/github/ralmnsk/dao/discussion/DiscussionDaoHiberImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="46" column="48" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+          <folding>
+            <element signature="e#969#970#0" expanded="true" />
+            <element signature="e#993#994#0" expanded="true" />
           </folding>
         </state>
       </provider>

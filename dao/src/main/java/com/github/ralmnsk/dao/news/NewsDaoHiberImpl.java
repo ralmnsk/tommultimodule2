@@ -37,11 +37,17 @@ public class NewsDaoHiberImpl implements NewsDao {
     }
 
     @Override
-    public News readNews(News news) {   //retrofitted
+    public News readNews(News news) {   //retrofitted  it finds only first news with name=newsName
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         News readNews=null;
-           readNews=session.get(News.class,news.getIdNews());
+//           readNews=session.get(News.class,news.getIdNews());
+        Query query=session.createQuery("from News where nws_name = :newsName",News.class);
+        query.setParameter("newsName",news.getNameNews());
+        List<News> newsList=query.getResultList();
+        if ((newsList!=null)&&(newsList.size())>0){
+            readNews=newsList.get(0);
+        }
         session.getTransaction().commit();
         session.close();
         return readNews;
