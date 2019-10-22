@@ -1,5 +1,6 @@
 package com.github.ralmnsk.model.news;
 
+import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.user.User;
 
@@ -27,16 +28,28 @@ public class News implements Serializable {
     private Date dateNews;
 
     @ManyToOne
+    @JoinColumn(name="usr_id")
     private User user;
+
+    @OneToOne (mappedBy = "news")
+    private Discussion discussion;
 
     @OneToMany(mappedBy = "news",cascade = CascadeType.ALL)
     private Set<Msg> msgSet;
+
+    public Discussion getDiscussion() {
+        return discussion;
+    }
+
+    public void setDiscussion(Discussion discussion) {
+        this.discussion = discussion;
+    }
 
     public Set<Msg> getMsgSet() {
         return msgSet;
     }
 
-    public void setMsgList(Set<Msg> msgSet) {
+    public void setMsgSet(Set<Msg> msgSet) {
         this.msgSet = msgSet;
     }
 
@@ -119,4 +132,6 @@ public class News implements Serializable {
                 ", dateNews=" + dateNews +
                 '}';
     }
+
+
 }

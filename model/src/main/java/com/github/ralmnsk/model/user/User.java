@@ -1,7 +1,7 @@
 package com.github.ralmnsk.model.user;
 
 
-import com.github.ralmnsk.model.msg.Msg;
+import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 
 import javax.persistence.*;
@@ -34,8 +34,26 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private Set<News> newsSet;
 
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "usr_disc",
+            joinColumns = @JoinColumn(name = "usr_id"),
+            inverseJoinColumns = @JoinColumn(name = "disc_id")
+    )
+    private Set<Discussion> discussionSet=new HashSet<>();
 
-//---------------------------------------------
+    public Set<Discussion> getDiscussionSet() {
+        return discussionSet;
+    }
+
+    public void setDiscussionSet(Set<Discussion> discussionSet) {
+        this.discussionSet = discussionSet;
+    }
+
+
+    //---------------------------------------------
     public Set<News> getNewsSet() {
         return newsSet;
     }

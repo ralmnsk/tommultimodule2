@@ -82,29 +82,27 @@ public class UserDaoHiberImplTest {
         userDao.deleteUser(userById);
     }
 
-    @Test
-    public void createNewsInUser(){
-        User user=userInTestCreate();
-        userDao.createUser(user);
-
-        NewsDao newsDao=NewsDaoHiberImpl.getInstance();
-        News news=new News("nameNews1","dataNews1",new Date());
-        newsDao.createNews(news);
-
-        Msg msg=new Msg(new Date(),"first message");
-        MsgDao msgDao= MsgDaoHiberImpl.getInstance();
-        msgDao.create(msg);
-
-        //msg.setUser(user);
-        msg.setNews(news);
-
-        news.addMsg(msg);
-        news.setUser(user);
-
-        user.addNews(news);
-        //user.addMsg(msg);
-
-        userDao.updateUser(user);
-        newsDao.updateNews(news);
-    }
+//    @Test
+//    public void createNewsInUser(){
+//        User user=userInTestCreate();
+//        userDao.createUser(user);
+//
+//        NewsDao newsDao=NewsDaoHiberImpl.getInstance();
+//        News news=new News("nameNews1","dataNews1",new Date());
+//        newsDao.createNews(news);
+//
+//        Msg msg=new Msg(new Date(),"first message");
+//        MsgDao msgDao= MsgDaoHiberImpl.getInstance();
+//        msgDao.create(msg);
+//
+//        msg.setNews(news);
+//
+//        news.addMsg(msg);
+//        news.setUser(user);
+//
+//        user.addNews(news);
+//
+//        userDao.updateUser(user);
+//        newsDao.updateNews(news);
+//    }
 }

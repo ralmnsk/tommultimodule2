@@ -108,7 +108,7 @@ class NewsDaoHiberImplTest {
         assertEquals(testNews.getDataNews(),newsGetById.getDataNews());
         newsDao.deleteNews(testNews);
     }
-
+//-------------------------------------------------------------------
     @Test
     public void createNewsInUser(){
         for (int i=1;i<4;i++){

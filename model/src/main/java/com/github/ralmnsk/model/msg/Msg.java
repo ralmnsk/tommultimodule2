@@ -22,9 +22,11 @@ public class Msg {
     private String text;
 
     @ManyToOne
+    @JoinColumn(name="nws_id")
     private News news;
 
     @ManyToOne
+    @JoinColumn(name="usr_id")
     private User user;
 
     public User getUser() {
