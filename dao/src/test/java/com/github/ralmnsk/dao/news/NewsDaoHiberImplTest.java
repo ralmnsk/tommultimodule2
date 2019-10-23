@@ -116,6 +116,23 @@ class NewsDaoHiberImplTest {
         assertEquals(testNews.getDataNews(),newsGetById.getDataNews());
         newsDao.deleteNews(testNews);
     }
+
+//    @Test
+//    public void findNewsInUser(){
+//        UserDao userDao=UserDaoHiberImpl.getInstance();
+//        User user=new User("qwe","123",new Date(),"usr");
+//        User readUser=userDao.readUser(user);
+//        readUser.getNewsSet().stream().forEach(System.out::println);
+//    }
+
+    @Test
+    public void updateExistingNews(){
+        News news=newsDao.getById(1L);
+        news.setNameNews("222");
+        news.setDataNews("222222");
+        newsDao.updateNews(news);
+        System.out.println(news);
+    }
 //-------------------------------------------------------------------
 //    @Test
 //    public void createNewsInUser(){

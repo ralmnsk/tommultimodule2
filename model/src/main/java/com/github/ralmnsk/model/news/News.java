@@ -27,7 +27,7 @@ public class News implements Serializable {
     @Temporal(value=TemporalType.TIMESTAMP)
     private Date dateNews;
 
-    @ManyToOne
+    @ManyToOne//(cascade = CascadeType.PERSIST)
     @JoinColumn(name="usr_id")
     private User user;
 

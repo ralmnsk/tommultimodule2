@@ -57,9 +57,7 @@ public class NewsDaoHiberImpl implements NewsDao {
     public void updateNews(News news) {   //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        if(readNews(news)!=null){
-            session.update(news);
-        }
+        session.update(news);
         session.getTransaction().commit();
         session.close();
     }

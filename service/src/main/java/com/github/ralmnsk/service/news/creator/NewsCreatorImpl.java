@@ -9,6 +9,8 @@ import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class NewsCreatorImpl implements NewsCreator {
     private User user;
@@ -32,16 +34,15 @@ public class NewsCreatorImpl implements NewsCreator {
 
         if (!dataNews.isEmpty()){
             news=new News(nameNews, dataNews, new Date());
-            newsService.createNews(news);
             User readUser=userService.readUser(user);
-
             news.setUser(readUser);
-            readUser.addNews(news);
+            newsService.createNews(news);
+//            readUser.getNewsSet().size();
+//            readUser.addNews(news);
+//            userService.updateUser(readUser);
+//
+//            newsService.createNews(news);
 
-            logger.info("news created:"+news.toString());
-
-            newsService.updateNews(news);
-            userService.updateUser(readUser);
 //
             logger.info(this.getClass()+" newsCreate()");
         } else {

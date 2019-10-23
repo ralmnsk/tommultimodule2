@@ -41,7 +41,7 @@ public class MyNewsServlet extends HttpServlet {
 
     private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
 
-        NewsService newsService=NewsServiceImpl.getInstance();
+//        NewsService newsService=NewsServiceImpl.getInstance();
         UserService userService=UserServiceImpl.getInstance();
         User user=(User)req.getSession().getAttribute("user");
         User readUser=userService.readUser(user);

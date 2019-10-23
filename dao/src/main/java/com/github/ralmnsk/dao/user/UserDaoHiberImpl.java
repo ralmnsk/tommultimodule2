@@ -54,6 +54,10 @@ public class UserDaoHiberImpl implements UserDao{
 
         if(list.size()>0){
             readUser=list.get(0);
+            readUser.getNewsSet();
+            if(readUser.getNewsSet()!=null){
+                readUser.getNewsSet().size();
+            }
         }
         session.getTransaction().commit();
         session.close();
