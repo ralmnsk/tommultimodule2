@@ -25,14 +25,7 @@ public class NewsDeleterImpl implements NewsDeleter {
 
     @Override
     public void delete() {
-//        NewsService newsService= NewsServiceImpl.getInstance();
-//        News readNews=newsService.readNews(news);
-//        //UserService userService= UserServiceImpl.getInstance();
-////        User readUser=userService.readUser(user);
-//
-//        newsService.deleteNews(readNews);
-////        userService.updateUser(readUser);
-////        System.out.println("LOOK: "+readUser+" "+readUser.getNewsList());
+
         UserDao userDao= UserDaoHiberImpl.getInstance();
         User readUser=userDao.readUser(user);
         NewsDao newsDao= NewsDaoHiberImpl.getInstance();
@@ -42,10 +35,7 @@ public class NewsDeleterImpl implements NewsDeleter {
         if ((newsSet!=null)&&(newsSet.size()>0)){
             for(News n:newsSet){
                 if (n.getIdNews()==readNews.getIdNews()){
-                    System.out.println("LOOK: "+n);
-                    //readUser.getNewsSet().remove(n);
                     newsDao.deleteNews(readNews);
-                    userDao.updateUser(readUser);
                 }
             }
 
