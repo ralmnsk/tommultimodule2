@@ -31,6 +31,11 @@ public class MyNewsServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
+        String page=req.getParameter("page");
+        int pageId=0;
+        if (!page.equals(null)) {
+            pageId = Integer.parseInt(page);
+        }
         Paginator paginator=new PaginatorImpl(req,resp);
         paginator.viewNewsOfUser(0,5);
         req.getRequestDispatcher("/mynews.jsp").forward(req, resp);
@@ -38,8 +43,13 @@ public class MyNewsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Paginator paginator=new PaginatorImpl(req,resp);
-        paginator.viewNewsOfUser(0,5);
+        String page=req.getParameter("page");
+            int pageId=0;
+        if (!page.equals(null)) {
+            pageId = Integer.parseInt(page);
+        }
+            Paginator paginator=new PaginatorImpl(req,resp);
+        paginator.viewNewsOfUser(pageId*5,5);
         req.getRequestDispatcher("/mynews.jsp").forward(req, resp);
     }
 

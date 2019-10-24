@@ -28,7 +28,7 @@ public class PaginatorImpl implements Paginator {
         NewsService newsService= NewsServiceImpl.getInstance();
         UserService userService= UserServiceImpl.getInstance();
 
-        List<News> newsList=newsService.findAllNews(0,10);
+        List<News> newsList=newsService.findAllNews(firstResult,maxResults);
         Collections.sort(newsList,new SortByTime());
         Map<News, User> map=new LinkedHashMap();
         if (newsList.size()>0){

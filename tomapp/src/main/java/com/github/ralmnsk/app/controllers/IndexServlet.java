@@ -25,18 +25,12 @@ public class IndexServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        //resp.sendRedirect(req.getContextPath() +"/news");
-//        req.getRequestDispatcher(req.getContextPath() +"/news").forward(req,resp);
-//        System.out.println(req.getContextPath() +"/news");
         getServletContext().getRequestDispatcher("/news").forward(req, resp);
         IndexServlet.logger.info(this.getClass()+" doGet() /news");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-//        req.getRequestDispatcher(req.getContextPath() +"/news").forward(req,resp);
-//        System.out.println(req.getContextPath() +"/news");
         getServletContext().getRequestDispatcher("/news").forward(req, resp);
         IndexServlet.logger.info(this.getClass()+" doPost() /news");
     }
