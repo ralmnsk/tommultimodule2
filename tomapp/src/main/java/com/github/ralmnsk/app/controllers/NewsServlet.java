@@ -20,16 +20,27 @@ public class NewsServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        //System.out.println("message from get");
-        PaginatorImpl paginator=new PaginatorImpl(req,resp);
-        paginator.viewNews(0,5);
+        pagination(req,resp,5);
+
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PaginatorImpl paginator=new PaginatorImpl(req,resp);
-        paginator.viewNews(0,5);
+        pagination(req,resp,5);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
+    }
+
+    private void pagination(HttpServletRequest req, HttpServletResponse resp, int maxResults){
+        PaginatorImpl paginator=new PaginatorImpl(req,resp);
+        String page=req.getParameter("page");
+        int pageId=0;
+        if (page!=null) {
+            pageId = Integer.parseInt(page)-1;
+            paginator.viewNews((maxResults*pageId),maxResults);
+            //5*(1-1)=0 //5*(2-1)=5 //5*(3-1)=10
+        } else {
+            paginator.viewNews((maxResults*pageId),maxResults);
+        }
     }
 }

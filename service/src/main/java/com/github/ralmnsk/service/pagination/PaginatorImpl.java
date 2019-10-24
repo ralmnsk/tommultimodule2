@@ -62,9 +62,13 @@ public class PaginatorImpl implements Paginator {
                 for (News news:newsSet){
                     newsList.add(news);
                 }
+                int newsIndex=0;
                 Collections.sort(newsList,new SortByTime());
                 for (News n:newsList){
-                    map.put(n,readUser);
+                    if((newsIndex>=firstResult)&&(newsIndex<=(firstResult+maxResults))){
+                        map.put(n,readUser);
+                    }
+                        newsIndex++;
                 }
             }
             session.setAttribute("map",map);

@@ -33,19 +33,19 @@ public class MyNewsServlet extends HttpServlet {
         resp.setContentType("text/html");
         String page=req.getParameter("page");
         int pageId=0;
-        if (!page.equals(null)) {
+        if (page!=null) {
             pageId = Integer.parseInt(page);
         }
         Paginator paginator=new PaginatorImpl(req,resp);
-        paginator.viewNewsOfUser(0,5);
+        paginator.viewNewsOfUser(5*pageId,5);//5*1   5*2*1 , 5*2 5*2*2
         req.getRequestDispatcher("/mynews.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String page=req.getParameter("page");
-            int pageId=0;
-        if (!page.equals(null)) {
+        int pageId=0;
+        if (page!=null) {
             pageId = Integer.parseInt(page);
         }
             Paginator paginator=new PaginatorImpl(req,resp);
