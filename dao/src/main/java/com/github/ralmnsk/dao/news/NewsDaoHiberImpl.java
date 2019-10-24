@@ -77,7 +77,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-        Query<News> query=session.createQuery("from News ");
+        Query<News> query=session.createQuery("from News order by dateNews desc");
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResults);
         List<News> newsList=query.list();

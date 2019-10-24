@@ -5,6 +5,8 @@ import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.NewsServiceImpl;
 import com.github.ralmnsk.service.news.comparator.SortByTime;
+import com.github.ralmnsk.service.pagination.Paginator;
+import com.github.ralmnsk.service.pagination.PaginatorImpl;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
@@ -29,39 +31,16 @@ public class MyNewsServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        viewNews(req,resp);
+        Paginator paginator=new PaginatorImpl(req,resp);
+        paginator.viewNewsOfUser(0,5);
         req.getRequestDispatcher("/mynews.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        viewNews(req,resp);
+        Paginator paginator=new PaginatorImpl(req,resp);
+        paginator.viewNewsOfUser(0,5);
         req.getRequestDispatcher("/mynews.jsp").forward(req, resp);
     }
 
-    private void viewNews(HttpServletRequest req, HttpServletResponse resp) {
-
-//        NewsService newsService=NewsServiceImpl.getInstance();
-        UserService userService=UserServiceImpl.getInstance();
-        User user=(User)req.getSession().getAttribute("user");
-        User readUser=userService.readUser(user);
-
-        if (readUser!=null){
-            Set<News> newsSet=readUser.getNewsSet();
-            Map<News,User> map=new LinkedHashMap();
-            HttpSession session=req.getSession();
-            if ((newsSet!=null)&&(newsSet.size()>0)){
-                List<News> newsList=new ArrayList<News>();
-                for (News news:newsSet){
-                    newsList.add(news);
-                }
-                Collections.sort(newsList,new SortByTime());
-                for (News n:newsList){
-                    map.put(n,readUser);
-                }
-            }
-                session.setAttribute("map",map);
-
-        }
-    }
 }
