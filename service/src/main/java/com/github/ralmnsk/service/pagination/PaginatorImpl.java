@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.pagination;
 
+import com.github.ralmnsk.dao.news.NewsDaoCounterImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
@@ -77,17 +78,75 @@ public class PaginatorImpl implements Paginator {
 
 
     public void pagination(int maxResults){
-        //PaginatorImpl paginator=new PaginatorImpl(req,resp);
-        String page=req.getParameter("page");
-        int pageId=0;
-        int maxPageItem=1;
-        //int countOfMaxPageItem=
-        if (page!=null) {
-            pageId = Integer.parseInt(page)-1;
-            viewNews((maxResults*pageId),maxResults);
-            //5*(1-1)=0 //5*(2-1)=5 //5*(3-1)=10
-        } else {
-            viewNews((maxResults*pageId),maxResults);
+        HttpSession session=req.getSession();
+        int currentPage=0;
+
+        int step=0;
+        int pagesCount=getCountOfPages(maxResults);
+
+        if(session.getAttribute("currentPage")!=null){
+            currentPage=(int)req.getSession().getAttribute("currentPage");
         }
+        session.setAttribute("currentPage",currentPage);
+
+        if (req.getParameter("move")!=null){
+            String move=req.getParameter("move"); //next and previous on jsp
+            switch (move){
+                case "next": step=1;
+                    currentPage=(currentPage<pagesCount)?(currentPage+step):currentPage;
+                break;
+                case "previous": step=-1;
+                    currentPage=(currentPage>0)?(currentPage+step):currentPage;
+                break;
+            }
+
+            session.setAttribute("currentPage",currentPage);
+        }
+
+        viewNews((maxResults*(currentPage)),maxResults);
+        req.setAttribute("pagesCount",pagesCount);
+
+//        String page=req.getParameter("page"); //page on jsp
+//        String move=req.getParameter("move"); //next and previous on jsp
+//        int pagesCount=getCountOfPages(maxResults); //count of news from database
+//        int pageId=0;
+//        int currentPagesSet=0;
+//        if (req.getSession().getAttribute("currentPagesSet")!=null){
+//            currentPagesSet=(int)req.getSession().getAttribute("currentPagesSet");
+//        }
+//
+//        if (page!=null) {
+//            pageId = Integer.parseInt(page)-1;
+//        }
+//        viewNews((maxResults*(pageId+currentPagesSet)),maxResults);
+//            //5*(1-1)=0 //5*(2-1)=5 //5*(3-1)=10
+//
+//        if (move!=null){
+//            switch (move){
+//                case "next":
+//                    if(pagesCount>currentPagesSet){
+//                        req.setAttribute("page",currentPagesSet+1);
+//                        req.getSession().setAttribute("currentPagesSet",currentPagesSet+1);
+//                    }
+//                    break;
+//                case "previous":
+//
+//                    break;
+//            }
+//
+//        }
+//        req.setAttribute("pagesCount",pagesCount);
+    }
+
+    private int getCountOfPages(int maxResults) {
+        int newsCount= NewsDaoCounterImpl
+                .getInstance().getNewsCount();
+        int countOfPages=newsCount/maxResults;
+        int restOfNews=newsCount-countOfPages*maxResults;
+        if(restOfNews>0){
+            countOfPages++;
+        }
+
+        return countOfPages;
     }
 }

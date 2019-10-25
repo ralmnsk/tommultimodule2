@@ -34,16 +34,4 @@ public class NewsServlet extends HttpServlet {
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
-//    private void pagination(HttpServletRequest req, HttpServletResponse resp, int maxResults){
-//        PaginatorImpl paginator=new PaginatorImpl(req,resp);
-//        String page=req.getParameter("page");
-//        int pageId=0;
-//        if (page!=null) {
-//            pageId = Integer.parseInt(page)-1;
-//            paginator.viewNews((maxResults*pageId),maxResults);
-//            //5*(1-1)=0 //5*(2-1)=5 //5*(3-1)=10
-//        } else {
-//            paginator.viewNews((maxResults*pageId),maxResults);
-//        }
-//    }
 }
