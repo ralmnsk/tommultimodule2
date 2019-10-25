@@ -74,4 +74,20 @@ public class PaginatorImpl implements Paginator {
             session.setAttribute("map",map);
         }
     }
+
+
+    public void pagination(int maxResults){
+        //PaginatorImpl paginator=new PaginatorImpl(req,resp);
+        String page=req.getParameter("page");
+        int pageId=0;
+        int maxPageItem=1;
+        //int countOfMaxPageItem=
+        if (page!=null) {
+            pageId = Integer.parseInt(page)-1;
+            viewNews((maxResults*pageId),maxResults);
+            //5*(1-1)=0 //5*(2-1)=5 //5*(3-1)=10
+        } else {
+            viewNews((maxResults*pageId),maxResults);
+        }
+    }
 }

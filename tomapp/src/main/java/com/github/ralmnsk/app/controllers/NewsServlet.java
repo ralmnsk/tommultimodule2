@@ -1,5 +1,6 @@
 package com.github.ralmnsk.app.controllers;
 
+import com.github.ralmnsk.service.pagination.Paginator;
 import com.github.ralmnsk.service.pagination.PaginatorImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,27 +21,29 @@ public class NewsServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        pagination(req,resp,5);
+        Paginator paginator=new PaginatorImpl(req,resp);
+        paginator.pagination(5);
 
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        pagination(req,resp,5);
+        Paginator paginator=new PaginatorImpl(req,resp);
+        paginator.pagination(5);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
-    private void pagination(HttpServletRequest req, HttpServletResponse resp, int maxResults){
-        PaginatorImpl paginator=new PaginatorImpl(req,resp);
-        String page=req.getParameter("page");
-        int pageId=0;
-        if (page!=null) {
-            pageId = Integer.parseInt(page)-1;
-            paginator.viewNews((maxResults*pageId),maxResults);
-            //5*(1-1)=0 //5*(2-1)=5 //5*(3-1)=10
-        } else {
-            paginator.viewNews((maxResults*pageId),maxResults);
-        }
-    }
+//    private void pagination(HttpServletRequest req, HttpServletResponse resp, int maxResults){
+//        PaginatorImpl paginator=new PaginatorImpl(req,resp);
+//        String page=req.getParameter("page");
+//        int pageId=0;
+//        if (page!=null) {
+//            pageId = Integer.parseInt(page)-1;
+//            paginator.viewNews((maxResults*pageId),maxResults);
+//            //5*(1-1)=0 //5*(2-1)=5 //5*(3-1)=10
+//        } else {
+//            paginator.viewNews((maxResults*pageId),maxResults);
+//        }
+//    }
 }
