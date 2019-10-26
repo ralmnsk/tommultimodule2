@@ -1,7 +1,9 @@
-package com.github.ralmnsk.dao.msg;
+package com.github.ralmnsk.dao.contact;
 
 import com.github.ralmnsk.dao.connection.HibernateUtil;
-import com.github.ralmnsk.model.msg.Msg;
+import com.github.ralmnsk.dao.msg.MsgDao;
+import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
+import com.github.ralmnsk.model.contact.Contact;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
@@ -9,17 +11,17 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-public class MsgDaoHiberImpl implements MsgDao{
+public class ContactDaoImpl implements ContactDao {
     private static Logger logger= LoggerFactory.getLogger(MsgDaoHiberImpl.class);
-    private static volatile MsgDao instance;
+    private static volatile ContactDao instance;
 
-    public static MsgDao getInstance() {
-        MsgDao localInstance = instance;
+    public static ContactDao getInstance() {
+        ContactDao localInstance = instance;
         if (localInstance == null) {
-            synchronized (MsgDao.class) {
+            synchronized (ContactDao.class) {
                 localInstance = instance;
                 if (localInstance == null) {
-                    instance = localInstance = new MsgDaoHiberImpl();
+                    instance = localInstance = new ContactDaoImpl();
                 }
             }
         }
@@ -27,30 +29,30 @@ public class MsgDaoHiberImpl implements MsgDao{
     }
 
     @Override
-    public void create(Msg msg) {
+    public void create(Contact contact) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        session.save(msg);
+        session.save(contact);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public Msg read(Long id) {
+    public Contact read(Long id) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Msg msg=session.get(Msg.class,id);
+        Contact contact=session.get(Contact.class,id);
         session.getTransaction().commit();
         session.close();
-        return msg;
+        return contact;
     }
 
     @Override
-    public void update(Long id, String newText) {
+    public void update(Long id, String newMail) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Msg msg=session.get(Msg.class,id);
-        msg.setText(newText);
+        Contact contact=session.get(Contact.class,id);
+        contact.setMail(newMail);
         session.getTransaction().commit();
         session.close();
     }
@@ -59,24 +61,24 @@ public class MsgDaoHiberImpl implements MsgDao{
     public void delete(Long id) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Msg msg=session.get(Msg.class,id);
-        session.delete(msg);
+        Contact contact=session.get(Contact.class,id);
+        session.delete(contact);
         session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public List<Msg> findAll(int firstResult, int maxResults) {
+    public List<Contact> findAll(int firstResult, int maxResults) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-        Query<Msg> query=session.createQuery("from Msg ");
+        Query<Contact> query=session.createQuery("from Contact ");
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResults);
-        List<Msg> msgList=query.list();
+        List<Contact> contactList=query.list();
 
         session.getTransaction().commit();
         session.close();
-        return msgList;
+        return contactList;
     }
 }

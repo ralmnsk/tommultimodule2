@@ -1,6 +1,7 @@
 package com.github.ralmnsk.model.user;
 
 
+import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 
@@ -40,6 +41,9 @@ public class User implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "disc_id")
     )
     private Set<Discussion> discussionSet=new HashSet<>();
+
+    @OneToOne(mappedBy = "user")
+    private Contact contact;
 
     public Set<Discussion> getDiscussionSet() {
         return discussionSet;
