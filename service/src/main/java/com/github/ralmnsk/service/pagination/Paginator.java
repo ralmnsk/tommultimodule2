@@ -4,4 +4,5 @@ public interface Paginator {
     void viewNews(int firstResult,int maxResults);
     void viewNewsOfUser(int firstResult,int maxResults);
     void pagination(int maxResults);
+    void paginationForUserNews(int maxResults);
 }

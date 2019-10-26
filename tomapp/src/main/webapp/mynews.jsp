@@ -46,11 +46,11 @@
         <nav aria-label="Page navigation example">
                   <ul class="pagination justify-content-center">
 
-                    <li class="page-item"><a class="page-link" href="/tomapp/news?move=previous">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="/tomapp/news?move=next">Next</a></li>
-                    <li class="page-item"><a class="page-link" href="/tomapp/news?maxResults=5">5</a></li>
-                    <li class="page-item"><a class="page-link" href="/tomapp/news?maxResults=15">15</a></li>
-                    <li class="page-item"><a class="page-link" href="/tomapp/news?maxResults=50">50</a></li>
+                    <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/mynews?move=previous">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/mynews?move=next">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/mynews?maxResults=5">5</a></li>
+                    <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/mynews?maxResults=15">15</a></li>
+                    <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/mynews?maxResults=50">50</a></li>
                     <li class="page-item"><a class="page-link">Page: ${currentPage}</a></li>
                     <li class="page-item"><a class="page-link">Total: ${pagesCount}</a></li>
 

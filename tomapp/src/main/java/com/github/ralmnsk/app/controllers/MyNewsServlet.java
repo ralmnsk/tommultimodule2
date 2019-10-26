@@ -31,26 +31,28 @@ public class MyNewsServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        String page=req.getParameter("page");
-        int pageId=0;
-        if (page!=null) {
-            pageId = Integer.parseInt(page);
-        }
-        Paginator paginator=new PaginatorImpl(req,resp);
-        paginator.viewNewsOfUser(5*pageId,5);//5*1   5*2*1 , 5*2 5*2*2
+        paginate(req,resp);
         req.getRequestDispatcher("/mynews.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String page=req.getParameter("page");
-        int pageId=0;
-        if (page!=null) {
-            pageId = Integer.parseInt(page);
-        }
-            Paginator paginator=new PaginatorImpl(req,resp);
-        paginator.viewNewsOfUser(pageId*5,5);
+        paginate(req,resp);
         req.getRequestDispatcher("/mynews.jsp").forward(req, resp);
+    }
+
+    private void paginate(HttpServletRequest req, HttpServletResponse resp){
+        HttpSession session=req.getSession();
+        int maxResults=5;
+        if(req.getParameter("maxResults")!=null){
+            maxResults=Integer.parseInt(req.getParameter("maxResults"));
+            session.setAttribute("maxResults",maxResults);
+        }
+        if(session.getAttribute("maxResults")!=null){
+            maxResults=(int)session.getAttribute("maxResults");
+        }
+        Paginator paginator=new PaginatorImpl(req,resp);
+        paginator.paginationForUserNews(maxResults);
     }
 
 }

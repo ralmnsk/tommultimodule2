@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.math.BigInteger;
 
 public class NewsDaoCounterImpl implements NewsDaoCounter {
-    private static Logger logger= LoggerFactory.getLogger(NewsDaoHiberImpl.class);
+    private static Logger logger= LoggerFactory.getLogger(NewsDaoCounterImpl.class);
     private static volatile NewsDaoCounter instance;
 
     public static NewsDaoCounter getInstance() {
