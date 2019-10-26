@@ -79,7 +79,7 @@ public class PaginatorImpl implements Paginator {
 
     public void pagination(int maxResults){
         HttpSession session=req.getSession();
-        int currentPage=0;
+        int currentPage=1;
 
         int step=0;
         int pagesCount=getCountOfPages(maxResults);
@@ -99,11 +99,16 @@ public class PaginatorImpl implements Paginator {
                     currentPage=(currentPage>0)?(currentPage+step):currentPage;
                 break;
             }
-
+            if(currentPage==0){
+                currentPage++;
+            }
             session.setAttribute("currentPage",currentPage);
         }
-
-        viewNews((maxResults*(currentPage)),maxResults);
+        if(currentPage>0){
+            viewNews((maxResults*(currentPage-1)),maxResults);
+        } else {
+            viewNews((maxResults*(currentPage)),maxResults);
+        }
         req.setAttribute("pagesCount",pagesCount);
 
 //        String page=req.getParameter("page"); //page on jsp

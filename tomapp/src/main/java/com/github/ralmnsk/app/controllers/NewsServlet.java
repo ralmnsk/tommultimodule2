@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(urlPatterns ={"/news"})
@@ -21,17 +22,29 @@ public class NewsServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
-        Paginator paginator=new PaginatorImpl(req,resp);
-        paginator.pagination(5);
-
+        paginate(req,resp);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Paginator paginator=new PaginatorImpl(req,resp);
-        paginator.pagination(5);
+        HttpSession session=req.getSession();
+        paginate(req,resp);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
+    }
+
+    private void paginate(HttpServletRequest req, HttpServletResponse resp){
+        HttpSession session=req.getSession();
+        int maxResults=5;
+        if(req.getParameter("maxResults")!=null){
+            maxResults=Integer.parseInt(req.getParameter("maxResults"));
+            session.setAttribute("maxResults",maxResults);
+        }
+        if(session.getAttribute("maxResults")!=null){
+            maxResults=(int)session.getAttribute("maxResults");
+        }
+        Paginator paginator=new PaginatorImpl(req,resp);
+        paginator.pagination(maxResults);
     }
 
 }
