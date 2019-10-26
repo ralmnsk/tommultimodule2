@@ -35,5 +35,6 @@ public class DelNewsServlet extends HttpServlet {
         User user=(User)req.getSession().getAttribute("user");
         NewsDeleter deleter=new NewsDeleterImpl(news, user);
         deleter.delete();
+        req.getSession().removeAttribute("mapMsgUsr");
     }
 }

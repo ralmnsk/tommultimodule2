@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.news.comparator;
 
+import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 
 import java.util.Comparator;
@@ -16,4 +17,5 @@ public class SortByTime implements Comparator<News> {
                 return 0;
          }
     }
+
 }

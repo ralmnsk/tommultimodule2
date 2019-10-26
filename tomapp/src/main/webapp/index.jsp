@@ -35,9 +35,18 @@
 
                                                         </br>
                                 Дата: ${entry.key.dateNews}</br>
+            <c:if test = "${(user.role == 'usr')or(user.role == 'admin')}">
+                <form name="sendToDiscuss" method="POST" action="site/discuss">
+                    <div class="form=group">
+                        <input type="hidden" name="discussNewsId" value="${entry.key.idNews}">
+                        <input class="btn btn-primary" type="submit" value="Перейти к обсуждению"/>
+                    </div>
+                </form>
+            </c:if>
+
 
                                 </p>
-                                    <hr/>
+        <hr/>
                     </c:forEach>
                 </table>
         </div>
@@ -45,7 +54,7 @@
 
 
         <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
+          <ul autofocus class="pagination justify-content-center">
 
             <li class="page-item"><a class="page-link" href="/tomapp/news?move=previous">Previous</a></li>
             <li class="page-item"><a class="page-link" href="/tomapp/news?move=next">Next</a></li>

@@ -33,7 +33,7 @@
                                 <form name="editNewsForm" method="POST" action="edit">
                                 <div class="form=group">
                                 <input type="hidden" name="editNewsId" value="${entry.key.idNews}">
-                                <input type="submit" value="Редактировать"/>
+                                <input class="btn btn-primary" type="submit" value="Редактировать"/>
                                 </div>
                                 </form>
 
