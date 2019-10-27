@@ -45,6 +45,14 @@ public class User implements Serializable {
     @OneToOne(mappedBy = "user")
     private Contact contact;
 
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
     public Set<Discussion> getDiscussionSet() {
         return discussionSet;
     }
