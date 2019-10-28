@@ -4,6 +4,7 @@ import com.github.ralmnsk.dao.connection.HibernateUtil;
 
 import com.github.ralmnsk.model.discussion.Discussion;
 
+import com.github.ralmnsk.model.user.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
@@ -32,6 +33,7 @@ public class DiscussionDaoHiberImpl implements DiscussionDao{
     public void create(Discussion discussion) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
+        discussion.getUserSet().size();
         session.save(discussion);
         session.getTransaction().commit();
         session.close();

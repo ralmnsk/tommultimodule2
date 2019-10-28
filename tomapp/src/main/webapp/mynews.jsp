@@ -9,19 +9,24 @@
     <body>
         <div class="container">
         <h2>Новости пользователя ${user.name}</h2>
-        </br>
-                     <a href="/tomapp/">Главная</a>
                     </br>
-                    <a href="/tomapp/topsecret">Страница администратора</a>
+                     <a href="${pageContext.request.contextPath}/">Главная</a>
                     </br>
-                    <a href="/tomapp/topsecret2">Страница администратора 2</a>
+                    <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
                     </br>
-                    <a href="/tomapp/site/logout">Logout</a>
+                    <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
+                    </br>
+                    <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
                     <hr/>
-                    <a href="/tomapp/site/addnews">Добавить новость</a>
+                    <a href="${pageContext.request.contextPath}/site/addnews">Добавить новость</a>
                     </br>
-                    <a href="/tomapp/site/mynews">Мои новости</a>
-        <hr/>   <table>
+                    <a href="${pageContext.request.contextPath}/site/mynews">Мои новости</a>
+                    </br>
+                    <a href="${pageContext.request.contextPath}/site/contact">Мой контакт</a>
+                    </br>
+                    <a href="${pageContext.request.contextPath}/site/coment">Мои коментарии</a>
+                    <hr/>
+        <table>
                     <c:forEach var="entry" items="${map}">
                         <tr><td><p><h4>${entry.key.nameNews}</h4></br>
                                         ${entry.key.dataNews}<p>

@@ -7,7 +7,7 @@
     <body>
         <div class="container">
             <h2>Добавление новости ${user.name}</h2>
-            </br>
+
             </br>
              <a href="/tomapp/">Главная</a>
             </br>
@@ -18,6 +18,13 @@
             <a href="/tomapp/site/logout">Logout</a>
             <hr/>
             <a href="/tomapp/site/inform">Страница пользователя</a>
+            </br>
+            <a href="${pageContext.request.contextPath}/site/mynews">Мои новости</a>
+            </br>
+            <a href="${pageContext.request.contextPath}/site/contact">Мой контакт</a>
+            </br>
+            <a href="${pageContext.request.contextPath}/site/coment">Мои коментарии</a>
+            <hr/>
         </div>
 
             </br>

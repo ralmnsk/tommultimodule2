@@ -1,5 +1,12 @@
 package com.github.ralmnsk.service.news.creator;
 
+import com.github.ralmnsk.dao.discussion.DiscussionDao;
+import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
+import com.github.ralmnsk.dao.news.NewsDao;
+import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
+import com.github.ralmnsk.dao.user.UserDao;
+import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
+import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
@@ -37,19 +44,21 @@ public class NewsCreatorImpl implements NewsCreator {
             User readUser=userService.readUser(user);
             news.setUser(readUser);
             newsService.createNews(news);
-//            readUser.getNewsSet().size();
-//            readUser.addNews(news);
-//            userService.updateUser(readUser);
-//
-//            newsService.createNews(news);
-
-//
+            News readNews=newsService.readNews(news);
+            discussionCreate(readUser,readNews);
             logger.info(this.getClass()+" newsCreate()");
         } else {
             logger.info("news created: {} is empty", news);
         }
 
     return news;
+    }
+
+    private void discussionCreate(User user,News news){
+        DiscussionDao discussionDao=DiscussionDaoHiberImpl.getInstance();
+        Discussion discussion=new Discussion();
+        discussion.getUserSet().add(user);
+        discussionDao.create(discussion);
     }
 
 

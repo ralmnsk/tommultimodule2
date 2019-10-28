@@ -2,6 +2,7 @@ package com.github.ralmnsk.dao.discussion;
 
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.msg.Msg;
+import com.github.ralmnsk.model.user.User;
 
 import java.util.List;
 

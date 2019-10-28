@@ -108,4 +108,21 @@ class DiscussionDaoHiberImplTest {
         List<Discussion> discussions=discussionDao.findAll(0,100);
         assertTrue(discussions.size()>=3);
     }
+
+    @Test
+    public void createDiscussionInUserAndInNews(){
+        UserDao userDao=UserDaoHiberImpl.getInstance();
+        User user=userDao.getById(1L);
+        NewsDao newsDao=NewsDaoHiberImpl.getInstance();
+        News news=newsDao.getById(39L);
+
+        Discussion discussion=new Discussion();
+        news.setDiscussion(discussion);
+        discussionDao.create(discussion);
+        discussion.setNews(news);
+        newsDao.updateNews(news);
+        user.getDiscussionSet().add(discussion);
+        discussion.getUserSet().add(user);
+        userDao.updateUser(user);
+    }
 }

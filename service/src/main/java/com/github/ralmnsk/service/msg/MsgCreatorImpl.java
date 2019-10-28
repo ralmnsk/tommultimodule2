@@ -49,8 +49,14 @@ public class MsgCreatorImpl implements MsgCreator{
         msg.setNews(news);
 
         msgDao.create(msg);
+
+        addUserInDiscussion(user,news);
         //getMsgList();
         return msg;
+    }
+
+    private void addUserInDiscussion(User user, News news) {
+
     }
 
     @Override
@@ -82,4 +88,5 @@ public class MsgCreatorImpl implements MsgCreator{
             System.out.println(mapMsgUsr);
         }
     }
+
 }

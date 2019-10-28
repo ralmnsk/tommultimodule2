@@ -9,7 +9,6 @@
             <h2>Страница пользователя ${user.name}</h2>
 
             </br>
-            </br>
              <a href="${pageContext.request.contextPath}/">Главная</a>
             </br>
             <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
@@ -23,6 +22,17 @@
             <a href="${pageContext.request.contextPath}/site/mynews">Мои новости</a>
             </br>
             <a href="${pageContext.request.contextPath}/site/contact">Мой контакт</a>
+            </br>
+            <a href="${pageContext.request.contextPath}/site/comment">Мои коментарии</a>
+            <hr/>
+
+            <c:forEach var="entry" items="${discussionNewsMap}">
+                <p><h4>${entry.key.id}</h4></br>
+                ${entry.value.nameNews}<p>
+                </br>
+                <hr/>
+            </c:forEach>
+
         </div>
     </body>
 </html>

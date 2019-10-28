@@ -2,6 +2,7 @@ package com.github.ralmnsk.dao.msg;
 
 import com.github.ralmnsk.dao.connection.HibernateUtil;
 import com.github.ralmnsk.model.msg.Msg;
+import com.github.ralmnsk.model.user.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
@@ -73,6 +74,20 @@ public class MsgDaoHiberImpl implements MsgDao{
         Query<Msg> query=session.createQuery("from Msg ");
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResults);
+        List<Msg> msgList=query.list();
+
+        session.getTransaction().commit();
+        session.close();
+        return msgList;
+    }
+
+    @Override
+    public List<Msg> findByUser(User user) {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+
+        Query<Msg> query=session.createQuery("from Msg where user.id=:id");
+        query.setParameter("id",user.getId());
         List<Msg> msgList=query.list();
 
         session.getTransaction().commit();

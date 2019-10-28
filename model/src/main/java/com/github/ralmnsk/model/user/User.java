@@ -35,7 +35,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private Set<News> newsSet;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "usr_disc",
             joinColumns = @JoinColumn(name = "usr_id"),
             inverseJoinColumns = @JoinColumn(name = "disc_id")
