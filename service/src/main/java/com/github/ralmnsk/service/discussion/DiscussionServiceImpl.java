@@ -3,6 +3,8 @@ package com.github.ralmnsk.service.discussion;
 import com.github.ralmnsk.dao.discussion.DiscussionDao;
 import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
+import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
 
 import java.util.List;
 
@@ -24,8 +26,8 @@ public class DiscussionServiceImpl implements DiscussionService {
         return localInstance;
     }
     @Override
-    public void create(Discussion discussion) {
-        discussionDao.create(discussion);
+    public void create(User user, News news) {
+        discussionDao.create(user, news);
     }
 
     @Override

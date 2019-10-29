@@ -56,9 +56,7 @@ public class NewsCreatorImpl implements NewsCreator {
 
     private void discussionCreate(User user,News news){
         DiscussionDao discussionDao=DiscussionDaoHiberImpl.getInstance();
-        Discussion discussion=new Discussion();
-        discussion.getUserSet().add(user);
-        discussionDao.create(discussion);
+        discussionDao.create(user,news);
     }
 
 
