@@ -11,9 +11,11 @@ import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -74,12 +76,14 @@ public class DiscussionDaoHiberImpl implements DiscussionDao{
     public List<Discussion> readByUser(User user) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        CriteriaBuilder cb=session.getCriteriaBuilder();
-        CriteriaQuery<Discussion> criteria = cb.createQuery(Discussion.class);
-        Root<Discussion> d = criteria.from(Discussion.class);
-        criteria.select(d).where(
-                //cb.equal(d.<News>get("news"),discussion.getNews())
-                cb.equal(d.get("disc_id"),user.getId())
+        CriteriaBuilder builder=session.getCriteriaBuilder();
+        CriteriaQuery<Discussion> criteria = builder.createQuery(Discussion.class);
+        Root<Discussion> root = criteria.from(Discussion.class);
+        criteria.select(root).where(
+                builder.isMember(
+                        user,
+                        root.<Collection<User>>get("userSet")
+                )
         );
         List<Discussion> resultList = session.createQuery(criteria).getResultList();
         session.getTransaction().commit();

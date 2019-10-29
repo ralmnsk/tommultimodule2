@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface DiscussionService {
     void create(User user, News news);
-    Discussion read(Long id);
+    List<Discussion> readByUser(User user);
     void delete(Long id);
     List<Discussion> findAll(int firstResult, int maxResults);
 

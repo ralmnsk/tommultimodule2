@@ -31,8 +31,8 @@ public class DiscussionServiceImpl implements DiscussionService {
     }
 
     @Override
-    public Discussion read(Long id) {
-        return discussionDao.read(id);
+    public List<Discussion> readByUser(User user) {
+        return discussionDao.readByUser(user);
     }
 
     @Override

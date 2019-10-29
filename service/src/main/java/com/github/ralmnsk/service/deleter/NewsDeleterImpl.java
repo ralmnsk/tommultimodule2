@@ -16,6 +16,7 @@ import com.github.ralmnsk.service.user.UserServiceImpl;
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class NewsDeleterImpl implements NewsDeleter {
     private News news;
@@ -37,7 +38,10 @@ public class NewsDeleterImpl implements NewsDeleter {
 
         Discussion discussion=null;
         if(news.getDiscussion()!=null){
-            discussion=discussionDao.read(news.getDiscussion().getId());
+            List<Discussion> discussionList=discussionDao.readByUser(readUser)
+                    .stream()
+                    .filter(d->d.getNews().getIdNews()==readNews.getIdNews())
+                    .collect(Collectors.toList());
         }
 
         Set<News> newsSet=readUser.getNewsSet(); //.remove(0);

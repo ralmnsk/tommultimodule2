@@ -124,6 +124,6 @@ class DiscussionDaoHiberImplTest {
         UserDao userDao=UserDaoHiberImpl.getInstance();
         User user=userDao.getById(1L);
         List<Discussion> list=discussionDao.readByUser(user);
-        System.out.println("LOOK:"+list);
+        list.stream().map(d->d.getNews().getNameNews()).forEach(System.out::println);
     }
 }
