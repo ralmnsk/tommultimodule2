@@ -123,4 +123,16 @@ public class DiscussionDaoHiberImpl implements DiscussionDao{
         session.close();
         return discussionList;
     }
+
+    @Override
+    public void addUserInDiscussion(User user, Discussion discussion) {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        User readUser=session.get(User.class,user.getId());
+        Discussion readDiscussion=session.get(Discussion.class,discussion.getId());
+        readUser.getDiscussionSet().add(readDiscussion);
+        readDiscussion.getUserSet().add(readUser);
+        session.getTransaction().commit();
+        session.close();
+    }
 }

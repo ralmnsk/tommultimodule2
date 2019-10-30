@@ -1,11 +1,14 @@
 package com.github.ralmnsk.service.msg;
 
+import com.github.ralmnsk.dao.discussion.DiscussionDao;
+import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
 import com.github.ralmnsk.dao.msg.MsgDao;
 import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
 import com.github.ralmnsk.dao.news.NewsDao;
 import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
 import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
+import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
@@ -64,6 +67,11 @@ public class MsgCreatorImpl implements MsgCreator{
         HttpSession session=req.getSession();
         News newsUnconfirmed=(News)session.getAttribute("news");
         News news=NewsDaoHiberImpl.getInstance().getById(newsUnconfirmed.getIdNews());
+        DiscussionDao discussionDao= DiscussionDaoHiberImpl.getInstance();
+//        UserDao userDao=UserDaoHiberImpl.getInstance();
+        Discussion discussion=news.getDiscussion();
+        //User userUnconfirmed=(User)session.getAttribute("user");
+        //User user=UserDaoHiberImpl.getInstance().getById(userUnconfirmed.getId());
         if (news.getMsgSet().size()>0){
             Set<Msg> msgSet=news.getMsgSet();
             List<Msg> msgList=new ArrayList<>();
@@ -82,6 +90,8 @@ public class MsgCreatorImpl implements MsgCreator{
                     Long id=user.getId();
 //                    User readUser=userService.getById(id);
                     mapMsgUsr.put(m,user);
+                    discussionDao.addUserInDiscussion(user,discussion);
+
                 }
             }
             session.setAttribute("mapMsgUsr",mapMsgUsr);

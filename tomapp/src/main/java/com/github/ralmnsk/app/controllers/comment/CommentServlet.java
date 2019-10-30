@@ -27,12 +27,14 @@ public class CommentServlet extends HttpServlet {
         resp.setContentType("text/html");
         getComment(req,resp);
         req.getRequestDispatcher("/inform.jsp").forward(req, resp);
+        req.getSession().removeAttribute("discussionList");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getComment(req,resp);
         req.getRequestDispatcher("/inform.jsp").forward(req, resp);
+        req.getSession().removeAttribute("discussionList");
     }
 
     private void getComment(HttpServletRequest req, HttpServletResponse resp){

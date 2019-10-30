@@ -12,5 +12,6 @@ public interface DiscussionDao {
     List<Discussion> readByUser(User user);
     void delete(Long id);
     List<Discussion> findAll(int firstResult, int maxResults);
+    void addUserInDiscussion(User user, Discussion discussion);
 
 }
