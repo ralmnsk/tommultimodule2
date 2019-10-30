@@ -20,7 +20,7 @@ public class News implements Serializable {
     @Column(name="nws_name")
     private String nameNews;
 
-    @Column(name="nws_data")
+    @Column(name="nws_data",columnDefinition = "TEXT")
     private String dataNews;
 
     @Column(name="nws_date")
