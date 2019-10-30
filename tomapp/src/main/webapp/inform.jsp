@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
     <head><title>INFORMATION</title>
         <meta charset="utf-8">
@@ -26,10 +28,21 @@
             <a href="${pageContext.request.contextPath}/site/comment">Мои коментарии</a>
             <hr/>
 
-            <c:forEach var="entry" items="${discussionNewsMap}">
-                <p><h4>${entry.key.id}</h4></br>
-                ${entry.value.nameNews}<p>
-                </br>
+            <c:choose>
+                <c:when test = "${fn:length(discussionList) > 0}">
+                    <c:out value="Мои Дискуссии:"/>
+                    </br>
+                    </br>
+                </c:when>
+                <c:otherwise>
+                     <c:out value="Нет дискуссий:"/>
+                     <br/>
+                     <br/>
+                </c:otherwise>
+            </c:choose>
+
+            <c:forEach var="item" items="${discussionList}">
+                <c:out value="${item.news.nameNews}"/><p>
                 <hr/>
             </c:forEach>
 

@@ -24,7 +24,7 @@
                     </br>
                     <a href="${pageContext.request.contextPath}/site/contact">Мой контакт</a>
                     </br>
-                    <a href="${pageContext.request.contextPath}/site/coment">Мои коментарии</a>
+                    <a href="${pageContext.request.contextPath}/site/comment">Мои коментарии</a>
                     <hr/>
         <table>
                     <c:forEach var="entry" items="${map}">

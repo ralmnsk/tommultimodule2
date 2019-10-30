@@ -1,5 +1,7 @@
 package com.github.ralmnsk.service.dispute;
 
+import com.github.ralmnsk.dao.discussion.DiscussionDao;
+import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
 import com.github.ralmnsk.dao.msg.MsgDao;
 import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
 import com.github.ralmnsk.dao.user.UserDao;
@@ -26,18 +28,14 @@ public class DisputeImpl implements Dispute {
         User user=(User)session.getAttribute("user");
         UserDao userDao= UserDaoHiberImpl.getInstance();
         User readUser=userDao.getById(user.getId());
-
-        if (readUser.getDiscussionSet().size()>0){
-            Set<Discussion> discussionSet=readUser.getDiscussionSet();
-            Map<Discussion, News> discussionNewsMap=new LinkedHashMap();
-            for (Discussion d:discussionSet){
-                discussionNewsMap.put(d,d.getNews());
-            }
-            session.setAttribute("discussionNewsMap",discussionNewsMap);
-        } else{
-            MsgDao msgDao= MsgDaoHiberImpl.getInstance();
-            List<Msg> msgList=msgDao.findByUser(user);
-
+        DiscussionDao discussionDao= DiscussionDaoHiberImpl.getInstance();
+        List<Discussion> discussionList=discussionDao.readByUser(readUser);
+        if ((discussionList!=null)&&(discussionList.size()>0)){
+            session.setAttribute("discussionList",discussionList);
         }
+//        else{
+//            MsgDao msgDao= MsgDaoHiberImpl.getInstance();
+//            List<Msg> msgList=msgDao.findByUser(user);
+//        }
     }
 }
