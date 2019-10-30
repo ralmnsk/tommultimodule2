@@ -9,10 +9,7 @@ import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.news.NewsService;
-import com.github.ralmnsk.service.news.NewsServiceImpl;
-import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceImpl;
+
 
 import java.util.List;
 import java.util.Set;
@@ -37,11 +34,12 @@ public class NewsDeleterImpl implements NewsDeleter {
         DiscussionDao discussionDao= DiscussionDaoHiberImpl.getInstance();
 
         Discussion discussion=null;
-        if(news.getDiscussion()!=null){
-            List<Discussion> discussionList=discussionDao.readByUser(readUser)
-                    .stream()
-                    .filter(d->d.getNews().getIdNews()==readNews.getIdNews())
-                    .collect(Collectors.toList());
+        if(readNews.getDiscussion()!=null){
+//            List<Discussion> discussionList=discussionDao.readByUser(readUser)
+//                    .stream()
+//                    .filter(d->d.getNews().getIdNews()==readNews.getIdNews())
+//                    .collect(Collectors.toList());
+            discussion=readNews.getDiscussion();
         }
 
         Set<News> newsSet=readUser.getNewsSet(); //.remove(0);
@@ -51,6 +49,7 @@ public class NewsDeleterImpl implements NewsDeleter {
                     if (discussion!=null){
                         discussionDao.delete(discussion.getId());
                     }
+
                     newsDao.deleteNews(readNews);
                 }
             }

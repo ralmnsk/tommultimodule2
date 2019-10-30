@@ -126,4 +126,9 @@ class DiscussionDaoHiberImplTest {
         List<Discussion> list=discussionDao.readByUser(user);
         list.stream().map(d->d.getNews().getNameNews()).forEach(System.out::println);
     }
+
+    @Test
+    public void deleteDiscussion(){
+        discussionDao.delete(33L);
+    }
 }

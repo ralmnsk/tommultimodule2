@@ -1,6 +1,7 @@
 package com.github.ralmnsk.dao.news;
 
 
+import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
 import com.github.ralmnsk.dao.msg.MsgDao;
 import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
 import com.github.ralmnsk.dao.user.UserDao;
@@ -132,6 +133,15 @@ class NewsDaoHiberImplTest {
         news.setDataNews("222222");
         newsDao.updateNews(news);
         System.out.println(news);
+    }
+
+    @Test
+    public void deleteNewsWithDiscussion(){
+        UserDao userDao=UserDaoHiberImpl.getInstance();
+        //User user=userDao.getById(6L);
+        News news=newsDao.getById(66L);
+        DiscussionDaoHiberImpl.getInstance().delete(news.getDiscussion().getId());
+        newsDao.deleteNews(news);
     }
 //-------------------------------------------------------------------
 //    @Test

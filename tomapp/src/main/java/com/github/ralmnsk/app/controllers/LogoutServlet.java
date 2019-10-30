@@ -40,6 +40,7 @@ public class LogoutServlet extends HttpServlet {
         session.setAttribute("user", null);
         session.setAttribute("userType", null);
         req.getRequestDispatcher("/logout.jsp").forward(req, resp);
+        session.removeAttribute("discussionList");
         logger.info(this.getClass()+" processReq /logout.jsp");
     }
 }

@@ -24,7 +24,7 @@
             </br>
             <a href="/tomapp/site/logout">Logout</a>
             <hr/>
-                <p>${news.dataNews}
+                <p>${news.nameNews}
             </br>
             <hr/>
                 <p>${news.dataNews}
@@ -40,6 +40,7 @@
                    <p><h4><c:out value="${entry.key.text}"></c:out></h4></br>
 
                    Написал: <c:out value="${entry.key.date}"></c:out></br>
+                   <hr/>
                 </c:forEach>
 
 

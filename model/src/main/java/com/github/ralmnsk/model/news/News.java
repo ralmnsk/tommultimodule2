@@ -31,7 +31,7 @@ public class News implements Serializable {
     @JoinColumn(name="usr_id")
     private User user;
 
-    @OneToOne (mappedBy = "news")
+    @OneToOne (mappedBy = "news", cascade = CascadeType.ALL)
     private Discussion discussion;
 
     @OneToMany(mappedBy = "news",cascade = CascadeType.ALL)

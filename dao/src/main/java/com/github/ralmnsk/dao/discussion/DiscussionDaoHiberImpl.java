@@ -96,8 +96,15 @@ public class DiscussionDaoHiberImpl implements DiscussionDao{
     public void delete(Long id) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        Discussion msg=session.get(Discussion.class,id);
-        session.delete(msg);
+        Discussion discussion=session.get(Discussion.class,id);
+
+        discussion.getUserSet().stream()
+                .map(user -> user.getDiscussionSet())
+                .forEach(set->set.remove(discussion));
+        discussion.getUserSet().clear();
+        discussion.getNews().setDiscussion(null);
+        discussion.setNews(null);
+        session.delete(discussion);
         session.getTransaction().commit();
         session.close();
     }
