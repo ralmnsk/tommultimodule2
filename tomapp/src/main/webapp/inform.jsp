@@ -42,7 +42,7 @@
             </c:choose>
 
             <c:forEach var="item" items="${discussionList}">
-                <c:out value="${item.news.nameNews}"/><p>
+                <a href="${pageContext.request.contextPath}/site/discuss?discussNewsId=${item.news.idNews}">${item.news.nameNews}</a>
                 <hr/>
             </c:forEach>
 

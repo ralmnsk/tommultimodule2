@@ -39,39 +39,26 @@ public class MsgCreatorImpl implements MsgCreator{
         String msgText=req.getParameter("msgText");
         Msg msg=new Msg(new Date(),msgText);
         News news=(News)session.getAttribute("news");
-//        NewsDao newsDao= NewsDaoHiberImpl.getInstance();
-//        News readNews=newsDao.getById(news.getIdNews());
-
         User user=(User)session.getAttribute("user");
-//        UserDao userDao= UserDaoHiberImpl.getInstance();
-//        User readUser=userDao.getById(user.getId());
 
         MsgDao msgDao= MsgDaoHiberImpl.getInstance();
-
         msg.setUser(user);
         msg.setNews(news);
 
         msgDao.create(msg);
 
-        addUserInDiscussion(user,news);
-        //getMsgList();
+
         return msg;
     }
 
-    private void addUserInDiscussion(User user, News news) {
-
-    }
 
     @Override
     public void getMsgList(){
         HttpSession session=req.getSession();
-        News newsUnconfirmed=(News)session.getAttribute("news");
-        News news=NewsDaoHiberImpl.getInstance().getById(newsUnconfirmed.getIdNews());
+        News news=NewsDaoHiberImpl.getInstance().getById(discussNewsId);
         DiscussionDao discussionDao= DiscussionDaoHiberImpl.getInstance();
-//        UserDao userDao=UserDaoHiberImpl.getInstance();
         Discussion discussion=news.getDiscussion();
-        //User userUnconfirmed=(User)session.getAttribute("user");
-        //User user=UserDaoHiberImpl.getInstance().getById(userUnconfirmed.getId());
+        Map<Msg, User> mapMsgUsr=new LinkedHashMap();
         if (news.getMsgSet().size()>0){
             Set<Msg> msgSet=news.getMsgSet();
             List<Msg> msgList=new ArrayList<>();
@@ -81,22 +68,37 @@ public class MsgCreatorImpl implements MsgCreator{
             }
             Collections.sort(msgList,new SortByTimeMsg());
 
-            Map<Msg, User> mapMsgUsr=new LinkedHashMap();
+
 
             for (Msg m:msgList){
                 User user=m.getUser();
 
                 if(user!=null){
                     Long id=user.getId();
-//                    User readUser=userService.getById(id);
                     mapMsgUsr.put(m,user);
-                    discussionDao.addUserInDiscussion(user,discussion);
-
+                    if(!isUserInDiscussion(user,discussion)){
+                        discussionDao.addUserInDiscussion(user,discussion);
+                    }
                 }
             }
-            session.setAttribute("mapMsgUsr",mapMsgUsr);
             System.out.println(mapMsgUsr);
         }
+            session.setAttribute("mapMsgUsr",mapMsgUsr);
+    }
+
+    private boolean isUserInDiscussion(User user, Discussion discussion) {
+        boolean isExist=false;
+        DiscussionDao discussionDao=DiscussionDaoHiberImpl.getInstance();
+        List<Discussion> discussions = discussionDao.readByUser(user);
+        if ((discussions!=null)&&(discussions.size()>0)){
+            for (Discussion d:discussions){
+                if(discussion.getId()==d.getId()){
+                    isExist=true;
+                }
+            }
+        }
+
+        return isExist;
     }
 
 }

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Enumeration;
 
 
 @WebServlet("/site/logout")
@@ -40,7 +41,11 @@ public class LogoutServlet extends HttpServlet {
         session.setAttribute("user", null);
         session.setAttribute("userType", null);
         req.getRequestDispatcher("/logout.jsp").forward(req, resp);
-        session.removeAttribute("discussionList");
+        Enumeration<String> attributeNames = session.getAttributeNames();
+        while(attributeNames.hasMoreElements()){
+            String atrr=attributeNames.nextElement();
+            session.removeAttribute(atrr);
+        }
         logger.info(this.getClass()+" processReq /logout.jsp");
     }
 }

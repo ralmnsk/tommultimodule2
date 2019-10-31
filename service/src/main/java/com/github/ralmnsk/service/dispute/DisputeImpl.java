@@ -2,15 +2,10 @@ package com.github.ralmnsk.service.dispute;
 
 import com.github.ralmnsk.dao.discussion.DiscussionDao;
 import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
-import com.github.ralmnsk.dao.msg.MsgDao;
-import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
 import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
-import com.github.ralmnsk.model.msg.Msg;
-import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.*;
