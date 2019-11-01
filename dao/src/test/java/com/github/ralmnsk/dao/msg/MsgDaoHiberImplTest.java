@@ -40,6 +40,10 @@ class MsgDaoHiberImplTest {
         msgDao.create(msg);
         assertEquals(msg.getText(),msgDao.read(msg.getId()).getText());
         msgDao.delete(msg.getId());
+
+        User user=news.getUser();
+        NewsDaoHiberImpl.getInstance().deleteNews(news);
+        UserDaoHiberImpl.getInstance().deleteUser(user);
     }
 
     @Test
@@ -50,6 +54,10 @@ class MsgDaoHiberImplTest {
         msgDao.create(msg);
         assertEquals(msg.getText(),msgDao.read(msg.getId()).getText());
         msgDao.delete(msg.getId());
+
+        User user=news.getUser();
+        NewsDaoHiberImpl.getInstance().deleteNews(news);
+        UserDaoHiberImpl.getInstance().deleteUser(user);
     }
 
     @Test
@@ -61,6 +69,10 @@ class MsgDaoHiberImplTest {
         msgDao.update(msg.getId(),"new test text");
         assertEquals("new test text",msgDao.read(msg.getId()).getText());
         msgDao.delete(msg.getId());
+
+        User user=news.getUser();
+        NewsDaoHiberImpl.getInstance().deleteNews(news);
+        UserDaoHiberImpl.getInstance().deleteUser(user);
     }
 
     @Test
@@ -71,6 +83,10 @@ class MsgDaoHiberImplTest {
         msgDao.create(msg);
         msgDao.delete(msg.getId());
         assertNull(msgDao.read(msg.getId()));
+
+        User user=news.getUser();
+        NewsDaoHiberImpl.getInstance().deleteNews(news);
+        UserDaoHiberImpl.getInstance().deleteUser(user);
     }
 
     @Test
@@ -84,6 +100,10 @@ class MsgDaoHiberImplTest {
         List<Msg> msgList=msgDao.findAll(0,11);
         assertTrue(msgList.size()>9);
         msgDao.findAll(0,100).stream().forEach(m->msgDao.delete(m.getId()));
+
+        User user=news.getUser();
+        NewsDaoHiberImpl.getInstance().deleteNews(news);
+        UserDaoHiberImpl.getInstance().deleteUser(user);
     }
 
     @Test
@@ -96,7 +116,10 @@ class MsgDaoHiberImplTest {
         msgDao.create(msg);
         assertNotNull(msg);
         assertNotNull(user);
-        assertEquals(msg.getId(),user.getId());
+        assertEquals(msg.getUser().getId(),user.getId());
         msgDao.delete(msg.getId());
+
+        NewsDaoHiberImpl.getInstance().deleteNews(news);
+        UserDaoHiberImpl.getInstance().deleteUser(user);
     }
 }

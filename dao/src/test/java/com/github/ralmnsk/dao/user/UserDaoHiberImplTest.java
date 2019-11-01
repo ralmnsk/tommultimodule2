@@ -64,7 +64,6 @@ public class UserDaoHiberImplTest {
         User user=userInTestCreate();
         userDao.createUser(user);
         User readUser=userDao.readUser(user);
-//        System.out.println("Testing: "+readUser);
         userDao.deleteUser(readUser);
         User afterTestUser=userDao.readUser(user);
         assertNull(afterTestUser);

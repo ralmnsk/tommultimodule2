@@ -48,6 +48,7 @@ class DiscussionDaoHiberImplTest {
     @Test
     void getInstance() {
         assertNotNull(discussionDao);
+        discussionDao.delete(discussion.getId());
     }
 
     @Test

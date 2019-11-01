@@ -41,6 +41,7 @@ class ContactDaoImplTest {
     @Test
     void getInstance() {
         assertNotNull(contactDao);
+        contactDao.delete(contact.getId());
     }
 
     @Test
