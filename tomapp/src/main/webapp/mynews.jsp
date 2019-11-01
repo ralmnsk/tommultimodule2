@@ -12,10 +12,12 @@
                     </br>
                      <a href="${pageContext.request.contextPath}/">Главная</a>
                     </br>
-                    <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
-                    </br>
-                    <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
-                    </br>
+                                    <c:if test = "${(user.role == 'admin')}">
+                                        <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
+                                        </br>
+                                        <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
+                                        </br>
+                                    </c:if>
                     <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
                     <hr/>
                     <a href="${pageContext.request.contextPath}/site/addnews">Добавить новость</a>

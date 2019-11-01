@@ -16,10 +16,12 @@
             </br>
              <a href="/tomapp/">Главная</a>
             </br>
-            <a href="/tomapp/topsecret">Страница администратора</a>
-            </br>
-            <a href="/tomapp/topsecret2">Страница администратора 2</a>
-            </br>
+                            <c:if test = "${(user.role == 'admin')}">
+                                <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
+                                </br>
+                                <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
+                                </br>
+                            </c:if>
             <a href="/tomapp/site/inform">Страница пользователя</a>
             </br>
             <a href="/tomapp/site/logout">Logout</a>
