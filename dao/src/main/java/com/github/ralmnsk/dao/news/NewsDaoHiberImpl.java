@@ -1,17 +1,12 @@
 package com.github.ralmnsk.dao.news;
 
 import com.github.ralmnsk.dao.connection.HibernateUtil;
-import com.github.ralmnsk.model.discussion.Discussion;
-import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.model.user.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.List;
-import java.util.Set;
 
 public class NewsDaoHiberImpl implements NewsDao {
     private static Logger logger= LoggerFactory.getLogger(NewsDaoHiberImpl.class);
@@ -45,7 +40,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         News readNews=null;
-//           readNews=session.get(News.class,news.getIdNews());
+
         Query query=session.createQuery("from News where nws_name = :newsName",News.class);
         query.setParameter("newsName",news.getNameNews());
         List<News> newsList=query.getResultList();

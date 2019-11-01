@@ -1,23 +1,19 @@
 package com.github.ralmnsk.dao.discussion;
 
 import com.github.ralmnsk.dao.connection.HibernateUtil;
-
 import com.github.ralmnsk.model.discussion.Discussion;
-
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
+
 
 public class DiscussionDaoHiberImpl implements DiscussionDao{
     private static Logger logger= LoggerFactory.getLogger(DiscussionDaoHiberImpl.class);

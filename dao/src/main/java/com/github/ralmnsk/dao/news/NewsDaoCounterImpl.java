@@ -4,7 +4,6 @@ import com.github.ralmnsk.dao.connection.HibernateUtil;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.math.BigInteger;
 
 public class NewsDaoCounterImpl implements NewsDaoCounter {

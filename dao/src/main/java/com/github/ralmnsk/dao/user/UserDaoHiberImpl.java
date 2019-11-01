@@ -1,14 +1,11 @@
 package com.github.ralmnsk.dao.user;
 
-import com.github.ralmnsk.dao.connection.DataSource;
 import com.github.ralmnsk.dao.connection.HibernateUtil;
 import com.github.ralmnsk.model.user.User;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.sql.*;
 import java.util.List;
 
 
@@ -29,11 +26,6 @@ public class UserDaoHiberImpl implements UserDao{
         return localInstance;
     }
 
-//    private Connection getConnection() throws SQLException{
-//    return DataSource.getInstance().getConnection();
-//    }
-
-
     public void createUser(User user) {  //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
@@ -44,7 +36,6 @@ public class UserDaoHiberImpl implements UserDao{
 
 
     public User readUser(User user) { //retrofitted
-
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         User readUser=null;
@@ -59,10 +50,9 @@ public class UserDaoHiberImpl implements UserDao{
                 readUser.getNewsSet().size();
             }
         }
-
-
         session.getTransaction().commit();
         session.close();
+
         return readUser;
     }
 
@@ -79,8 +69,6 @@ public class UserDaoHiberImpl implements UserDao{
     public void deleteUser(User user) { //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-//        Query<User> query=session.createQuery("delete from User where usr_name = :paramName");
-//        query.setParameter("paramName", user.getName());
         User readUser=session.get(User.class,user.getId());
         session.delete(readUser);
         session.getTransaction().commit();
@@ -94,6 +82,7 @@ public class UserDaoHiberImpl implements UserDao{
         User user=session.get(User.class,id);
         session.getTransaction().commit();
         session.close();
+
         return user;
     }
 }
