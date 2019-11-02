@@ -21,19 +21,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class NewsDaoHiberImplTest {
     private NewsDao newsDao=NewsDaoHiberImpl.getInstance();
 
-    public User userInTestCreate(){
+    private User userInTestCreate(){
         User user=new User("testName","testPassword",new Date(),"usr");
         return user;
     }
 
-    public User createUserInTest(){
+    private User createUserInTest(){
         UserDao userDao=UserDaoHiberImpl.getInstance();
         User user=userInTestCreate();
         userDao.createUser(user);
         return userDao.readUser(user);
     }
 
-    public void createTestNewsInUser(){
+    private void createTestNewsInUser(){
         User user=createUserInTest();
         News news=new News("nameNews","dataNews",new Date());
         news.setUser(user);
@@ -110,7 +110,7 @@ class NewsDaoHiberImplTest {
         List<News> list=newsDao.findAllNews(0,5);
         assertTrue(list.size()>4);
         List<News> listRest=newsDao.findAllNews(0,11);
-        listRest.stream().forEach(news->newsDao.deleteNews(news));
+        //listRest.stream().forEach(news->newsDao.deleteNews(news));
         UserDaoHiberImpl.getInstance().deleteUser(user);
     }
 

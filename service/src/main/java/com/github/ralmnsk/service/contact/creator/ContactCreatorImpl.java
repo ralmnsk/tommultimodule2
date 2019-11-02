@@ -5,11 +5,8 @@ import com.github.ralmnsk.dao.contact.ContactDaoImpl;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.user.User;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ContactCreatorImpl implements ContactCreator {
     private HttpServletRequest req;

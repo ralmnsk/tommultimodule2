@@ -45,15 +45,13 @@ public class NewsDeleterImpl implements NewsDeleter {
         Set<News> newsSet=readUser.getNewsSet(); //.remove(0);
         if ((newsSet!=null)&&(newsSet.size()>0)){
             for(News n:newsSet){
-                if (n.getIdNews()==readNews.getIdNews()){
+                if (n.getIdNews().equals(readNews.getIdNews())){
                     if (discussion!=null){
                         discussionDao.delete(discussion.getId());
                     }
-
                     newsDao.deleteNews(readNews);
                 }
             }
-
         }
     }
 }
