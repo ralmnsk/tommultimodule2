@@ -1,20 +1,7 @@
 package com.github.ralmnsk.service.contact.creator;
 
-import com.github.ralmnsk.model.contact.Contact;
-import com.github.ralmnsk.model.user.User;
-import com.mockrunner.mock.web.MockHttpServletRequest;
-import com.mockrunner.mock.web.MockHttpSession;
-import com.sun.deploy.net.HttpRequest;
-import org.apache.catalina.connector.Request;
+
 import org.junit.jupiter.api.Test;
-
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import java.util.Date;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 class ContactCreatorImplTest {

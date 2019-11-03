@@ -17,11 +17,29 @@
 		<module>service</module>
 	</modules>
 
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.7</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>cobertura</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+
+			</plugin>
+		</plugins>
+	</reporting>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-		<jacoco.version>0.8.2</jacoco.version>
+<!--		<jacoco.version>0.8.2</jacoco.version>-->
     </properties>
 
 	<licenses>
@@ -41,8 +59,19 @@
 			<version>5.4.5.Final</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.cobertura/cobertura -->
+<!--		<dependency>-->
+<!--			<groupId>net.sourceforge.cobertura</groupId>-->
+<!--			<artifactId>cobertura</artifactId>-->
+<!--			<version>2.1.1</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+
+
 
 		<!-- LOGGING DEPENDENCIES - LOG4J -->
+
+
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -146,7 +175,36 @@
 					<version>3.0.0</version>
 				</plugin>
 
-
+<!--				<plugin>-->
+<!--					<groupId>org.codehaus.mojo</groupId>-->
+<!--					<artifactId>cobertura-maven-plugin</artifactId>-->
+<!--					<version>2.7</version>-->
+<!--					<dependencies>-->
+<!--						<dependency>-->
+<!--							<groupId>net.sourceforge.cobertura</groupId>-->
+<!--							<artifactId>cobertura-runtime</artifactId>-->
+<!--							<version>2.1.1</version>-->
+<!--							<type>pom</type>-->
+<!--							<exclusions>-->
+<!--								<exclusion>-->
+<!--									<groupId>ch.qos.logback</groupId>-->
+<!--									<artifactId>logback-classic</artifactId>-->
+<!--								</exclusion>-->
+<!--							</exclusions>-->
+<!--						</dependency>-->
+<!--						<dependency>-->
+<!--							<groupId>net.sourceforge.cobertura</groupId>-->
+<!--							<artifactId>cobertura</artifactId>-->
+<!--							<version>2.1.1</version>-->
+<!--							<exclusions>-->
+<!--								<exclusion>-->
+<!--									<groupId>ch.qos.logback</groupId>-->
+<!--									<artifactId>logback-classic</artifactId>-->
+<!--								</exclusion>-->
+<!--							</exclusions>-->
+<!--						</dependency>-->
+<!--					</dependencies>-->
+<!--				</plugin>-->
 
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
@@ -166,30 +224,6 @@
 								<url>http://localhost:8080/manager</url>
 								<server>myserver</server>
 								<path>/${project.build.finalName}</path>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>${jacoco.version}</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>prepare-agent</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>jacoco-report</id>
-							<phase>test</phase>
-							<goals>
-								<goal>report</goal>
-							</goals>
-							<!-- default target/jscoco/site/* -->
-							<configuration>
-								<outputDirectory>target/jacoco-report</outputDirectory>
 							</configuration>
 						</execution>
 					</executions>

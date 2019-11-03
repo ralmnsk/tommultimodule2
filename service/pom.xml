@@ -73,6 +73,38 @@
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>2.7</version>
+<!--                    <dependencies>-->
+<!--                        <dependency>-->
+<!--                            <groupId>net.sourceforge.cobertura</groupId>-->
+<!--                            <artifactId>cobertura-runtime</artifactId>-->
+<!--                            <version>2.1.1</version>-->
+<!--                            <type>pom</type>-->
+<!--                            <exclusions>-->
+<!--                                <exclusion>-->
+<!--                                    <groupId>ch.qos.logback</groupId>-->
+<!--                                    <artifactId>logback-classic</artifactId>-->
+<!--                                </exclusion>-->
+<!--                            </exclusions>-->
+<!--                        </dependency>-->
+<!--                        <dependency>-->
+<!--                            <groupId>net.sourceforge.cobertura</groupId>-->
+<!--                            <artifactId>cobertura</artifactId>-->
+<!--                            <version>2.1.1</version>-->
+<!--                            <exclusions>-->
+<!--                                <exclusion>-->
+<!--                                    <groupId>ch.qos.logback</groupId>-->
+<!--                                    <artifactId>logback-classic</artifactId>-->
+<!--                                </exclusion>-->
+<!--                            </exclusions>-->
+<!--                        </dependency>-->
+<!--                    </dependencies>-->
+                </plugin>
+
             </plugins>
         </pluginManagement>
     </build>
