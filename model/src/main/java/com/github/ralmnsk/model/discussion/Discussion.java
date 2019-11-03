@@ -7,7 +7,11 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.hibernate.annotations.CacheConcurrencyStrategy.READ_WRITE;
+
 @Entity
+@Cacheable
+@org.hibernate.annotations.Cache(usage = READ_WRITE)
 @Table(name="disc")
 public class Discussion {
     @Id

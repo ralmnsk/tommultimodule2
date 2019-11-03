@@ -1,6 +1,8 @@
 package com.github.ralmnsk.service.authorization;
 
 
+import com.github.ralmnsk.dao.user.UserDao;
+import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.clienttype.ClientType;
 import org.junit.jupiter.api.Test;
@@ -59,5 +61,37 @@ public class AuthorizationImplTest {
             e.printStackTrace();
         }
 
+    }
+
+    @Test
+    void process1() {
+        User user=new User("testUser","testPassword",new Date(),"usr");
+        UserDao userDao= UserDaoHiberImpl.getInstance();
+        userDao.createUser(user);
+
+        AuthorizationImpl authorization=new AuthorizationImpl();
+        boolean isAuthorized=authorization.process("testUser", "testPassword");
+        assertTrue(isAuthorized);
+
+        boolean isAuthorized2=authorization.process("1testUser", "testPassword");
+        assertFalse(isAuthorized2);
+
+        User readUser=userDao.readUser(user);
+        userDao.deleteUser(readUser);
+    }
+
+    @Test
+    void getUserInLoginServlet1() {
+        User user=new User("testUser","testPassword",new Date(),"usr");
+        UserDao userDao= UserDaoHiberImpl.getInstance();
+        userDao.createUser(user);
+
+        AuthorizationImpl authorization=new AuthorizationImpl();
+        authorization.process("testUser", "testPassword");
+        User authUser=authorization.getUserInLoginServlet();
+        assertTrue(user.getName().equals(authUser.getName()));
+        assertTrue(authorization.getClientType().equals(ClientType.USER));
+        User readUser=userDao.readUser(user);
+        userDao.deleteUser(readUser);
     }
 }

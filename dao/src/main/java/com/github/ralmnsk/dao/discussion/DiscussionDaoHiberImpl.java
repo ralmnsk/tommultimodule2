@@ -61,7 +61,7 @@ public class DiscussionDaoHiberImpl implements DiscussionDao{
                 //cb.equal(d.<News>get("news"),discussion.getNews())
                 cb.equal(d.get("news"),news.getIdNews())
         );
-        List<Discussion> resultList = session.createQuery(criteria).getResultList();
+        List<Discussion> resultList = session.createQuery(criteria).setCacheable(true).getResultList();
         if (resultList.size()>0){
             return true;
         }
@@ -81,7 +81,7 @@ public class DiscussionDaoHiberImpl implements DiscussionDao{
                         root.<Collection<User>>get("userSet")
                 )
         );
-        List<Discussion> resultList = session.createQuery(criteria).getResultList();
+        List<Discussion> resultList = session.createQuery(criteria).setCacheable(true).getResultList();
         session.getTransaction().commit();
         session.close();
         return resultList;

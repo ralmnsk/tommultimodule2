@@ -1,17 +1,20 @@
 package com.github.ralmnsk.service.user;
 
+import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.sql.Timestamp;
 
+import static com.sun.javaws.JnlpxArgs.verify;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 public class UserServiceImplTest {
@@ -27,6 +30,8 @@ public class UserServiceImplTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
     }
+
+
 
     @Test
     public void createUser() {
@@ -79,5 +84,22 @@ public class UserServiceImplTest {
         when(userService.getById(1000L)).thenReturn(user);
         assertSame("Apple333", userService.getById(1000L).getName());
 
+    }
+
+    @Test
+    void getInstance() {
+        assertNotNull(UserServiceImpl.getInstance());
+    }
+
+//    @Test
+//    void setUser() {
+//    }
+
+    @Test
+    void setUserDao() {
+
+        UserService userService=mock(UserServiceImpl.class);
+        userService.setUserDao(userDao);
+        Mockito.verify(userService).setUserDao(userDao);
     }
 }

@@ -8,8 +8,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.*;
 
+import static org.hibernate.annotations.CacheConcurrencyStrategy.READ_WRITE;
+
 
 @Entity
+@Cacheable
+@org.hibernate.annotations.Cache(usage = READ_WRITE)
 @Table(name="nws")
 public class News implements Serializable {
     @Id

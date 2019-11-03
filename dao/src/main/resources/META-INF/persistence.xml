@@ -33,6 +33,12 @@
             <property name="hibernate.c3p0.max_statements" value="50" />
             <property name="hibernate.c3p0.idle_test_period" value="120" />
             <!--            <property name="hibernate.physical_naming_strategy" value="by.it.util.strategy.CustomNamingStrategy"/>-->
+            <property name="hibernate.cache.region.factory_class"
+                      value="org.hibernate.cache.ehcache.internal.EhcacheRegionFactory" />
+            <property name="hibernate.cache.use_second_level_cache" value="true" />
+            <property name="hibernate.cache.use_query_cache" value="true" />
+            <property name="hibernate.cache.auto_evict_collection_cache" value="true" />
+
         </properties>
     </persistence-unit>
 </persistence>

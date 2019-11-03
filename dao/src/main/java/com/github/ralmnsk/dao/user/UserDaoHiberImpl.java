@@ -39,7 +39,7 @@ public class UserDaoHiberImpl implements UserDao{
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         User readUser=null;
-        Query<User> query=session.createQuery("from User where usr_name = :paramName"); //User is @Entity where @Column (name="usr_name")
+        Query<User> query=session.createQuery("from User where usr_name = :paramName").setCacheable(true); //User is @Entity where @Column (name="usr_name")
         query.setParameter("paramName", user.getName());
         List<User> list=query.list();
 

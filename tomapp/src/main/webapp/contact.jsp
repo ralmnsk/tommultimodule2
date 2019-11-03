@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head><title>CONTACT</title>
         <meta charset="utf-8">
@@ -12,10 +13,12 @@
             </br>
              <a href="${pageContext.request.contextPath}/">Главная</a>
             </br>
-            <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
-            </br>
+            <c:if test = "${(user.role == 'admin')}">
+                                <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
+                                </br>
+                                <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
+                                </br>
+                            </c:if>
             <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
             <hr/>
             <a href="${pageContext.request.contextPath}/site/addnews">Добавить новость</a>

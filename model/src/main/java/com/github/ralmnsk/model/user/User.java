@@ -4,12 +4,15 @@ package com.github.ralmnsk.model.user;
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.*;
 
+import static org.hibernate.annotations.CacheConcurrencyStrategy.*;
+
 @Entity
+@Cacheable
+@org.hibernate.annotations.Cache(usage = READ_WRITE)
 @Table(name="usr")
 public class User implements Serializable {
 
