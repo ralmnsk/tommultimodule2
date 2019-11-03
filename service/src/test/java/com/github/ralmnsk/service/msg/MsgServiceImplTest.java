@@ -65,4 +65,23 @@ class MsgServiceImplTest {
         assertTrue(msgService.findAll(0,10).size()>9);
     }
 
+    @Test
+    void create1() {
+        MsgService msgService=MsgServiceImpl.getInstance();
+        Msg msg=new Msg(new Date(),"testMessage");
+        msgService.create(msg);
+
+        Msg readMsg=msgService.read(msg.getId());
+        assertEquals(msg.getId(),readMsg.getId());
+
+        msgService.update(readMsg.getId(),"testMessage2");
+        Msg updateMsg=msgService.read(readMsg.getId());
+        assertEquals(updateMsg.getText(),"testMessage2");
+
+        List<Msg> list=msgService.findAll(0,10);
+        assertTrue(list.size()>0);
+
+        msgService.delete(readMsg.getId());
+    }
+
 }

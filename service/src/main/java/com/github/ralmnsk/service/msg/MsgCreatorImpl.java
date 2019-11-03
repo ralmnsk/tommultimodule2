@@ -92,7 +92,7 @@ public class MsgCreatorImpl implements MsgCreator{
         List<Discussion> discussions = discussionDao.readByUser(user);
         if ((discussions!=null)&&(discussions.size()>0)){
             for (Discussion d:discussions){
-                if(discussion.getId()==d.getId()){
+                if((discussion!=null)&&(discussion.getId()==d.getId())){
                     isExist=true;
                 }
             }

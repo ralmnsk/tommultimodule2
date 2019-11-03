@@ -5,59 +5,58 @@ import com.github.ralmnsk.dao.contact.ContactDaoImpl;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.user.User;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 
 public class ContactCreatorImpl implements ContactCreator {
-    private HttpServletRequest req;
 
-    public ContactCreatorImpl(HttpServletRequest req) {
-        this.req = req;
+    public ContactCreatorImpl() {
     }
 
     @Override
-    public void getContact() {
-        HttpSession session=req.getSession();
-        Contact contact=null;
-        User user=(User)session.getAttribute("user");
-        User readUser= UserDaoHiberImpl.getInstance().readUser(user);
-        if(readUser.getContact()!=null){
-            contact=readUser.getContact();
-        }else{
-            contact=new Contact("no");
+    public Contact getContact(User user, String mail) {//user,  return contact
+        //HttpSession session=req.getSession();
+        Contact contact = null;
+//        User user=(User)session.getAttribute("user");
+        User readUser = UserDaoHiberImpl.getInstance().readUser(user);
+        if (readUser.getContact() != null) {
+            contact = readUser.getContact();
+        } else {
+            contact = new Contact("no");
         }
-        session.setAttribute("contact",contact);
-        String mail=req.getParameter("mail");
+        //session.setAttribute("contact",contact);
+        //String mail=req.getParameter("mail");
 
-        if (mail!=null){
-            String regex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+        if (mail != null) {
+            String regex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
                     "[a-zA-Z0-9_+&*-]+)*@" +
                     "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                     "A-Z]{2,7}$";
 
-            if(mail.matches(regex)){
-                    ContactDao contactDao= ContactDaoImpl.getInstance();
-                if (readUser.getContact()==null){
+            if (mail.matches(regex)) {
+                ContactDao contactDao = ContactDaoImpl.getInstance();
+                if (readUser.getContact() == null) {
                     contact.setMail(mail);
                     readUser.setContact(contact);
                     contact.setUser(readUser);
                     contactDao.create(contact);
-                    session.setAttribute("contact",contact);
+                    //session.setAttribute("contact",contact);
                 } else {
-                    Contact readContact=readUser.getContact();
+                    Contact readContact = readUser.getContact();
                     readUser.getContact().setMail(mail);
-                    contactDao.update(readContact.getId(),contact.getMail());
-                    session.setAttribute("contact",readContact);
+                    contactDao.update(readContact.getId(), contact.getMail());
+                    //session.setAttribute("contact",readContact);
+                    contact = readContact;
                 }
             }
-            session.setAttribute("user",readUser);
+            //session.setAttribute("user",readUser);
         }
+        return contact;
     }
 
     @Override
-    public void delContact(){
-        HttpSession session=req.getSession();
-        User user=(User)session.getAttribute("user");
+    public Contact delContact(User user){
+        //HttpSession session=req.getSession();
+        //User user=(User)session.getAttribute("user");
         User readUser= UserDaoHiberImpl.getInstance().readUser(user);
         Contact contact=readUser.getContact();
         if(contact!=null){
@@ -65,8 +64,10 @@ public class ContactCreatorImpl implements ContactCreator {
             ContactDao contactDao=ContactDaoImpl.getInstance();
             contactDao.delete(contact.getId());
             Contact noContact=new Contact("no");
-            session.setAttribute("contact",noContact);
+            //session.setAttribute("contact",noContact);
+            contact=noContact;
         }
+        return contact;
     }
 
 }

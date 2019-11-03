@@ -1,6 +1,9 @@
 package com.github.ralmnsk.service.contact.creator;
 
+import com.github.ralmnsk.model.contact.Contact;
+import com.github.ralmnsk.model.user.User;
+
 public interface ContactCreator {
-    void getContact();
-    void delContact();
+    Contact getContact(User user, String mail);
+    Contact delContact(User user);
 }

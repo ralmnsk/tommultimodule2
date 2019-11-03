@@ -2,6 +2,8 @@ package com.github.ralmnsk.app.controllers.contact;
 
 
 import com.github.ralmnsk.app.controllers.discussion.DiscussionServlet;
+import com.github.ralmnsk.model.contact.Contact;
+import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.contact.creator.ContactCreator;
 import com.github.ralmnsk.service.contact.creator.ContactCreatorImpl;
 import com.github.ralmnsk.service.msg.MsgCreator;
@@ -37,8 +39,12 @@ public class ContactServlet extends HttpServlet {
     }
 
     private void getContact(HttpServletRequest req, HttpServletResponse resp){
-        ContactCreator contactCreator=new ContactCreatorImpl(req);
-        contactCreator.getContact();
+        ContactCreator contactCreator=new ContactCreatorImpl();
+        HttpSession session=req.getSession();
+        User user=(User)session.getAttribute("user");
+        String mail=req.getParameter("mail");
+        Contact contact=contactCreator.getContact(user,mail);
+        session.setAttribute("contact",contact);
     }
 
 }
