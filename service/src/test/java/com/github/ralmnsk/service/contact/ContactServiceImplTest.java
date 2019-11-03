@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.contact;
 
+import com.github.ralmnsk.dao.contact.ContactDao;
 import com.github.ralmnsk.dao.contact.ContactDaoImpl;
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.user.User;
@@ -74,5 +75,35 @@ class ContactServiceImplTest {
         when(contactService.findAll(0,10)).thenReturn(list);
         verify(contactService).findAll(0,10);
         assertTrue(contactService.findAll(0,10).size()>9);
+    }
+
+    @Test
+    void create1() {
+        ContactService contactService=ContactServiceImpl.getInstance();
+        Contact contact=new Contact("test@mail.com");
+        contactService.create(contact);
+        Contact readContact=contactService.read(contact.getId());
+        assertEquals(contact.getMail(),readContact.getMail());
+        contactService.delete(contact.getId());
+    }
+
+    @Test
+    void update1() {
+        ContactService contactService=ContactServiceImpl.getInstance();
+        Contact contact=new Contact("test@mail.com");
+        contactService.create(contact);
+        contactService.update(contact.getId(),"test2@mail.com");
+        Contact readContact=contactService.read(contact.getId());
+        assertEquals(readContact.getMail(),"test2@mail.com");
+        contactService.delete(contact.getId());
+    }
+
+    @Test
+    void findAll1() {
+        ContactService contactService=ContactServiceImpl.getInstance();
+        Contact contact=new Contact("test@mail.com");
+        contactService.create(contact);
+        assertTrue(contactService.findAll(0,2).size()>=0);
+        contactService.delete(contact.getId());
     }
 }

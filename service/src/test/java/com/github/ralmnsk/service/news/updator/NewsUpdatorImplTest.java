@@ -17,6 +17,8 @@ class NewsUpdatorImplTest {
 
     @Test
     void newsUpdate() {
+        NewsUpdatorImpl test=new NewsUpdatorImpl();
+        assertNotNull(test);
         News news=new News("test","test",new Date());
         NewsDao newsDao= NewsDaoHiberImpl.getInstance();
         newsDao.createNews(news);

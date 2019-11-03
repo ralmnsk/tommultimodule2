@@ -58,9 +58,5 @@ class DisputeImplTest {
 //
 //    }
 
-    @Test
-    void getDiscussions(){
 
-
-    }
 }
