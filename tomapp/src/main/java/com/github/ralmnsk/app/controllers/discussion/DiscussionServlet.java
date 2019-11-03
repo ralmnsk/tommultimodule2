@@ -37,8 +37,8 @@ public class DiscussionServlet extends HttpServlet {
     private void discuss(HttpServletRequest req, HttpServletResponse resp){
         HttpSession session=req.getSession();
         Long discussNewsId=Long.parseLong(req.getParameter("discussNewsId"));
-        NewsEditor newsEditor=new NewsEditorImpl(session,discussNewsId);
-        newsEditor.newsEdit();
+        NewsEditor newsEditor=new NewsEditorImpl(discussNewsId);
+        session.setAttribute("news",newsEditor.newsEdit());
         MsgCreator msgCreator=new MsgCreatorImpl(req,discussNewsId);
         msgCreator.getMsgList();
 

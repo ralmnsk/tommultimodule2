@@ -11,11 +11,11 @@ import javax.servlet.http.HttpSession;
 public class NewsEditorImpl implements NewsEditor {
     private static Logger logger= LoggerFactory.getLogger(NewsEditorImpl.class);
     private Long id;
-    private HttpSession session;
+    //private HttpSession session;
 
-    public NewsEditorImpl(HttpSession session, Long id) {
+    public NewsEditorImpl(Long id) {
         this.id = id;
-        this.session=session;
+        //this.session=session;
     }
 
     public NewsEditorImpl() {
@@ -30,10 +30,11 @@ public class NewsEditorImpl implements NewsEditor {
     }
 
     @Override
-    public void newsEdit() {
+    public News newsEdit() {
         NewsService newsService=NewsServiceImpl.getInstance();
         News news=newsService.getById(id);
-        session.setAttribute("news",news);
+        //session.setAttribute("news",news);
         logger.info(this.getClass()+" newsEdit");
+        return news;
     }
 }

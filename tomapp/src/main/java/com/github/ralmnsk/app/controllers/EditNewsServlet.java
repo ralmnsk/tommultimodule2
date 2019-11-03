@@ -33,8 +33,8 @@ public class EditNewsServlet extends HttpServlet {
         //User user=(User)req.getSession().getAttribute("user");
         Long editNewsId=Long.parseLong(req.getParameter("editNewsId"));
         HttpSession session = req.getSession();
-        NewsEditor newsEditor=new NewsEditorImpl(session,editNewsId);
-        newsEditor.newsEdit();
+        NewsEditor newsEditor=new NewsEditorImpl(editNewsId);
+        session.setAttribute("news",newsEditor.newsEdit());
 
         req.getRequestDispatcher("/editnews.jsp").forward(req, resp);
         logger.info(this.getClass()+" processReq /editnews.jsp");
