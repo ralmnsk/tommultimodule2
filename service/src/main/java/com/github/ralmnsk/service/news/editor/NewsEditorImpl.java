@@ -34,7 +34,7 @@ public class NewsEditorImpl implements NewsEditor {
         NewsService newsService=NewsServiceImpl.getInstance();
         News news=newsService.getById(id);
         //session.setAttribute("news",news);
-        logger.info(this.getClass()+" newsEdit");
+        logger.info(this.getClass()+" news {} was edited",news);
         return news;
     }
 }

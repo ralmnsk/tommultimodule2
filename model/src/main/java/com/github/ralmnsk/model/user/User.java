@@ -7,7 +7,6 @@ import com.github.ralmnsk.model.news.News;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.*;
-
 import static org.hibernate.annotations.CacheConcurrencyStrategy.*;
 
 @Entity
@@ -76,7 +75,7 @@ public class User implements Serializable {
 
     public boolean addNews(News news) {
         if (newsSet == null) {
-            newsSet = new HashSet<News>();
+            newsSet = new HashSet<>();
             newsSet.add(news);
             return true;
         } else {

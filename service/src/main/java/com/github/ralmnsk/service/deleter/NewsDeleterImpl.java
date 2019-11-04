@@ -9,6 +9,8 @@ import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import java.util.List;
@@ -16,6 +18,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class NewsDeleterImpl implements NewsDeleter {
+
+    private static Logger logger= LoggerFactory.getLogger(NewsDeleterImpl.class);
     private News news;
     private User user;
 
@@ -48,8 +52,10 @@ public class NewsDeleterImpl implements NewsDeleter {
                 if (n.getIdNews().equals(readNews.getIdNews())){
                     if (discussion!=null){
                         discussionDao.delete(discussion.getId());
+                        logger.info(this.getClass()+": discussion was deleted: {}",discussion);
                     }
                     newsDao.deleteNews(readNews);
+                    logger.info(this.getClass()+": news was deleted: {}",readNews);
                 }
             }
         }

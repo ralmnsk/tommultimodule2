@@ -30,7 +30,7 @@
             </br>
             <a href="${pageContext.request.contextPath}/site/comment">Мои коментарии</a>
             <hr/>
-        </div>
+
 
             </br>
             <form name="createNewsForm" method="POST" action="createnews">
@@ -44,5 +44,6 @@
                     <button type="submit" class="btn btn-primary"> Создать новость </button>
                 </div>
             </form>
+        </div>
     </body>
 </html>

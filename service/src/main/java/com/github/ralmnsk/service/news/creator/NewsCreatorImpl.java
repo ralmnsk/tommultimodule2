@@ -46,7 +46,7 @@ public class NewsCreatorImpl implements NewsCreator {
             newsService.createNews(news);
             News readNews=newsService.readNews(news);
             discussionCreate(readUser,readNews);
-            logger.info(this.getClass()+" newsCreate()");
+            logger.info(this.getClass()+": news created:{}",news);
         } else {
             logger.info("news created: {} is empty", news);
         }

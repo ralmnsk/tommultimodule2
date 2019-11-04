@@ -46,6 +46,6 @@ public class LogoutServlet extends HttpServlet {
             String atrr=attributeNames.nextElement();
             session.removeAttribute(atrr);
         }
-        logger.info(this.getClass()+" processReq /logout.jsp");
+        logger.info(this.getClass()+": processReq /logout.jsp, user {} logged out",user);
     }
 }

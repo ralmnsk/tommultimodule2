@@ -43,6 +43,7 @@ public class NewsDaoHiberImpl implements NewsDao {
 
         Query query=session.createQuery("from News where nws_name = :newsName",News.class);
         query.setParameter("newsName",news.getNameNews());
+        query.setCacheable(true);
         List<News> newsList=query.getResultList();
         if ((newsList!=null)&&(newsList.size())>0){
             readNews=newsList.get(0);
@@ -80,6 +81,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         session.beginTransaction();
 
         Query<News> query=session.createQuery("from News order by dateNews desc");
+        query.setCacheable(true);
         query.setFirstResult(firstResult);
         query.setMaxResults(maxResults);
         List<News> newsList=query.list();
@@ -93,7 +95,7 @@ public class NewsDaoHiberImpl implements NewsDao {
     public News getById(Long id) {  //retrofitted
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        News news=null;
+        News news;
         news=session.get(News.class,id);
         if (news!=null){
             news.getMsgSet().size();

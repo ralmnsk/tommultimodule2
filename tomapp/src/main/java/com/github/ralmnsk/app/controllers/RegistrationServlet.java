@@ -61,9 +61,11 @@ public class RegistrationServlet extends HttpServlet {
             userService.createUser(user);
             String msg="Регистация "+user.getName()+" прошла успешно.";
             session.setAttribute("message", msg);
+            logger.info("user: {} was registered", user);
         } else{
             String msg=user.getName()+" уже зарегистрирован.";
             session.setAttribute("message", msg);
+            logger.info("user: {} was registered ALREADY.", user);
         }
     }
 

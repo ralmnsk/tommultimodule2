@@ -28,6 +28,6 @@ public class AddNewsServlet extends HttpServlet {
 
     private void processReq(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/addnews.jsp").forward(req, resp);
-        logger.info(this.getClass()+" processReq"+" /addnews.jsp");
+        logger.info(this.getClass()+": processReq:"+" /addnews.jsp");
     }
 }

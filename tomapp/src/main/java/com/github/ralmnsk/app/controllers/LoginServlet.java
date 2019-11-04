@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
         ClientType clientType=(ClientType)session.getAttribute("userType");
-        String page=null;
+        String page;
         Authorization authorization=new AuthorizationImpl();
 
         if(authorization.process(login,password)){
@@ -48,12 +48,12 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("userType", authorization.getClientType());
             //System.out.println("user "+login+" has role: " +authorization.getUserInLoginServlet().getRole());
             page="/welcome.jsp";
-            logger.info("User: "+login+" passed authorization");
+            logger.info("User: {} passed authorization", login);
         }else {
             page="/login.jsp";
             if(login!=null){
             req.setAttribute("errorLoginPassMessage","Incorrect login or password");
-                logger.info("User: "+login+" :incorrect login or password");
+                logger.info("User: {} : incorrect login or password",login);
             }
         }
         req.getRequestDispatcher(page).forward(req, resp);

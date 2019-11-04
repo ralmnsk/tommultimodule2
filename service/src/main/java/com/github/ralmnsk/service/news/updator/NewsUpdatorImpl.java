@@ -34,6 +34,6 @@ public class NewsUpdatorImpl implements NewsUpdator {
         NewsService newsService=NewsServiceImpl.getInstance();
         newsService.updateNews(news);
         session.setAttribute("news",news);
-        logger.info(this.getClass()+ " newsUpdate");
+        logger.info(this.getClass()+ ": news {} was updated", news);
     }
 }
