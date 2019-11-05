@@ -5,9 +5,14 @@ import com.github.ralmnsk.dao.contact.ContactDaoImpl;
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.user.UserServiceImpl;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +20,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+//@RunWith(MockitoJUnitRunner.class)
 class ContactServiceImplTest {
 
 //    @Mock
-//    private ContactDaoImpl contactDaoHiberImpl;
+//    private ContactDao contactDao;
 //
 //    @InjectMocks
-//    @Mock
-//    private ContactServiceImpl contactService;
+//    private ContactServiceImpl contactService=new ContactServiceImpl();
+
 
     @Test
     void getInstance() {
@@ -31,36 +37,52 @@ class ContactServiceImplTest {
 
     @Test
     void create() {
-        ContactServiceImpl contactService=mock(ContactServiceImpl.class);
+        ContactDao contactDao=mock(ContactDao.class);
         Contact contact=new Contact("test@mail.com");
+        ContactServiceImpl contactService=new ContactServiceImpl();
+        contactService.setContactDao(contactDao);
+        doNothing().when(contactDao).create(any());
         contactService.create(contact);
-        verify(contactService,times(1)).create(contact);
-        when(contactService.read(1L)).thenReturn(contact);
-        assertSame("test@mail.com", contactService.read(1L).getMail());
+        verify(contactDao).create(contact);
     }
 
     @Test
     void read() {
-        ContactServiceImpl contactService=mock(ContactServiceImpl.class);
+        ContactDao contactDao=mock(ContactDao.class);
         Contact contact=new Contact("test@mail.com");
-        contactService.create(contact);
-        when(contactService.read(1L)).thenReturn(contact);
-        assertNotNull(contactService.read(1L));
+        ContactServiceImpl contactService=new ContactServiceImpl();
+        contactService.setContactDao(contactDao);
+        when(contactDao.read(1L)).thenReturn(contact);
+        contactService.read(1L);
         assertSame("test@mail.com", contactService.read(1L).getMail());
     }
 
     @Test
     void update() {
-        ContactServiceImpl contactService=mock(ContactServiceImpl.class);
-        contactService.read(1L);
-        verify(contactService).read(1L);
+        ContactDao contactDao=mock(ContactDao.class);
+//        Contact contact=new Contact("test@mail.com");
+        ContactServiceImpl contactService=new ContactServiceImpl();
+        contactService.setContactDao(contactDao);
+        doNothing().when(contactDao).update(any(),any());
+        contactService.update(1L,"test@mail.com");
+        verify(contactDao).update(1L,"test@mail.com");
+//        ContactServiceImpl contactService=mock(ContactServiceImpl.class);
+//        contactService.read(1L);
+//        verify(contactService).read(1L);
     }
 
     @Test
     void delete() {
-        ContactServiceImpl contactService=mock(ContactServiceImpl.class);
+        ContactDao contactDao=mock(ContactDao.class);
+        Contact contact=new Contact("test@mail.com");
+        ContactServiceImpl contactService=new ContactServiceImpl();
+        contactService.setContactDao(contactDao);
+        doNothing().when(contactDao).delete(any());
         contactService.delete(1L);
-        verify(contactService).delete(1L);
+        verify(contactDao).delete(1L);
+//        ContactServiceImpl contactService=mock(ContactServiceImpl.class);
+//        contactService.delete(1L);
+//        verify(contactService).delete(1L);
     }
 
     @Test

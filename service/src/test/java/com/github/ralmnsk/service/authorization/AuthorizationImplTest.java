@@ -5,8 +5,13 @@ import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.clienttype.ClientType;
+import com.github.ralmnsk.service.user.UserService;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 
 import java.lang.reflect.InvocationTargetException;
@@ -15,39 +20,47 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class AuthorizationImplTest {
+    @Mock
+    private UserService userService;
 
-    @Test
-    private void process() {
-        Authorization authorization;
-        AuthorizationImpl authorizationImpl;
-        String username = "someusername";
-        String password = "unsafePassword";
-        authorization = mock(Authorization.class);
-        authorizationImpl = new AuthorizationImpl();
-        when(authorization.process(username, password))
-                .thenReturn(true);
-        boolean actual = authorizationImpl.process(username, password);
-        assertFalse(actual);
-    }
+    @InjectMocks
+    private AuthorizationImpl authorization=new AuthorizationImpl();
 
-    @Test
-    void getClientType() {
-        AuthorizationImpl authorization=mock(AuthorizationImpl.class);
-        when(authorization.getClientType()).thenReturn(ClientType.USER);
-        assertTrue(authorization.getClientType()==ClientType.USER);
-    }
+//    @Test
+//    private void process() {
+//        Authorization authorization;
+//        AuthorizationImpl authorizationImpl;
+//        String username = "someusername";
+//        String password = "unsafePassword";
+//        authorization = mock(Authorization.class);
+//        authorizationImpl = new AuthorizationImpl();
+//        when(authorization.process(username, password))
+//                .thenReturn(true);
+//        boolean actual = authorizationImpl.process(username, password);
+//        assertFalse(actual);
+//    }
 
-    @Test
-    void getUserInLoginServlet() {
-        User user=new User("user","password",new Date(),"usr");
-        AuthorizationImpl authorization=mock(AuthorizationImpl.class);
-        when(authorization.getUserInLoginServlet()).thenReturn(user);
-        assertTrue(authorization.getUserInLoginServlet().getName().equals(user.getName()));
-    }
+//    @Test
+//    void getClientType() {
+//        User user=new User("user","password",new Date(),"usr");
+//        doNothing().when(userService).readUser(user);
+//        verify(authorization).process("user","password");
+////        AuthorizationImpl authorization=mock(AuthorizationImpl.class);
+////        when(authorization.getClientType()).thenReturn(ClientType.USER);
+////        assertTrue(authorization.getClientType()==ClientType.USER);
+//    }
+
+//    @Test
+//    void getUserInLoginServlet() {
+//        User user=new User("user","password",new Date(),"usr");
+//        AuthorizationImpl authorization=mock(AuthorizationImpl.class);
+//        when(authorization.getUserInLoginServlet()).thenReturn(user);
+//        assertTrue(authorization.getUserInLoginServlet().getName().equals(user.getName()));
+//    }
 
     @Test
     void setClientTypeTest(){

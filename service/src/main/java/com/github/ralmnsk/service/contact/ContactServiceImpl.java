@@ -24,6 +24,10 @@ public class ContactServiceImpl implements ContactService {
         return localInstance;
     }
 
+    public void setContactDao(ContactDao contactDao) {
+        this.contactDao = contactDao;
+    }
+
     @Override
     public void create(Contact contact) {
         contactDao.create(contact);
