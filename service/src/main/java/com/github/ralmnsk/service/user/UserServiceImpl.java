@@ -24,9 +24,7 @@ public class UserServiceImpl implements UserService{
         return localInstance;
     }
 
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+
     @Override
     public void setUserDao(UserDao userDao){
         this.userDao=userDao;

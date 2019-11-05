@@ -53,9 +53,10 @@ class NewsServiceImplTest {
     @Test
     public void getById() {
         News news=getMeTestNews();
-        when(newsService.getById(1000L)).thenReturn(news);
+        when(newsDao.getById(1000L)).thenReturn(news);
         News testNews=newsService.getById(1000L);
         assertEquals(testNews,news);
+        Mockito.verify(newsDao,times(1)).getById(1000L);
     }
 
     @Test
@@ -74,13 +75,8 @@ class NewsServiceImplTest {
     @Test
     public void deleteNews() {
         News newsOne=new News("nameNews","dataNews",time);
-//        News newsTwo=new News(1000L,1001L,"nameNews","dataNews",time);
-//        when(newsDao.readNews(newsOne)).thenReturn(newsTwo);
         newsService.deleteNews(newsOne);
         verify(newsDao,times(1)).deleteNews(newsOne);
-//        newsService.deleteNews(news);
-//        when(newsService.readNews(news)).thenReturn(null);
-//        assertNull(newsService.readNews(news));
     }
 
     @Test
@@ -90,7 +86,7 @@ class NewsServiceImplTest {
         News newsTwo=new News("nameNews2","dataNews2",time);
         list.add(newsOne);
         list.add(newsTwo);
-        when(newsService.findAllNews(0,10)).thenReturn(list);
+        when(newsDao.findAllNews(0,10)).thenReturn(list);
         List<News> newsList=newsService.findAllNews(0,10);
         assertEquals(2,newsList.size());
         assertEquals(newsOne,newsList.get(0));

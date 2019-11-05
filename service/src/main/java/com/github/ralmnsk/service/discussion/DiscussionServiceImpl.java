@@ -25,6 +25,11 @@ public class DiscussionServiceImpl implements DiscussionService {
         }
         return localInstance;
     }
+
+    public void setDiscussionDao(DiscussionDao discussionDao) {
+        this.discussionDao = discussionDao;
+    }
+
     @Override
     public void create(User user, News news) {
         discussionDao.create(user, news);

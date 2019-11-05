@@ -38,9 +38,14 @@ class DiscussionServiceImplTest {
 
     @Test
     void delete() {
-        DiscussionService discussionService=mock(DiscussionServiceImpl.class);
+        User user=new User("testUser","testPassword",new Date(),"usr");
+        News news=new News("testNews","testData",new Date());
+        DiscussionDao discussionDao=mock(DiscussionDao.class);
+        DiscussionServiceImpl discussionService=new DiscussionServiceImpl();
+        discussionService.setDiscussionDao(discussionDao);
+        doNothing().when(discussionDao).delete(any());
         discussionService.delete(1L);
-        verify(discussionService,times(1)).delete(1L);
+        verify(discussionDao).delete(1L);
     }
 
     @Test
@@ -70,9 +75,12 @@ class DiscussionServiceImplTest {
     void create1() {
         User user=new User("testUser","testPassword",new Date(),"usr");
         News news=new News("testNews","testData",new Date());
-        DiscussionService discussionService=mock(DiscussionServiceImpl.class);
+        DiscussionDao discussionDao=mock(DiscussionDao.class);
+        DiscussionServiceImpl discussionService=new DiscussionServiceImpl();
+        discussionService.setDiscussionDao(discussionDao);
+        doNothing().when(discussionDao).create(any(),any());
         discussionService.create(user,news);
-        verify(discussionService,times(1)).create(user,news);
+        verify(discussionDao).create(user,news);
     }
 
     @Test
@@ -98,9 +106,27 @@ class DiscussionServiceImplTest {
         userDao.deleteUser(user);
     }
 
-//    @Test
-//    void readByUser1() {
-//    }
+    @Test
+    void readByUser1() {
+        User user=new User("testUser","testPassword",new Date(),"usr");
+        User readUser=new User("testUser","testPassword",new Date(),"usr");
+        readUser.setId(1L);
+        News news=new News("testNews","testData",new Date());
+        Discussion discussion=new Discussion();
+        discussion.setNews(news);
+        discussion.setId(1L);
+
+        DiscussionDao discussionDao=mock(DiscussionDao.class);
+        DiscussionServiceImpl discussionService=new DiscussionServiceImpl();
+        discussionService.setDiscussionDao(discussionDao);
+        List<Discussion> list=new ArrayList<>();
+        list.add(discussion);
+
+        when(discussionDao.readByUser(user)).thenReturn(list);
+        List<Discussion> dList=discussionService.readByUser(user);
+        verify(discussionDao).readByUser(user);
+        assertTrue(dList.contains(discussion));
+    }
 
     @Test
     void delete1() {

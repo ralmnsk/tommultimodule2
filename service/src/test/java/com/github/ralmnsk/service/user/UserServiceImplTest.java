@@ -1,13 +1,8 @@
 package com.github.ralmnsk.service.user;
 
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
+import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.model.user.User;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import java.sql.Timestamp;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -15,25 +10,16 @@ import static org.mockito.Mockito.*;
 
 public class UserServiceImplTest {
 
-    @Mock
-    private UserDaoHiberImpl userDao;
-
-    @InjectMocks
-    private UserServiceImpl userService;
-
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-
-
     @Test
-    private void createUser1() {
+    void createUser1Test() {
         User user = getMeTestUser();
+        UserDao userDao=mock(UserDao.class);
+        UserServiceImpl userService=new UserServiceImpl();
+        userService.setUserDao(userDao);
+        when(userDao.readUser(user)).thenReturn(user);
         userService.createUser(user);
-        when(userService.readUser(user)).thenReturn(user);
-        assertSame("Apple333", userService.readUser(user).getName());
+        assertEquals("Apple333", userService.readUser(user).getName());
+        verify(userDao).createUser(user);
     }
 
     private User getMeTestUser() {
@@ -51,53 +37,56 @@ public class UserServiceImplTest {
         assertNotNull(UserServiceImpl.getInstance());
     }
 
-    @Test
-    void setUserDao1() {
-        UserService userService=mock(UserServiceImpl.class);
-        userService.setUserDao(userDao);
-        Mockito.verify(userService).setUserDao(userDao);
-    }
-
-    @Test
-    void createUser2() {
-        UserService userService1=UserServiceImpl.getInstance();
-        User user=getMeTestUser();
-        userService1.createUser(user);
-        User readUser=userService1.readUser(user);
-        assertEquals(user.getName(),readUser.getName());
-        userService1.deleteUser(readUser);
-    }
 
     @Test
     void readUser1() {
+        UserDao userDao=mock(UserDao.class);
+        UserServiceImpl userService=new UserServiceImpl();
+        userService.setUserDao(userDao);
+
         User user = getMeTestUser();
-        when(userService.readUser(user)).thenReturn(user);
-        assertNotNull(userService.readUser(user));
-        assertSame("Apple333", userService.readUser(user).getName());
+        when(userDao.readUser(user)).thenReturn(user);
+
+        assertEquals("Apple333", userService.readUser(user).getName());
     }
 
     @Test
     void updateUser1() {
+        UserDao userDao=mock(UserDao.class);
+        UserServiceImpl userService=new UserServiceImpl();
+        userService.setUserDao(userDao);
+
         User user = getMeTestUser();
         user.setPass("pass222");
+
         userService.updateUser(user);
-        when(userService.readUser(user)).thenReturn(user);
-        assertSame("pass222", userService.readUser(user).getPass());
+        doNothing().when(userDao).updateUser(user);
+        verify(userDao).updateUser(user);
     }
 
     @Test
     void deleteUser1() {
+        UserDao userDao=mock(UserDao.class);
+        UserServiceImpl userService=new UserServiceImpl();
+        userService.setUserDao(userDao);
+
         User user = getMeTestUser();
         userService.deleteUser(user);
-        when(userService.readUser(user)).thenReturn(null);
-        assertNull(userService.readUser(user));
+
+
+        doNothing().when(userDao).deleteUser(user);
+        verify(userDao).deleteUser(user);
     }
 
     @Test
     void getById1() {
+        UserDao userDao=mock(UserDao.class);
+        UserServiceImpl userService=new UserServiceImpl();
+        userService.setUserDao(userDao);
+
         User user = getMeTestUser();
         User testUser = userService.getById(1000L);
-        when(userService.getById(1000L)).thenReturn(user);
-        assertSame("Apple333", userService.getById(1000L).getName());
+        when(userDao.getById(1000L)).thenReturn(user);
+        assertEquals("Apple333", userService.getById(1000L).getName());
     }
 }
