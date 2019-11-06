@@ -41,7 +41,7 @@ public class NewsDaoHiberImpl implements NewsDao {
         session.beginTransaction();
         News readNews=null;
 
-        Query query=session.createQuery("from News where nws_name = :newsName",News.class);
+        Query query=session.createQuery("from News where nameNews = :newsName",News.class);
         query.setParameter("newsName",news.getNameNews());
         query.setCacheable(true);
         List<News> newsList=query.getResultList();

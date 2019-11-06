@@ -53,6 +53,7 @@ class NewsDaoHiberImplTest {
         News news=new News("nameNews","dataNews",new Date());
         news.setUser(user);
         newsDao.createNews(news);
+        assertNotNull(news.getIdNews());
         News foundNews=newsDao.readNews(news);
         System.out.println(foundNews);
         assertEquals(news.getNameNews(),foundNews.getNameNews());
@@ -66,9 +67,12 @@ class NewsDaoHiberImplTest {
         News news=new News("nameNews","dataNews",new Date());
 //        newsDao.createNews(news);
         createTestNewsInUser();
+
         News foundNews=newsDao.readNews(news);
+
         User user=foundNews.getUser();
         assertEquals(news.getNameNews(),foundNews.getNameNews());
+
         newsDao.deleteNews(foundNews);
         UserDaoHiberImpl.getInstance().deleteUser(user);
     }

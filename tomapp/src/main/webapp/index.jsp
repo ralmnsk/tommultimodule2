@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
     <head>
@@ -34,7 +35,7 @@
                                 Автор: ${entry.value.name}
 
                                                         </br>
-                                Дата: ${entry.key.dateNews}</br>
+                                Дата: <fmt:formatDate type = "both" value = "${entry.key.dateNews}" /></br>
             <c:if test = "${(user.role == 'usr')or(user.role == 'admin')}">
                 <form name="sendToDiscuss" method="POST" action="site/discuss">
                     <div class="form=group">

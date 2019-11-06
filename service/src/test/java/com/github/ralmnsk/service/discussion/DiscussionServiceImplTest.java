@@ -10,14 +10,24 @@ import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@ExtendWith(MockitoExtension.class)
 class DiscussionServiceImplTest {
 
+    @Mock
+    DiscussionDao dao;
+
+    @InjectMocks
+    DiscussionServiceImpl service;
 
     @Test
     void readByUser() {
@@ -38,9 +48,9 @@ class DiscussionServiceImplTest {
 
     @Test
     void delete() {
-        DiscussionService discussionService=mock(DiscussionServiceImpl.class);
-        discussionService.delete(1L);
-        verify(discussionService,times(1)).delete(1L);
+        doNothing().when(dao).delete(any());
+        service.delete(1L);
+        verify(dao,times(1)).delete(1L);
     }
 
     @Test

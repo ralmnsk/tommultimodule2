@@ -34,8 +34,7 @@ public class NewsDaoCounterForUserImpl implements NewsDaoCounterForUser {
 
         session.getTransaction().commit();
         session.close();
-        Integer convertedCount=count.intValue();
-        return convertedCount;
+        return count.intValue();
     }
 }
 
