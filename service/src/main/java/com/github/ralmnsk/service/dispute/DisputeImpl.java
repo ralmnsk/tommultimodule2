@@ -6,8 +6,6 @@ import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.user.User;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.*;
 
 public class DisputeImpl implements Dispute {

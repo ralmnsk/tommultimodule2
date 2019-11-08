@@ -6,6 +6,7 @@ import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.clienttype.ClientType;
 import com.github.ralmnsk.service.user.UserService;
+import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -22,13 +23,13 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class AuthorizationImplTest {
-    @Mock
-    private UserService userService;
-
-    @InjectMocks
-    private AuthorizationImpl authorization=new AuthorizationImpl();
+//    @Mock
+//    private UserServiceImpl userService;
+//
+//    @InjectMocks
+//    private AuthorizationImpl authorization=new AuthorizationImpl();
 
 //    @Test
 //    private void process() {

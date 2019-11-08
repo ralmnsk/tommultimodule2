@@ -1,3 +1,5 @@
 com\github\ralmnsk\model\news\News.class
+com\github\ralmnsk\model\contact\Contact.class
+com\github\ralmnsk\model\discussion\Discussion.class
 com\github\ralmnsk\model\msg\Msg.class
 com\github\ralmnsk\model\user\User.class
