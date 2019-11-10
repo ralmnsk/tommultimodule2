@@ -1,4 +1,4 @@
-package com.example.demo.security;
+package com.github.ralmnsk.demo.security;
 
 import com.github.ralmnsk.model.user.User;
 import lombok.Data;

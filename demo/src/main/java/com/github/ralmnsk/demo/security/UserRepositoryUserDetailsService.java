@@ -1,7 +1,7 @@
-package com.example.demo.security;
+package com.github.ralmnsk.demo.security;
 
+import com.github.ralmnsk.dao.user.UserRepository;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,7 +23,7 @@ public class UserRepositoryUserDetailsService
   @Override
   public UserDetails loadUserByUsername(String username)
       throws UsernameNotFoundException {
-    User user = userRepo.findByUsername(username);
+    User user = userRepo.findByName(username);
     if (user != null) {
       return user;
     }

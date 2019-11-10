@@ -64,7 +64,7 @@ class NewsServiceImplTest {
         News news=getMeTestNews();
         NewsDaoHiberImpl newsDao=mock(NewsDaoHiberImpl.class);
         NewsService newsService=NewsServiceImpl.getInstance();
-        newsService.setNewsDao(newsDao);
+        //newsService.setNewsDao(newsDao);
         news.setDataNews("dataNews222");
         newsService.updateNews(news);
         verify(newsDao,times(1)).updateNews(news);

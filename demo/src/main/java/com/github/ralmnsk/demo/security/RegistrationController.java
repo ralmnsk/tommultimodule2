@@ -1,5 +1,5 @@
-package com.example.demo.security;
-import com.github.ralmnsk.service.repository.UserRepository;
+package com.github.ralmnsk.demo.security;
+import com.github.ralmnsk.dao.user.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

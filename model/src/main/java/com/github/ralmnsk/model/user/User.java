@@ -9,7 +9,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.*;
-import static org.hibernate.annotations.CacheConcurrencyStrategy.*;
+
+import static org.hibernate.annotations.CacheConcurrencyStrategy.READ_WRITE;
+
 
 @Entity
 @Cacheable

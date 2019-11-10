@@ -35,6 +35,12 @@ public class NewsServiceImpl implements NewsService{
     public News getById(Long id) {
         return newsDao.getById(id);
     }
+
+    @Override
+    public News findByName(String name) {
+        return null;
+    }
+
     @Override
     public void updateNews(News news) {
         newsDao.updateNews(news);
@@ -43,12 +49,14 @@ public class NewsServiceImpl implements NewsService{
     public void deleteNews(News news) {
         newsDao.deleteNews(news);
     }
-    @Override
-    public void setNewsDao(NewsDao newsDao) {
-        this.newsDao=newsDao;
-    }
+//    @Override
+//    public void setNewsDao(NewsDao newsDao) {
+//        this.newsDao=newsDao;
+//    }
 
     public List<News> findAllNews(int firstResult, int maxResults) {
         return newsDao.findAllNews(firstResult,maxResults);
     }
+
+
 }

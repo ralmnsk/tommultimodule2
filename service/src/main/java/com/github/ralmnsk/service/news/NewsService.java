@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface NewsService {
 
-    void setNewsDao(NewsDao newsDao);
     void createNews(News news);
     News readNews(News news);
     void updateNews(News news);
     void deleteNews(News news);
-    List<News> findAllNews(int firstResult, int maxResults);
+    List<News> findAllNews(int page, int maxResults);
     News getById(Long id);
+    News findByName(String name);
 }
