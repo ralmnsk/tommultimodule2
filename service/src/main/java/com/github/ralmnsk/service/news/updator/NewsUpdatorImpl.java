@@ -2,7 +2,6 @@ package com.github.ralmnsk.service.news.updator;
 
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
-import com.github.ralmnsk.service.news.NewsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,9 +30,9 @@ public class NewsUpdatorImpl implements NewsUpdator {
 
     @Override
     public void newsUpdate() {
-        NewsService newsService=NewsServiceImpl.getInstance();
-        newsService.updateNews(news);
-        session.setAttribute("news",news);
-        logger.info(this.getClass()+ ": news {} was updated", news);
+//        NewsService newsService=NewsServiceImpl.getInstance();
+//        newsService.updateNews(news);
+//        session.setAttribute("news",news);
+//        logger.info(this.getClass()+ ": news {} was updated", news);
     }
 }

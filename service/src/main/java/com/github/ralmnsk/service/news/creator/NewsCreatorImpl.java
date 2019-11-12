@@ -2,22 +2,14 @@ package com.github.ralmnsk.service.news.creator;
 
 import com.github.ralmnsk.dao.discussion.DiscussionDao;
 import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
-import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
-import com.github.ralmnsk.service.news.NewsServiceImpl;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 public class NewsCreatorImpl implements NewsCreator {
     private User user;
@@ -33,23 +25,24 @@ public class NewsCreatorImpl implements NewsCreator {
     }
 
     @Override
+
     public News newsCreate(){
         News news=new News();
 
-        NewsService newsService=NewsServiceImpl.getInstance();
-        UserService userService= UserServiceImpl.getInstance();
-
-        if (!dataNews.isEmpty()){
-            news=new News(nameNews, dataNews, new Date());
-            User readUser=userService.readUser(user);
-            news.setUser(readUser);
-            newsService.createNews(news);
-            News readNews=newsService.readNews(news);
-            discussionCreate(readUser,readNews);
-            logger.info(this.getClass()+": news created:{}",news);
-        } else {
-            logger.info("news created: {} is empty", news);
-        }
+//        NewsService newsService=NewsServiceImpl.getInstance();
+//        UserService userService= UserServiceImpl.getInstance();
+//
+//        if (!dataNews.isEmpty()){
+//            news=new News(nameNews, dataNews, new Date());
+//            User readUser=userService.readUser(user);
+//            news.setUser(readUser);
+//            newsService.createNews(news);
+//            News readNews=newsService.readNews(news);
+//            discussionCreate(readUser,readNews);
+//            logger.info(this.getClass()+": news created:{}",news);
+//        } else {
+//            logger.info("news created: {} is empty", news);
+//        }
 
     return news;
     }

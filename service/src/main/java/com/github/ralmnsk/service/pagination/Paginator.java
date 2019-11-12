@@ -9,6 +9,6 @@ import java.util.Map;
 public interface Paginator {
     Map<News, User> viewNews(int page, int maxResults);
     Map<News, User> viewNewsOfUser(int page,int maxResults, User user);
-//    void pagination(int maxResults);
-//    void paginationForUserNews(int maxResults);
+    Long getAllNewsCount();
+    int pagesCount(int allEntitiesCount, int maxEntitiesOnPage);
 }

@@ -73,4 +73,9 @@ public class NewsServiceRepoImpl implements NewsService{
         Optional<News> byId = newsRepo.findById(id);
         return byId.get();
     }
+
+    @Override
+    public Long countAllNews() {
+        return newsRepo.countAllNews();
+    }
 }

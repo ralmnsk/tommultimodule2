@@ -26,6 +26,7 @@ public class DemoApplication {
 
 
 	public static void main(String[] args) {
+		System.setProperty("server.servlet.context-path", "/tomapp");
 		SpringApplication.run(DemoApplication.class, args);
 	}
 

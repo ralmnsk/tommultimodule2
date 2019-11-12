@@ -14,4 +14,5 @@ public interface NewsService {
     List<News> findAllNews(int page, int maxResults);
     News getById(Long id);
     News findByName(String name);
+    Long countAllNews();
 }

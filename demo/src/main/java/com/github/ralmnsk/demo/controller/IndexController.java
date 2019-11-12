@@ -2,17 +2,17 @@ package com.github.ralmnsk.demo.controller;
 
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.pagination.Paginator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +21,8 @@ import java.util.Map;
 public class IndexController {
     @Autowired
     private Paginator paginator;
+    @Autowired
+    private NewsService newsService;
 
     @GetMapping(path = "/hello/{person}")
     public String hello(@PathVariable String person, Model model){
@@ -30,7 +32,7 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(){
-        return "index";//"redirect:/news";    //"redirect:/info";
+        return "redirect:/news";//"redirect:/news";    //"redirect:/info";
     }
 
 //    @GetMapping("/security")
@@ -38,26 +40,48 @@ public class IndexController {
 //        return "security";
 //    }
 
-    @GetMapping("/news")
-    public String news(Model model){
 
-        Map<News, User> map=paginator.viewNews(0,10);
+    @RequestMapping(value = "/news", method = RequestMethod.GET)
+    public String news(@RequestParam(value="move",required = false) String move,
+                       @RequestParam(value = "maxResults",required = false) String maxResults, Model model, HttpServletRequest req){
+        HttpSession session=req.getSession();
+        int currentPage=1;
+        if(session.getAttribute("currentPage")!=null){
+            currentPage=(Integer)session.getAttribute("currentPage");
+        }
+
+
+        int maxResultsCount=5;
+        if (maxResults!=null){
+            maxResultsCount=Integer.parseInt(maxResults);
+        }else{
+            if(session.getAttribute("maxResults")!=null){
+                maxResultsCount=(int)session.getAttribute("maxResults");
+            }
+        }
+
+
+        int allEntitiesCount=newsService.countAllNews().intValue();
+        int pagesCount=paginator.pagesCount(allEntitiesCount,maxResultsCount);
+
+
+        if (move!=null){
+            switch(move){
+                case "previous":
+                    currentPage=currentPage>1?currentPage-1:currentPage;
+                    break;
+                case "next":
+                    currentPage=currentPage<pagesCount?currentPage=currentPage+1:currentPage;
+                    break;
+            }
+        }
+
+        Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount);
         model.addAttribute("map",map);
+        session.setAttribute("currentPage",currentPage);
+        session.setAttribute("pagesCount",pagesCount);
+        session.setAttribute("maxResults",maxResultsCount);
         return "index";
     }
-
-//    private void paginate(HttpServletRequest req, HttpServletResponse resp){
-//        HttpSession session=req.getSession();
-//        int maxResults=5;
-//        if(req.getParameter("maxResults")!=null){
-//            maxResults=Integer.parseInt(req.getParameter("maxResults"));
-//            session.setAttribute("maxResults",maxResults);
-//        }
-//        if(session.getAttribute("maxResults")!=null){
-//            maxResults=(int)session.getAttribute("maxResults");
-//        }
-//        Paginator paginator=new PaginatorImpl(req,resp);
-//        paginator.pagination(maxResults);
-//    }
 
 }

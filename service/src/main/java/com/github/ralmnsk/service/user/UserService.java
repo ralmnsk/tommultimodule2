@@ -14,5 +14,5 @@ public interface UserService {
     User getById(Long id);
     void updateUser(User user);
     void deleteUser(User user);
-    //void setUserDao(UserDao userDao);
+
 }

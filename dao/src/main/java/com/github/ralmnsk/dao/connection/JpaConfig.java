@@ -46,9 +46,14 @@ public class JpaConfig {
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/news?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow");
-        dataSource.setUsername("root");
-        dataSource.setPassword("password");
+//        dataSource.setUrl("jdbc:mysql://localhost:3306/news?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("password");
+
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://remotemysql.com:3306/eYcooOkOuh?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow");
+        dataSource.setUsername("eYcooOkOuh");
+        dataSource.setPassword("OPDoegkjHh");
 
         return dataSource;
     }
@@ -80,7 +85,7 @@ public class JpaConfig {
      public Properties additionalProperties() {
         Properties hibernateProperties = new Properties();
 
-        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
+        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         hibernateProperties.setProperty("hibernate.show_sql", "true");
 

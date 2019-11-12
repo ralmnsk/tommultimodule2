@@ -43,4 +43,14 @@ class NewsRepositoryTest {
         newsRepo.delete(readNews);
         userRepo.delete(user);
     }
+
+    @Test
+    void countAllNews() {
+        News news=new News("testNewsName","testNewsData",new Date());
+        newsRepo.save(news);
+        Long n=newsRepo.countAllNews();
+        assertTrue(n>0);
+        newsRepo.delete(news);
+
+    }
 }

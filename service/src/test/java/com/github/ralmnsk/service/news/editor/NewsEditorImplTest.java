@@ -3,8 +3,6 @@ package com.github.ralmnsk.service.news.editor;
 import com.github.ralmnsk.dao.news.NewsDao;
 import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
 import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.service.news.NewsService;
-import com.github.ralmnsk.service.news.NewsServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;

@@ -12,4 +12,8 @@ import org.springframework.stereotype.Repository;
 public interface NewsRepository extends JpaRepository<News, Long> {
     @Query("select n from News n where n.nameNews = :name")
     News findByName(@Param("name") String name);
+
+    @Query("select count(n) from News n")
+    Long countAllNews();
+
 }

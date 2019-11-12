@@ -12,20 +12,20 @@
         main page (index page)
         </br>
         <c:if test = "${empty user}">
-            <a href="/tomapp/login">Вход</a>
+            <a href="${pageContext.request.contextPath}/login">Вход</a>
             </br>
-            <a href="/tomapp/goregistrate">Регистрация</a>
+            <a href="${pageContext.request.contextPath}/goregistrate">Регистрация</a>
         </c:if>
 
 
         <c:if test = "${(user.role == 'usr')or(user.role == 'admin')}">
             </br>
-            <a href="/tomapp/site/inform">Страница пользователя</a>
+            <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
             </br>
-            <a href="/tomapp/site/logout">Logout</a>
+            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
         </c:if>
         <br>
-        <a href="/tomapp/news">Новости</a>
+        <a href="${pageContext.request.contextPath}/news">Новости</a>
         <hr/>   <table>
                     <c:forEach var="entry" items="${map}">
                         <tr><td><p><h4>${entry.key.nameNews}</h4></br>
@@ -56,11 +56,11 @@
         <nav aria-label="Page navigation example">
           <ul autofocus class="pagination justify-content-center">
 
-            <li class="page-item"><a class="page-link" href="/tomapp/news?move=previous">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="/tomapp/news?move=next">Next</a></li>
-            <li class="page-item"><a class="page-link" href="/tomapp/news?maxResults=5">5</a></li>
-            <li class="page-item"><a class="page-link" href="/tomapp/news?maxResults=15">15</a></li>
-            <li class="page-item"><a class="page-link" href="/tomapp/news?maxResults=50">50</a></li>
+            <li class="page-item"><a class="page-link" href="/news?move=previous">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="/news?move=next">Next</a></li>
+            <li class="page-item"><a class="page-link" href="/news?maxResults=5">5</a></li>
+            <li class="page-item"><a class="page-link" href="/news?maxResults=15">15</a></li>
+            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/news?maxResults=50">50</a></li>
             <li class="page-item"><a class="page-link">Page: ${currentPage}</a></li>
             <li class="page-item"><a class="page-link">Total: ${pagesCount}</a></li>
 

@@ -84,6 +84,12 @@ class NewsServiceRepoImplTest {
         Mockito.verify(repo,times(1)).findByName("testNewsName");
     }
 
+    @Test
+    void countAllNews() {
+        service.countAllNews();
+        Mockito.verify(repo,times(1)).countAllNews();
+    }
+
 //    @Test
 //    void getById() {
 //        service.getById(1L);
