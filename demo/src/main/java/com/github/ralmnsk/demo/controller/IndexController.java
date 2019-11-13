@@ -50,10 +50,11 @@ public class IndexController {
             currentPage=(Integer)session.getAttribute("currentPage");
         }
 
-
+            boolean isMaxResultsChanged=false;
         int maxResultsCount=5;
         if (maxResults!=null){
             maxResultsCount=Integer.parseInt(maxResults);
+            isMaxResultsChanged=true;
         }else{
             if(session.getAttribute("maxResults")!=null){
                 maxResultsCount=(int)session.getAttribute("maxResults");
@@ -76,6 +77,7 @@ public class IndexController {
             }
         }
 
+        currentPage=isMaxResultsChanged?1:currentPage;
         Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount);
         model.addAttribute("map",map);
         session.setAttribute("currentPage",currentPage);

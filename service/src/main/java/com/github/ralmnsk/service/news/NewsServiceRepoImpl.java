@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,8 +59,9 @@ public class NewsServiceRepoImpl implements NewsService{
     }
 
     @Override
-    public List<News> findAllNews(int page, int maxResults) {
-        Page<News> pageNews=newsRepo.findAll(PageRequest.of(page,maxResults));
+    public List<News> findAllNews(Pageable pageable) {
+//        Page<News> pageNews=newsRepo.findAll(PageRequest.of(page,maxResults));
+        Page<News> pageNews=newsRepo.findAll(pageable);
         return pageNews.getContent();
     }
 

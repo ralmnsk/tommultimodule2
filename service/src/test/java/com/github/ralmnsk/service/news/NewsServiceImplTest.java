@@ -8,6 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.domain.PageRequest;
+
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -87,7 +89,7 @@ class NewsServiceImplTest {
         list.add(newsOne);
         list.add(newsTwo);
         when(newsDao.findAllNews(0,10)).thenReturn(list);
-        List<News> newsList=newsService.findAllNews(0,10);
+        List<News> newsList=newsService.findAllNews(PageRequest.of(0,10));
         assertEquals(2,newsList.size());
         assertEquals(newsOne,newsList.get(0));
         verify(newsDao,times(1)).findAllNews(0,10);
