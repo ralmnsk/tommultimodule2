@@ -3,8 +3,11 @@ package com.github.ralmnsk.dao.connection;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.context.annotation.*;
 
+        import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
         import org.springframework.core.env.Environment;
 
+        import org.springframework.core.io.ClassPathResource;
+        import org.springframework.core.io.Resource;
         import org.springframework.jdbc.datasource.DriverManagerDataSource;
         import org.springframework.orm.jpa.JpaTransactionManager;
         import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -20,7 +23,7 @@ package com.github.ralmnsk.dao.connection;
         "com.github.ralmnsk.model", "com.github.ralmnsk.demo",
         "com.github.ralmnsk.service.user"})
 //@EnableJpaRepositories(basePackages = "com.github.ralmnsk.dao")
-@PropertySource(value={"classpath:application.properties"})
+//@PropertySource(value={"classpath:application.properties"})
 @EnableTransactionManagement
 
 public class JpaConfig {
@@ -45,10 +48,10 @@ public class JpaConfig {
     @Bean
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/news?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow");
-        dataSource.setUsername("root");
-        dataSource.setPassword("password");
+        dataSource.setDriverClassName(env.getProperty("spring.datasource.driver-class-name"));//("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl(env.getProperty("spring.datasource.url"));
+        dataSource.setUsername(env.getProperty("spring.datasource.username"));
+        dataSource.setPassword(env.getProperty("spring.datasource.password"));
 
 //        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 //        dataSource.setUrl("jdbc:mysql://remotemysql.com:3306/eYcooOkOuh?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow");
@@ -63,7 +66,7 @@ public class JpaConfig {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
         vendorAdapter.setShowSql(false);
-        vendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
+        vendorAdapter.setDatabasePlatform(env.getProperty("spring.datasource.password"));
          LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());
@@ -85,11 +88,22 @@ public class JpaConfig {
      public Properties additionalProperties() {
         Properties hibernateProperties = new Properties();
 
-        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
-        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
-        hibernateProperties.setProperty("hibernate.show_sql", "true");
+        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.hibernate.ddl-auto"));
+        hibernateProperties.setProperty("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect"));
+        hibernateProperties.setProperty("hibernate.show_sql", env.getProperty("spring.jpa.show-sql"));
 
         return hibernateProperties;
+    }
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer properties(){
+        PropertySourcesPlaceholderConfigurer pspc =
+                new PropertySourcesPlaceholderConfigurer();
+        Resource[] resources = new ClassPathResource[ ]
+                { new ClassPathResource( "application.properties" ) };
+        pspc.setLocations( resources );
+        pspc.setIgnoreUnresolvablePlaceholders( true );
+        return pspc;
     }
 
 }

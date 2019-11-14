@@ -24,30 +24,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                .antMatchers("/", "/news")
-//                .access("hasRole('usr')")
-//                .antMatchers("/**").access("permitAll")
-//
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//
-//                .and()
-//                .logout()
-//                .logoutSuccessUrl("/")
-//
-//                .and()
-//                .csrf()
-//                .ignoringAntMatchers("/h2-console/**")
-//
-//                // Allow pages to be loaded in frames from the same origin; needed for H2-Console
-//                .and()
-//                .headers()
-//                .frameOptions()
-//                .sameOrigin()
-//        ;
+        http
+                .authorizeRequests()
+                .antMatchers("/", "/news")
+                .access("hasRole('usr')")
+                .antMatchers("/**").access("permitAll")
+
+                .and()
+                .formLogin()
+                .loginPage("/login")
+
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
+
+                .and()
+                .csrf()
+                .ignoringAntMatchers("/h2-console/**")
+
+                // Allow pages to be loaded in frames from the same origin; needed for H2-Console
+                .and()
+                .headers()
+                .frameOptions()
+                .sameOrigin()
+        ;
     }
 
     @Bean
