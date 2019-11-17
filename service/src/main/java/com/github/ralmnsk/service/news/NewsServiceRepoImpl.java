@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @Service
 @Transactional
-@ComponentScan(basePackages = {"com.github.ralmnsk.model","com.github.ralmnsk.dao"})
+//@ComponentScan(basePackages = {"com.github.ralmnsk.model","com.github.ralmnsk.dao"})
 public class NewsServiceRepoImpl implements NewsService{
 
 //    @PersistenceContext

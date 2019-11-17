@@ -1,3 +1,5 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
@@ -8,7 +10,7 @@
 <body>
     <div class="container">
         <h2>Пожалуйста, войдите:</h2>
-            <form name="loginForm" method="POST" action="login">
+            <form name="formLogin" method="POST" action="authorization">
 
             Login:<br/>
             <input type="text" name="login" value=""/>
@@ -21,9 +23,9 @@
 
         ${errorLoginPassMessage}
         </br>
-        <a href="/tomapp/goregistrate">Регистация</a>
+        <a href="${pageContext.request.contextPath}/goregistrate">Регистация</a>
         </br>
-        <a href="/tomapp/">Главная</a>
+        <a href="${pageContext.request.contextPath}/">Главная</a>
     </div>
 </body>
 </html>

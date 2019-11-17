@@ -8,11 +8,11 @@
         <div class="container">
             ${message}
             </br>
-            <a href="/tomapp/">Главная</a>
+            <a href="${pageContext.request.contextPath}/">Главная</a>
             </br>
-            <a href="/tomapp/site/login">Вход</a>
+            <a href="${pageContext.request.contextPath}/site/login">Вход</a>
             </br>
-            <a href="/tomapp/goregistrate">Возврат к регистации</a>
+            <a href="${pageContext.request.contextPath}/goregistrate">Возврат к регистации</a>
         </div>
     </body>
 </html>

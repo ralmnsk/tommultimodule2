@@ -18,7 +18,7 @@ import static org.hibernate.annotations.CacheConcurrencyStrategy.READ_WRITE;
 @org.hibernate.annotations.Cache(usage = READ_WRITE)
 @Table(name="usr")
 
-public class User implements UserDetails {
+public class User implements UserDetails{
 
     private static final long serialVersionUID = 1L;
 
@@ -169,7 +169,17 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("usr"));
+        return Arrays.asList(new SimpleGrantedAuthority(getRole()));
+    }
+
+    @Override
+    public String getPassword() {
+        return pass;
+    }
+
+    @Override
+    public String getUsername() {
+        return name;
     }
 
     @Override
@@ -190,16 +200,6 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    @Override
-    public String getPassword() {
-        return getPass();
-    }
-
-    @Override
-    public String getUsername() {
-        return getName();
     }
 }
 

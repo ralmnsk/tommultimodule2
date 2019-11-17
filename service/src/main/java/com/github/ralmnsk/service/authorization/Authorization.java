@@ -1,7 +1,8 @@
 package com.github.ralmnsk.service.authorization;
 
+import com.github.ralmnsk.model.role.ClientType;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.clienttype.ClientType;
+
 
 public interface Authorization {
     ClientType getClientType();

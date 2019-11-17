@@ -3,8 +3,8 @@ package com.github.ralmnsk.service.authorization;
 
 import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
+import com.github.ralmnsk.model.role.ClientType;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.clienttype.ClientType;
 import com.github.ralmnsk.service.user.UserService;
 import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.junit.jupiter.api.Test;

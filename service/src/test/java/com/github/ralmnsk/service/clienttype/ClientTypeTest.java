@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.clienttype;
 
+import com.github.ralmnsk.model.role.ClientType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

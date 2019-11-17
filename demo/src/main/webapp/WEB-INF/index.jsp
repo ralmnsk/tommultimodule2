@@ -12,20 +12,20 @@
         main page (index page)
         </br>
         <c:if test = "${empty user}">
-            <a href="/tomapp/login">Вход</a>
+            <a href="${pageContext.request.contextPath}/login">Вход</a>
             </br>
-            <a href="/tomapp/goregistrate">Регистрация</a>
+            <a href="${pageContext.request.contextPath}/goregistrate">Регистрация</a>
         </c:if>
 
 
         <c:if test = "${(user.role == 'usr')or(user.role == 'admin')}">
             </br>
-            <a href="/tomapp/site/inform">Страница пользователя</a>
+            <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
             </br>
-            <a href="/tomapp/site/logout">Logout</a>
+            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
         </c:if>
         <br>
-        <a href="/tomapp/news">Новости</a>
+        <a href="${pageContext.request.contextPath}/news">Новости</a>
         <hr/>   <table>
                     <c:forEach var="entry" items="${map}">
                         <tr><td><p><h4>${entry.key.nameNews}</h4></br>

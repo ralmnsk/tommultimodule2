@@ -1,17 +1,27 @@
 package com.github.ralmnsk.service.authorization;
 
 
+
+import com.github.ralmnsk.model.role.ClientType;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.clienttype.ClientType;
+
 import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+//@Slf4j
+//@Service
 public class
 AuthorizationImpl implements Authorization {
-    private static Logger logger= LoggerFactory.getLogger(AuthorizationImpl.class);
+//    private static Logger logger= LoggerFactory.getLogger(AuthorizationImpl.class);
+//    @Autowired
+    private UserService userService;
+
+//    @Autowired
+    private PasswordEncoder encoder;
+
     private ClientType clientType;
     private User userInLoginServlet;
 
@@ -31,19 +41,21 @@ AuthorizationImpl implements Authorization {
         user.setName(login);
         user.setPass(password);
 
-        //UserDao userDao=new UserDaoImpl();
-        UserService userService=UserServiceImpl.getInstance();
-        //userService.setUserDao(userDao);
-
         User readUser=userService.readUser(user);
-       // System.out.println("checkout user:"+readUser);
 
-        if((readUser!=null)&&(login!=null)&&(login.equals(readUser.getName())&&(password.equals(readUser.getPass())))){
-            userInLoginServlet=readUser;
-            clientType=setClientType(readUser.getRole());
-            return true;
+        if((readUser!=null)&&(login!=null)&&(login.equals(readUser.getName()))){
+
+            boolean isPasswordMatches = encoder.matches(password,readUser.getPass());
+//            System.out.println("LOOK:"+isPasswordMatches);
+            //readUser.setPass(encode);
+
+            if (isPasswordMatches){
+                userInLoginServlet=readUser;
+                clientType=setClientType(readUser.getRole());
+                return true;
+            }
         }
-        logger.info(this.getClass()+" process()");
+//        logger.info(this.getClass()+" process()");
         return false;
     }
 
@@ -51,9 +63,9 @@ AuthorizationImpl implements Authorization {
     private ClientType setClientType(String role) {
         ClientType type=ClientType.GUEST;
         switch (role){
-            case "usr":type=ClientType.USER;
+            case "USER":type=ClientType.USER;
                 break;
-            case "admin":type=ClientType.ADMIN;
+            case "ADMIN":type=ClientType.ADMIN;
                 break;
         }
 

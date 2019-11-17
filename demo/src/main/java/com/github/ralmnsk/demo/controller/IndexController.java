@@ -31,7 +31,13 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(){
+    public String index(HttpServletRequest req){
+        if(req.getSession().getAttribute("errorRegistrationMessage")!=null){
+            req.getSession().removeAttribute("errorRegistrationMessage");
+        }
+        if( req.getSession().getAttribute("errorLoginPassMessage")!=null){
+            req.getSession().removeAttribute("errorLoginPassMessage");
+        }
         return "redirect:/news";//"redirect:/news";    //"redirect:/info";
     }
 

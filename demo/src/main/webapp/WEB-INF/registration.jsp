@@ -7,7 +7,7 @@
     <body>
         <div class="container">
             <h2>Пожалуйста зарегистрируйтесь:</h2>
-            <form name="loginForm" method="POST" action="registration">
+            <form name="registrationForm" method="POST" action="registration">
 
             Логин:<br/>
             <input type="text" name="login" value=""/>
@@ -19,8 +19,9 @@
             </form>
             <hr/>
             </br>
-            ${errorLoginPassMessage}
-            <a href="/tomapp/">Главная</a>
+            ${errorRegistrationMessage}
+            </br>
+            <a href="${pageContext.request.contextPath}/">Главная</a>
         </div>
     </body>
 </html>
