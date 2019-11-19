@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h2>Пожалуйста, войдите:</h2>
-            <form name="formLogin" method="POST" action="authorization">
+            <form name="formLogin" method="POST" action="/login">
 
             Login:<br/>
             <input type="text" name="login" value=""/>

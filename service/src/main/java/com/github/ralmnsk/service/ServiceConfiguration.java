@@ -7,6 +7,6 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ComponentScan("com.github.ralmnsk.service")
-@Import(JpaConfig.class)
+//@Import(JpaConfig.class)
 public class ServiceConfiguration {
 }

@@ -23,11 +23,11 @@
 
             ${user.name}
             </br>
-            <a href="/tomapp/">Главная</a>
+            <a href="${pageContext.request.contextPath}/">Главная</a>
             </br>
-            <a href="/tomapp/site/inform">Страница пользователя</a>
+            <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
             </br>
-            <a href="/tomapp/site/logout">Logout</a>
+            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
         </div>
     </body>
 </html>

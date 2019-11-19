@@ -1,5 +1,6 @@
 package com.github.ralmnsk.dao.connection;
 
+        import com.zaxxer.hikari.HikariDataSource;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.boot.autoconfigure.domain.EntityScan;
         import org.springframework.context.annotation.*;
@@ -11,17 +12,19 @@ package com.github.ralmnsk.dao.connection;
         import org.springframework.core.io.Resource;
         import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         import org.springframework.jdbc.datasource.DriverManagerDataSource;
+        import org.springframework.orm.hibernate5.HibernateTransactionManager;
         import org.springframework.orm.jpa.JpaTransactionManager;
         import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
         import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+        import org.springframework.transaction.PlatformTransactionManager;
         import org.springframework.transaction.annotation.EnableTransactionManagement;
+        import org.springframework.transaction.support.TransactionTemplate;
+
         import javax.persistence.EntityManagerFactory;
         import javax.sql.DataSource;
         import java.util.Properties;
 
 @Configuration
-//@ComponentScan({"com.github.ralmnsk.dao",
-//        "com.github.ralmnsk.model"})
 @EnableJpaRepositories(basePackages = "com.github.ralmnsk.dao")
 @EntityScan(basePackages = "com.github.ralmnsk.model")
 @EnableTransactionManagement
@@ -34,9 +37,10 @@ public class JpaConfig {
 
     @Bean
     public DataSource dataSource() {
-        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        final HikariDataSource dataSource = new HikariDataSource();
         dataSource.setDriverClassName(env.getProperty("spring.datasource.driver-class-name"));//("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl(env.getProperty("spring.datasource.url"));
+        dataSource.setJdbcUrl(env.getProperty("spring.datasource.url"));
         dataSource.setUsername(env.getProperty("spring.datasource.username"));
         dataSource.setPassword(env.getProperty("spring.datasource.password"));
 
@@ -92,6 +96,15 @@ public class JpaConfig {
         pspc.setIgnoreUnresolvablePlaceholders( true );
         return pspc;
     }
+
+
+
+    @Bean
+    public TransactionTemplate transactionTemplate(EntityManagerFactory entityManagerFactory){
+        return new TransactionTemplate(transactionManager(entityManagerFactory));
+    }
+
+
 
 }
 

@@ -2,7 +2,10 @@ package com.github.ralmnsk.demo.security;
 
 import com.github.ralmnsk.dao.user.UserRepository;
 import com.github.ralmnsk.model.user.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,7 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 
+@Slf4j
 @Service
 public class UserRepositoryUserDetailsService
         implements UserDetailsService {
@@ -31,11 +36,15 @@ public class UserRepositoryUserDetailsService
         User user = userRepo.findByName(username);
         if (user != null) {
 
-            return user;
+            return new org.springframework.security.core.userdetails.User(user.getName(),user.getPassword(),getRole(user));
         }
         throw new UsernameNotFoundException(
                 "User '" + username + "' not found");
-//        return null;
+    }
+
+    private Collection<? extends GrantedAuthority> getRole(User user) {
+        String userRole=user.getRole();
+        return AuthorityUtils.createAuthorityList(userRole);
     }
 
 }

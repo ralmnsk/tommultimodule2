@@ -4,6 +4,7 @@ import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.authorization.Authorization;
 import com.github.ralmnsk.service.registration.Register;
 import com.github.ralmnsk.service.user.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-
+@Slf4j
 @Controller
 public class RegistrationController {
   @Autowired

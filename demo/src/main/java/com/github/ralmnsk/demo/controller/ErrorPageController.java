@@ -1,10 +1,11 @@
 package com.github.ralmnsk.demo.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+@Slf4j
 @Controller
 public class ErrorPageController implements org.springframework.boot.web.servlet.error.ErrorController {
     private final static String PATH = "/error";

@@ -18,16 +18,16 @@ import java.util.Date;
 import java.util.List;
 
 
-@Component
-public class CustomAuthenticationProvider implements AuthenticationProvider
+//@Component
+public class CustomAuthenticationProvider //implements AuthenticationProvider
 {
-		@Autowired
+//		@Autowired
 		private UserService userService;
 
-		@Autowired
+//		@Autowired
 		private PasswordEncoder encoder;
 
-		@Override
+//		@Override
 		public Authentication authenticate(Authentication authentication) throws AuthenticationException
 		{
 				String userName = authentication.getName();
@@ -59,7 +59,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider
 				return false;
 		}
 
-		@Override
+//		@Override
 		public boolean supports(Class<?> authentication)
 		{
 				return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);

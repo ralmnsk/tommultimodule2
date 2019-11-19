@@ -17,12 +17,12 @@ public class RegistrationForm {
   
   public User toUser(PasswordEncoder passwordEncoder) {
     return new User(
-        login, passwordEncoder.encode(password),new Date(),ClientType.USER.name());
+        login, passwordEncoder.encode(password),new Date(),"ROLE_"+ClientType.USER.name());
   }
 
   public User toUserNoPassEncoder() {
     return new User(
-            login, password,new Date(),ClientType.USER.name());
+            login, password,new Date(),"ROLE_"+ClientType.USER.name());
   }
   
 }

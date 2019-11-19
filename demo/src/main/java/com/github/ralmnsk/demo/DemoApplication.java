@@ -1,7 +1,9 @@
 package com.github.ralmnsk.demo;
 
+import com.github.ralmnsk.dao.connection.JpaConfig;
 import com.github.ralmnsk.demo.config.WebConfiguration;
 import com.github.ralmnsk.demo.security.SecurityConfig;
+import com.github.ralmnsk.service.ServiceConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -17,17 +19,25 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Slf4j
 @Configuration
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.github.ralmnsk.service"})
+//@ComponentScan(basePackages = {"com.github.ralmnsk.demo"})
+@Import({WebConfiguration.class,
+		SecurityConfig.class, JpaConfig.class,
+		ServiceConfiguration.class})
 
-@Import({WebConfiguration.class,SecurityConfig.class})
 
-
-public class DemoApplication {
+public class DemoApplication extends SpringBootServletInitializer{
 
 
 	public static void main(String[] args) {
-		System.setProperty("server.servlet.context-path", "/tomapp");
+//		System.setProperty("server.servlet.context-path", "/tomapp");
 		SpringApplication.run(DemoApplication.class, args);
 	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(DemoApplication.class);
+	}
+
+
 
 }

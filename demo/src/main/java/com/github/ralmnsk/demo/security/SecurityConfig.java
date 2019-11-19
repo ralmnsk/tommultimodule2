@@ -1,6 +1,7 @@
 package com.github.ralmnsk.demo.security;
 
 import com.github.ralmnsk.dao.user.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,58 +20,45 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.sql.DataSource;
 
+@Slf4j
 @Configuration
 @EnableWebSecurity
+//@EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 //@EnableGlobalMethodSecurity(prePostEnabled = true) //for class SiteController @PreAuthorized
-@ComponentScan({"com.github.ralmnsk.dao","com.github.ralmnsk.demo"})
+//@ComponentScan({"com.github.ralmnsk.demo"}) //"com.github.ralmnsk.dao",
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-//    @Autowired
-//    private DataSource dataSource;
-
-//    @Autowired
-//    public UserRepository userRepository;
 
     @Autowired
     public UserDetailsService userDetailsService;
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        return new UserRepositoryUserDetailsService(userRepository);
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-//                .authorizeRequests()
-//                    .antMatchers("/site/**")
-//                    .hasAnyRole("USER","ADMIN")
-//
-//                .and()
-                    .authorizeRequests()
-                    .antMatchers("/", "/news","/goregistrate","/registration","/authorization","/login")
-                    .access("permitAll")
-//                    .anyRequest().authenticated()
+                .authorizeRequests()
+                    .antMatchers("/","/news","/login","/**")
+                    .permitAll()
+
+//                    .antMatchers("/site/inform")
+//                    .hasAnyRole("ADMIN", "USER")
+
                 .and()
                     .formLogin()
                     .loginPage("/login")
-//                    .loginProcessingUrl("/authorization")
-//                    .defaultSuccessUrl("/welcome")
+                    .loginProcessingUrl("/authenticate")
+                    .defaultSuccessUrl("/welcome")
+                    .failureUrl("/login?error=true")
+                    .permitAll()
+
                 .and()
                     .logout()
-                    .logoutSuccessUrl("/")
+                    .logoutSuccessUrl("/login?logout=true")
+                    .invalidateHttpSession(true)
+                    .permitAll()
+
                 .and()
                     .csrf()
-                    .disable()
-                //.ignoringAntMatchers("/h2-console/**")
-
-                // Allow pages to be loaded in frames from the same origin; needed for H2-Console
-//                .and()
-//                .headers()
-//                .frameOptions()
-//                .sameOrigin()
-        ;
-    }
+                    .disable();
+        }
 
     @Bean
     public PasswordEncoder encoder() {
@@ -88,5 +76,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 ;
 
     }
+//        @Override
+//        protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//            auth
+//                    .inMemoryAuthentication()
+//            .passwordEncoder(encoder())
+//            .withUser("user").password(encoder().encode("123")).roles("USER")
+//            .and()
+//            .withUser("admin").password(encoder().encode("123")).roles("USER", "ADMIN");
+//}
 
 }
