@@ -56,6 +56,7 @@ public class LoginController {
         if(userDetails!=null){
             if(passwordEncoder.matches(authUser.getPass(),userDetails.getPassword())){
                 User user=userService.readUser(authUser);
+                req.getSession().setAttribute("userId",user.getId());
                 req.getSession().setAttribute("user",user);
                 return "welcome";
             }

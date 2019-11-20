@@ -7,7 +7,7 @@ import com.github.ralmnsk.model.user.User;
 import java.util.List;
 
 public interface DiscussionService {
-    void create(User user, News news);
+    boolean create(User user, News news);
     List<Discussion> readByUser(User user);
     void delete(Long id);
     List<Discussion> findAll(int firstResult, int maxResults);

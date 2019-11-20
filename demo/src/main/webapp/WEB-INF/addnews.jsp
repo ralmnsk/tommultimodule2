@@ -20,9 +20,9 @@
                                         </br>
                                     </c:if>
 
-            <a href="/tomapp/site/logout">Logout</a>
+            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
             <hr/>
-            <a href="/tomapp/site/inform">Страница пользователя</a>
+            <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
             </br>
             <a href="${pageContext.request.contextPath}/site/mynews">Мои новости</a>
             </br>
