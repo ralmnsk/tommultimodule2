@@ -38,7 +38,7 @@ public class PaginatorImpl implements Paginator{
     }
 
     @Override
-    public Map<News, User> viewNewsOfUser(int page, int maxResults,User user) {
+    public Map<News, User> viewNewsOfUser(int page, int maxResults,User user) {  //page = number of page
         Map<News, User>map=new HashMap<>();
         Pageable pageable= PageRequest.of(page,maxResults);
         List<News> list=newsService.findAllNews(pageable);

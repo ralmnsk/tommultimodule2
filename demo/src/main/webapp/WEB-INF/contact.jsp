@@ -13,7 +13,7 @@
             </br>
              <a href="${pageContext.request.contextPath}/">Главная</a>
             </br>
-            <c:if test = "${(user.role == 'admin')}">
+            <c:if test = "${(user.role == 'ROLE_ADMIN')}">
                                 <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
                                 </br>
                                 <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
@@ -28,7 +28,7 @@
             <a href="${pageContext.request.contextPath}/site/contact">Мой контакт</a>
             <p>
             </br>
-        <form name="updateContactForm" method="POST" action="contact">
+        <form name="updateContactForm" method="POST" action="gocontact">
             <div class="form-group">
                 <label for="exampleInputText1">Почта ${user.name}:</label>
                 <input style="width: 300px;" type="text" class="form-control" name="mail" value="${contact.mail}">

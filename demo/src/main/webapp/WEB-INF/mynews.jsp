@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
     <head>
         <meta charset="utf-8">
@@ -12,7 +13,7 @@
                     </br>
                      <a href="${pageContext.request.contextPath}/">Главная</a>
                     </br>
-                                    <c:if test = "${(user.role == 'admin')}">
+                                    <c:if test = "${(user.role == 'ROLE_ADMIN')}">
                                         <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
                                         </br>
                                         <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
@@ -36,7 +37,7 @@
                                 Автор: ${entry.value.name}
 
                                                         </br>
-                                Дата: ${entry.key.dateNews}</br>
+                                Дата: <fmt:formatDate type="both" value="${entry.key.dateNews}"/></br>
                                 <form name="editNewsForm" method="POST" action="edit">
                                 <div class="form=group">
                                 <input type="hidden" name="editNewsId" value="${entry.key.idNews}">

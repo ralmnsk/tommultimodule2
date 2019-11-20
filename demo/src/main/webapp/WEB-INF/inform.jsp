@@ -12,7 +12,7 @@
             </br>
              <a href="${pageContext.request.contextPath}/">Главная</a>
              </br>
-                <c:if test = "${(user.role == 'admin')}">
+                <c:if test = "${(user.role == 'ROLE_ADMIN')}">
                     <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
                     </br>
                     <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>

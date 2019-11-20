@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
     <head>
         <meta charset="utf-8">
@@ -18,7 +19,7 @@
         </c:if>
 
 
-        <c:if test = "${(user.role == 'usr')or(user.role == 'admin')}">
+        <c:if test = "${(user.role == 'ROLE_USER')or(user.role == 'ROLE_ADMIN')}">
             </br>
             <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
             </br>
@@ -34,7 +35,7 @@
                                 Автор: ${entry.value.name}
 
                                                         </br>
-                                Дата: ${entry.key.dateNews}</br>
+                                Дата: <fmt:formatDate type="both" value="${entry.key.dateNews}"/></br>
             <c:if test = "${(user.role == 'usr')or(user.role == 'admin')}">
                 <form name="sendToDiscuss" method="POST" action="site/discuss">
                     <div class="form=group">
