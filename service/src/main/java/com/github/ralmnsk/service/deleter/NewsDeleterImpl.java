@@ -79,11 +79,19 @@ public class NewsDeleterImpl implements NewsDeleter {
             for(News n:newsSet){
                 if (n.getIdNews().equals(readNews.getIdNews())){
                     if (discussion!=null){
+                        log.info("discussion id={} of user={} newsName={} was deleted: {}",discussion.getId(),user.getName(),news.getNameNews());
+                        readUser.getDiscussionSet().remove(discussion);
+                        userService.updateUser(readUser);
+                        discussion.getUserSet().remove(readUser);
+                        readNews.setDiscussion(null);
+                        newsService.updateNews(readNews);
+                        discussion.setNews(null);
                         discussionService.delete(discussion.getId());
-                        log.info("discussion id={} of user={} newsName={}was deleted: {}",discussion.getId(),user.getName(),news.getNameNews());
                     }
-                    newsService.deleteNews(readNews);
                     log.info("news id={} name={} was deleted: {}",readNews.getIdNews(),readNews.getNameNews());
+                    readNews.setUser(null);
+                    readUser.getNewsSet().remove(readNews);
+                    newsService.deleteNews(readNews);
                 }
             }
         }

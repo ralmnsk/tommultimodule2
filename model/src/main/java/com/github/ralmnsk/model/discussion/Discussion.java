@@ -23,7 +23,7 @@ public class Discussion {
     @JoinColumn(name="nws_id")
     private News news;
 
-    @ManyToMany(mappedBy = "discussionSet", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "discussionSet")
     private Set<User> userSet=new HashSet<>();
 
     public Set<User> getUserSet() {
