@@ -12,51 +12,82 @@ import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.discussion.DiscussionService;
+import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.comparator.SortByTime;
 import com.github.ralmnsk.service.news.comparator.SortByTimeMsg;
 import com.github.ralmnsk.service.news.editor.NewsEditorImpl;
+import com.github.ralmnsk.service.user.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
+@Slf4j
+@Service
 public class MsgCreatorImpl implements MsgCreator{
-    private static Logger logger= LoggerFactory.getLogger(MsgCreatorImpl.class);
+    @Autowired
+    private MsgService msgService;
+    @Autowired
+    private NewsService newsService;
+    @Autowired
+    private DiscussionService discussionService;
+    @Autowired
+    private UserService userService;
 
-    private HttpServletRequest req;
     private Long discussNewsId;
+    private String msgText;
+    private User user;
 
-    public MsgCreatorImpl(HttpServletRequest req, Long discussNewsId) {
-        this.req = req;
+
+    public MsgCreatorImpl() {
+    }
+
+    public Long getDiscussNewsId() {
+        return discussNewsId;
+    }
+
+    public void setDiscussNewsId(Long discussNewsId) {
         this.discussNewsId = discussNewsId;
+    }
+
+    public String getMsgText() {
+        return msgText;
+    }
+
+    public void setMsgText(String msgText) {
+        this.msgText = msgText;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
     public Msg create() {
-        HttpSession session=req.getSession();
-        String msgText=req.getParameter("msgText");
         Msg msg=new Msg(new Date(),msgText);
-        News news=(News)session.getAttribute("news");
-        User user=(User)session.getAttribute("user");
-
-        MsgDao msgDao= MsgDaoHiberImpl.getInstance();
+        News news=newsService.getById(discussNewsId);
         msg.setUser(user);
         msg.setNews(news);
 
-        msgDao.create(msg);
-
-
-        return msg;
+        msgService.create(msg);
+       return msg;
     }
 
 
     @Override
-    public void getMsgList(){
-        HttpSession session=req.getSession();
-        News news=NewsDaoHiberImpl.getInstance().getById(discussNewsId);
-        DiscussionDao discussionDao= DiscussionDaoHiberImpl.getInstance();
+    public Map<Msg, User> getMsgMap(){
+
+        News news=newsService.getById(discussNewsId);
         Discussion discussion=news.getDiscussion();
         Map<Msg, User> mapMsgUsr=new LinkedHashMap();
         if (news.getMsgSet().size()>0){
@@ -77,19 +108,21 @@ public class MsgCreatorImpl implements MsgCreator{
                     Long id=user.getId();
                     mapMsgUsr.put(m,user);
                     if(!isUserInDiscussion(user,discussion)){
-                        discussionDao.addUserInDiscussion(user,discussion);
+                        user.getDiscussionSet().add(discussion);
+                        discussion.getUserSet().add(user);
+                        userService.updateUser(user);
                     }
                 }
             }
-            System.out.println(mapMsgUsr);
+//            System.out.println(mapMsgUsr);
         }
-            session.setAttribute("mapMsgUsr",mapMsgUsr);
+            return mapMsgUsr;
     }
 
     private boolean isUserInDiscussion(User user, Discussion discussion) {
         boolean isExist=false;
-        DiscussionDao discussionDao=DiscussionDaoHiberImpl.getInstance();
-        List<Discussion> discussions = discussionDao.readByUser(user);
+
+        List<Discussion> discussions = discussionService.readByUser(user);
         if ((discussions!=null)&&(discussions.size()>0)){
             for (Discussion d:discussions){
                 if((discussion!=null)&&(discussion.getId()==d.getId())){

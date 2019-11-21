@@ -5,6 +5,7 @@ import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -51,7 +52,7 @@ public class DiscussionServiceRepoImpl implements DiscussionService{
 
     @Override
     public List<Discussion> readByUser(User user) {
-        return null;//discussionRepository.(user);
+        return discussionRepository.findByUserId(user.getId());//discussionRepository.(user);
     }
 
     @Override
@@ -60,7 +61,7 @@ public class DiscussionServiceRepoImpl implements DiscussionService{
     }
 
     @Override
-    public List<Discussion> findAll(int firstResult, int maxResults) {
-        return null;//discussionRepository.findAll(firstResult,maxResults);
+    public List<Discussion> findAll(int page, int size) {
+        return discussionRepository.findAll(PageRequest.of(page,size)).getContent();
     }
 }

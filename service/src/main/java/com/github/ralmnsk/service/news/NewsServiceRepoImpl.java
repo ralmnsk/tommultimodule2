@@ -2,12 +2,9 @@ package com.github.ralmnsk.service.news;
 
 
 import com.github.ralmnsk.dao.news.NewsRepository;
-import com.github.ralmnsk.dao.user.UserRepository;
 import com.github.ralmnsk.model.news.News;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

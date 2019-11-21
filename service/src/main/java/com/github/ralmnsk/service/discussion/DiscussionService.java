@@ -10,6 +10,6 @@ public interface DiscussionService {
     boolean create(User user, News news);
     List<Discussion> readByUser(User user);
     void delete(Long id);
-    List<Discussion> findAll(int firstResult, int maxResults);
+    List<Discussion> findAll(int page, int size);
 
 }

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <html>
     <head><title>Discussion</title>
@@ -14,17 +15,17 @@
              </h2>
             </br>
             </br>
-             <a href="/tomapp/">Главная</a>
+             <a href="${pageContext.request.contextPath}/">Главная</a>
             </br>
-                            <c:if test = "${(user.role == 'admin')}">
+                            <c:if test = "${(user.role == 'ROLE_ADMIN')}">
                                 <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
                                 </br>
                                 <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
                                 </br>
                             </c:if>
-            <a href="/tomapp/site/inform">Страница пользователя</a>
+            <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
             </br>
-            <a href="/tomapp/site/logout">Logout</a>
+            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
             <hr/>
                 <p>${news.nameNews}
             </br>
@@ -46,7 +47,7 @@
                 </c:forEach>
 
 
-        </div>
+
             <form name="sendMsgForm" method="POST" action="msg">
                 <div class="form-group">
                     <p><label for="exampleFormControlTextarea1">Сообщение:</label>
@@ -54,5 +55,6 @@
                     <button autofocus type="submit" class="btn btn-primary"> Отправить сообщение </button>
                 </div>
             </form>
+        </div>
     </body>
 </html>

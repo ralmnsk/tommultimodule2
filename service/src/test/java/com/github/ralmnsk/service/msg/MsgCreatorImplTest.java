@@ -22,8 +22,8 @@ class MsgCreatorImplTest {
 
     @Test
     void getMsgList() {
-        MsgCreatorImpl msgCreator=mock(MsgCreatorImpl.class);
-        msgCreator.getMsgList();
-        verify(msgCreator,times(1)).getMsgList();
+//        MsgCreatorImpl msgCreator=mock(MsgCreatorImpl.class);
+//        msgCreator.getMsgList();
+//        verify(msgCreator,times(1)).getMsgList();
     }
 }

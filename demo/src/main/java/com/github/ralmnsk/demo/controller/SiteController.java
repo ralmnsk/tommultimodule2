@@ -2,11 +2,15 @@ package com.github.ralmnsk.demo.controller;
 
 
 import com.github.ralmnsk.model.contact.Contact;
+import com.github.ralmnsk.model.discussion.Discussion;
+import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.contact.ContactService;
 import com.github.ralmnsk.service.contact.creator.ContactCreator;
 import com.github.ralmnsk.service.deleter.NewsDeleter;
+import com.github.ralmnsk.service.dispute.Dispute;
+import com.github.ralmnsk.service.msg.MsgCreator;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.creator.NewsCreator;
 import com.github.ralmnsk.service.news.editor.NewsEditor;
@@ -28,6 +32,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -52,6 +57,10 @@ public class SiteController {
     private NewsUpdator newsUpdator;
     @Autowired
     private NewsDeleter newsDeleter;
+    @Autowired
+    private Dispute dispute;
+    @Autowired
+    MsgCreator msgCreator;
 
 //    @Secured("USER")
     @GetMapping("/site/inform")
@@ -187,5 +196,38 @@ public class SiteController {
         newsDeleter.delete();
         req.getSession().removeAttribute("mapMsgUsr");
         return "redirect:/site/mynews";
+    }
+
+    @GetMapping("/site/comment")
+    public String comment(HttpServletRequest req){
+        HttpSession session=req.getSession();
+        User user=(User)session.getAttribute("user");
+
+        List<Discussion> discussionList=dispute.get(userService.getById(user.getId()));
+        if ((discussionList!=null)&&(discussionList.size()>0)){
+            session.setAttribute("discussionList",discussionList);
+        }
+        return "inform";
+    }
+
+    @GetMapping("/site/discuss")
+    public String discussion(HttpServletRequest req){
+        HttpSession session=req.getSession();
+        Long discussNewsId=Long.parseLong(req.getParameter("discussNewsId"));
+//        News newsSession=(News)session.getAttribute("news");
+        News news=newsService.getById(discussNewsId);
+        Long userId=(Long)session.getAttribute("userId");
+        User user=userService.getById(userId);
+        String msgText=req.getParameter("msgText");
+        session.setAttribute("news",news);
+
+        msgCreator.setUser(user);
+        msgCreator.setDiscussNewsId(discussNewsId);
+        msgCreator.setMsgText(msgText);
+        Map<Msg, User> mapMsgUsr = msgCreator.getMsgMap();
+
+        session.setAttribute("mapMsgUsr",mapMsgUsr);
+        session.setAttribute("discussNewsId",discussNewsId);
+        return "discussion";
     }
 }
