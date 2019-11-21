@@ -6,8 +6,11 @@ import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.contact.ContactService;
 import com.github.ralmnsk.service.contact.creator.ContactCreator;
+import com.github.ralmnsk.service.deleter.NewsDeleter;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.creator.NewsCreator;
+import com.github.ralmnsk.service.news.editor.NewsEditor;
+import com.github.ralmnsk.service.news.updator.NewsUpdator;
 import com.github.ralmnsk.service.pagination.Paginator;
 import com.github.ralmnsk.service.pagination.PaginatorImpl;
 import com.github.ralmnsk.service.user.UserService;
@@ -43,7 +46,12 @@ public class SiteController {
     private ContactCreator contactCreator;
     @Autowired
     private ContactService contactService;
-
+    @Autowired
+    private NewsEditor newsEditor;
+    @Autowired
+    private NewsUpdator newsUpdator;
+    @Autowired
+    private NewsDeleter newsDeleter;
 
 //    @Secured("USER")
     @GetMapping("/site/inform")
@@ -146,5 +154,38 @@ public class SiteController {
             Contact contact=contactCreator.delContact(user);
             session.setAttribute("contact",contact);
         return "contact";
+    }
+
+    @PostMapping("/site/edit")
+    public String edit(HttpServletRequest req){
+        Long editNewsId=Long.parseLong(req.getParameter("editNewsId"));
+        HttpSession session = req.getSession();
+        newsEditor.setId(editNewsId);
+        session.setAttribute("news",newsEditor.newsEdit());
+        return "editnews";
+    }
+
+    @PostMapping("/site/updatenews")
+    public String update(HttpServletRequest req){
+        HttpSession session = req.getSession();
+        News news=(News)req.getSession().getAttribute("news");
+        String nameNews=req.getParameter("nameNews");
+        String dataNews=req.getParameter("dataNews");
+        news.setNameNews(nameNews);
+        news.setDataNews(dataNews);
+        newsUpdator.setNews(news);
+        session.setAttribute("news",newsUpdator.newsUpdate());
+        return "inform";
+    }
+
+    @PostMapping("/site/deletenews")
+    public String delete(HttpServletRequest req){
+        News news=(News)req.getSession().getAttribute("news");
+        User user=(User)req.getSession().getAttribute("user");
+        newsDeleter.setNews(news);
+        newsDeleter.setUser(user);
+        newsDeleter.delete();
+        req.getSession().removeAttribute("mapMsgUsr");
+        return "redirect:/site/mynews";
     }
 }

@@ -9,17 +9,30 @@ import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.discussion.DiscussionService;
+import com.github.ralmnsk.service.news.NewsService;
+import com.github.ralmnsk.service.user.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Slf4j
+@Service
 public class NewsDeleterImpl implements NewsDeleter {
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private NewsService newsService;
+    @Autowired
+    private DiscussionService discussionService;
 
-    private static Logger logger= LoggerFactory.getLogger(NewsDeleterImpl.class);
     private News news;
     private User user;
 
@@ -28,14 +41,29 @@ public class NewsDeleterImpl implements NewsDeleter {
         this.user=user;
     }
 
+    public NewsDeleterImpl() {
+    }
+
+    public News getNews() {
+        return news;
+    }
+
+    public void setNews(News news) {
+        this.news = news;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public void delete() {
-
-        UserDao userDao= UserDaoHiberImpl.getInstance();
-        User readUser=userDao.readUser(user);
-        NewsDao newsDao= NewsDaoHiberImpl.getInstance();
-        News readNews=newsDao.readNews(news);   //.getById(news.getIdNews());
-        DiscussionDao discussionDao= DiscussionDaoHiberImpl.getInstance();
+        User readUser=userService.getById(user.getId());
+        News readNews=newsService.getById(news.getIdNews());   //.getById(news.getIdNews());
 
         Discussion discussion=null;
         if(readNews.getDiscussion()!=null){
@@ -51,11 +79,11 @@ public class NewsDeleterImpl implements NewsDeleter {
             for(News n:newsSet){
                 if (n.getIdNews().equals(readNews.getIdNews())){
                     if (discussion!=null){
-                        discussionDao.delete(discussion.getId());
-                        logger.info(this.getClass()+": discussion was deleted: {}",discussion);
+                        discussionService.delete(discussion.getId());
+                        log.info("discussion id={} of user={} newsName={}was deleted: {}",discussion.getId(),user.getName(),news.getNameNews());
                     }
-                    newsDao.deleteNews(readNews);
-                    logger.info(this.getClass()+": news was deleted: {}",readNews);
+                    newsService.deleteNews(readNews);
+                    log.info("news id={} name={} was deleted: {}",readNews.getIdNews(),readNews.getNameNews());
                 }
             }
         }

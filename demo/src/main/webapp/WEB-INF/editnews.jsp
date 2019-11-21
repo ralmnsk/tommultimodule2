@@ -9,15 +9,15 @@
             <h2>Редактирование новости ${user.name}</h2>
             </br>
             </br>
-             <a href="/tomapp/">Главная</a>
+             <a href="${pageContext.request.contextPath}/">Главная</a>
             </br>
-            <a href="/tomapp/topsecret">Страница администратора</a>
+            <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
             </br>
-            <a href="/tomapp/topsecret2">Страница администратора 2</a>
+            <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
             </br>
-            <a href="/tomapp/site/logout">Logout</a>
+            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
             <hr/>
-            <a href="/tomapp/site/inform">Страница пользователя</a>
+            <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
             </br>
             <a href="${pageContext.request.contextPath}/site/mynews">Мои новости</a>
             </br>
@@ -25,7 +25,7 @@
             </br>
             <a href="${pageContext.request.contextPath}/site/coment">Мои коментарии</a>
             <hr/>
-        </div>
+
 
             </br>
             <form name="updateNewsForm" method="POST" action="updatenews">
@@ -44,5 +44,6 @@
                 <button type="submit" class="btn btn-primary"> Удалить новость ${user.name} </button>
             </div>
             </form>
+        </div>
     </body>
 </html>

@@ -2,17 +2,21 @@ package com.github.ralmnsk.service.news.editor;
 
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Slf4j
+@Service
 public class NewsEditorImpl implements NewsEditor {
-    private static Logger logger= LoggerFactory.getLogger(NewsEditorImpl.class);
+    @Autowired
+    private NewsService newsService;
     private Long id;
-    //private HttpSession session;
 
     public NewsEditorImpl(Long id) {
         this.id = id;
-        //this.session=session;
     }
 
     public NewsEditorImpl() {
@@ -29,9 +33,8 @@ public class NewsEditorImpl implements NewsEditor {
     @Override
     public News newsEdit() {
         News news=null;
-//        NewsService newsService=NewsServiceImpl.getInstance();
-//        news=newsService.getById(id);
-//        logger.info(this.getClass()+" news {} was edited",news);
+        news=newsService.getById(id);
+        log.info(this.getClass()+" news {} was edited",news);
         return news;
     }
 }

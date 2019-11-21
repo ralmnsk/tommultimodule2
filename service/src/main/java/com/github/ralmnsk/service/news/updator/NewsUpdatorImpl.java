@@ -2,14 +2,20 @@ package com.github.ralmnsk.service.news.updator;
 
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 
+@Slf4j
+@Service
 public class NewsUpdatorImpl implements NewsUpdator {
-    private static Logger logger= LoggerFactory.getLogger(NewsUpdatorImpl.class);
-    private HttpSession session;
+    @Autowired
+    private NewsService newsService;
+
     private News news;
 
     public News getNews() {
@@ -20,19 +26,17 @@ public class NewsUpdatorImpl implements NewsUpdator {
         this.news = news;
     }
 
-    public NewsUpdatorImpl(HttpSession session, News news) {
+    public NewsUpdatorImpl(News news) {
         this.news = news;
-        this.session=session;
     }
 
     public NewsUpdatorImpl() {
     }
 
     @Override
-    public void newsUpdate() {
-//        NewsService newsService=NewsServiceImpl.getInstance();
-//        newsService.updateNews(news);
-//        session.setAttribute("news",news);
-//        logger.info(this.getClass()+ ": news {} was updated", news);
+    public News newsUpdate() {
+        newsService.updateNews(news);
+        log.info(this.getClass()+ ": news id= {}, name:{} was updated", news.getIdNews(),news.getNameNews());
+        return news;
     }
 }
