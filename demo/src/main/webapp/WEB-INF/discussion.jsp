@@ -27,10 +27,10 @@
             </br>
             <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
             <hr/>
-                <p>${news.nameNews}
+                <h5>Название новости:</h5> ${news.nameNews}
             </br>
             <hr/>
-                <p>${news.dataNews}
+                <h5>Текст новости:</h5><p>${news.dataNews}
             </br>
                 <p>Автор:${news.user.name}   Дата:${news.dateNews}
             </br>

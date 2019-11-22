@@ -212,9 +212,19 @@ public class SiteController {
 
     @GetMapping("/site/discuss")
     public String discussion(HttpServletRequest req){
+            String page=discussionProcess(req);
+        return page;
+    }
+
+    @PostMapping("/site/discuss")
+    public String discussionPost(HttpServletRequest req){
+        String page=discussionProcess(req);
+        return page;
+    }
+
+    private String discussionProcess(HttpServletRequest req){
         HttpSession session=req.getSession();
         Long discussNewsId=Long.parseLong(req.getParameter("discussNewsId"));
-//        News newsSession=(News)session.getAttribute("news");
         News news=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
         User user=userService.getById(userId);
@@ -228,6 +238,28 @@ public class SiteController {
 
         session.setAttribute("mapMsgUsr",mapMsgUsr);
         session.setAttribute("discussNewsId",discussNewsId);
+
         return "discussion";
     }
+
+    @PostMapping("/site/msg")
+    public String msg(HttpServletRequest req){
+        HttpSession session=req.getSession();
+        Long discussNewsId=(Long)session.getAttribute("discussNewsId");
+        String msgText=req.getParameter("msgText");
+        News news=newsService.getById(discussNewsId);
+        Long userId=(Long)session.getAttribute("userId");
+        User user=userService.getById(userId);
+        session.setAttribute("news",news);
+
+        msgCreator.setUser(user);
+        msgCreator.setDiscussNewsId(discussNewsId);
+        msgCreator.setMsgText(msgText);
+
+        msgCreator.create();
+        session.setAttribute("mapMsgUsr",msgCreator.getMsgMap());
+        session.setAttribute("discussNewsId",discussNewsId);
+        return "discussion";
+    }
+
 }

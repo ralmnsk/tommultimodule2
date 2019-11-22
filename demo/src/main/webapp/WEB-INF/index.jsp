@@ -36,7 +36,7 @@
 
                                                         </br>
                                 Дата: <fmt:formatDate type="both" value="${entry.key.dateNews}"/></br>
-            <c:if test = "${(user.role == 'usr')or(user.role == 'admin')}">
+            <c:if test = "${(user.role == 'ROLE_USER')or(user.role == 'ROLE_ADMIN')}">
                 <form name="sendToDiscuss" method="POST" action="site/discuss">
                     <div class="form=group">
                         <input type="hidden" name="discussNewsId" value="${entry.key.idNews}">
