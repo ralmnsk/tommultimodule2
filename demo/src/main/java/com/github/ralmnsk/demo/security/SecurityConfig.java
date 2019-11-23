@@ -2,6 +2,7 @@ package com.github.ralmnsk.demo.security;
 
 import com.github.ralmnsk.dao.user.UserRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -29,17 +30,20 @@ import javax.sql.DataSource;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
+    @Qualifier("userDS")
     public UserDetailsService userDetailsService;
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/","/news","/login","/**")
+                    .antMatchers("/","/news","/login","/goregistrate","/registration")
                     .permitAll()
 
-//                    .antMatchers("/site/inform")
-//                    .hasAnyRole("ADMIN", "USER")
+                    .antMatchers("/site/**","/*")
+                    .hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
+//                    .hasAnyRole("ROLE_ADMIN", "ROLE_USER")
 
                 .and()
                     .formLogin()
@@ -72,8 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         auth
                 .userDetailsService(userDetailsService)
-                .passwordEncoder(encoder())
-                ;
+                .passwordEncoder(encoder());
 
     }
 //        @Override

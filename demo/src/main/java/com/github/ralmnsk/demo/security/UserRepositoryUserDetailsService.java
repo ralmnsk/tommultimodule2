@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 
 @Slf4j
-@Service
+@Service("userDS")
 public class UserRepositoryUserDetailsService
         implements UserDetailsService {
 

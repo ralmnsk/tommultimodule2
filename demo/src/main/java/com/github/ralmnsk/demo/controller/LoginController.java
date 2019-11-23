@@ -7,6 +7,8 @@ import com.github.ralmnsk.service.authorization.Authorization;
 import com.github.ralmnsk.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -30,6 +32,8 @@ public class LoginController {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private UserService userService;
+//    @Autowired
+//    private AuthenticationManager authenticationManager;
 
     public LoginController(
         UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
@@ -56,6 +60,9 @@ public class LoginController {
         if(userDetails!=null){
             if(passwordEncoder.matches(authUser.getPass(),userDetails.getPassword())){
                 User user=userService.readUser(authUser);
+                SecurityContextHolder
+                        .getContext()
+                        .setAuthentication(new UsernamePasswordAuthenticationToken(user.getName(),user.getPass(),userDetails.getAuthorities()));//GOLDEN CODE
                 req.getSession().setAttribute("userId",user.getId());
                 req.getSession().setAttribute("user",user);
                 return "welcome";
