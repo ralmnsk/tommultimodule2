@@ -1,12 +1,9 @@
 package com.github.ralmnsk.demo.security;
 
-import com.github.ralmnsk.dao.user.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web
         .configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web
@@ -19,7 +16,6 @@ import org.springframework.security.config.annotation.web
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import javax.sql.DataSource;
 
 @Slf4j
 @Configuration
@@ -41,9 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/","/news","/login","/goregistrate","/registration")
                     .permitAll()
 
-                    .antMatchers("/site/**","/*")
+                    .antMatchers("/site/**","/*","site/inform")
                     .hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
-//                    .hasAnyRole("ROLE_ADMIN", "ROLE_USER")
+                    .antMatchers("/site/inform/admin","/site/inform/admin/**")
+                    .hasAnyAuthority("ROLE_ADMIN")
 
                 .and()
                     .formLogin()
@@ -79,14 +76,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(encoder());
 
     }
-//        @Override
-//        protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//            auth
-//                    .inMemoryAuthentication()
-//            .passwordEncoder(encoder())
-//            .withUser("user").password(encoder().encode("123")).roles("USER")
-//            .and()
-//            .withUser("admin").password(encoder().encode("123")).roles("USER", "ADMIN");
-//}
 
 }
