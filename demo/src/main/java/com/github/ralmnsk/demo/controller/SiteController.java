@@ -64,7 +64,7 @@ public class SiteController {
 
 //    @Secured("USER")
     @GetMapping("/site/inform")
-    public String inform(Authentication authentication){ //NOT WORKING
+    public String inform(){ //NOT WORKING
         return "inform";
     }
 

@@ -10,17 +10,18 @@
 <body>
     <div class="container">
         <h2>Пожалуйста, войдите:</h2>
-            <form name="formLogin" method="POST" action="/login">
+            <div class="form-group">
+                <form name="formLogin" method="POST" action="/login">
 
-            Login:<br/>
-            <input type="text" name="login" value=""/>
-            <br/>Password:<br/>
-            <input type="password" name="password" value=""/>
-            <br/>
+                    Login:<br/>
+                    <input type="text" name="login" value=""/>
+                    <br/>Password:<br/>
+                    <input type="password" name="password" value=""/>
+                    <br/>
 
-            <input type="submit" value="Log in"/>
-            </form><hr/>
-
+                    <input class="btn btn-primary" type="submit" value="Log in"/>
+                </form><hr/>
+            </div>
         ${errorLoginPassMessage}
         </br>
         <a href="${pageContext.request.contextPath}/goregistrate">Регистация</a>

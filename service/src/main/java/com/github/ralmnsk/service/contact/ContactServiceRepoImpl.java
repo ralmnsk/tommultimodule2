@@ -42,7 +42,12 @@ public class ContactServiceRepoImpl implements ContactService {
     }
 
     @Override
-    public List<Contact> findAll(int firstResult, int maxResults) {
-        return repo.findAll(PageRequest.of(firstResult,maxResults)).getContent();
+    public List<Contact> findAll(int page, int size) {
+        return repo.findAll(PageRequest.of(page,size)).getContent();
+    }
+
+    @Override
+    public Long countAllContacts() {
+        return repo.countAllContacts();
     }
 }

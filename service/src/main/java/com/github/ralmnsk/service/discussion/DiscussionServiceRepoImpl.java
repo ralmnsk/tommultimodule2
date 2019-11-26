@@ -64,4 +64,9 @@ public class DiscussionServiceRepoImpl implements DiscussionService{
     public List<Discussion> findAll(int page, int size) {
         return discussionRepository.findAll(PageRequest.of(page,size)).getContent();
     }
+
+    @Override
+    public Long count() {
+        return discussionRepository.count();
+    }
 }

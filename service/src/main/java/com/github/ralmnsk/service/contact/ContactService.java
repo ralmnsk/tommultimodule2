@@ -9,5 +9,6 @@ public interface ContactService {
     Contact read(Long id);
     void update(Long id, String newMail);
     void delete(Long id);
-    List<Contact> findAll(int firstResult, int maxResults);
+    List<Contact> findAll(int page, int sized);
+    Long countAllContacts();
 }

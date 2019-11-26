@@ -12,12 +12,6 @@
             </br>
              <a href="${pageContext.request.contextPath}/">Главная</a>
              </br>
-                <c:if test = "${(user.role == 'ROLE_ADMIN')}">
-                    <a href="${pageContext.request.contextPath}/topsecret">Страница администратора</a>
-                    </br>
-                    <a href="${pageContext.request.contextPath}/topsecret2">Страница администратора 2</a>
-                    </br>
-                </c:if>
             <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
             <hr/>
             <a href="${pageContext.request.contextPath}/site/addnews">Добавить новость</a>
@@ -27,6 +21,11 @@
             <a href="${pageContext.request.contextPath}/site/contact">Мой контакт</a>
             </br>
             <a href="${pageContext.request.contextPath}/site/comment">Мои коментарии</a>
+            </br>
+            <c:if test = "${(user.role == 'ROLE_ADMIN')}">
+                  <a href="${pageContext.request.contextPath}/site/inform/admin">Страница администратора</a>
+                  </br>
+            </c:if>
             <hr/>
 
             <c:choose>
