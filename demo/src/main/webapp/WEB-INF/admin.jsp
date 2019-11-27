@@ -94,7 +94,7 @@
             </c:choose>
 
             <c:forEach var="item" items="${discussionList}">
-                <a href="${pageContext.request.contextPath}/site/discuss?discussNewsId=${item.news.idNews}">${item.news.nameNews}</a>
+                <a href="${pageContext.request.contextPath}/site/inform/admin/discuss?discussNewsId=${item.news.idNews}">${item.news.nameNews}</a>
                 <hr/>
             </c:forEach>
 

@@ -35,21 +35,23 @@
                 <c:forEach var="entry" items="${mapMsgUsr}">
                    </br>
                    Автор: <c:out value="${entry.value.name}"></c:out>
-                   <p><h4><c:out value="${entry.key.text}"></c:out></h4></br>
-
+                <!-- <p><h4><c:out value="${entry.key.text}"></c:out></h4></br> -->
                    Написал: <c:out value="${entry.key.date}"></c:out></br>
+
                    <hr/>
+
+                <form name="sendMsgForm" method="POST" action="msgedit">
+                    <div class="form-group">
+                        <p><label for="exampleFormControlTextarea1">Сообщение:</label>
+                        <textarea type="text" aria-label="With textarea" class="form-control" rows="5" name="msgText">${entry.key.text}</textarea>
+                        <input type="hidden" name="editMsgId" value="${entry.key.id}">
+                        <input type="hidden" name="discussNewsId" value="${entry.key.news.idNews}">
+                            <button autofocus type="submit" name="msgupdate" class="btn btn-primary"> Редактировать сообщение </button>
+                            <button autofocus type="submit" name="msgdelete" class="btn btn-primary"> Удалить сообщение </button>
+                    </div>
+                </form>
+
                 </c:forEach>
-
-
-
-            <form name="sendMsgForm" method="POST" action="msg">
-                <div class="form-group">
-                    <p><label for="exampleFormControlTextarea1">Сообщение:</label>
-                    <textarea type="text" aria-label="With textarea" class="form-control" rows="5" name="msgText">Ваше сообщение</textarea>
-                    <button autofocus type="submit" class="btn btn-primary"> Отправить сообщение </button>
-                </div>
-           </form>
         </div>
     </body>
 </html>

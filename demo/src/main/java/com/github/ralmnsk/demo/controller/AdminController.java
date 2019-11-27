@@ -2,11 +2,14 @@ package com.github.ralmnsk.demo.controller;
 
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.discussion.Discussion;
+import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.contact.ContactService;
 import com.github.ralmnsk.service.deleter.NewsDeleter;
 import com.github.ralmnsk.service.discussion.DiscussionService;
+import com.github.ralmnsk.service.msg.MsgCreator;
+import com.github.ralmnsk.service.msg.MsgService;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.editor.NewsEditor;
 import com.github.ralmnsk.service.news.updator.NewsUpdator;
@@ -41,6 +44,10 @@ public class AdminController {
     private ContactService contactService;
     @Autowired
     private DiscussionService discussionService;
+    @Autowired
+    private MsgCreator msgCreator;
+    @Autowired
+    private MsgService msgService;
 
     @GetMapping("/site/inform/admin")
     public String adminPage(){
@@ -222,5 +229,71 @@ public class AdminController {
             session.setAttribute("pagesCount",pagesCount);
             session.setAttribute("maxResults",maxResultsCount);
         return "admin";
+    }
+
+    @PostMapping("/site/inform/admin/msg")
+    public String msg(HttpServletRequest req){
+        HttpSession session=req.getSession();
+        Long discussNewsId=(Long)session.getAttribute("discussNewsId");
+        String msgText=req.getParameter("msgText");
+        News news=newsService.getById(discussNewsId);
+        Long userId=(Long)session.getAttribute("userId");
+        User user=userService.getById(userId);
+        session.setAttribute("news",news);
+
+        msgCreator.setUser(user);
+        msgCreator.setDiscussNewsId(discussNewsId);
+        msgCreator.setMsgText(msgText);
+
+        msgCreator.create();
+        session.setAttribute("mapMsgUsr",msgCreator.getMsgMap());
+        session.setAttribute("discussNewsId",discussNewsId);
+        return "discussion";
+    }
+
+    @GetMapping("/site/inform/admin/discuss")
+    public String discussion(HttpServletRequest req){
+        String page=discussionProcess(req);
+        return page;
+    }
+
+    @PostMapping("/site/inform/admin/discuss")
+    public String discussionPost(HttpServletRequest req){
+        String page=discussionProcess(req);
+        return page;
+    }
+
+    private String discussionProcess(HttpServletRequest req){
+        HttpSession session=req.getSession();
+        Long discussNewsId=Long.parseLong(req.getParameter("discussNewsId"));
+        News news=newsService.getById(discussNewsId);
+        Long userId=(Long)session.getAttribute("userId");
+        User user=userService.getById(userId);
+        String msgText=req.getParameter("msgText");
+        session.setAttribute("news",news);
+
+        msgCreator.setUser(user);
+        msgCreator.setDiscussNewsId(discussNewsId);
+        msgCreator.setMsgText(msgText);
+        Map<Msg, User> mapMsgUsr = msgCreator.getMsgMap();
+
+        session.setAttribute("mapMsgUsr",mapMsgUsr);
+        session.setAttribute("discussNewsId",discussNewsId);
+
+        return "msg_admin";
+    }
+
+    @PostMapping("/site/inform/admin/msgedit")
+    public String msgEdit(HttpServletRequest req){
+        if (req.getParameter("msgupdate")!=null){
+            Long id=Long.parseLong(req.getParameter("editMsgId"));
+            msgService.update(id,req.getParameter("msgText"));
+        }
+        if (req.getParameter("msgdelete")!=null){
+            Long id=Long.parseLong(req.getParameter("editMsgId"));
+            msgService.delete(id);
+        }
+            Long discussNewsId=Long.parseLong(req.getParameter("discussNewsId"));
+        return "redirect:/site/inform/admin/discuss?discussNewsId="+discussNewsId;
     }
 }
