@@ -14,7 +14,7 @@ public class ErrorPageController implements org.springframework.boot.web.servlet
     @ResponseBody
     public String getErrorPath() {
         // TODO Auto-generated method stub
-        return "ERROR happened";
+        return "error";
     }
 
 }

@@ -3,26 +3,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<html>
-    <head><title>INFORMATION</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="container">
+<div class="container">
             <h2>Страница администратора ${user.name}</h2>
-            </br>
-             <a href="${pageContext.request.contextPath}/">Главная</a>
-             </br>
 
-            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
-            <hr/>
-            <a href="${pageContext.request.contextPath}/site/inform/admin/news">Hовости пользователей</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/site/inform/admin/contact">Контакты пользователей</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/site/inform/admin/comment">Коментарии пользователей</a>
-            <hr/>
+
 <!--NEWS LIST-->
             <c:if test = "${pageFlag=='usersNews'}">
                 <table>
@@ -104,11 +88,10 @@
         <c:if test = "${pageFlag=='contact'}">
         <h4>Контакты пользователей</h4>
         <c:forEach var="entry" items="${mapContacts}">
-                        <tr><td><p>Пользователь: ${entry.key}  mail: ${entry.value}
+                        <p>Пользователь: ${entry.key}  mail: ${entry.value}
         </c:forEach>
-          <nav aria-label="Page navigation example">
-            <ul autofocus class="pagination justify-content-center">
-
+          <nav aria-label="Page navigation example" >
+            <ul autofocus class="pagination justify-content-center" style="vertical-align: bottom;">
                 <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?move=previous">Previous</a></li>
                 <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?move=next">Next</a></li>
                 <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?maxResults=5">5</a></li>
@@ -119,6 +102,5 @@
             </ul>
           </nav>
         </c:if>
-        </div>
-    </body>
-</html>
+</div>
+

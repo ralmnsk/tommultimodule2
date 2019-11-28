@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- index -->
+    <definition name="index"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_index.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="login"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_login.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="welcome"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_welcome.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="inform"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_inform.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="addnews"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_addnews.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="mynews"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_mynews.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="contact"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_contact.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="discussion"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_discussion.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="editnews"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_editnews.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="logout"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_logout.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="admin"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_admin.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="msg_admin"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_msg_admin.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="reg_succsses"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_reg_succsses.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="registration"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_registration.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+    <definition name="error"
+                template="/WEB-INF/layouts/classic.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" />
+        <put-attribute name="body" value="/WEB-INF/bodyfragments/_error.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" />
+    </definition>
+
+</tiles-definitions>

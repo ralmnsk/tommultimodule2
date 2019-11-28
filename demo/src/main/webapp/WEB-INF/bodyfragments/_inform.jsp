@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
     <head><title>INFORMATION</title>
         <meta charset="utf-8">
@@ -9,24 +10,6 @@
     <body>
         <div class="container">
             <h2>Страница пользователя ${user.name}</h2>
-            </br>
-             <a href="${pageContext.request.contextPath}/">Главная</a>
-             </br>
-            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
-            <hr/>
-            <a href="${pageContext.request.contextPath}/site/addnews">Добавить новость</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/site/mynews">Мои новости</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/site/contact">Мой контакт</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/site/comment">Мои коментарии</a>
-            </br>
-            <c:if test = "${(user.role == 'ROLE_ADMIN')}">
-                  <a href="${pageContext.request.contextPath}/site/inform/admin">Страница администратора</a>
-                  </br>
-            </c:if>
-            <hr/>
 
             <c:choose>
                 <c:when test = "${fn:length(discussionList) > 0}">

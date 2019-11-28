@@ -14,20 +14,15 @@
         <div class="container">
             <h2>Welcome</h2>
             Здраствуйте,
-            <c:if test="${user.role =='usr'}">
+            <c:if test="${user.role =='ROLE_USER'}">
                 <c:out value="пользователь"/>
             </c:if>
-            <c:if test="${user.role =='admin'}">
+            <c:if test="${user.role =='ROLE_ADMIN'}">
                         <c:out value="администратор"/>
             </c:if>
 
             ${user.name}
-            </br>
-            <a href="${pageContext.request.contextPath}/">Главная</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/site/inform">Страница пользователя</a>
-            </br>
-            <a href="${pageContext.request.contextPath}/site/logout">Logout</a>
+
         </div>
     </body>
 </html>
