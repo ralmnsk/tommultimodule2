@@ -39,11 +39,11 @@ public class PaginatorImpl implements Paginator{
 
     @Override
     public Map<News, User> viewNewsOfUser(int page, int maxResults,User user) {  //page = number of page
-        Map<News, User>map=new HashMap<>();
+        Map<News, User>map=new LinkedHashMap<>();
         Pageable pageable= PageRequest.of(page,maxResults);
-        List<News> list=newsService.findAllNews(pageable);
+        List<Long> list=newsService.findAllNewsByUserId(pageable,user.getId());
         list.stream()
-                .filter(n->n.getUser().getName().equals(user.getName()))
+                .map(l->newsService.getById(l))
                 .forEach(n->map.put(n,n.getUser()));
         return map;
     }

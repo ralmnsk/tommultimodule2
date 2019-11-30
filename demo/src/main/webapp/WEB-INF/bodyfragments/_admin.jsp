@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <div class="container">
-            <h2>Страница администратора ${user.name}</h2>
+            <h2>Страница администратора ${name}</h2>
 
 
 <!--NEWS LIST-->
@@ -17,7 +17,7 @@
                                 Автор: ${entry.value.name}
                                                                  </br>
                                 Дата: <fmt:formatDate type="both" value="${entry.key.dateNews}"/></br>
-                        <c:if test = "${(user.role == 'ROLE_USER')or(user.role == 'ROLE_ADMIN')}">
+                        <c:if test = "${(role == 'ROLE_ADMIN')}">
                             <form name="editNewsForm" method="POST" action="edit">
                                 <div class="form=group">
                                     <input type="hidden" name="editNewsId" value="${entry.key.idNews}">
@@ -52,12 +52,14 @@
                         <label for="exampleInputText1">Название новости</label>
                         <input type="text" class="form-control" name="nameNews" value="${news.nameNews}">
                         <label for="exampleFormControlTextarea1"> Редактирование текста новости:</label>
+                        <input type="hidden" name="editNewsId" value="${news.idNews}">
                         <textarea type="text" aria-label="With textarea" class="form-control" rows="5" name="dataNews">${news.dataNews}</textarea>
                         <button type="submit" class="btn btn-primary"> Редактировать новость ${news.user.name} </button>
                          </div>
                 </form>
                 <form name="deleteNewsForm" method="POST" action="deletenews">
                         <div class="form=group">
+                            <input type="hidden" name="editNewsId" value="${news.idNews}">
                             <button type="submit" class="btn btn-primary"> Удалить новость ${news.user.name} </button>
                     </div>
                 </form>

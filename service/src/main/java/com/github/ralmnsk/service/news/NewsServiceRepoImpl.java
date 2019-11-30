@@ -3,14 +3,15 @@ package com.github.ralmnsk.service.news;
 
 import com.github.ralmnsk.dao.news.NewsRepository;
 import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.news.comparator.SortByTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Transactional
@@ -56,8 +57,25 @@ public class NewsServiceRepoImpl implements NewsService{
     }
 
     @Override
-    public List<News> findAllNews(Pageable pageable) {
+    public List<Long> findAllNewsByUserId(Pageable pageable, Long userId) {
 //        Page<News> pageNews=newsRepo.findAll(PageRequest.of(page,maxResults));
+        int lim=pageable.getPageSize();
+        int offs=(int)pageable.getOffset();
+        List<Long> list=newsRepo.findAllNewsByUserId(userId);
+        List<Long> newsList=new LinkedList<Long>();
+        if(list.size()>0){
+            for (int i=0;i<list.size();i++){
+                if ((i>=offs)&&(i<=(offs+lim-1))){
+                    newsList.add(list.get(i));
+                }
+            }
+        }
+//        newsList.stream().forEach(System.out::println);
+        return newsList;
+    }
+
+    @Override
+    public List<News> findAllNews(Pageable pageable) {
         Page<News> pageNews=newsRepo.findAll(pageable);
         return pageNews.getContent();
     }

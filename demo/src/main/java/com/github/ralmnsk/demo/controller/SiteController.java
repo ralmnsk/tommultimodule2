@@ -57,7 +57,9 @@ public class SiteController {
 
 //    @Secured("USER")
     @GetMapping("/site/inform")
-    public String inform(){ //NOT WORKING
+    public String inform(Model model, HttpSession session){ //NOT WORKING
+        User user=userService.getById((Long)session.getAttribute("userId"));
+        model.addAttribute("user",user);
         return "inform";
     }
 
@@ -67,9 +69,9 @@ public class SiteController {
     }
 
     @PostMapping("/site/createnews")
-    public String createNews(HttpServletRequest req){
-        String dataNews=req.getParameter("dataNews");
-        String nameNews=req.getParameter("nameNews");
+    public String createNews(@RequestParam("dataNews") String dataNews,
+                             @RequestParam("nameNews") String nameNews,
+                             HttpServletRequest req){
         Long userId=(Long)req.getSession().getAttribute("userId");
         creator.setUserId(userId);
         creator.setDataNews(dataNews);
@@ -80,8 +82,9 @@ public class SiteController {
 
     @RequestMapping(value = "/site/mynews", method = RequestMethod.GET)
     public String news(@RequestParam(value="move",required = false) String move,
-                       @RequestParam(value = "maxResults",required = false) String maxResults, Model model, HttpServletRequest req){
-        HttpSession session=req.getSession();
+                       @RequestParam(value = "maxResults",required = false) String maxResults,
+                       Model model, HttpSession session){
+
         int currentPage=1;
         if(session.getAttribute("currentPage")!=null){
             currentPage=(Integer)session.getAttribute("currentPage");
@@ -125,133 +128,146 @@ public class SiteController {
     }
 
     @PostMapping("/site/gocontact")
-    public String goContact(HttpServletRequest req){
-        HttpSession session=req.getSession();
+    public String goContact(Model model,
+                            @RequestParam("mail") String mail,
+                            HttpSession session){
         User user=userService.getById((Long)session.getAttribute("userId"));
-        String mail="no";
-        if(req.getParameter("mail")!=null){
-            mail=req.getParameter("mail");
+        if(mail!=null){
+            model.addAttribute("mail",mail);
+        } else{
+            mail="no";
         }
         Contact contact=contactCreator.getContact(user,mail);
-        session.setAttribute("contact",contact);
+        model.addAttribute("contact",contact);
         return "contact";
     }
 
     @GetMapping("/site/contact")
-    public String contactPost(HttpServletRequest req){
-        HttpSession session=req.getSession();
+    public String contactPost(Model model, HttpSession session){
         Contact contact=new Contact();
         contact.setMail("no");
          if(userService.getById((Long)session.getAttribute("userId")).getContact()!=null){
              contact=userService.getById((Long)session.getAttribute("userId")).getContact();
          }
-             session.setAttribute("contact",contact);
+             model.addAttribute("contact",contact);
         return "contact";
     }
 
     @PostMapping("/site/delcontact")
-    public String delContact(HttpServletRequest req){
+    public String delContact(Model model, HttpServletRequest req){
             HttpSession session=req.getSession();
             User user=userService.getById((Long)session.getAttribute("userId"));
             Contact contact=contactCreator.delContact(user);
-            session.setAttribute("contact",contact);
+        model.addAttribute("contact",contact);
         return "contact";
     }
 
     @PostMapping("/site/edit")
-    public String edit(HttpServletRequest req){
-        Long editNewsId=Long.parseLong(req.getParameter("editNewsId"));
-        HttpSession session = req.getSession();
+    public String edit(Model model,
+                       @RequestParam("editNewsId") Long editNewsId){
         newsEditor.setId(editNewsId);
-        session.setAttribute("news",newsEditor.newsEdit());
+        model.addAttribute("news",newsEditor.newsEdit());
+        model.addAttribute("editNewsId",editNewsId);
         return "editnews";
     }
 
     @PostMapping("/site/updatenews")
-    public String update(HttpServletRequest req){
-        HttpSession session = req.getSession();
-        News news=(News)req.getSession().getAttribute("news");
-        String nameNews=req.getParameter("nameNews");
-        String dataNews=req.getParameter("dataNews");
+    public String update(Model model,
+                         @RequestParam("editNewsId") Long editNewsId,
+                         @RequestParam("nameNews") String nameNews,
+                         @RequestParam("dataNews") String dataNews){
+        News news=newsService.getById(editNewsId);
         news.setNameNews(nameNews);
         news.setDataNews(dataNews);
         newsUpdator.setNews(news);
-        session.setAttribute("news",newsUpdator.newsUpdate());
+        model.addAttribute("news",newsUpdator.newsUpdate());
+        model.addAttribute("editNewsId",editNewsId);
         return "inform";
     }
 
     @PostMapping("/site/deletenews")
-    public String delete(HttpServletRequest req){
-        News news=(News)req.getSession().getAttribute("news");
-        User user=(User)req.getSession().getAttribute("user");
+    public String delete(Model model,
+                         HttpSession session,
+                         @RequestParam("editNewsId") Long editNewsId){
+        News news=newsService.getById(editNewsId);
+        User user=userService.getById((Long)session.getAttribute("userId"));
         newsDeleter.setNews(news);
         newsDeleter.setUser(user);
         newsDeleter.delete();
-        req.getSession().removeAttribute("mapMsgUsr");
+//        model.addAttribute("mapMsgUsr",null);
         return "redirect:/site/mynews";
     }
 
     @GetMapping("/site/comment")
-    public String comment(HttpServletRequest req){
-        HttpSession session=req.getSession();
-        User user=(User)session.getAttribute("user");
+    public String comment(Model model,
+                          HttpSession session){
 
-        List<Discussion> discussionList=dispute.get(userService.getById(user.getId()));
+        Long userId=(Long)session.getAttribute("userId");
+
+        List<Discussion> discussionList=dispute.get(userService.getById(userId));
         if ((discussionList!=null)&&(discussionList.size()>0)){
-            session.setAttribute("discussionList",discussionList);
+            model.addAttribute("discussionList",discussionList);
         }
         return "inform";
     }
 
     @GetMapping("/site/discuss")
-    public String discussion(HttpServletRequest req){
-            String page=discussionProcess(req);
-        return page;
-    }
-
-    @PostMapping("/site/discuss")
-    public String discussionPost(HttpServletRequest req){
-        String page=discussionProcess(req);
-        return page;
-    }
-
-    private String discussionProcess(HttpServletRequest req){
-        HttpSession session=req.getSession();
-        Long discussNewsId=Long.parseLong(req.getParameter("discussNewsId"));
+    public String discussion(HttpSession session,
+                             Model model,
+                             @RequestParam("discussNewsId") Long discussNewsId){
         News news=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
         User user=userService.getById(userId);
-        String msgText=req.getParameter("msgText");
-        session.setAttribute("news",news);
+        model.addAttribute("news",news);
 
         msgCreator.setUser(user);
         msgCreator.setDiscussNewsId(discussNewsId);
-        msgCreator.setMsgText(msgText);
+//        msgCreator.setMsgText(msgText);
         Map<Msg, User> mapMsgUsr = msgCreator.getMsgMap();
 
-        session.setAttribute("mapMsgUsr",mapMsgUsr);
-        session.setAttribute("discussNewsId",discussNewsId);
+        model.addAttribute("mapMsgUsr",mapMsgUsr);
+        model.addAttribute("discussNewsId",discussNewsId);
+        return "discussion";
+    }
 
+    @PostMapping("/site/discuss")
+    public String discussionPost(HttpSession session,
+                                 Model model,
+                                 @RequestParam("discussNewsId") Long discussNewsId){
+        News news=newsService.getById(discussNewsId);
+        Long userId=(Long)session.getAttribute("userId");
+        User user=userService.getById(userId);
+        model.addAttribute("news",news);
+
+        msgCreator.setUser(user);
+        msgCreator.setDiscussNewsId(discussNewsId);
+//        msgCreator.setMsgText(msgText);
+        Map<Msg, User> mapMsgUsr = msgCreator.getMsgMap();
+
+        model.addAttribute("mapMsgUsr",mapMsgUsr);
+        model.addAttribute("discussNewsId",discussNewsId);
         return "discussion";
     }
 
     @PostMapping("/site/msg")
-    public String msg(HttpServletRequest req){
-        HttpSession session=req.getSession();
-        Long discussNewsId=(Long)session.getAttribute("discussNewsId");
-        String msgText=req.getParameter("msgText");
+    public String msg(Model model,
+                      HttpSession session,
+                      @RequestParam("discussNewsId") Long discussNewsId,
+                      @RequestParam("msgText") String msgText){
         News news=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
         User user=userService.getById(userId);
-        session.setAttribute("news",news);
+        model.addAttribute("news",news);
 
         msgCreator.setUser(user);
         msgCreator.setDiscussNewsId(discussNewsId);
         msgCreator.setMsgText(msgText);
+        if (!msgText.equals("")){
+            msgCreator.create();
+        }
 
-        msgCreator.create();
-        session.setAttribute("mapMsgUsr",msgCreator.getMsgMap());
-        session.setAttribute("discussNewsId",discussNewsId);
+        model.addAttribute("mapMsgUsr",msgCreator.getMsgMap());
+        model.addAttribute("discussNewsId",discussNewsId);
         return "discussion";
     }
 

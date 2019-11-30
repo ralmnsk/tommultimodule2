@@ -11,9 +11,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,10 +51,17 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginPost(RegistrationForm form, HttpServletRequest req){
-
+    public String loginPost(RegistrationForm form,
+                            HttpServletRequest req,
+                            Model model){
+        UserDetails userDetails=null;
         User authUser=form.toUserNoPassEncoder();
-        UserDetails userDetails=userDetailsService.loadUserByUsername(authUser.getName());
+        try{
+            userDetails=userDetailsService.loadUserByUsername(authUser.getName());
+        } catch (UsernameNotFoundException e){
+            log.error("UsernameNotFoundException login:{}", authUser.getName());
+        }
+
         if(userDetails!=null){
             if(passwordEncoder.matches(authUser.getPass(),userDetails.getPassword())){
                 User user=userService.readUser(authUser);
@@ -60,12 +69,14 @@ public class LoginController {
                         .getContext()
                         .setAuthentication(new UsernamePasswordAuthenticationToken(user.getName(),user.getPass(),userDetails.getAuthorities()));//GOLDEN CODE
                 req.getSession().setAttribute("userId",user.getId());
-                req.getSession().setAttribute("user",user);
+                req.getSession().setAttribute("name",user.getName());
+                req.getSession().setAttribute("role",user.getRole());
+                model.addAttribute("user",user);
                 return "welcome";
             }
         }
         String errorLoginPassMessage="Неверный логин или пароль";
-        req.getSession().setAttribute("errorLoginPassMessage",errorLoginPassMessage);
+        model.addAttribute("errorLoginPassMessage",errorLoginPassMessage);
         return "login";
     }
 

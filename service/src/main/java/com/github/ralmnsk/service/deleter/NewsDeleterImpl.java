@@ -62,36 +62,37 @@ public class NewsDeleterImpl implements NewsDeleter {
 
     @Override
     public void delete() {
-        User readUser=userService.getById(user.getId());
-        News readNews=newsService.getById(news.getIdNews());   //.getById(news.getIdNews());
+//        User readUser=userService.getById(user.getId());
+//        News readNews=newsService.getById(news.getIdNews());   //.getById(news.getIdNews());
 
         Discussion discussion=null;
-        if(readNews.getDiscussion()!=null){
+        if(news.getDiscussion()!=null){
 //            List<Discussion> discussionList=discussionDao.readByUser(readUser)
 //                    .stream()
 //                    .filter(d->d.getNews().getIdNews()==readNews.getIdNews())
 //                    .collect(Collectors.toList());
-            discussion=readNews.getDiscussion();
+            discussion=news.getDiscussion();
         }
 
-        Set<News> newsSet=readUser.getNewsSet(); //.remove(0);
+        Set<News> newsSet=user.getNewsSet(); //.remove(0);
         if ((newsSet!=null)&&(newsSet.size()>0)){
             for(News n:newsSet){
-                if (n.getIdNews().equals(readNews.getIdNews())){
+                if (n.getIdNews().equals(news.getIdNews())){
                     if (discussion!=null){
                         log.info("discussion id={} of user={} newsName={} was deleted: {}",discussion.getId(),user.getName(),news.getNameNews());
-                        readUser.getDiscussionSet().remove(discussion);
-                        userService.updateUser(readUser);
-                        discussion.getUserSet().remove(readUser);
-                        readNews.setDiscussion(null);
-                        newsService.updateNews(readNews);
+                        user.getDiscussionSet().remove(discussion);
+                        userService.updateUser(user);
+                        discussion.getUserSet().remove(user);
+                        news.setDiscussion(null);
+                        newsService.updateNews(news);
                         discussion.setNews(null);
                         discussionService.delete(discussion.getId());
                     }
-                    log.info("news id={} name={} was deleted: {}",readNews.getIdNews(),readNews.getNameNews());
-                    readNews.setUser(null);
-                    readUser.getNewsSet().remove(readNews);
-                    newsService.deleteNews(readNews);
+                    log.info("news id={} name={} was deleted: {}",news.getIdNews(),news.getNameNews());
+                    news.setUser(null);
+                    user.getNewsSet().remove(news);
+                    newsService.deleteNews(news);
+                    break;
                 }
             }
         }

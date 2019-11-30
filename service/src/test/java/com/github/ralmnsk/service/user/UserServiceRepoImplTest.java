@@ -64,18 +64,7 @@ class UserServiceRepoImplTest {
     }
 
     @Test
-    void readUser() {
-    }
+    void findAllNewsByUserId(){
 
-    @Test
-    void updateUser() {
-    }
-
-    @Test
-    void deleteUser() {
-    }
-
-    @Test
-    void getById() {
     }
 }

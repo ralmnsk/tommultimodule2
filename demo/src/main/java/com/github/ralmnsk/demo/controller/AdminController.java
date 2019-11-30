@@ -56,8 +56,10 @@ public class AdminController {
 
     @RequestMapping(value = "/site/inform/admin/news", method = RequestMethod.GET)
     public String news(@RequestParam(value="move",required = false) String move,
-                       @RequestParam(value = "maxResults",required = false) String maxResults, Model model, HttpServletRequest req){
-        HttpSession session=req.getSession();
+                       @RequestParam(value = "maxResults",required = false) String maxResults,
+                       HttpSession session,
+                       Model model){
+
         int currentPage=1;
         if(session.getAttribute("currentPage")!=null){
             currentPage=(Integer)session.getAttribute("currentPage");
@@ -93,8 +95,8 @@ public class AdminController {
 //        User user=userService.getById((Long)session.getAttribute("userId"));
         currentPage=isMaxResultsChanged?1:currentPage;
         Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
-        session.setAttribute("map",map);
-        session.setAttribute("pageFlag","usersNews");
+        model.addAttribute("map",map);
+        model.addAttribute("pageFlag","usersNews");
         session.setAttribute("currentPage",currentPage);
         session.setAttribute("pagesCount",pagesCount);
         session.setAttribute("maxResults",maxResultsCount);
@@ -102,37 +104,43 @@ public class AdminController {
     }
 
     @PostMapping("/site/inform/admin/edit")
-    public String edit(HttpServletRequest req){
+    public String edit(HttpServletRequest req,
+                       Model model){
         HttpSession session=req.getSession();
-        session.setAttribute("pageFlag","newsEdit");
+        model.addAttribute("pageFlag","newsEdit");
         Long editNewsId=Long.parseLong(req.getParameter("editNewsId"));
         newsEditor.setId(editNewsId);
-        session.setAttribute("news",newsEditor.newsEdit());
+        model.addAttribute("news",newsEditor.newsEdit());
         return "admin";
     }
 
     @PostMapping ("/site/inform/admin/updatenews")
-    public String updateNews(HttpServletRequest req){
+    public String updateNews(HttpServletRequest req,
+                             @RequestParam("editNewsId") Long editNewsId,
+                             @RequestParam("nameNews") String nameNews,
+                             @RequestParam("dataNews") String dataNews,
+                             Model model){
         HttpSession session = req.getSession();
-        session.setAttribute("pageFlag","usersNews");
-        News news=(News)req.getSession().getAttribute("news");
-        String nameNews=req.getParameter("nameNews");
-        String dataNews=req.getParameter("dataNews");
+        model.addAttribute("pageFlag","usersNews");
+        News news=newsService.getById(editNewsId);
+
         news.setNameNews(nameNews);
         news.setDataNews(dataNews);
         newsUpdator.setNews(news);
-        session.setAttribute("news",newsUpdator.newsUpdate());
+        model.addAttribute("news",newsUpdator.newsUpdate());
+        model.addAttribute("editNewsId",editNewsId);
         return "redirect:/site/inform/admin/news";
     }
 
     @PostMapping ("/site/inform/admin/deletenews")
-    public String deleteNews(HttpServletRequest req){
-        News news=(News)req.getSession().getAttribute("news");
-        User user=userService.readUser(news.getUser());
+    public String deleteNews(HttpSession session,
+                             @RequestParam("editNewsId") Long editNewsId){
+        News news=newsService.getById(editNewsId);
+        User user=userService.getById((Long)session.getAttribute("userId"));
         newsDeleter.setNews(news);
         newsDeleter.setUser(user);
         newsDeleter.delete();
-        req.getSession().removeAttribute("mapMsgUsr");
+//        req.getSession().removeAttribute("mapMsgUsr");
         return "redirect:/site/inform/admin/news";
     }
 
@@ -140,7 +148,7 @@ public class AdminController {
     public String contact (@RequestParam(value="move",required = false) String move,
                            @RequestParam(value = "maxResults",required = false) String maxResults, Model model, HttpServletRequest req){
         HttpSession session=req.getSession();
-        session.setAttribute("pageFlag","contact");
+        model.addAttribute("pageFlag","contact");
         int currentPage=1;
         if(session.getAttribute("currentPage")!=null){
             currentPage=(Integer)session.getAttribute("currentPage");
@@ -177,7 +185,7 @@ public class AdminController {
         contactService.findAll((currentPage - 1), maxResultsCount)
         .stream().forEach(contact->mapContacts.put(contact.getUser().getName(),contact.getMail())); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
 
-        session.setAttribute("mapContacts",mapContacts);
+        model.addAttribute("mapContacts",mapContacts);
         session.setAttribute("currentPage",currentPage);
         session.setAttribute("pagesCount",pagesCount);
         session.setAttribute("maxResults",maxResultsCount);
@@ -188,7 +196,7 @@ public class AdminController {
     public String comment(@RequestParam(value="move",required = false) String move,
                           @RequestParam(value = "maxResults",required = false) String maxResults, Model model, HttpServletRequest req){
         HttpSession session=req.getSession();
-        session.setAttribute("pageFlag","discussions");
+        model.addAttribute("pageFlag","discussions");
 
             int currentPage=1;
             if(session.getAttribute("currentPage")!=null){
@@ -224,7 +232,7 @@ public class AdminController {
             currentPage=isMaxResultsChanged?1:currentPage;
         List<Discussion> discussionList = discussionService.findAll((currentPage - 1), maxResultsCount);
         discussionService.findAll((currentPage - 1), maxResultsCount); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
-            session.setAttribute("discussionList",discussionList);
+            model.addAttribute("discussionList",discussionList);
             session.setAttribute("currentPage",currentPage);
             session.setAttribute("pagesCount",pagesCount);
             session.setAttribute("maxResults",maxResultsCount);

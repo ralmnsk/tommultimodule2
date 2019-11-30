@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="container">
-            <h2>Страница пользователя ${user.name}</h2>
+            <h2>Страница пользователя ${name}</h2>
 
             <c:choose>
                 <c:when test = "${fn:length(discussionList) > 0}">

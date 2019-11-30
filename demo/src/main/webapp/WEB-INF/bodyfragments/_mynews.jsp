@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
         <div class="container">
-        <h2>Новости пользователя ${user.name}</h2>
+        <h2>Новости пользователя ${name}</h2>
 
         <table>
                     <c:forEach var="entry" items="${map}">

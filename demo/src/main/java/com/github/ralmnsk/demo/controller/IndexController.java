@@ -10,6 +10,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,19 +25,19 @@ public class IndexController {
     @Autowired
     private NewsService newsService;
 
-    @GetMapping(path = "/hello/{person}")
-    public String hello(@PathVariable String person, Model model){
-        model.addAttribute("person",person);
-        return "info";    //"redirect:/info";
-    }
+//    @GetMapping(path = "/hello/{person}")
+//    public String hello(@PathVariable String person, Model model){
+//        model.addAttribute("person",person);
+//        return "info";    //"redirect:/info";
+//    }
 
     @GetMapping("/")
-    public String index(HttpServletRequest req){
-        if(req.getSession().getAttribute("errorRegistrationMessage")!=null){
-            req.getSession().removeAttribute("errorRegistrationMessage");
+    public String index(Model model){
+        if(model.getAttribute("errorRegistrationMessage")!=null){
+            model.addAttribute("errorRegistrationMessage",null);
         }
-        if( req.getSession().getAttribute("errorLoginPassMessage")!=null){
-            req.getSession().removeAttribute("errorLoginPassMessage");
+        if( model.getAttribute("errorLoginPassMessage")!=null){
+            model.addAttribute("errorLoginPassMessage",null);
         }
         return "redirect:/news";//"redirect:/news";    //"redirect:/info";
     }
@@ -49,11 +50,12 @@ public class IndexController {
 
     @RequestMapping(value = "/news", method = RequestMethod.GET)
     public String news(@RequestParam(value="move",required = false) String move,
-                       @RequestParam(value = "maxResults",required = false) String maxResults, Model model, HttpServletRequest req){
-        HttpSession session=req.getSession();
+                       @RequestParam(value = "maxResults",required = false) String maxResults,
+                       Model model){
+
         int currentPage=1;
-        if(session.getAttribute("currentPage")!=null){
-            currentPage=(Integer)session.getAttribute("currentPage");
+        if(model.getAttribute("currentPage")!=null){
+            currentPage=(Integer)model.getAttribute("currentPage");
         }
 
             boolean isMaxResultsChanged=false;
@@ -62,8 +64,8 @@ public class IndexController {
             maxResultsCount=Integer.parseInt(maxResults);
             isMaxResultsChanged=true;
         }else{
-            if(session.getAttribute("maxResults")!=null){
-                maxResultsCount=(int)session.getAttribute("maxResults");
+            if(model.getAttribute("maxResults")!=null){
+                maxResultsCount=(int)model.getAttribute("maxResults");
             }
         }
 
@@ -86,9 +88,9 @@ public class IndexController {
         currentPage=isMaxResultsChanged?1:currentPage;
         Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount);
         model.addAttribute("map",map);
-        session.setAttribute("currentPage",currentPage);
-        session.setAttribute("pagesCount",pagesCount);
-        session.setAttribute("maxResults",maxResultsCount);
+        model.addAttribute("currentPage",currentPage);
+        model.addAttribute("pagesCount",pagesCount);
+        model.addAttribute("maxResults",maxResultsCount);
         return "index";
     }
 
