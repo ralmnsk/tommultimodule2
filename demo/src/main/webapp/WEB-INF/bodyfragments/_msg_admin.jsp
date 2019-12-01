@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
         <div class="container">
             <h2>Обсуждение новости:</br>
@@ -18,8 +19,8 @@
                 <c:forEach var="entry" items="${mapMsgUsr}">
                    </br>
                    Автор: <c:out value="${entry.value.name}"></c:out>
-                <!-- <p><h4><c:out value="${entry.key.text}"></c:out></h4></br> -->
-                   Написал: <c:out value="${entry.key.date}"></c:out></br>
+                <!--<p><h4><c:out value="${entry.key.text}"></c:out></h4>-->
+                   Написал: <fmt:formatDate type="both" value="${entry.key.date}"/>
 
                    <hr/>
 

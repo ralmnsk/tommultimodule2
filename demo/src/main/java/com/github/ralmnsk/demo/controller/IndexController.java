@@ -51,11 +51,19 @@ public class IndexController {
     @RequestMapping(value = "/news", method = RequestMethod.GET)
     public String news(@RequestParam(value="move",required = false) String move,
                        @RequestParam(value = "maxResults",required = false) String maxResults,
-                       Model model){
+                       Model model,
+                       HttpSession session){
 
         int currentPage=1;
-        if(model.getAttribute("currentPage")!=null){
-            currentPage=(Integer)model.getAttribute("currentPage");
+        boolean pageFlag=false;
+        if(session.getAttribute("pageFlag")!=null){
+            if(session.getAttribute("pageFlag").equals("allNews")){
+                pageFlag=true;
+            }
+        }
+        if((session.getAttribute("currentPage")!=null)&&
+                (pageFlag)){
+            currentPage=(Integer)session.getAttribute("currentPage");
         }
 
             boolean isMaxResultsChanged=false;
@@ -64,13 +72,14 @@ public class IndexController {
             maxResultsCount=Integer.parseInt(maxResults);
             isMaxResultsChanged=true;
         }else{
-            if(model.getAttribute("maxResults")!=null){
-                maxResultsCount=(int)model.getAttribute("maxResults");
+            if((session.getAttribute("maxResults")!=null)&&
+            (pageFlag)){
+                maxResultsCount=(int)session.getAttribute("maxResults");
             }
         }
 
 
-        int allEntitiesCount=newsService.countAllNews().intValue();
+        int allEntitiesCount=newsService.countAllNews().intValue(); //changes service
         int pagesCount=paginator.pagesCount(allEntitiesCount,maxResultsCount);
 
 
@@ -86,12 +95,14 @@ public class IndexController {
         }
 
         currentPage=isMaxResultsChanged?1:currentPage;
-        Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount);
+        Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount); //changes map
         model.addAttribute("map",map);
-        model.addAttribute("currentPage",currentPage);
-        model.addAttribute("pagesCount",pagesCount);
-        model.addAttribute("maxResults",maxResultsCount);
+        session.setAttribute("pageFlag","allNews"); //changes
+        session.setAttribute("currentPage",currentPage);
+        session.setAttribute("pagesCount",pagesCount);
+        session.setAttribute("maxResults",maxResultsCount);
         return "index";
     }
+
 
 }

@@ -28,7 +28,17 @@
                 <a href="${pageContext.request.contextPath}/site/discuss?discussNewsId=${item.news.idNews}">${item.news.nameNews}</a>
                 <hr/>
             </c:forEach>
-
         </div>
+            <nav aria-label="Page navigation example">
+                      <ul autofocus class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/comment?move=previous">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/comment?move=next">Next</a></li>
+                        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/comment?maxResults=5">5</a></li>
+                        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/comment?maxResults=15">15</a></li>
+                        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/comment?maxResults=50">50</a></li>
+                        <li class="page-item"><a class="page-link">Page: ${currentPage}</a></li>
+                        <li class="page-item"><a class="page-link">Total: ${pagesCount}</a></li>
+                      </ul>
+            </nav>
     </body>
 </html>

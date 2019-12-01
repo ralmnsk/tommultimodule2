@@ -6,6 +6,7 @@ import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
@@ -62,7 +63,7 @@ public class DiscussionServiceRepoImpl implements DiscussionService{
 
     @Override
     public List<Discussion> findAll(int page, int size) {
-        return discussionRepository.findAll(PageRequest.of(page,size)).getContent();
+        return discussionRepository.findAll(PageRequest.of(page,size, Sort.by("id").descending())).getContent();
     }
 
     @Override

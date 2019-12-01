@@ -148,9 +148,15 @@ public class AdminController {
     public String contact (@RequestParam(value="move",required = false) String move,
                            @RequestParam(value = "maxResults",required = false) String maxResults, Model model, HttpServletRequest req){
         HttpSession session=req.getSession();
-        model.addAttribute("pageFlag","contact");
+
         int currentPage=1;
-        if(session.getAttribute("currentPage")!=null){
+        boolean pageFlag=false;
+        if(session.getAttribute("pageFlag")!=null){
+            if(session.getAttribute("pageFlag").equals("contact")){
+                pageFlag=true;
+            }
+        }
+        if((session.getAttribute("currentPage")!=null)&&(pageFlag)){
             currentPage=(Integer)session.getAttribute("currentPage");
         }
 
@@ -160,7 +166,7 @@ public class AdminController {
             maxResultsCount=Integer.parseInt(maxResults);
             isMaxResultsChanged=true;
         }else{
-            if(session.getAttribute("maxResults")!=null){
+            if ((session.getAttribute("maxResults")!=null)&&pageFlag){
                 maxResultsCount=(int)session.getAttribute("maxResults");
             }
         }
@@ -186,6 +192,7 @@ public class AdminController {
         .stream().forEach(contact->mapContacts.put(contact.getUser().getName(),contact.getMail())); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
 
         model.addAttribute("mapContacts",mapContacts);
+        session.setAttribute("pageFlag","contact");
         session.setAttribute("currentPage",currentPage);
         session.setAttribute("pagesCount",pagesCount);
         session.setAttribute("maxResults",maxResultsCount);

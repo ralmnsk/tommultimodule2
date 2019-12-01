@@ -33,11 +33,11 @@
                 <nav aria-label="Page navigation example">
                           <ul autofocus class="pagination justify-content-center">
 
-                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/news?move=previous">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/news?move=next">Next</a></li>
-                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/news?maxResults=5">5</a></li>
-                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/news?maxResults=15">15</a></li>
-                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/news?maxResults=50">50</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/news?move=previous">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/news?move=next">Next</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/news?maxResults=5">5</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/news?maxResults=15">15</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/news?maxResults=50">50</a></li>
                             <li class="page-item"><a class="page-link">Page: ${currentPage}</a></li>
                             <li class="page-item"><a class="page-link">Total: ${pagesCount}</a></li>
 
@@ -80,10 +80,21 @@
             </c:choose>
 
             <c:forEach var="item" items="${discussionList}">
-                <a href="${pageContext.request.contextPath}/site/inform/admin/discuss?discussNewsId=${item.news.idNews}">${item.news.nameNews}</a>
+                <a href="${pageContext.request.contextPath}/site/inform/admin/discuss?discussNewsId=${item.news.idNews}">${item.news.nameNews}    <b>${item.news.user.name}:<fmt:formatDate type="both" value="${item.news.dateNews}"/></b></a>
                 <hr/>
             </c:forEach>
 
+            <nav aria-label="Page navigation example" >
+                        <ul autofocus class="pagination justify-content-center" style="vertical-align: bottom;">
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/comment?move=previous">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/comment?move=next">Next</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/comment?maxResults=5">5</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/comment?maxResults=15">15</a></li>
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/comment?maxResults=50">50</a></li>
+                            <li class="page-item"><a class="page-link">Page: ${currentPage}</a></li>
+                            <li class="page-item"><a class="page-link">Total: ${pagesCount}</a></li>
+                        </ul>
+            </nav>
 
         </c:if>
 <!--CONTACT-->
@@ -94,15 +105,16 @@
         </c:forEach>
           <nav aria-label="Page navigation example" >
             <ul autofocus class="pagination justify-content-center" style="vertical-align: bottom;">
-                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?move=previous">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?move=next">Next</a></li>
-                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?maxResults=5">5</a></li>
-                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?maxResults=15">15</a></li>
-                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/contact?maxResults=50">50</a></li>
+                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/contact?move=previous">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/contact?move=next">Next</a></li>
+                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/contact?maxResults=5">5</a></li>
+                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/contact?maxResults=15">15</a></li>
+                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/site/inform/admin/contact?maxResults=50">50</a></li>
                 <li class="page-item"><a class="page-link">Page: ${currentPage}</a></li>
                 <li class="page-item"><a class="page-link">Total: ${pagesCount}</a></li>
             </ul>
           </nav>
         </c:if>
+
 </div>
 

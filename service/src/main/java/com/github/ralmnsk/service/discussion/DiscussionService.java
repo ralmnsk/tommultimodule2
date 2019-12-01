@@ -11,6 +11,5 @@ public interface DiscussionService {
     List<Discussion> readByUser(User user);
     void delete(Long id);
     List<Discussion> findAll(int page, int size);
-
     Long count();
 }

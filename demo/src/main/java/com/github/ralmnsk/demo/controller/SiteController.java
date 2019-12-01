@@ -9,6 +9,7 @@ import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.contact.ContactService;
 import com.github.ralmnsk.service.contact.creator.ContactCreator;
 import com.github.ralmnsk.service.deleter.NewsDeleter;
+import com.github.ralmnsk.service.discussion.DiscussionService;
 import com.github.ralmnsk.service.dispute.Dispute;
 import com.github.ralmnsk.service.msg.MsgCreator;
 import com.github.ralmnsk.service.news.NewsService;
@@ -25,6 +26,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -53,7 +55,9 @@ public class SiteController {
     @Autowired
     private Dispute dispute;
     @Autowired
-    MsgCreator msgCreator;
+    private MsgCreator msgCreator;
+    @Autowired
+    private DiscussionService discussionService;
 
 //    @Secured("USER")
     @GetMapping("/site/inform")
@@ -86,7 +90,13 @@ public class SiteController {
                        Model model, HttpSession session){
 
         int currentPage=1;
-        if(session.getAttribute("currentPage")!=null){
+        boolean pageFlag=false;
+        if(session.getAttribute("pageFlag")!=null){
+            if(session.getAttribute("pageFlag").equals("myNews")){
+                pageFlag=true;
+            }
+        }
+        if((session.getAttribute("currentPage")!=null)&&pageFlag){
             currentPage=(Integer)session.getAttribute("currentPage");
         }
 
@@ -96,7 +106,7 @@ public class SiteController {
             maxResultsCount=Integer.parseInt(maxResults);
             isMaxResultsChanged=true;
         }else{
-            if(session.getAttribute("maxResults")!=null){
+            if((session.getAttribute("maxResults")!=null)&&pageFlag){
                 maxResultsCount=(int)session.getAttribute("maxResults");
             }
         }
@@ -121,6 +131,7 @@ public class SiteController {
         currentPage=isMaxResultsChanged?1:currentPage;
         Map<News, User> map=paginator.viewNewsOfUser((currentPage-1),maxResultsCount,user);
         model.addAttribute("map",map);
+        session.setAttribute("pageFlag","myNews");
         session.setAttribute("currentPage",currentPage);
         session.setAttribute("pagesCount",pagesCount);
         session.setAttribute("maxResults",maxResultsCount);
@@ -199,15 +210,75 @@ public class SiteController {
     }
 
     @GetMapping("/site/comment")
-    public String comment(Model model,
+    public String comment(@RequestParam(value="move",required = false) String move,
+                          @RequestParam(value = "maxResults",required = false) String maxResults,
+                          Model model,
                           HttpSession session){
 
         Long userId=(Long)session.getAttribute("userId");
 
-        List<Discussion> discussionList=dispute.get(userService.getById(userId));
-        if ((discussionList!=null)&&(discussionList.size()>0)){
-            model.addAttribute("discussionList",discussionList);
+        int currentPage=1;
+        boolean pageFlag=false;
+        if(session.getAttribute("pageFlag")!=null){
+            if(session.getAttribute("pageFlag").equals("myComments")){
+                pageFlag=true;
+            }
         }
+        if((session.getAttribute("currentPage")!=null)&&
+                (pageFlag)){
+            currentPage=(Integer)session.getAttribute("currentPage");
+        }
+
+        boolean isMaxResultsChanged=false;
+        int maxResultsCount=5;
+        if (maxResults!=null){
+            maxResultsCount=Integer.parseInt(maxResults);
+            isMaxResultsChanged=true;
+        }else{
+            if((session.getAttribute("maxResults")!=null)&&
+                    (pageFlag)){
+                maxResultsCount=(int)session.getAttribute("maxResults");
+            }
+        }
+
+
+        int allEntitiesCount=discussionService
+                .readByUser(userService.getById((Long)session.getAttribute("userId"))).size();// .countAllNews().intValue(); //changes service
+        int pagesCount=paginator.pagesCount(allEntitiesCount,maxResultsCount);
+
+
+        if (move!=null){
+            switch(move){
+                case "previous":
+                    currentPage=currentPage>1?currentPage-1:currentPage;
+                    break;
+                case "next":
+                    currentPage=currentPage<pagesCount?currentPage=currentPage+1:currentPage;
+                    break;
+            }
+        }
+
+        currentPage=isMaxResultsChanged?1:currentPage;
+//        Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount); //changes map
+
+        List<Discussion> list=dispute.get(userService.getById(userId));
+        List<Discussion> discussionList=new ArrayList<>();
+        if ((list!=null)&&(list.size()>0)){
+            int start=(currentPage-1)*maxResultsCount;
+            int end=start+maxResultsCount-1;
+            for(int i=0;i<list.size();i++){
+                if((i>=start)&&(i<=end)){
+                    discussionList.add(list.get(i));
+                }
+            }
+        }
+
+        model.addAttribute("discussionList",discussionList);
+        session.setAttribute("pageFlag","myComments"); //changes
+        session.setAttribute("currentPage",currentPage);
+        session.setAttribute("pagesCount",pagesCount);
+        session.setAttribute("maxResults",maxResultsCount);
+
         return "inform";
     }
 
