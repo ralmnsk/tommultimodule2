@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 @Slf4j
@@ -32,7 +33,7 @@ public class IndexController {
 //    }
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, Locale locale){
         if(model.getAttribute("errorRegistrationMessage")!=null){
             model.addAttribute("errorRegistrationMessage",null);
         }
@@ -52,7 +53,8 @@ public class IndexController {
     public String news(@RequestParam(value="move",required = false) String move,
                        @RequestParam(value = "maxResults",required = false) String maxResults,
                        Model model,
-                       HttpSession session){
+                       HttpSession session,
+                       Locale locale){
 
         int currentPage=1;
         boolean pageFlag=false;

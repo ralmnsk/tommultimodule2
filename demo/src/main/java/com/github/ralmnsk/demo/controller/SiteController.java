@@ -28,6 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 @Slf4j
@@ -61,21 +62,24 @@ public class SiteController {
 
 //    @Secured("USER")
     @GetMapping("/site/inform")
-    public String inform(Model model, HttpSession session){ //NOT WORKING
+    public String inform(Model model,
+                         HttpSession session,
+                         Locale locale){ //NOT WORKING
         User user=userService.getById((Long)session.getAttribute("userId"));
         model.addAttribute("user",user);
         return "inform";
     }
 
     @GetMapping("/site/addnews")
-    public String addNews(){
+    public String addNews(Locale locale){
         return "addnews";
     }
 
     @PostMapping("/site/createnews")
     public String createNews(@RequestParam("dataNews") String dataNews,
                              @RequestParam("nameNews") String nameNews,
-                             HttpServletRequest req){
+                             HttpServletRequest req,
+                             Locale locale){
         Long userId=(Long)req.getSession().getAttribute("userId");
         creator.setUserId(userId);
         creator.setDataNews(dataNews);
@@ -87,7 +91,9 @@ public class SiteController {
     @RequestMapping(value = "/site/mynews", method = RequestMethod.GET)
     public String news(@RequestParam(value="move",required = false) String move,
                        @RequestParam(value = "maxResults",required = false) String maxResults,
-                       Model model, HttpSession session){
+                       Model model,
+                       HttpSession session,
+                       Locale locale){
 
         int currentPage=1;
         boolean pageFlag=false;
@@ -141,7 +147,8 @@ public class SiteController {
     @PostMapping("/site/gocontact")
     public String goContact(Model model,
                             @RequestParam("mail") String mail,
-                            HttpSession session){
+                            HttpSession session,
+                            Locale locale){
         User user=userService.getById((Long)session.getAttribute("userId"));
         if(mail!=null){
             model.addAttribute("mail",mail);
@@ -154,7 +161,9 @@ public class SiteController {
     }
 
     @GetMapping("/site/contact")
-    public String contactPost(Model model, HttpSession session){
+    public String contactPost(Model model,
+                              HttpSession session,
+                              Locale locale){
         Contact contact=new Contact();
         contact.setMail("no");
          if(userService.getById((Long)session.getAttribute("userId")).getContact()!=null){
@@ -165,7 +174,9 @@ public class SiteController {
     }
 
     @PostMapping("/site/delcontact")
-    public String delContact(Model model, HttpServletRequest req){
+    public String delContact(Model model,
+                             HttpServletRequest req,
+                             Locale locale){
             HttpSession session=req.getSession();
             User user=userService.getById((Long)session.getAttribute("userId"));
             Contact contact=contactCreator.delContact(user);
@@ -175,7 +186,8 @@ public class SiteController {
 
     @PostMapping("/site/edit")
     public String edit(Model model,
-                       @RequestParam("editNewsId") Long editNewsId){
+                       @RequestParam("editNewsId") Long editNewsId,
+                       Locale locale){
         newsEditor.setId(editNewsId);
         model.addAttribute("news",newsEditor.newsEdit());
         model.addAttribute("editNewsId",editNewsId);
@@ -186,7 +198,8 @@ public class SiteController {
     public String update(Model model,
                          @RequestParam("editNewsId") Long editNewsId,
                          @RequestParam("nameNews") String nameNews,
-                         @RequestParam("dataNews") String dataNews){
+                         @RequestParam("dataNews") String dataNews,
+                         Locale locale){
         News news=newsService.getById(editNewsId);
         news.setNameNews(nameNews);
         news.setDataNews(dataNews);
@@ -199,7 +212,8 @@ public class SiteController {
     @PostMapping("/site/deletenews")
     public String delete(Model model,
                          HttpSession session,
-                         @RequestParam("editNewsId") Long editNewsId){
+                         @RequestParam("editNewsId") Long editNewsId,
+                         Locale locale){
         News news=newsService.getById(editNewsId);
         User user=userService.getById((Long)session.getAttribute("userId"));
         newsDeleter.setNews(news);
@@ -213,7 +227,8 @@ public class SiteController {
     public String comment(@RequestParam(value="move",required = false) String move,
                           @RequestParam(value = "maxResults",required = false) String maxResults,
                           Model model,
-                          HttpSession session){
+                          HttpSession session,
+                          Locale locale){
 
         Long userId=(Long)session.getAttribute("userId");
 
@@ -285,7 +300,8 @@ public class SiteController {
     @GetMapping("/site/discuss")
     public String discussion(HttpSession session,
                              Model model,
-                             @RequestParam("discussNewsId") Long discussNewsId){
+                             @RequestParam("discussNewsId") Long discussNewsId,
+                             Locale locale){
         News news=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
         User user=userService.getById(userId);
@@ -304,7 +320,8 @@ public class SiteController {
     @PostMapping("/site/discuss")
     public String discussionPost(HttpSession session,
                                  Model model,
-                                 @RequestParam("discussNewsId") Long discussNewsId){
+                                 @RequestParam("discussNewsId") Long discussNewsId,
+                                 Locale locale){
         News news=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
         User user=userService.getById(userId);
@@ -324,7 +341,8 @@ public class SiteController {
     public String msg(Model model,
                       HttpSession session,
                       @RequestParam("discussNewsId") Long discussNewsId,
-                      @RequestParam("msgText") String msgText){
+                      @RequestParam("msgText") String msgText,
+                      Locale locale){
         News news=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
         User user=userService.getById(userId);

@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Locale;
 
 @Slf4j
 @Controller
@@ -41,7 +42,7 @@ public class LoginController {
 
 
     @GetMapping("/login")
-    public String login(){
+    public String login(Locale locale){
         return "login";    //"redirect:/info";
     }
 //
@@ -53,7 +54,8 @@ public class LoginController {
     @PostMapping("/login")
     public String loginPost(RegistrationForm form,
                             HttpServletRequest req,
-                            Model model){
+                            Model model,
+                            Locale locale){
         UserDetails userDetails=null;
         User authUser=form.toUserNoPassEncoder();
         try{
@@ -96,7 +98,9 @@ public class LoginController {
 //}
 
     @RequestMapping(value="/site/logout", method = RequestMethod.GET)
-    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+    public String logoutPage (HttpServletRequest request,
+                              HttpServletResponse response,
+                              Locale locale) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null){
             new SecurityContextLogoutHandler().logout(request, response, auth);

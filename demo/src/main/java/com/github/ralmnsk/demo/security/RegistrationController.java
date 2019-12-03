@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Locale;
+
 @Slf4j
 @Controller
 public class RegistrationController {
@@ -30,7 +32,8 @@ public class RegistrationController {
   }
   
   @GetMapping("/goregistrate")
-  public String registerForm(HttpServletRequest req) {
+  public String registerForm(HttpServletRequest req,
+                             Locale locale) {
     if(req.getSession().getAttribute("errorLoginPassMessage")!=null){
       req.getSession().removeAttribute("errorLoginPassMessage");
     }
@@ -38,7 +41,9 @@ public class RegistrationController {
   }
   
   @PostMapping("/registration")
-  public String processRegistration(RegistrationForm form, HttpServletRequest req) {
+  public String processRegistration(RegistrationForm form,
+                                    HttpServletRequest req,
+                                    Locale locale) {
 
     String page;
     User registrationUser=form.toUser(passwordEncoder);
