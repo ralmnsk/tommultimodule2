@@ -3,26 +3,38 @@ package com.github.ralmnsk.service.msg;
 import com.github.ralmnsk.dao.msg.MsgDao;
 import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
 import com.github.ralmnsk.dao.msg.MsgRepository;
+import com.github.ralmnsk.dto.MsgDto;
 import com.github.ralmnsk.model.msg.Msg;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MsgServiceImpl implements MsgService {
     @Autowired
+    private ModelMapper mapper;
+
+    @Autowired
     private MsgRepository msgRepo;
 
     @Override
-    public void create(Msg msg) {
+    public void create(MsgDto msgDto) {
+        Msg msg=mapper.map(msgDto,Msg.class);
         msgRepo.save(msg);
     }
 
     @Override
-    public Msg read(Long id) {
-        return msgRepo.getOne(id);
+    public MsgDto read(Long id) {
+        Msg msg=msgRepo.getOne(id);
+        if (msg!=null){
+            MsgDto msgDto=mapper.map(msg,MsgDto.class);
+            return msgDto;
+        }
+        return null;
     }
 
     @Override
@@ -38,7 +50,14 @@ public class MsgServiceImpl implements MsgService {
     }
 
     @Override
-    public List<Msg> findAll(Pageable pageable) {
-        return msgRepo.findAll(pageable).getContent();
+    public List<MsgDto> findAll(Pageable pageable) {
+        List<Msg> list=msgRepo.findAll(pageable).getContent();
+        if ((list!=null)&&(list.size()>0)){
+            List<MsgDto> listDto=list.stream()
+                    .map(m->mapper.map(m,MsgDto.class))
+                    .collect(Collectors.toList());
+            return listDto;
+        }
+        return null;
     }
 }

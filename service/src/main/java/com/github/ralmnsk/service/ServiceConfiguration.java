@@ -1,6 +1,8 @@
 package com.github.ralmnsk.service;
 
 import com.github.ralmnsk.dao.connection.JpaConfig;
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -9,4 +11,8 @@ import org.springframework.context.annotation.Import;
 @ComponentScan("com.github.ralmnsk.service")
 //@Import(JpaConfig.class)
 public class ServiceConfiguration {
+    @Bean
+    public ModelMapper mapper(){
+        return new ModelMapper();
+    }
 }

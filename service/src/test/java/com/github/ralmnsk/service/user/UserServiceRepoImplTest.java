@@ -2,6 +2,7 @@ package com.github.ralmnsk.service.user;
 
 import com.github.ralmnsk.dao.connection.JpaConfig;
 import com.github.ralmnsk.dao.user.UserRepository;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.user.User;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,18 +13,13 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.GenericApplicationContext;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.mockito.Mockito.*;
 
 //@RunWith(SpringRunner.class)
@@ -36,7 +32,8 @@ import static org.mockito.Mockito.*;
 class UserServiceRepoImplTest {
 //    private GenericApplicationContext ctx;
 //    private UserService userServiceTest;
-
+    @Autowired
+    private ModelMapper mapper;
     @Mock
     private UserRepository userRepository;
 
@@ -48,18 +45,13 @@ class UserServiceRepoImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
-//    @Test
-//    void userServiceTest(){
-//        ctx = new AnnotationConfigApplicationContext(JpaConfig.class);
-//        userServiceTest = ctx.getBean(UserService.class);
-//        assertNotNull(userServiceTest);
-//    }
 
     @Test
     void createUser() {
-        User user=new User("testUser","123",new Date(),"usr");
+        UserDto userDto=new UserDto("testUser","123",new Date(),"usr");
 //        doNothing().when(userRepository.save(user));
-        userService.createUser(user);
+        User user=mapper.map(userDto,User.class);
+        userService.createUser(userDto);
         Mockito.verify(userRepository,times(1)).save(user);
     }
 

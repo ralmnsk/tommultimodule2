@@ -1,5 +1,6 @@
 package com.github.ralmnsk.service.registration;
 
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ public class Registration implements Register{
     private UserService userService;
 
     @Override
-    public boolean isRegistered(User user) {
-        User checkUser=userService.readUser(user);
+    public boolean isRegistered(UserDto userDto) {
+        UserDto checkUser=userService.readUser(userDto);
         if(checkUser!=null){
             return true;
         }

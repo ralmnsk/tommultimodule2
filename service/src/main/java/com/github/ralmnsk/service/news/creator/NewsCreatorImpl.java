@@ -1,16 +1,11 @@
 package com.github.ralmnsk.service.news.creator;
 
-import com.github.ralmnsk.dao.discussion.DiscussionDao;
-import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.discussion.DiscussionService;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

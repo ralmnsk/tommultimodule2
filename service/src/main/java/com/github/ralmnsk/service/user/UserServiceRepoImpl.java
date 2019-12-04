@@ -2,7 +2,9 @@ package com.github.ralmnsk.service.user;
 
 
 import com.github.ralmnsk.dao.user.UserRepository;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.user.User;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,6 +22,8 @@ public class UserServiceRepoImpl implements UserService{
 
 //    @PersistenceContext
 //    private EntityManager em;
+    @Autowired
+    private ModelMapper mapper;
 
     private UserRepository userRepo; //= UserDaoHiberImpl.getInstance();
 
@@ -37,26 +41,37 @@ public class UserServiceRepoImpl implements UserService{
     }
 
     @Override
-    public void createUser(User user) {
+    public void createUser(UserDto userDto) {
+        User user=mapper.map(userDto,User.class);
         userRepo.save(user);
     }
     @Override
-    public User readUser(User user) {
-        return userRepo.findByName(user.getName());
+    public UserDto readUser(UserDto userDto) {
+        User user=mapper.map(userDto,User.class);
+        User readUser=userRepo.findByName(user.getName());
+        UserDto readUserDto=mapper.map(readUser,UserDto.class);
+        return readUserDto;
     }
     @Override
-    public void updateUser(User user) {
+    public void updateUser(UserDto userDto) {
+        User user=mapper.map(userDto,User.class);
         userRepo.saveAndFlush(user);
     }
     @Override
-    public void deleteUser(User user) {
+    public void deleteUser(UserDto userDto) {
+        User user=mapper.map(userDto,User.class);
         userRepo.delete(user);
     }
 
     @Override
-    public User getById(Long id) {
+    public UserDto getById(Long id) {
         Optional<User> byId = userRepo.findById(id);
-        return byId.get();
+        User user=byId.get();
+        if (user!=null){
+            UserDto userDto=mapper.map(user,UserDto.class);
+            return userDto;
+        }
+        return null;
     }
 
 }
