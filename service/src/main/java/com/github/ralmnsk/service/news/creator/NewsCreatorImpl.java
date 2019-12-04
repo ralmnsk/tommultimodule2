@@ -1,11 +1,14 @@
 package com.github.ralmnsk.service.news.creator;
 
+import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.discussion.DiscussionService;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,8 @@ public class NewsCreatorImpl implements NewsCreator {
     private UserService userService;
     @Autowired
     private DiscussionService discussionService;
+    @Autowired
+    private ModelMapper mapper;
 
     public NewsCreatorImpl(Long userId, String dataNews, String nameNews) {
         this.userId = userId;
@@ -73,21 +78,21 @@ public class NewsCreatorImpl implements NewsCreator {
     }
 
     @Override
-    public News newsCreate(){
-        News news=new News();
+    public NewsDto newsCreate(){
+        NewsDto newsDto=new NewsDto();
 
         if (!dataNews.isEmpty()){
-            news=new News(nameNews, dataNews, new Date());
-            User readUser=userService.getById(userId);
-            news.setUser(readUser);
-            newsService.createNews(news);
-            discussionService.create(readUser,news);
-            log.info(this.getClass()+": news created:{}",news);
+            newsDto=new NewsDto(nameNews, dataNews, new Date());
+            UserDto readUserDto=userService.getById(userId);
+            newsDto.setUserDto(readUserDto);
+            newsService.createNews(newsDto);
+            discussionService.create(readUserDto,newsDto);
+            log.info(this.getClass()+": news created:{}",newsDto);
         } else {
-            log.info("news: {} is empty", news);
+            log.info("news: {} is empty", newsDto);
         }
 
-    return news;
+    return newsDto;
     }
 
 }

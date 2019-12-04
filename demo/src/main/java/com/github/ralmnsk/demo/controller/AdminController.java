@@ -1,7 +1,12 @@
 package com.github.ralmnsk.demo.controller;
 
+import com.github.ralmnsk.dto.MsgDto;
+import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.contact.Contact;
+import com.github.ralmnsk.model.contact.ContactDto;
 import com.github.ralmnsk.model.discussion.Discussion;
+import com.github.ralmnsk.model.discussion.DiscussionDto;
 import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
@@ -94,7 +99,7 @@ public class AdminController {
 
 //        User user=userService.getById((Long)session.getAttribute("userId"));
         currentPage=isMaxResultsChanged?1:currentPage;
-        Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
+        Map<NewsDto, UserDto> map=paginator.viewNews((currentPage-1),maxResultsCount); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
         model.addAttribute("map",map);
         model.addAttribute("pageFlag","usersNews");
         session.setAttribute("currentPage",currentPage);
@@ -122,11 +127,11 @@ public class AdminController {
                              Model model){
         HttpSession session = req.getSession();
         model.addAttribute("pageFlag","usersNews");
-        News news=newsService.getById(editNewsId);
+        NewsDto newsDto=newsService.getById(editNewsId);
 
-        news.setNameNews(nameNews);
-        news.setDataNews(dataNews);
-        newsUpdator.setNews(news);
+        newsDto.setNameNews(nameNews);
+        newsDto.setDataNews(dataNews);
+        newsUpdator.setNewsDto(newsDto);
         model.addAttribute("news",newsUpdator.newsUpdate());
         model.addAttribute("editNewsId",editNewsId);
         return "redirect:/site/inform/admin/news";
@@ -135,10 +140,10 @@ public class AdminController {
     @PostMapping ("/site/inform/admin/deletenews")
     public String deleteNews(HttpSession session,
                              @RequestParam("editNewsId") Long editNewsId){
-        News news=newsService.getById(editNewsId);
-        User user=userService.getById((Long)session.getAttribute("userId"));
-        newsDeleter.setNews(news);
-        newsDeleter.setUser(user);
+        NewsDto newsDto=newsService.getById(editNewsId);
+        UserDto userDto=userService.getById((Long)session.getAttribute("userId"));
+        newsDeleter.setNewsDto(newsDto);
+        newsDeleter.setUserDto(userDto);
         newsDeleter.delete();
 //        req.getSession().removeAttribute("mapMsgUsr");
         return "redirect:/site/inform/admin/news";
@@ -186,7 +191,7 @@ public class AdminController {
         }
 
         currentPage=isMaxResultsChanged?1:currentPage;
-        List<Contact> contacts = contactService.findAll((currentPage - 1), maxResultsCount);
+        List<ContactDto> contacts = contactService.findAll((currentPage - 1), maxResultsCount);
         Map<String, String> mapContacts=new LinkedHashMap<>();
         contactService.findAll((currentPage - 1), maxResultsCount)
         .stream().forEach(contact->mapContacts.put(contact.getUser().getName(),contact.getMail())); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
@@ -237,7 +242,7 @@ public class AdminController {
 
 //        User user=userService.getById((Long)session.getAttribute("userId"));
             currentPage=isMaxResultsChanged?1:currentPage;
-        List<Discussion> discussionList = discussionService.findAll((currentPage - 1), maxResultsCount);
+        List<DiscussionDto> discussionList = discussionService.findAll((currentPage - 1), maxResultsCount);
         discussionService.findAll((currentPage - 1), maxResultsCount); //viewNewsOfUser((currentPage-1),maxResultsCount,user);
             model.addAttribute("discussionList",discussionList);
             session.setAttribute("currentPage",currentPage);
@@ -251,12 +256,12 @@ public class AdminController {
         HttpSession session=req.getSession();
         Long discussNewsId=(Long)session.getAttribute("discussNewsId");
         String msgText=req.getParameter("msgText");
-        News news=newsService.getById(discussNewsId);
+        NewsDto newsDto=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
-        User user=userService.getById(userId);
-        session.setAttribute("news",news);
+        UserDto userDto=userService.getById(userId);
+        session.setAttribute("news",newsDto);
 
-        msgCreator.setUser(user);
+        msgCreator.setUserDto(userDto);
         msgCreator.setDiscussNewsId(discussNewsId);
         msgCreator.setMsgText(msgText);
 
@@ -281,16 +286,16 @@ public class AdminController {
     private String discussionProcess(HttpServletRequest req){
         HttpSession session=req.getSession();
         Long discussNewsId=Long.parseLong(req.getParameter("discussNewsId"));
-        News news=newsService.getById(discussNewsId);
+        NewsDto newsDto=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
-        User user=userService.getById(userId);
+        UserDto userDto=userService.getById(userId);
         String msgText=req.getParameter("msgText");
-        session.setAttribute("news",news);
+        session.setAttribute("news",newsDto);
 
-        msgCreator.setUser(user);
+        msgCreator.setUserDto(userDto);
         msgCreator.setDiscussNewsId(discussNewsId);
         msgCreator.setMsgText(msgText);
-        Map<Msg, User> mapMsgUsr = msgCreator.getMsgMap();
+        Map<MsgDto, UserDto> mapMsgUsr = msgCreator.getMsgMap();
 
         session.setAttribute("mapMsgUsr",mapMsgUsr);
         session.setAttribute("discussNewsId",discussNewsId);

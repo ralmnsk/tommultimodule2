@@ -1,27 +1,18 @@
 package com.github.ralmnsk.service.deleter;
 
-import com.github.ralmnsk.dao.discussion.DiscussionDao;
-import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
-import com.github.ralmnsk.model.discussion.Discussion;
-import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
+import com.github.ralmnsk.model.discussion.DiscussionDto;
 import com.github.ralmnsk.service.discussion.DiscussionService;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -32,32 +23,34 @@ public class NewsDeleterImpl implements NewsDeleter {
     private NewsService newsService;
     @Autowired
     private DiscussionService discussionService;
+    @Autowired
+    private ModelMapper mapper;
 
-    private News news;
-    private User user;
+    private NewsDto newsDto;
+    private UserDto userDto;
 
-    public NewsDeleterImpl(News news, User user) {
-        this.news=news;
-        this.user=user;
+    public NewsDeleterImpl(NewsDto newsDto, UserDto userDto) {
+        this.newsDto=newsDto;
+        this.userDto=userDto;
     }
 
     public NewsDeleterImpl() {
     }
 
-    public News getNews() {
-        return news;
+    public NewsDto getNewsDto() {
+        return newsDto;
     }
 
-    public void setNews(News news) {
-        this.news = news;
+    public void setNewsDto(NewsDto newsDto) {
+        this.newsDto = newsDto;
     }
 
-    public User getUser() {
-        return user;
+    public UserDto getUserDto() {
+        return userDto;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserDto(UserDto userDto) {
+        this.userDto = userDto;
     }
 
     @Override
@@ -65,33 +58,33 @@ public class NewsDeleterImpl implements NewsDeleter {
 //        User readUser=userService.getById(user.getId());
 //        News readNews=newsService.getById(news.getIdNews());   //.getById(news.getIdNews());
 
-        Discussion discussion=null;
-        if(news.getDiscussion()!=null){
+        DiscussionDto discussionDto=null;
+        if(newsDto.getDiscussionDto()!=null){
 //            List<Discussion> discussionList=discussionDao.readByUser(readUser)
 //                    .stream()
 //                    .filter(d->d.getNews().getIdNews()==readNews.getIdNews())
 //                    .collect(Collectors.toList());
-            discussion=news.getDiscussion();
+            discussionDto=newsDto.getDiscussionDto();
         }
 
-        Set<News> newsSet=user.getNewsSet(); //.remove(0);
-        if ((newsSet!=null)&&(newsSet.size()>0)){
-            for(News n:newsSet){
-                if (n.getIdNews().equals(news.getIdNews())){
-                    if (discussion!=null){
-                        log.info("discussion id={} of user={} newsName={} was deleted: {}",discussion.getId(),user.getName(),news.getNameNews());
-                        user.getDiscussionSet().remove(discussion);
-                        userService.updateUser(user);
-                        discussion.getUserSet().remove(user);
-                        news.setDiscussion(null);
-                        newsService.updateNews(news);
-                        discussion.setNews(null);
-                        discussionService.delete(discussion.getId());
+        Set<NewsDto> newsSetDto=userDto.getNewsSetDto(); //.remove(0);
+        if ((newsSetDto!=null)&&(newsSetDto.size()>0)){
+            for(NewsDto n:newsSetDto){
+                if (n.getIdNews().equals(newsDto.getIdNews())){
+                    if (discussionDto!=null){
+                        log.info("discussion id={} of user={} newsName={} was deleted: {}",discussionDto.getId(),userDto.getName(),newsDto.getNameNews());
+                        userDto.getDiscussionSetDto().remove(discussionDto);
+                        userService.updateUser(userDto);
+                        discussionDto.getUserSetDto().remove(userDto);
+                        newsDto.setDiscussionDto(null);
+                        newsService.updateNews(newsDto);
+                        discussionDto.setNewsDto(null);
+                        discussionService.delete(discussionDto.getId());
                     }
-                    log.info("news id={} name={} was deleted: {}",news.getIdNews(),news.getNameNews());
-                    news.setUser(null);
-                    user.getNewsSet().remove(news);
-                    newsService.deleteNews(news);
+                    log.info("news id={} name={} was deleted: {}",newsDto.getIdNews(),newsDto.getNameNews());
+                    newsDto.setUserDto(null);
+                    userDto.getNewsSetDto().remove(newsDto);
+                    newsService.deleteNews(newsDto);
                     break;
                 }
             }

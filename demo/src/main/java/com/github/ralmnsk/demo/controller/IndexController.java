@@ -1,5 +1,7 @@
 package com.github.ralmnsk.demo.controller;
 
+import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
@@ -97,7 +99,7 @@ public class IndexController {
         }
 
         currentPage=isMaxResultsChanged?1:currentPage;
-        Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount); //changes map
+        Map<NewsDto, UserDto> map=paginator.viewNews((currentPage-1),maxResultsCount); //changes map
         model.addAttribute("map",map);
         session.setAttribute("pageFlag","allNews"); //changes
         session.setAttribute("currentPage",currentPage);

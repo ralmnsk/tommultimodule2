@@ -7,14 +7,14 @@ import com.github.ralmnsk.model.user.User;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit4.SpringRunner;
 
 
 import java.util.Date;
@@ -22,41 +22,48 @@ import java.util.Date;
 
 import static org.mockito.Mockito.*;
 
-//@RunWith(SpringRunner.class)
-//@DataJpaTest
-//@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
-@RunWith(MockitoJUnitRunner.class)
-//@ComponentScan({"com.github.ralmnsk.service","com.github.ralmnsk.dao",
-//        "com.github.ralmnsk.model", "com.github.ralmnsk.demo"})
-//@EnableJpaRepositories
+@RunWith(SpringRunner.class)
 class UserServiceRepoImplTest {
-//    private GenericApplicationContext ctx;
-//    private UserService userServiceTest;
-    @Autowired
-    private ModelMapper mapper;
+
     @Mock
     private UserRepository userRepository;
 
     @InjectMocks
-    private UserService userService=new UserServiceRepoImpl(userRepository);
+    UserServiceRepoImpl userService;
 
     @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
     }
 
-
     @Test
     void createUser() {
         UserDto userDto=new UserDto("testUser","123",new Date(),"usr");
-//        doNothing().when(userRepository.save(user));
+        ModelMapper mapper=new ModelMapper();
         User user=mapper.map(userDto,User.class);
+//        doNothing().when(userRepository.save(user));
         userService.createUser(userDto);
         Mockito.verify(userRepository,times(1)).save(user);
     }
 
     @Test
-    void findAllNewsByUserId(){
+    void readUser() {
+        UserDto userDto=new UserDto(1L,"testUser","123",new Date(),"usr");
+        ModelMapper mapper=new ModelMapper();
+        User user=mapper.map(userDto,User.class);
+        userService.readUser(userDto);
+        Mockito.verify(userRepository,times(1)).getOne(user.getId());
+    }
 
+    @Test
+    void updateUser() {
+    }
+
+    @Test
+    void deleteUser() {
+    }
+
+    @Test
+    void getById() {
     }
 }

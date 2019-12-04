@@ -1,8 +1,13 @@
 package com.github.ralmnsk.demo.controller;
 
 
+import com.github.ralmnsk.dto.MsgDto;
+import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.contact.Contact;
+import com.github.ralmnsk.model.contact.ContactDto;
 import com.github.ralmnsk.model.discussion.Discussion;
+import com.github.ralmnsk.model.discussion.DiscussionDto;
 import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
@@ -65,8 +70,8 @@ public class SiteController {
     public String inform(Model model,
                          HttpSession session,
                          Locale locale){ //NOT WORKING
-        User user=userService.getById((Long)session.getAttribute("userId"));
-        model.addAttribute("user",user);
+        UserDto userDto=userService.getById((Long)session.getAttribute("userId"));
+        model.addAttribute("user",userDto);
         return "inform";
     }
 
@@ -118,7 +123,7 @@ public class SiteController {
         }
 
 
-        int allEntitiesCount=userService.getById((Long)session.getAttribute("userId")).getNewsSet().size();                                                                   //=newsService.countAllNews().intValue();
+        int allEntitiesCount=userService.getById((Long)session.getAttribute("userId")).getNewsSetDto().size();                                                                   //=newsService.countAllNews().intValue();
         int pagesCount=paginator.pagesCount(allEntitiesCount,maxResultsCount);
 
 
@@ -133,9 +138,9 @@ public class SiteController {
             }
         }
 
-        User user=userService.getById((Long)session.getAttribute("userId"));
+        UserDto userDto=userService.getById((Long)session.getAttribute("userId"));
         currentPage=isMaxResultsChanged?1:currentPage;
-        Map<News, User> map=paginator.viewNewsOfUser((currentPage-1),maxResultsCount,user);
+        Map<NewsDto, UserDto> map=paginator.viewNewsOfUser((currentPage-1),maxResultsCount,userDto);
         model.addAttribute("map",map);
         session.setAttribute("pageFlag","myNews");
         session.setAttribute("currentPage",currentPage);
@@ -149,14 +154,14 @@ public class SiteController {
                             @RequestParam("mail") String mail,
                             HttpSession session,
                             Locale locale){
-        User user=userService.getById((Long)session.getAttribute("userId"));
+        UserDto userDto=userService.getById((Long)session.getAttribute("userId"));
         if(mail!=null){
             model.addAttribute("mail",mail);
         } else{
             mail="no";
         }
-        Contact contact=contactCreator.getContact(user,mail);
-        model.addAttribute("contact",contact);
+        ContactDto contactDto=contactCreator.getContactDto(userDto,mail);
+        model.addAttribute("contact",contactDto);
         return "contact";
     }
 
@@ -164,12 +169,12 @@ public class SiteController {
     public String contactPost(Model model,
                               HttpSession session,
                               Locale locale){
-        Contact contact=new Contact();
-        contact.setMail("no");
-         if(userService.getById((Long)session.getAttribute("userId")).getContact()!=null){
-             contact=userService.getById((Long)session.getAttribute("userId")).getContact();
+        ContactDto contactDto=new ContactDto();
+        contactDto.setMail("no");
+         if(userService.getById((Long)session.getAttribute("userId")).getContactDto()!=null){
+             contactDto=userService.getById((Long)session.getAttribute("userId")).getContactDto();
          }
-             model.addAttribute("contact",contact);
+             model.addAttribute("contact",contactDto);
         return "contact";
     }
 
@@ -178,9 +183,9 @@ public class SiteController {
                              HttpServletRequest req,
                              Locale locale){
             HttpSession session=req.getSession();
-            User user=userService.getById((Long)session.getAttribute("userId"));
-            Contact contact=contactCreator.delContact(user);
-        model.addAttribute("contact",contact);
+            UserDto userDto=userService.getById((Long)session.getAttribute("userId"));
+            ContactDto contactDto=contactCreator.delContactDto(userDto);
+        model.addAttribute("contact",contactDto);
         return "contact";
     }
 
@@ -200,10 +205,10 @@ public class SiteController {
                          @RequestParam("nameNews") String nameNews,
                          @RequestParam("dataNews") String dataNews,
                          Locale locale){
-        News news=newsService.getById(editNewsId);
-        news.setNameNews(nameNews);
-        news.setDataNews(dataNews);
-        newsUpdator.setNews(news);
+        NewsDto newsDto=newsService.getById(editNewsId);
+        newsDto.setNameNews(nameNews);
+        newsDto.setDataNews(dataNews);
+        newsUpdator.setNewsDto(newsDto);
         model.addAttribute("news",newsUpdator.newsUpdate());
         model.addAttribute("editNewsId",editNewsId);
         return "inform";
@@ -214,10 +219,10 @@ public class SiteController {
                          HttpSession session,
                          @RequestParam("editNewsId") Long editNewsId,
                          Locale locale){
-        News news=newsService.getById(editNewsId);
-        User user=userService.getById((Long)session.getAttribute("userId"));
-        newsDeleter.setNews(news);
-        newsDeleter.setUser(user);
+        NewsDto newsDto=newsService.getById(editNewsId);
+        UserDto userDto=userService.getById((Long)session.getAttribute("userId"));
+        newsDeleter.setNewsDto(newsDto);
+        newsDeleter.setUserDto(userDto);
         newsDeleter.delete();
 //        model.addAttribute("mapMsgUsr",null);
         return "redirect:/site/mynews";
@@ -276,8 +281,8 @@ public class SiteController {
         currentPage=isMaxResultsChanged?1:currentPage;
 //        Map<News, User> map=paginator.viewNews((currentPage-1),maxResultsCount); //changes map
 
-        List<Discussion> list=dispute.get(userService.getById(userId));
-        List<Discussion> discussionList=new ArrayList<>();
+        List<DiscussionDto> list=dispute.get(userService.getById(userId));
+        List<DiscussionDto> discussionList=new ArrayList<>();
         if ((list!=null)&&(list.size()>0)){
             int start=(currentPage-1)*maxResultsCount;
             int end=start+maxResultsCount-1;
@@ -302,15 +307,15 @@ public class SiteController {
                              Model model,
                              @RequestParam("discussNewsId") Long discussNewsId,
                              Locale locale){
-        News news=newsService.getById(discussNewsId);
+        NewsDto newsDto=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
-        User user=userService.getById(userId);
-        model.addAttribute("news",news);
+        UserDto userDto=userService.getById(userId);
+        model.addAttribute("news",newsDto);
 
-        msgCreator.setUser(user);
+        msgCreator.setUserDto(userDto);
         msgCreator.setDiscussNewsId(discussNewsId);
 //        msgCreator.setMsgText(msgText);
-        Map<Msg, User> mapMsgUsr = msgCreator.getMsgMap();
+        Map<MsgDto, UserDto> mapMsgUsr = msgCreator.getMsgMap();
 
         model.addAttribute("mapMsgUsr",mapMsgUsr);
         model.addAttribute("discussNewsId",discussNewsId);
@@ -322,15 +327,15 @@ public class SiteController {
                                  Model model,
                                  @RequestParam("discussNewsId") Long discussNewsId,
                                  Locale locale){
-        News news=newsService.getById(discussNewsId);
+        NewsDto newsDto=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
-        User user=userService.getById(userId);
-        model.addAttribute("news",news);
+        UserDto userDto=userService.getById(userId);
+        model.addAttribute("news",newsDto);
 
-        msgCreator.setUser(user);
+        msgCreator.setUserDto(userDto);
         msgCreator.setDiscussNewsId(discussNewsId);
 //        msgCreator.setMsgText(msgText);
-        Map<Msg, User> mapMsgUsr = msgCreator.getMsgMap();
+        Map<MsgDto, UserDto> mapMsgUsr = msgCreator.getMsgMap();
 
         model.addAttribute("mapMsgUsr",mapMsgUsr);
         model.addAttribute("discussNewsId",discussNewsId);
@@ -343,12 +348,12 @@ public class SiteController {
                       @RequestParam("discussNewsId") Long discussNewsId,
                       @RequestParam("msgText") String msgText,
                       Locale locale){
-        News news=newsService.getById(discussNewsId);
+        NewsDto newsDto=newsService.getById(discussNewsId);
         Long userId=(Long)session.getAttribute("userId");
-        User user=userService.getById(userId);
-        model.addAttribute("news",news);
+        UserDto userDto=userService.getById(userId);
+        model.addAttribute("news",newsDto);
 
-        msgCreator.setUser(user);
+        msgCreator.setUserDto(userDto);
         msgCreator.setDiscussNewsId(discussNewsId);
         msgCreator.setMsgText(msgText);
         if (!msgText.equals("")){

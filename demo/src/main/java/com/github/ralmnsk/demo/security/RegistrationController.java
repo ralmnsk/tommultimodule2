@@ -1,10 +1,12 @@
 package com.github.ralmnsk.demo.security;
 import com.github.ralmnsk.dao.user.UserRepository;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.authorization.Authorization;
+
 import com.github.ralmnsk.service.registration.Register;
 import com.github.ralmnsk.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,8 @@ import java.util.Locale;
 public class RegistrationController {
   @Autowired
   private Register register;
+  @Autowired
+  private ModelMapper mapper;
 
   private UserService userService;
   private PasswordEncoder passwordEncoder;
@@ -46,14 +50,15 @@ public class RegistrationController {
                                     Locale locale) {
 
     String page;
-    User registrationUser=form.toUser(passwordEncoder);
-    boolean isRegisteredUser=register.isRegistered(registrationUser);
+    UserDto registrationUserDto=form.toUser(passwordEncoder);
+
+    boolean isRegisteredUser=register.isRegistered(registrationUserDto);
     if(isRegisteredUser){
       String errorRegistrationMessage="Пользователь с таким login уже зарегистрирован";
       req.getSession().setAttribute("errorRegistrationMessage",errorRegistrationMessage);
       return "redirect:/goregistrate";
     }
-    userService.createUser(registrationUser);
+    userService.createUser(registrationUserDto);
     return "redirect:/login";
   }
 

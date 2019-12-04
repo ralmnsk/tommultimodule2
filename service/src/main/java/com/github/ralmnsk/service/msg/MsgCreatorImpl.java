@@ -1,36 +1,20 @@
 package com.github.ralmnsk.service.msg;
 
-import com.github.ralmnsk.dao.discussion.DiscussionDao;
-import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
-import com.github.ralmnsk.dao.msg.MsgDao;
-import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.dto.MsgDto;
 import com.github.ralmnsk.dto.NewsDto;
 import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.discussion.DiscussionDto;
-import com.github.ralmnsk.model.msg.Msg;
-import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.discussion.DiscussionService;
 import com.github.ralmnsk.service.news.NewsService;
-import com.github.ralmnsk.service.news.comparator.SortByTime;
 import com.github.ralmnsk.service.news.comparator.SortByTimeMsg;
-import com.github.ralmnsk.service.news.editor.NewsEditorImpl;
 import com.github.ralmnsk.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.*;
 
 @Slf4j

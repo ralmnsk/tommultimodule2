@@ -1,9 +1,5 @@
 package com.github.ralmnsk.dao.discussion;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
@@ -17,83 +13,83 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DiscussionDaoHiberImplTest {
-    private DiscussionDao discussionDao=DiscussionDaoHiberImpl.getInstance();
-    private UserDao userDao=UserDaoHiberImpl.getInstance();
-    private NewsDao newsDao=NewsDaoHiberImpl.getInstance();
-    private User user;
-    private News news;
-    private Discussion discussion;
-
-    @BeforeEach
-    void setUp() {
-        user=new User("testUser","testPassword",new Date(),"usr");
-        userDao.createUser(user);
-
-        news=new News("nameNews","dataNews",new Date());
-        news.setUser(user);
-        newsDao.createNews(news);
-
-        discussionDao.create(user,news);
-
-        List<Discussion> list=discussionDao.readByUser(user);
-        list.stream().filter(d->d.getNews().getIdNews()==news.getIdNews());
-        discussion=list.get(0);
-    }
-
-    @AfterEach
-    void tearDown() {
-        userDao.deleteUser(user);
-    }
-
-    @Test
-    void getInstance() {
-        assertNotNull(discussionDao);
-        discussionDao.delete(discussion.getId());
-    }
-
-    @Test
-    void create() {
-        News readNews=newsDao.getById(news.getIdNews());
-        assertTrue(readNews.getDiscussion().getId()==discussion.getId());
-        discussionDao.delete(discussion.getId());
-    }
-
-    @Test
-    void readByUser() {
-        boolean isReadDiscussion=false;
-        List<Discussion> discussions = discussionDao.readByUser(user);
-        News readNews=newsDao.getById(news.getIdNews());
-        Long discussionId=readNews.getDiscussion().getId();
-        for(Discussion d:discussions){
-            if(d.getId()==discussionId){
-                isReadDiscussion=true;
-            }
-        }
-        assertTrue(isReadDiscussion);
-    }
-
-    @Test
-    void delete() {
-        Long discussionId=discussion.getId();
-        discussionDao.delete(discussionId);
-        List<Discussion> list=discussionDao.readByUser(user);
-        assertTrue(list.size()==0);
-    }
-
-    @Test
-    void findAll() {
-        List<Discussion> list=discussionDao.readByUser(user);
-        assertTrue(list.size()>0);
-    }
-
-    @Test
-    void addUserInDiscussion() {
-        User testUser=new User("userInDiscussion","userInDiscussion",new Date(),"usr");
-        userDao.createUser(testUser);
-        discussionDao.addUserInDiscussion(testUser,discussion);
-        List<Discussion> discussions = discussionDao.readByUser(testUser);
-        assertTrue(discussions.size()==1);
-}
+//    private DiscussionDao discussionDao=DiscussionDaoHiberImpl.getInstance();
+//    private UserDao userDao=UserDaoHiberImpl.getInstance();
+//    private NewsDao newsDao=NewsDaoHiberImpl.getInstance();
+//    private User user;
+//    private News news;
+//    private Discussion discussion;
+//
+//    @BeforeEach
+//    void setUp() {
+//        user=new User("testUser","testPassword",new Date(),"usr");
+//        userDao.createUser(user);
+//
+//        news=new News("nameNews","dataNews",new Date());
+//        news.setUser(user);
+//        newsDao.createNews(news);
+//
+//        discussionDao.create(user,news);
+//
+//        List<Discussion> list=discussionDao.readByUser(user);
+//        list.stream().filter(d->d.getNews().getIdNews()==news.getIdNews());
+//        discussion=list.get(0);
+//    }
+//
+//    @AfterEach
+//    void tearDown() {
+//        userDao.deleteUser(user);
+//    }
+//
+//    @Test
+//    void getInstance() {
+//        assertNotNull(discussionDao);
+//        discussionDao.delete(discussion.getId());
+//    }
+//
+//    @Test
+//    void create() {
+//        News readNews=newsDao.getById(news.getIdNews());
+//        assertTrue(readNews.getDiscussion().getId()==discussion.getId());
+//        discussionDao.delete(discussion.getId());
+//    }
+//
+//    @Test
+//    void readByUser() {
+//        boolean isReadDiscussion=false;
+//        List<Discussion> discussions = discussionDao.readByUser(user);
+//        News readNews=newsDao.getById(news.getIdNews());
+//        Long discussionId=readNews.getDiscussion().getId();
+//        for(Discussion d:discussions){
+//            if(d.getId()==discussionId){
+//                isReadDiscussion=true;
+//            }
+//        }
+//        assertTrue(isReadDiscussion);
+//    }
+//
+//    @Test
+//    void delete() {
+//        Long discussionId=discussion.getId();
+//        discussionDao.delete(discussionId);
+//        List<Discussion> list=discussionDao.readByUser(user);
+//        assertTrue(list.size()==0);
+//    }
+//
+//    @Test
+//    void findAll() {
+//        List<Discussion> list=discussionDao.readByUser(user);
+//        assertTrue(list.size()>0);
+//    }
+//
+//    @Test
+//    void addUserInDiscussion() {
+//        User testUser=new User("userInDiscussion","userInDiscussion",new Date(),"usr");
+//        userDao.createUser(testUser);
+//        discussionDao.addUserInDiscussion(testUser,discussion);
+//        List<Discussion> discussions = discussionDao.readByUser(testUser);
+//        assertTrue(discussions.size()==1);
+//}
 
 
 //    @Test

@@ -1,15 +1,9 @@
 package com.github.ralmnsk.service.news.updator;
 
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
-import com.github.ralmnsk.model.news.News;
 import org.junit.jupiter.api.Test;
 
 import javax.servlet.http.HttpSession;
 
-import java.util.Date;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class NewsUpdatorImplTest {

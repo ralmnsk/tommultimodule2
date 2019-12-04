@@ -29,6 +29,6 @@ class UserRepositoryTest {
         User readUser=userRepo.findByName("testUser");
         System.out.println(readUser);
         assertTrue(user.getName().equals(readUser.getName()));
-//        userRepo.delete(user);
+        userRepo.delete(user);
     }
 }

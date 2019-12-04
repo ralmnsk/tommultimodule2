@@ -1,20 +1,26 @@
 package com.github.ralmnsk.service.contact.creator;
 
+import com.github.ralmnsk.dao.user.UserRepository;
+import com.github.ralmnsk.service.user.UserService;
+import com.github.ralmnsk.service.user.UserServiceRepoImpl;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
-import com.github.ralmnsk.model.contact.Contact;
-import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.contact.ContactService;
-import org.junit.jupiter.api.Test;
-
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+@RunWith(MockitoJUnitRunner.class)
 class ContactCreatorImplTest {
+    @Autowired
+    private ModelMapper mapper;
+    @Mock
+    private UserRepository userRepository;
+
+    @InjectMocks
+    private UserService userService=new UserServiceRepoImpl(userRepository);
+
+
 //    @Test
 //    void getContact() {
 //        User user=new User("testUser","123",new Date(),"usr");

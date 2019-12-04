@@ -11,8 +11,5 @@ import org.springframework.context.annotation.Import;
 @ComponentScan("com.github.ralmnsk.service")
 //@Import(JpaConfig.class)
 public class ServiceConfiguration {
-    @Bean
-    public ModelMapper mapper(){
-        return new ModelMapper();
-    }
+
 }

@@ -1,9 +1,6 @@
 package com.github.ralmnsk.service.news;
 
-import com.github.ralmnsk.dao.news.NewsDao;
 import com.github.ralmnsk.dto.NewsDto;
-import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.model.user.User;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;

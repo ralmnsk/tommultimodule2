@@ -27,45 +27,45 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 class NewsServiceRepoImplTest {
-    @Mock
-    private NewsRepository repo;
-
-    @InjectMocks
-    private NewsService service=new NewsServiceRepoImpl(repo);
-
-    @BeforeEach
-    public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
-    }
-
-
-    @Test
-    void createNews() {
-        News news=new News("testNewsName","testNewsData",new Date());
-        service.createNews(news);
-        Mockito.verify(repo,times(1)).save(news);
-    }
-
-    @Test
-    void readNewsByName() {
-        News news=new News("testNewsName","testNewsData",new Date());
-        service.readNews(news);
-        Mockito.verify(repo,times(1)).findByName(news.getNameNews());
-    }
-
-    @Test
-    void updateNews() {
-        News news=new News("testNewsName","testNewsData",new Date());
-        service.updateNews(news);
-        Mockito.verify(repo,times(1)).save(news);
-    }
-
-    @Test
-    void deleteNews() {
-        News news=new News("testNewsName","testNewsData",new Date());
-        service.deleteNews(news);
-        Mockito.verify(repo,times(1)).delete(news);
-    }
+//    @Mock
+//    private NewsRepository repo;
+//
+//    @InjectMocks
+//    private NewsService service=new NewsServiceRepoImpl(repo);
+//
+//    @BeforeEach
+//    public void setUp() throws Exception {
+//        MockitoAnnotations.initMocks(this);
+//    }
+//
+//
+//    @Test
+//    void createNews() {
+//        News news=new News("testNewsName","testNewsData",new Date());
+//        service.createNews(news);
+//        Mockito.verify(repo,times(1)).save(news);
+//    }
+//
+//    @Test
+//    void readNewsByName() {
+//        News news=new News("testNewsName","testNewsData",new Date());
+//        service.readNews(news);
+//        Mockito.verify(repo,times(1)).findByName(news.getNameNews());
+//    }
+//
+//    @Test
+//    void updateNews() {
+//        News news=new News("testNewsName","testNewsData",new Date());
+//        service.updateNews(news);
+//        Mockito.verify(repo,times(1)).save(news);
+//    }
+//
+//    @Test
+//    void deleteNews() {
+//        News news=new News("testNewsName","testNewsData",new Date());
+//        service.deleteNews(news);
+//        Mockito.verify(repo,times(1)).delete(news);
+//    }
 
 //    @Test
 //    void findAllNews() {
@@ -77,18 +77,18 @@ class NewsServiceRepoImplTest {
 //        assertTrue(testList.get(0).getNameNews().equals("testNewsName"));
 //    }
 
-    @Test
-    void findByName() {
-        News news=new News("testNewsName","testNewsData",new Date());
-        service.findByName("testNewsName");
-        Mockito.verify(repo,times(1)).findByName("testNewsName");
-    }
-
-    @Test
-    void countAllNews() {
-        service.countAllNews();
-        Mockito.verify(repo,times(1)).countAllNews();
-    }
+//    @Test
+//    void findByName() {
+//        News news=new News("testNewsName","testNewsData",new Date());
+//        service.findByName("testNewsName");
+//        Mockito.verify(repo,times(1)).findByName("testNewsName");
+//    }
+//
+//    @Test
+//    void countAllNews() {
+//        service.countAllNews();
+//        Mockito.verify(repo,times(1)).countAllNews();
+//    }
 
 //    @Test
 //    void getById() {

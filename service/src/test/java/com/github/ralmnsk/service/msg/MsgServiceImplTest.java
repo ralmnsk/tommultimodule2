@@ -11,29 +11,29 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class MsgServiceImplTest {
-
-    @Test
-    void getInstance() {
-//        assertNotNull(MsgServiceImpl.getInstance());
-    }
-
-    @Test
-    void create() {
-        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
-        Msg msg=new Msg(new Date(),"testMessage");
-        msgService.create(msg);
-        verify(msgService,times(1)).create(msg);
-    }
-
-    @Test
-    void read() {
-        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
-        Msg msg=new Msg(new Date(),"testMessage");
-        msgService.read(1L);
-        verify(msgService,times(1)).read(1L);
-        when(msgService.read(1L)).thenReturn(msg);
-        assertTrue(msgService.read(1L).getText().equals("testMessage"));
-    }
+//
+//    @Test
+//    void getInstance() {
+////        assertNotNull(MsgServiceImpl.getInstance());
+//    }
+//
+//    @Test
+//    void create() {
+//        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
+//        Msg msg=new Msg(new Date(),"testMessage");
+//        msgService.create(msg);
+//        verify(msgService,times(1)).create(msg);
+//    }
+//
+//    @Test
+//    void read() {
+//        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
+//        Msg msg=new Msg(new Date(),"testMessage");
+//        msgService.read(1L);
+//        verify(msgService,times(1)).read(1L);
+//        when(msgService.read(1L)).thenReturn(msg);
+//        assertTrue(msgService.read(1L).getText().equals("testMessage"));
+//    }
 
     @Test
     void update() {

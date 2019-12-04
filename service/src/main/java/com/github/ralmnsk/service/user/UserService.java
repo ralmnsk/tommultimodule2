@@ -1,9 +1,7 @@
 package com.github.ralmnsk.service.user;
 
 
-import com.github.ralmnsk.dao.user.UserDao;
 import com.github.ralmnsk.dto.UserDto;
-import com.github.ralmnsk.model.user.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

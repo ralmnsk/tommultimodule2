@@ -1,5 +1,6 @@
 package com.github.ralmnsk.demo.security;
 
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.role.ClientType;
 import com.github.ralmnsk.model.user.User;
 import lombok.Data;
@@ -15,13 +16,13 @@ public class RegistrationForm {
   private String password;
 
   
-  public User toUser(PasswordEncoder passwordEncoder) {
-    return new User(
+  public UserDto toUser(PasswordEncoder passwordEncoder) {
+    return new UserDto(
         login, passwordEncoder.encode(password),new Date(),"ROLE_"+ClientType.USER.name());
   }
 
-  public User toUserNoPassEncoder() {
-    return new User(
+  public UserDto toUserNoPassEncoder() {
+    return new UserDto(
             login, password,new Date(),"ROLE_"+ClientType.USER.name());
   }
   

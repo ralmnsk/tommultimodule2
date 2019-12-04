@@ -10,31 +10,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SortByTimeTest {
 
-    @Test
-    void compare() {
-        SortByTime sort=new SortByTime();
-        News newsOne=new News("one","one",new Date());
-        try {
-            sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        News newsTwo=new News("two","two",new Date());
-        assertTrue(sort.compare(newsOne,newsTwo)==1);
-
-    }
-
-    void compare1() {
-        SortByTime sort=new SortByTime();
-        News newsOne=new News("one","one",new Date());
-        try {
-            sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        News newsTwo=new News("two","two",new Date());
-        assertTrue(sort.compare(newsTwo,newsOne)==-1);
-        assertTrue(sort.compare(newsOne,newsOne)==0);
-
-    }
+//    @Test
+//    void compare() {
+//        SortByTime sort=new SortByTime();
+//        News newsOne=new News("one","one",new Date());
+//        try {
+//            sleep(100);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        News newsTwo=new News("two","two",new Date());
+//        assertTrue(sort.compare(newsOne,newsTwo)==1);
+//
+//    }
+//
+//    void compare1() {
+//        SortByTime sort=new SortByTime();
+//        News newsOne=new News("one","one",new Date());
+//        try {
+//            sleep(100);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        News newsTwo=new News("two","two",new Date());
+//        assertTrue(sort.compare(newsTwo,newsOne)==-1);
+//        assertTrue(sort.compare(newsOne,newsOne)==0);
+//
+//    }
 }

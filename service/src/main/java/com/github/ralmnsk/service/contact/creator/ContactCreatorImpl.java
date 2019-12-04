@@ -1,13 +1,10 @@
 package com.github.ralmnsk.service.contact.creator;
 
-import com.github.ralmnsk.dao.contact.ContactDao;
-import com.github.ralmnsk.dao.contact.ContactDaoImpl;
-import com.github.ralmnsk.dao.contact.ContactRepository;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
-import com.github.ralmnsk.model.contact.Contact;
-import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.dto.UserDto;
+import com.github.ralmnsk.model.contact.ContactDto;
 import com.github.ralmnsk.service.contact.ContactService;
 import com.github.ralmnsk.service.user.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +14,22 @@ public class ContactCreatorImpl implements ContactCreator {
     private UserService userService;
     @Autowired
     private ContactService contactService;
+    @Autowired
+    private ModelMapper mapper;
 
     public ContactCreatorImpl() {
     }
 
     @Override
-    public Contact getContact(User user, String mail) {//user,  return contact
+    public ContactDto getContactDto(UserDto userDto, String mail) {//user,  return contact
 
-        Contact contact = null;
-        User readUser = userService.readUser(user);
-        if (readUser.getContact() != null) {
-            contact = readUser.getContact();
+        ContactDto contactDto = null;
+
+        UserDto readUserDto = userService.readUser(userDto);
+        if (readUserDto.getContactDto() != null) {
+            contactDto = readUserDto.getContactDto();
         } else {
-            contact = new Contact("no");
+            contactDto = new ContactDto("no");
         }
 
         if (mail != null) {
@@ -40,35 +40,35 @@ public class ContactCreatorImpl implements ContactCreator {
 
             if (mail.matches(regex)) {
 
-                if (readUser.getContact() == null) {
-                    contact.setMail(mail);
-                    readUser.setContact(contact);
-                    contact.setUser(readUser);
-                    contactService.create(contact);
+                if (readUserDto.getContactDto() == null) {
+                    contactDto.setMail(mail);
+                    readUserDto.setContactDto(contactDto);
+                    contactDto.setUserDto(readUserDto);
+                    contactService.create(contactDto);
 
                 } else {
-                    Contact readContact = readUser.getContact();
-                    readUser.getContact().setMail(mail);
-                    contactService.update(readContact.getId(), contact.getMail());
-                    contact = readContact;
+                    ContactDto readContactDto = readUserDto.getContactDto();
+                    readUserDto.getContactDto().setMail(mail);
+                    contactService.update(readContactDto.getId(), contactDto.getMail());
+                    contactDto = readContactDto;
                 }
             }
         }
-        return contact;
+        return contactDto;
     }
 
     @Override
-    public Contact delContact(User user){
-        User readUser= userService.readUser(user);
-        Contact contact=readUser.getContact();
-        if(contact!=null){
-            readUser.setContact(null);
+    public ContactDto delContactDto(UserDto userDto){
+        UserDto readUserDto= userService.readUser(userDto);
+        ContactDto contactDto=readUserDto.getContactDto();
+        if(contactDto!=null){
+            readUserDto.setContactDto(null);
 
-            contactService.delete(contact.getId());
-            Contact noContact=new Contact("no");
-            contact=noContact;
+            contactService.delete(contactDto.getId());
+            ContactDto noContactDto=new ContactDto("no");
+            contactDto=noContactDto;
         }
-        return contact;
+        return contactDto;
     }
 
 }

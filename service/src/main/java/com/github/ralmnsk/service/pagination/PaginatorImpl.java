@@ -1,10 +1,13 @@
 package com.github.ralmnsk.service.pagination;
 
+import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.comparator.SortByTime;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,14 +22,16 @@ import java.util.stream.Collectors;
 public class PaginatorImpl implements Paginator{
     @Autowired
     private NewsService newsService;
+    @Autowired
+    private ModelMapper mapper;
 
     @Override
-    public Map<News, User> viewNews(int page, int maxResults) {
+    public Map<NewsDto, UserDto> viewNews(int page, int maxResults) {
         Pageable pageable= PageRequest.of(page,maxResults, Sort.by("dateNews").descending());
-        Map<News, User> map=new LinkedHashMap<>();
-        List<News> list=newsService.findAllNews(pageable);
+        Map<NewsDto, UserDto> map=new LinkedHashMap<>();
+        List<NewsDto> list=newsService.findAllNews(pageable);
 //        list=list.stream().sorted(new SortByTime()).collect(Collectors.toList());
-        list.stream().forEach(n->map.put(n,n.getUser()));
+        list.stream().forEach(n->map.put(n,n.getUserDto()));
         return map;
     }
 
@@ -38,13 +43,13 @@ public class PaginatorImpl implements Paginator{
     }
 
     @Override
-    public Map<News, User> viewNewsOfUser(int page, int maxResults,User user) {  //page = number of page
-        Map<News, User>map=new LinkedHashMap<>();
+    public Map<NewsDto, UserDto> viewNewsOfUser(int page, int maxResults,UserDto userDto) {  //page = number of page
+        Map<NewsDto, UserDto>map=new LinkedHashMap<>();
         Pageable pageable= PageRequest.of(page,maxResults);
-        List<Long> list=newsService.findAllNewsByUserId(pageable,user.getId());
+        List<Long> list=newsService.findAllNewsByUserId(pageable,userDto.getId());
         list.stream()
                 .map(l->newsService.getById(l))
-                .forEach(n->map.put(n,n.getUser()));
+                .forEach(n->map.put(n,n.getUserDto()));
         return map;
     }
 

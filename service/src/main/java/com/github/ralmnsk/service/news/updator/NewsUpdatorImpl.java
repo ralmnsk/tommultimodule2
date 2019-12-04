@@ -1,8 +1,10 @@
 package com.github.ralmnsk.service.news.updator;
 
+import com.github.ralmnsk.dto.NewsDto;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.service.news.NewsService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,28 +17,30 @@ import javax.servlet.http.HttpSession;
 public class NewsUpdatorImpl implements NewsUpdator {
     @Autowired
     private NewsService newsService;
+    @Autowired
+    private ModelMapper mapper;
 
-    private News news;
+    private NewsDto newsDto;
 
-    public News getNews() {
-        return news;
+    public NewsDto getNewsDto() {
+        return newsDto;
     }
 
-    public void setNews(News news) {
-        this.news = news;
+    public void setNewsDto(NewsDto newsDto) {
+        this.newsDto = newsDto;
     }
 
-    public NewsUpdatorImpl(News news) {
-        this.news = news;
+    public NewsUpdatorImpl(NewsDto newsDto) {
+        this.newsDto = newsDto;
     }
 
     public NewsUpdatorImpl() {
     }
 
     @Override
-    public News newsUpdate() {
-        newsService.updateNews(news);
-        log.info(this.getClass()+ ": news id= {}, name:{} was updated", news.getIdNews(),news.getNameNews());
-        return news;
+    public NewsDto newsUpdate() {
+        newsService.updateNews(newsDto);
+        log.info(this.getClass()+ ": news id= {}, name:{} was updated", newsDto.getIdNews(),newsDto.getNameNews());
+        return newsDto;
     }
 }

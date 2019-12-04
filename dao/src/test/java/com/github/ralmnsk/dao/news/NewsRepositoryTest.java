@@ -39,7 +39,7 @@ class NewsRepositoryTest {
 
         News readNews=newsRepo.findById(news.getIdNews()).get();
         assertTrue(news.getNameNews().equals(news.getNameNews()));
-        System.out.println(readNews);
+//        System.out.println(readNews);
 
         newsRepo.delete(readNews);
         userRepo.delete(user);
@@ -57,7 +57,20 @@ class NewsRepositoryTest {
 
     @Test
     void findAllNewsByUserId(){
-        List<Long> list = newsRepo.findAllNewsByUserId(2L);
-        list.stream().forEach(System.out::println);
+        User user=new User("testUser","123",new Date(),"usr");
+        userRepo.save(user);
+
+        News news=new News("testNewsName","testNewsData",new Date());
+        news.setUser(user);
+        newsRepo.save(news);
+        List<Long> list = newsRepo.findAllNewsByUserId(user.getId());
+//        list.stream().forEach(System.out::println);
+        assertTrue(list.size()>0);
+        Long newsId=list.get(0);
+        News testNews=newsRepo.getOne(newsId);
+        assertTrue(testNews.getIdNews().equals(news.getIdNews()));
+
+        newsRepo.delete(news);
+        userRepo.delete(user);
     }
 }

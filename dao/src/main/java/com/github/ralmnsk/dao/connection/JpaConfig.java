@@ -1,6 +1,7 @@
 package com.github.ralmnsk.dao.connection;
 
         import com.zaxxer.hikari.HikariDataSource;
+        import org.modelmapper.ModelMapper;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.boot.autoconfigure.domain.EntityScan;
         import org.springframework.context.annotation.*;
@@ -76,6 +77,7 @@ public class JpaConfig {
         return transactionManager;
     }
 
+
      public Properties additionalProperties() {
         Properties hibernateProperties = new Properties();
 
@@ -105,6 +107,10 @@ public class JpaConfig {
     }
 
 
+    @Bean
+    public ModelMapper mapper(){
+        return new ModelMapper();
+    }
 
 }
 

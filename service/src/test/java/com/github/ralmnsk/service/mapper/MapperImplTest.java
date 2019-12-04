@@ -13,8 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 class MapperImplTest {
-    @Autowired
-    private Mapper mapper;
 
     @Test
     void convert() {

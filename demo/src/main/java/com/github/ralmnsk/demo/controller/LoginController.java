@@ -2,6 +2,7 @@ package com.github.ralmnsk.demo.controller;
 
 
 import com.github.ralmnsk.demo.security.RegistrationForm;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -57,7 +58,7 @@ public class LoginController {
                             Model model,
                             Locale locale){
         UserDetails userDetails=null;
-        User authUser=form.toUserNoPassEncoder();
+        UserDto authUser=form.toUserNoPassEncoder();
         try{
             userDetails=userDetailsService.loadUserByUsername(authUser.getName());
         } catch (UsernameNotFoundException e){
@@ -66,14 +67,14 @@ public class LoginController {
 
         if(userDetails!=null){
             if(passwordEncoder.matches(authUser.getPass(),userDetails.getPassword())){
-                User user=userService.readUser(authUser);
+                UserDto userDto=userService.readUser(authUser);
                 SecurityContextHolder
                         .getContext()
-                        .setAuthentication(new UsernamePasswordAuthenticationToken(user.getName(),user.getPass(),userDetails.getAuthorities()));//GOLDEN CODE
-                req.getSession().setAttribute("userId",user.getId());
-                req.getSession().setAttribute("name",user.getName());
-                req.getSession().setAttribute("role",user.getRole());
-                model.addAttribute("user",user);
+                        .setAuthentication(new UsernamePasswordAuthenticationToken(userDto.getName(),userDto.getPass(),userDetails.getAuthorities()));//GOLDEN CODE
+                req.getSession().setAttribute("userId",userDto.getId());
+                req.getSession().setAttribute("name",userDto.getName());
+                req.getSession().setAttribute("role",userDto.getRole());
+                model.addAttribute("user",userDto);
                 return "welcome";
             }
         }
