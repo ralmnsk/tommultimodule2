@@ -5,6 +5,7 @@ import com.github.ralmnsk.dto.NewsDto;
 import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.discussion.DiscussionDto;
+import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.discussion.DiscussionService;
 import com.github.ralmnsk.service.news.NewsService;
@@ -86,14 +87,17 @@ public class MsgCreatorImpl implements MsgCreator{
             List<MsgDto> msgListDto=new ArrayList<>();
 
             for(MsgDto m:msgSetDto){
-                msgListDto.add(m);
+                m.setNewsDto(newsDto);
+                MsgDto readMsgDto=msgService.read(m.getId());
+                msgListDto.add(readMsgDto);
             }
             Collections.sort(msgListDto,new SortByTimeMsg());
 
 
 
             for (MsgDto m:msgListDto){
-                UserDto userDto=m.getUserDto();
+                MsgDto msg=msgService.read(m.getId());
+                UserDto userDto=msg.getUserDto();
 
                 if(userDto!=null){
                     Long id=userDto.getId();

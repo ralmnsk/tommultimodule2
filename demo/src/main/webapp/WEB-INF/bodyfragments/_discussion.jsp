@@ -12,7 +12,7 @@
             <hr/>
                 <h5>Текст новости:</h5><p>${news.dataNews}
             </br>
-                <p>Автор:${news.user.name}   Дата:${news.dateNews}
+                <p>Автор:${news.userDto.name}   Дата:${news.dateNews}
             </br>
             <hr/>
                 <p> <H3> Обсуждение:</H3>

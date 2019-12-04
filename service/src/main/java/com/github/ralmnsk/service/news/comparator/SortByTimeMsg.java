@@ -9,9 +9,9 @@ import java.util.Comparator;
 public class SortByTimeMsg implements Comparator<MsgDto> {
     @Override
     public int compare(MsgDto n1, MsgDto n2) {
-        if(n1.getDate().getTime()>n2.getDate().getTime()){
+        if(n1.getDate().getTime()<n2.getDate().getTime()){
             return -1;
-        } else if(n1.getDate().getTime()<n2.getDate().getTime()){
+        } else if(n1.getDate().getTime()>n2.getDate().getTime()){
             return 1;
         } else {
 

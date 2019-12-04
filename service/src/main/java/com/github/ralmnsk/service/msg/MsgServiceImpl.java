@@ -2,6 +2,8 @@ package com.github.ralmnsk.service.msg;
 
 import com.github.ralmnsk.dao.msg.MsgRepository;
 import com.github.ralmnsk.dto.MsgDto;
+import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
 import com.github.ralmnsk.model.msg.Msg;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +22,11 @@ public class MsgServiceImpl implements MsgService {
     private MsgRepository msgRepo;
 
     @Override
-    public void create(MsgDto msgDto) {
+    public MsgDto create(MsgDto msgDto) {
         Msg msg=mapper.map(msgDto,Msg.class);
         msgRepo.save(msg);
+        msgDto.setId(msg.getId());
+        return msgDto;
     }
 
     @Override
@@ -30,6 +34,10 @@ public class MsgServiceImpl implements MsgService {
         Msg msg=msgRepo.getOne(id);
         if (msg!=null){
             MsgDto msgDto=mapper.map(msg,MsgDto.class);
+            NewsDto newsDto=mapper.map(msg.getNews(), NewsDto.class);
+            UserDto userDto=mapper.map(msg.getUser(), UserDto.class);
+            msgDto.setNewsDto(newsDto);
+            msgDto.setUserDto(userDto);
             return msgDto;
         }
         return null;

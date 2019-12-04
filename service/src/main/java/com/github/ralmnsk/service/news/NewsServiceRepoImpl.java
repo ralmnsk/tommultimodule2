@@ -2,7 +2,11 @@ package com.github.ralmnsk.service.news;
 
 
 import com.github.ralmnsk.dao.news.NewsRepository;
+import com.github.ralmnsk.dto.MsgDto;
 import com.github.ralmnsk.dto.NewsDto;
+import com.github.ralmnsk.dto.UserDto;
+import com.github.ralmnsk.model.discussion.DiscussionDto;
+import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.news.comparator.SortByTime;
@@ -107,15 +111,37 @@ public class NewsServiceRepoImpl implements NewsService{
     public NewsDto getById(Long id) {
         Optional<News> byId = newsRepo.findById(id);
         News news=byId.get();
-        if (news!=null){
-            NewsDto newsDto=mapper.map(news,NewsDto.class);
-            return newsDto;
-        }
-        return null;
+        return newsToDto(news);
     }
 
     @Override
     public Long countAllNews() {
         return newsRepo.countAllNews();
+    }
+
+    private NewsDto newsToDto(News news){
+        NewsDto newsDto=null;
+        if (news!=null){
+            newsDto=mapper.map(news,NewsDto.class);
+            Set<Msg> set=news.getMsgSet();
+            if ((set!=null)&&(set.size()>0)) {
+                Set<MsgDto> setDto = set.stream()
+                        .map(m -> mapper.map(m, MsgDto.class))
+                        .collect(Collectors.toSet());
+
+                newsDto.setMsgSetDto(setDto);
+
+                if (news.getUser() != null) {
+                    UserDto userDto = mapper.map(news.getUser(), UserDto.class);
+                    newsDto.setUserDto(userDto);
+                }
+
+                if (news.getDiscussion() != null) {
+                    DiscussionDto discussionDto = mapper.map(news.getDiscussion(), DiscussionDto.class);
+                    newsDto.setDiscussionDto(discussionDto);
+                }
+            }
+        }
+        return newsDto;
     }
 }
