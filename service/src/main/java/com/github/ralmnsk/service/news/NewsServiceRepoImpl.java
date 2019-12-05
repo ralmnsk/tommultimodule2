@@ -122,6 +122,7 @@ public class NewsServiceRepoImpl implements NewsService{
     private NewsDto newsToDto(News news){
         NewsDto newsDto=null;
         if (news!=null){
+
             newsDto=mapper.map(news,NewsDto.class);
             Set<Msg> set=news.getMsgSet();
             if ((set!=null)&&(set.size()>0)) {
