@@ -1,19 +1,6 @@
 package com.github.ralmnsk.service.contact.creator;
 
 
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
-import com.github.ralmnsk.model.contact.Contact;
-import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.contact.ContactService;
-import org.junit.jupiter.api.Test;
-
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class ContactCreatorImplTest {
 //    @Test
 //    void getContact() {

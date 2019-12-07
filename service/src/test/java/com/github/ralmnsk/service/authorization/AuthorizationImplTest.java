@@ -1,18 +1,9 @@
 package com.github.ralmnsk.service.authorization;
 
 
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.role.ClientType;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceImpl;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
 
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +12,6 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.*;
 
 //@RunWith(MockitoJUnitRunner.class)
 public class AuthorizationImplTest {

@@ -1,9 +1,5 @@
 package com.github.ralmnsk.service.dispute;
 
-import com.github.ralmnsk.dao.discussion.DiscussionDao;
-import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.discussion.DiscussionService;

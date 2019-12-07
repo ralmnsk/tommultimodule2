@@ -1,25 +1,5 @@
 package com.github.ralmnsk.service.contact;
 
-import com.github.ralmnsk.dao.contact.ContactDao;
-import com.github.ralmnsk.dao.contact.ContactDaoImpl;
-import com.github.ralmnsk.model.contact.Contact;
-import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.user.UserServiceImpl;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
 //@RunWith(MockitoJUnitRunner.class)
 class ContactServiceImplTest {
 

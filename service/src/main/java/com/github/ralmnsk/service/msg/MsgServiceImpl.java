@@ -1,7 +1,5 @@
 package com.github.ralmnsk.service.msg;
 
-import com.github.ralmnsk.dao.msg.MsgDao;
-import com.github.ralmnsk.dao.msg.MsgDaoHiberImpl;
 import com.github.ralmnsk.dao.msg.MsgRepository;
 import com.github.ralmnsk.model.msg.Msg;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,9 +1,5 @@
 package com.github.ralmnsk.service.contact.creator;
 
-import com.github.ralmnsk.dao.contact.ContactDao;
-import com.github.ralmnsk.dao.contact.ContactDaoImpl;
-import com.github.ralmnsk.dao.contact.ContactRepository;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.contact.ContactService;

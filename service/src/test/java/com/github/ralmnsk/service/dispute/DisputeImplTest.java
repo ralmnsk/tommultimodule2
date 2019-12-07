@@ -1,23 +1,15 @@
 package com.github.ralmnsk.service.dispute;
 
-import com.github.ralmnsk.dao.discussion.DiscussionDao;
-import com.github.ralmnsk.dao.discussion.DiscussionDaoHiberImpl;
-import com.github.ralmnsk.dao.news.NewsDao;
-import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.dao.user.UserDaoHiberImpl;
 import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import org.junit.jupiter.api.Test;
 
-import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 class DisputeImplTest {
     @Test

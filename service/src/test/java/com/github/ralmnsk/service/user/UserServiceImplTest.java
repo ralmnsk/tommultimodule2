@@ -1,12 +1,5 @@
 package com.github.ralmnsk.service.user;
 
-import com.github.ralmnsk.dao.user.UserDao;
-import com.github.ralmnsk.model.user.User;
-import org.junit.jupiter.api.Test;
-import java.sql.Timestamp;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
 
 public class UserServiceImplTest {
 

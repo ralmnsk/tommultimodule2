@@ -1,6 +1,5 @@
 package com.github.ralmnsk.service.news;
 
-import com.github.ralmnsk.dao.news.NewsDaoHiberImpl;
 import com.github.ralmnsk.model.news.News;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +9,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.data.domain.PageRequest;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
