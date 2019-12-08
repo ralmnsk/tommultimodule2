@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web
         .configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web
@@ -20,6 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Slf4j
 @Configuration
 @EnableWebSecurity
+@Profile("deploy")
 //@EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 //@EnableGlobalMethodSecurity(prePostEnabled = true) //for class SiteController @PreAuthorized
 //@ComponentScan({"com.github.ralmnsk.demo"}) //"com.github.ralmnsk.dao",
