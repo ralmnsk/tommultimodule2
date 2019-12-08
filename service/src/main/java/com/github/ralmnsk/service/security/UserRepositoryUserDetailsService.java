@@ -1,4 +1,4 @@
-package com.github.ralmnsk.demo.security;
+package com.github.ralmnsk.service.security;
 
 import com.github.ralmnsk.dao.user.UserRepository;
 import com.github.ralmnsk.model.user.User;
