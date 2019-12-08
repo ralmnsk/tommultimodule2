@@ -1,13 +1,42 @@
 package com.github.ralmnsk.service.news.editor;
 
+import com.github.ralmnsk.model.discussion.Discussion;
 import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.news.NewsService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 
+@RunWith(MockitoJUnitRunner.class)
 class NewsEditorImplTest {
+    @Mock
+    private NewsService newsService;
+    @InjectMocks
+    private NewsEditor editor=new NewsEditorImpl();
+
+    private User user;
+
+    private News news;
+
+
+    @BeforeEach
+    public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+        user=new User(1L,"user","pass",new Date(),"ROLE_USER");
+        news=new News(1L,"name","data",new Date());
+        news.setUser(user);
+        user.getNewsSet().add(news);
+    }
 
     @Test
     void getId() {
@@ -24,15 +53,9 @@ class NewsEditorImplTest {
 
     @Test
     void newsEdit() {
-        News news =new News("testName","testData",new Date());
-        NewsDao newsDao= NewsDaoHiberImpl.getInstance();
-        newsDao.createNews(news);
-        NewsEditor newsEditor=new NewsEditorImpl(news.getIdNews());
-        newsEditor.newsEdit();
-
-        News readNews=newsDao.getById(news.getIdNews());
-        assertEquals(readNews.getNameNews(),"testName");
-
-        newsDao.deleteNews(news);
+        editor.setId(1L);
+        editor.newsEdit();
+        Mockito.verify(newsService, Mockito.times(1)).getById(any());
     }
+
 }

@@ -1,7 +1,20 @@
 package com.github.ralmnsk.service.msg;
 
+import com.github.ralmnsk.dao.msg.MsgRepository;
 import com.github.ralmnsk.model.msg.Msg;
+import com.github.ralmnsk.model.news.News;
+import com.github.ralmnsk.model.user.User;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,78 +23,66 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@RunWith(MockitoJUnitRunner.class)
 class MsgServiceImplTest {
+    @Mock
+    private MsgRepository repo;
 
-    @Test
-    void getInstance() {
-//        assertNotNull(MsgServiceImpl.getInstance());
+    @InjectMocks
+    private MsgService service=new MsgServiceImpl();
+
+    private User user;
+
+    private News news;
+
+    private Msg msg;
+
+    @BeforeEach
+    public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+
+        user=new User(1L,"user","pass",new Date(),"ROLE_USER");
+        news=new News(1L,"name","data",new Date());
+        msg=new Msg();
+        msg.setText("text");
+        msg.setNews(news);
+        msg.setUser(user);
+        msg.setDate(new Date());
+        msg.setId(1L);
     }
 
     @Test
     void create() {
-        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
-        Msg msg=new Msg(new Date(),"testMessage");
-        msgService.create(msg);
-        verify(msgService,times(1)).create(msg);
+        service.create(msg);
+        Mockito.verify(repo,times(1)).save(any());
     }
 
     @Test
     void read() {
-        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
-        Msg msg=new Msg(new Date(),"testMessage");
-        msgService.read(1L);
-        verify(msgService,times(1)).read(1L);
-        when(msgService.read(1L)).thenReturn(msg);
-        assertTrue(msgService.read(1L).getText().equals("testMessage"));
+        service.read(1L);
+        Mockito.verify(repo,times(1)).getOne(any());
     }
 
     @Test
     void update() {
-        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
-        msgService.update(1L,"newText");
-        verify(msgService,times(1)).update(1L,"newText");
+        when(repo.getOne(1L)).thenReturn(msg);
+        service.update(1L,"newText");
+        Mockito.verify(repo,times(1)).save(msg);
     }
 
     @Test
     void delete() {
-        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
-        msgService.delete(1L);
-        verify(msgService,times(1)).delete(1L);
+        service.delete(1L);
+        Mockito.verify(repo,times(1)).deleteById(1L);
     }
 
     @Test
     void findAll() {
-//        List<Msg> list=new ArrayList<>();
-//        for (int i=0;i<11;i++){
-//            Msg msg=new Msg(new Date(),"testMessage");
-//            list.add(msg);
-//        }
-//
-//        MsgServiceImpl msgService=mock(MsgServiceImpl.class);
-//        msgService.findAll(0,10);
-//        verify(msgService,times(1)).findAll(0,10);
-//
-//        when(msgService.findAll(0,10)).thenReturn(list);
-//        assertTrue(msgService.findAll(0,10).size()>9);
+        List<Msg> list=new ArrayList<>();
+        list.add(msg);
+        Page<Msg> page=new PageImpl<Msg>(list);
+        when(repo.findAll((PageRequest.of(0,10)))).thenReturn(page);
+        service.findAll(PageRequest.of(0,10));
+        Mockito.verify(repo,times(1)).findAll(PageRequest.of(0,10));
     }
-
-    @Test
-    void create1() {
-//        MsgService msgService=MsgServiceImpl.getInstance();
-//        Msg msg=new Msg(new Date(),"testMessage");
-//        msgService.create(msg);
-//
-//        Msg readMsg=msgService.read(msg.getId());
-//        assertEquals(msg.getId(),readMsg.getId());
-//
-//        msgService.update(readMsg.getId(),"testMessage2");
-//        Msg updateMsg=msgService.read(readMsg.getId());
-//        assertEquals(updateMsg.getText(),"testMessage2");
-//
-//        List<Msg> list=msgService.findAll(0,10);
-//        assertTrue(list.size()>0);
-//
-//        msgService.delete(readMsg.getId());
-    }
-
 }

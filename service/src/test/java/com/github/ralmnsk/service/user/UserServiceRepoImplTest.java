@@ -12,16 +12,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.GenericApplicationContext;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.test.context.junit4.SpringRunner;
-
 
 import java.util.Date;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -48,13 +41,6 @@ class UserServiceRepoImplTest {
         MockitoAnnotations.initMocks(this);
     }
 
-//    @Test
-//    void userServiceTest(){
-//        ctx = new AnnotationConfigApplicationContext(JpaConfig.class);
-//        userServiceTest = ctx.getBean(UserService.class);
-//        assertNotNull(userServiceTest);
-//    }
-
     @Test
     void createUser() {
         User user=new User("testUser","123",new Date(),"usr");
@@ -64,7 +50,34 @@ class UserServiceRepoImplTest {
     }
 
     @Test
-    void findAllNewsByUserId(){
-
+    void readUser() {
+        User user=new User("testUser","123",new Date(),"usr");
+        userService.readUser(user);
+        Mockito.verify(userRepository,times(1)).findByName(user.getName());
     }
+
+    @Test
+    void updateUser() {
+        User user=new User("testUser","123",new Date(),"usr");
+        userService.updateUser(user);
+        Mockito.verify(userRepository,times(1)).saveAndFlush(user);
+    }
+
+    @Test
+    void deleteUser() {
+        User user=new User("testUser","123",new Date(),"usr");
+        userService.deleteUser(user);
+        Mockito.verify(userRepository,times(1)).delete(user);
+    }
+
+    @Test
+    public void getById(){
+        User user=new User(1L,"user","pass",new Date(),"ROLE_USER");
+        Optional<User> userOptional= Optional.of(user);
+        when(userRepository.findById(1L)).thenReturn(userOptional);
+
+        userService.getById(1L);
+        Mockito.verify(userRepository,times(1)).findById(1L);
+    }
+
 }

@@ -42,7 +42,7 @@ public class User implements UserDetails{
 
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    private Set<News> newsSet;
+    private Set<News> newsSet=new HashSet<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "usr_disc",

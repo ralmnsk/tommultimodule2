@@ -1,19 +1,18 @@
 package com.github.ralmnsk.service.news;
 
 import com.github.ralmnsk.dao.news.NewsRepository;
-import com.github.ralmnsk.dao.user.UserRepository;
 import com.github.ralmnsk.model.news.News;
-import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceRepoImpl;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.Request;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.ArrayList;
@@ -22,8 +21,8 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
+import org.springframework.data.domain.Pageable;
 
 @RunWith(MockitoJUnitRunner.class)
 class NewsServiceRepoImplTest {
@@ -67,15 +66,29 @@ class NewsServiceRepoImplTest {
         Mockito.verify(repo,times(1)).delete(news);
     }
 
-//    @Test
-//    void findAllNews() {
-//        News news=new News("testNewsName","testNewsData",new Date());
-//        List<News> list=new ArrayList<News>();
-//        list.add(news);
-//        when(repo.findAll(PageRequest.of(0,10)).getContent()).thenReturn(list);
-//        List<News> testList=service.findAllNews(0,10);
-//        assertTrue(testList.get(0).getNameNews().equals("testNewsName"));
-//    }
+    @Test
+    void findAllNewsByUserId() {
+        News news=new News(1L,"testNewsName","testNewsData",new Date());
+        List<News> list=new ArrayList<>();
+        list.add(news);
+        Pageable pageable= PageRequest.of(0,10);
+        Page<News> page=new PageImpl<News>(list);
+        when(repo.findAll(pageable)).thenReturn(page);
+        service.findAllNewsByUserId(pageable, 1L);
+        Mockito.verify(repo,times(1)).findAllNewsByUserId(1L);
+    }
+
+    @Test
+    void findAllNews() {
+        News news=new News(1L,"testNewsName","testNewsData",new Date());
+        List<News> list=new ArrayList<>();
+        list.add(news);
+        Pageable pageable= PageRequest.of(0,10);
+        Page<News> page=new PageImpl<News>(list);
+        when(repo.findAll(pageable)).thenReturn(page);
+        service.findAllNews(pageable);
+        Mockito.verify(repo,times(1)).findAll(pageable);
+    }
 
     @Test
     void findByName() {
@@ -90,9 +103,13 @@ class NewsServiceRepoImplTest {
         Mockito.verify(repo,times(1)).countAllNews();
     }
 
-//    @Test
-//    void getById() {
-//        service.getById(1L);
-//        Mockito.verify(repo,times(1)).findById(1L);
-//    }
+    @Test
+    void getById() {
+        News news=new News(1L,"name","text",new Date());
+        Optional<News> optional= Optional.of(news);
+        when( repo.findById(1L)).thenReturn(optional);
+
+        service.getById(1L);
+        Mockito.verify(repo,times(1)).findById(1L);
+    }
 }

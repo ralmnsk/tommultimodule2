@@ -22,8 +22,8 @@ class SortByTimeMsgTest {
 
         SortByTimeMsg sortByTimeMsg=new SortByTimeMsg();
 
-        assertTrue(sortByTimeMsg.compare(one,two)==-1);
+        assertTrue(sortByTimeMsg.compare(one,two)==1);
         assertTrue(sortByTimeMsg.compare(one,one)==0);
-        assertTrue(sortByTimeMsg.compare(two,one)==1);
+        assertTrue(sortByTimeMsg.compare(two,one)==-1);
     }
 }

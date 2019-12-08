@@ -14,7 +14,6 @@ public interface NewsService {
     void deleteNews(News news);
     List<Long> findAllNewsByUserId(Pageable pageable, Long userId);
     List<News> findAllNews(Pageable pageable);
-//    List<News> findAllNews(int page, int maxResults);
     News getById(Long id);
     News findByName(String name);
     Long countAllNews();

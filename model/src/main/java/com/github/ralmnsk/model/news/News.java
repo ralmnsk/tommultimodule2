@@ -39,7 +39,7 @@ public class News implements Serializable {
     private Discussion discussion;
 
     @OneToMany(mappedBy = "news",cascade = CascadeType.ALL)
-    private Set<Msg> msgSet;
+    private Set<Msg> msgSet=new HashSet<>();
 
     public Discussion getDiscussion() {
         return discussion;
