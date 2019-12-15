@@ -2,8 +2,6 @@ package com.github.ralmnsk.service.security;
 
 import com.github.ralmnsk.dao.user.UserRepository;
 import com.github.ralmnsk.model.user.User;
-import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceRepoImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

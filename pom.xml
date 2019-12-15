@@ -109,17 +109,17 @@
 		</dependency>
 		<!-- end::devTools[] -->
 
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<scope>test</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.seleniumhq.selenium</groupId>-->
+<!--			<artifactId>selenium-java</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>htmlunit-driver</artifactId>
-			<scope>test</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.seleniumhq.selenium</groupId>-->
+<!--			<artifactId>htmlunit-driver</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -142,13 +142,21 @@
 			<version>5.3.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-test -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcprov-jdk15on</artifactId>
-			<version>1.64</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.bouncycastle</groupId>-->
+<!--			<artifactId>bcprov-jdk15on</artifactId>-->
+<!--			<version>1.64</version>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.apache.tiles</groupId>

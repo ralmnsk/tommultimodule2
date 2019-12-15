@@ -1,108 +1,154 @@
 package com.github.ralmnsk.demo.controller;
 
-import com.github.ralmnsk.dao.connection.JpaConfig;
-import com.github.ralmnsk.demo.DemoApplication;
-import com.github.ralmnsk.demo.config.WebConfiguration;
-import com.github.ralmnsk.demo.security.SecurityConfig;
-import com.github.ralmnsk.demo.security.SecurityWebApplicationInitializer;
+
+import com.github.ralmnsk.model.contact.Contact;
+import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
+import com.github.ralmnsk.service.contact.creator.ContactCreator;
+import com.github.ralmnsk.service.news.creator.NewsCreator;
+import com.github.ralmnsk.service.pagination.Paginator;
 import com.github.ralmnsk.service.user.UserService;
-import com.github.ralmnsk.service.user.UserServiceRepoImpl;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.mock.web.MockHttpSession;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.AnnotationConfigWebContextLoader;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.servlet.ViewResolver;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
-import java.util.UUID;
+import java.util.HashMap;
+import java.util.Map;
 
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
-import static org.mockito.Mockito.mock;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
+import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
+import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.unauthenticated;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@RunWith(SpringRunner.class)
-@WebMvcTest(SiteController.class)
-@ContextConfiguration(loader= AnnotationConfigWebContextLoader.class,
-        classes={JpaConfig.class, WebConfiguration.class, ViewResolver.class,
-                    SecurityConfig.class, SiteController.class,
-                    UserServiceRepoImpl.class})
+@SpringBootTest
+@AutoConfigureMockMvc
+@WithUserDetails("zzz")
 class SiteControllerTest {
 
     @Autowired
-    private WebApplicationContext wac;
-    @Autowired
-    MockHttpSession mockHttpSession;
+    private SiteController controller;
     @Autowired
     private MockMvc mockMvc;
-    @Mock
-    private UserServiceRepoImpl userService;
-    @InjectMocks
-    private SiteController siteController;
+    @MockBean
+    private UserService userService;
+    @MockBean
+    private Paginator paginator;
+    @MockBean
+    private NewsCreator creator;
+    @MockBean
+    private HttpSession session;
+    @MockBean
+    private ContactCreator contactCreator;
 
     private User user;
+    private News news;
+    private Map<News,User> map;
+    private Contact contact;
+
 
     @BeforeEach
     void setUp() {
-        user=new User(1L,"admin","123",new Date(),"ROLE_ADMIN");
-        when(userService.getById(1L)).thenReturn(user);
-//        MockHttpSession mockHttpSession=new MockHttpSession(wac.getServletContext(), UUID.randomUUID().toString());
-        mockHttpSession.setAttribute("userId",1L);
+        user=new User(1L,"zzz","123",new Date(),"ROLE_USER");
+        news=new News(1L,"test name","test data",new Date());
+        user.getNewsSet().add(news);
+        map=new HashMap<>();
+        map.put(news,user);
+        contact=new Contact();
+        contact.setId(1L);
+        contact.setMail("test@mail.com");
+        contact.setUser(user);
     }
+
 
     @Test
     void inform() throws Exception{
+        when(userService.getById(any())).thenReturn(user);
 
-        mockMvc.perform(get("/site/inform")
-                .session(mockHttpSession)
-                )
-
+        mockMvc.perform(get("/site/inform"))
+                .andExpect(authenticated())
                 .andExpect(status().isOk())
-                .andExpect(view().name("inform"))
                 .andExpect(model().attributeExists("user"))
-
+                .andExpect(view().name("inform"))
         ;
     }
 
     @Test
-    void addNews() {
+    void informUnauthorized() throws Exception{
+
+        mockMvc.perform(get("/site/inform"))
+                .andExpect(unauthenticated())
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void createNews() {
+    void addNews() throws Exception {
+        mockMvc.perform(get("/site/addnews"))
+                .andExpect(authenticated())
+                .andExpect(status().isOk())
+                .andExpect(view().name("addnews"))
+        ;
     }
 
     @Test
-    void news() {
+    void createNews() throws Exception{
+        mockMvc.perform(post("/site/createnews")
+                .param("dataNews","dataNews")
+                .param("nameNews","nameNews")
+                    )
+                .andExpect(authenticated())
+                .andExpect(status().isOk())
+                .andExpect(view().name("inform"))
+        ;
+
     }
 
     @Test
-    void goContact() {
+    void news() throws Exception{
+        when(userService.getById(any())).thenReturn(user);
+        when(paginator.pagesCount(1,1)).thenReturn(1);
+        int currentPage=1;
+        mockMvc.perform(get("/site/mynews")
+                .param("move","next")
+                .param("maxResults","5")
+                .sessionAttr("pageFlag","myNews")
+                .sessionAttr("currentPage",currentPage)
+                .sessionAttr("pagesCount","1")
+                )
+                .andExpect(authenticated())
+                .andExpect(status().isOk())
+                .andExpect(view().name("mynews"))
+        ;
+    }
+
+    @Test
+    void goContact() throws Exception{
+        when(userService.getById(any())).thenReturn(user);
+        when(contactCreator.getContact(user,anyString())).thenReturn(contact);
+        mockMvc.perform(get("/site/gocontact")
+                .param("mail","test@mail.com")
+
+        )
+                .andExpect(model().attribute("mail",anyString()))
+                .andExpect(model().attribute("contact",anyString()))
+                .andExpect(authenticated())
+                .andExpect(status().isOk())
+                .andExpect(view().name("contact"))
+        ;
     }
 
     @Test

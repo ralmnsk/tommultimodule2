@@ -21,7 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Slf4j
 @Configuration
 @EnableWebSecurity
-@Profile("deploy")
+//@Profile("deploy")
 //@EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 //@EnableGlobalMethodSecurity(prePostEnabled = true) //for class SiteController @PreAuthorized
 //@ComponentScan({"com.github.ralmnsk.demo"}) //"com.github.ralmnsk.dao",

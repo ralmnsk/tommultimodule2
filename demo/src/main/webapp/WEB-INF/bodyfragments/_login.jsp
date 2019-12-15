@@ -8,7 +8,6 @@
         <h2>Пожалуйста, войдите:</h2>
             <div class="form-group">
                 <form name="formLogin" method="POST" action="/login">
-
                     Login:<br/>
                     <input type="text" name="login" value=""/>
                     <br/>Password:<br/>
