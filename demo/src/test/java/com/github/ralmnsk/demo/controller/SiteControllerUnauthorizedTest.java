@@ -19,6 +19,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.authenticated;
 import static org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.unauthenticated;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
@@ -50,58 +51,105 @@ class SiteControllerUnauthorizedTest {
 
     @Test
     void addNews() throws Exception {
-        mockMvc.perform(get("/site/addnews"))
-                .andExpect(authenticated())
-                .andExpect(status().isOk())
-                .andExpect(view().name("addnews"))
+        mockMvc.perform(post("/site/addnews"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
         ;
     }
 
     @Test
-    void createNews() {
+    void createNews() throws Exception{
+        mockMvc.perform(post("/site/createnews"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void news() {
+    void news() throws Exception{
+        mockMvc.perform(post("/site/mynews"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void goContact() {
+    void goContact() throws Exception{
+        mockMvc.perform(post("/site/gocontact"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void contactPost() {
+    void contactPost() throws Exception{
+        mockMvc.perform(post("/site/contact"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void delContact() {
+    void delContact() throws Exception{
+        mockMvc.perform(post("/site/delcontact"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void edit() {
+    void edit() throws Exception{
+        mockMvc.perform(post("/site/edit"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void update() {
+    void update() throws Exception{
+        mockMvc.perform(post("/site/updatenews"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void delete() {
+    void delete() throws Exception{
+        mockMvc.perform(post("/site/deletenews"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void comment() {
+    void comment() throws Exception{
+        mockMvc.perform(post("/site/comment"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void discussion() {
+    void discussion() throws Exception{
+        mockMvc.perform(get("/site/discuss"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void discussionPost() {
+    void discussionPost() throws Exception{
+        mockMvc.perform(post("/site/discuss"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 
     @Test
-    void msg() {
+    void msg() throws Exception{
+        mockMvc.perform(post("/site/msg"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("http://localhost/login"));
+        ;
     }
 }
