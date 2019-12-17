@@ -3,6 +3,7 @@ package com.github.ralmnsk.demo.controller;
 
 import com.github.ralmnsk.model.contact.Contact;
 import com.github.ralmnsk.model.discussion.Discussion;
+import com.github.ralmnsk.model.msg.Msg;
 import com.github.ralmnsk.model.news.News;
 import com.github.ralmnsk.model.user.User;
 import com.github.ralmnsk.service.contact.creator.ContactCreator;
@@ -10,6 +11,7 @@ import com.github.ralmnsk.service.deleter.NewsDeleter;
 import com.github.ralmnsk.service.deleter.NewsDeleterImpl;
 import com.github.ralmnsk.service.discussion.DiscussionService;
 import com.github.ralmnsk.service.dispute.Dispute;
+import com.github.ralmnsk.service.msg.MsgCreator;
 import com.github.ralmnsk.service.news.NewsService;
 import com.github.ralmnsk.service.news.creator.NewsCreator;
 import com.github.ralmnsk.service.news.editor.NewsEditor;
@@ -73,6 +75,8 @@ class SiteControllerTest {
     private DiscussionService discussionService;
     @MockBean
     private Dispute dispute;
+    @MockBean
+    private MsgCreator msgCreator;
 
     private User user;
     private News news;
@@ -278,20 +282,71 @@ class SiteControllerTest {
     }
 
 
-//        session.setAttribute("pageFlag","myComments"); //changes
-//        session.setAttribute("currentPage",currentPage);
-//        session.setAttribute("pagesCount",pagesCount);
-//        session.setAttribute("maxResults",maxResultsCount);
+
 
     @Test
     void discussion() throws Exception{
+        when(newsService.getById(news.getIdNews())).thenReturn(news);
+        when(userService.getById(user.getId())).thenReturn(user);
+        Map<Msg,User> map=new HashMap<>();
+        Msg msg=new Msg(new Date(),"test text");
+        map.put(msg,user);
+        when(msgCreator.getMsgMap()).thenReturn(map);
+        mockMvc.perform(get("/site/discuss")
+                .param("userId",user.getId().toString())
+                .param("discussNewsId",news.getIdNews().toString())
+        )
+                .andExpect(model().attribute("news",news))
+                .andExpect(model().attribute("mapMsgUsr",map))
+                .andExpect(model().attribute("discussNewsId",news.getIdNews()))
+                .andExpect(authenticated())
+                .andExpect(status().isOk())
+                .andExpect(view().name("discussion"))
+        ;
     }
 
     @Test
     void discussionPost() throws Exception{
+        when(newsService.getById(news.getIdNews())).thenReturn(news);
+        when(userService.getById(user.getId())).thenReturn(user);
+        Map<Msg,User> map=new HashMap<>();
+        Msg msg=new Msg(new Date(),"test text");
+        map.put(msg,user);
+        when(msgCreator.getMsgMap()).thenReturn(map);
+        mockMvc.perform(post("/site/discuss")
+                .param("userId",user.getId().toString())
+                .param("discussNewsId",news.getIdNews().toString())
+                .sessionAttr("pageFlag","myComments")
+        )
+                .andExpect(model().attribute("news",news))
+                .andExpect(model().attribute("mapMsgUsr",map))
+                .andExpect(model().attribute("discussNewsId",news.getIdNews()))
+                .andExpect(authenticated())
+                .andExpect(status().isOk())
+                .andExpect(view().name("discussion"))
+        ;
     }
 
     @Test
     void msg() throws Exception{
+        when(newsService.getById(news.getIdNews())).thenReturn(news);
+        when(userService.getById(user.getId())).thenReturn(user);
+        Map<Msg,User> map=new HashMap<>();
+        Msg msg=new Msg(new Date(),"test text");
+        map.put(msg,user);
+        when(msgCreator.create()).thenReturn(msg);
+        when(msgCreator.getMsgMap()).thenReturn(map);
+        mockMvc.perform(post("/site/msg")
+                .param("userId",user.getId().toString())
+                .param("discussNewsId",news.getIdNews().toString())
+                .param("msgText","test message")
+        )
+                .andExpect(model().attribute("news",news))
+                .andExpect(model().attribute("mapMsgUsr",map))
+                .andExpect(model().attribute("discussNewsId",news.getIdNews()))
+                .andExpect(authenticated())
+                .andExpect(status().isOk())
+                .andExpect(view().name("discussion"))
+        ;
     }
 }
