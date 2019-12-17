@@ -39,10 +39,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/","/news","/login","/goregistrate","/registration")
                     .permitAll()
 
-                    .antMatchers("/site/**","/*","site/inform")
+                    .antMatchers("/site/*","/*","site/inform")
                     .hasAnyAuthority("ROLE_ADMIN","ROLE_USER")
-                    .antMatchers("/site/inform/admin","/site/inform/admin/**")
+                    .antMatchers("/site/inform/admin","/site/inform/admin/*","/site/inform/admin/**")
                     .hasAnyAuthority("ROLE_ADMIN")
+                .and()
+                    .exceptionHandling().accessDeniedPage("/")
 
                 .and()
                     .formLogin()

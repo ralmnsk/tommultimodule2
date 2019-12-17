@@ -3,5 +3,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
         <div class="container">
-            <h2>Error happened</h2>
+            <h2>ERROR HAPPENED</h2>
         </div>

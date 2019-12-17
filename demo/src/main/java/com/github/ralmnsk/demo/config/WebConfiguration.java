@@ -30,7 +30,7 @@ import java.util.Locale;
 public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/login");
+//        registry.addViewController("/error");
 //        registry.addViewController("/welcome").setViewName("welcome");
     }
 

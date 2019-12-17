@@ -10,11 +10,15 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.server.ErrorPage;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.http.HttpStatus;
 
 @Slf4j
 @Configuration
@@ -25,7 +29,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 		ServiceConfiguration.class})
 
 
-public class DemoApplication extends SpringBootServletInitializer{
+public class DemoApplication extends SpringBootServletInitializer {
 
 
 	public static void main(String[] args) {
@@ -37,7 +41,6 @@ public class DemoApplication extends SpringBootServletInitializer{
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(DemoApplication.class);
 	}
-
 
 
 }
