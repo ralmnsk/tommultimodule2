@@ -91,11 +91,11 @@ public class WebConfiguration implements WebMvcConfigurer {
 ////        registry.viewResolver(new ThymeleafViewResolver());
 //    }
 
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/webapp/**")
-//                .addResourceLocations("/webapp/");
-//    }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/images/**")
+                .addResourceLocations("classpath:/images/");
+    }
 
 
     @Override

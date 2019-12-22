@@ -15,7 +15,47 @@
                }
             nav{
                 }
+                body{
+                    background-image: url("${pageContext.request.contextPath}/images/bg.jpg");
+                    }
+            ul.my {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              width: 270px;
+              background-color: #f1f1f1;
+              border: 1px solid #555;
+            }
+
+            li.my a {
+              display: block;
+              color: #000;
+              padding: 8px 16px;
+              text-decoration: none;
+            }
+
+            li.my {
+              text-align: left;
+              border-bottom: 1px solid #555;
+            }
+
+            li.my:last-child {
+              border-bottom: none;
+            }
+
+            li.my a.active {
+              background-color: #9ae890;
+              color: white;
+            }
+
+            li.my a:hover:not(.active) {
+              background-color: #63e851;
+              color: white;
+            }
+
         </style>
+
+
 </head>
 
 <body>

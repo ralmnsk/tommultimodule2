@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <p><label for="exampleFormControlTextarea1">Сообщение:</label>
                     <input type="hidden" name="discussNewsId" value="${discussNewsId}">
-                    <textarea type="text" aria-label="With textarea" class="form-control" rows="5" name="msgText">Ваше сообщение</textarea>
+                    <textarea type="text" aria-label="With textarea" class="form-control" rows="5" name="msgText" placeholder="Ваше сообщение"></textarea>
                     <button autofocus type="submit" class="btn btn-primary"> Отправить сообщение </button>
                 </div>
            </form>

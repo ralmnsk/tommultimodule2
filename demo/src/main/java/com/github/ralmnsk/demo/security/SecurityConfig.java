@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web
         .configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web
@@ -36,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/","/news","/login","/goregistrate","/registration")
+                    .antMatchers("/images/","/","/news","/login","/goregistrate","/registration")
                     .permitAll()
 
                     .antMatchers("/site/*","/*","site/inform")
@@ -62,7 +63,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                     .csrf()
-                    .disable();
+                    .disable()
+                ;
+
         }
 
     @Bean
@@ -70,6 +73,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+
+//    @Override
+//    public void configure(WebSecurity web) {
+//        web
+//                .ignoring()
+//                .antMatchers("/images/**");
+//    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)

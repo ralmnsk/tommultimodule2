@@ -4,15 +4,17 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<div style="background: #E0E0E0; height: 55px; padding: 5px;">
-  <div style="float: left">
-     <h1>Новостной портал</h1>
-  </div>
 
-  <div style="float: right; padding: 10px; text-align: right;">
+         <div style="background: #E0E0E0; height: 55px; padding: 5px;">
+           <div style="float: left">
+              <h1>Новостной портал</h1>
+           </div>
+
+           <div style="float: right; padding: 10px; text-align: right;">
 
 
 
-  </div>
+           </div>
 
-</div>
+         </div>
+
