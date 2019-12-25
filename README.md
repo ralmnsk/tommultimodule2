@@ -2,37 +2,17 @@
 There is a simple news site web application with such technologies as java, servlets, jsp, jstl, jdbc.
 It is the multi module project consists of submodules: dao, models, service, web.
 
-*Web servlets use login and password registration.*
+The News portal project is a multi module web application. To simplify the process of the project development Maven was used. There are dao layer, model module, web and service modules in the application. News portal is connected to the mySQL database where users, news data, messages and other information are stored. 
+Users, administrator and unregistered portal guests have different access levels and menu.
+The unregistered user can read the news.
+The registered user can also read news, but creates, edits, deletes and comments.
+The administrator has the same possibilities as users and even more. He can change news and messages of users.
+Spring security helps to maintain roles and privileges of users and also such processes as registration, authentication and authorization.
 
-*The access to user's pages is controlled by filter.*
-
-*The topsecret pages is controlled by second level filter.*
-
-*The type of an application database is mysql.*
-
-*It is used intelliji idea for viewing testing coverage of the project.*
-
-*Testing libraries are junit 5 and mokito.*
-
-*Models: user, news, storage.*
-
-Map and navigation on the site.
-------------------------------
-
-There is a main (index) page of application.
-The page has links to login(Вход), registration(Регистрация) and news pages(Новости).
-You can use existing user login-"qwe" and password-"123", role:"user" or 
-create your own in the registration form of the registration page or
- test web application by entrance of admin login-"admin" and password-"admin".
-
-On the news page(Новости) you can see titles, creation dates and news data
-that were added in a database some time before.
-
-You appear on the welcome page after positive authorization.
-There are links to the main page(Главная), user page(Страница пользователя) and logout.
-In case you have administrator role you can visit administrator pages(Страница администратора, Страница администратора2).
-User page has a link to addition of user news on a page of web application and edition page for changing name or text of news and deleting.
-
-The test coverage report was generated with intelliji idea. Results are located in the report folder. The general application test coverage is more than thirty percents.
+The Dao layer is created by using Spring Data JPA technology and Hibernate to connect to the database.
+Models are POJO classes fulfilled with Hibernate annotations.
+The Service layer includes application logic and communicates with all project modules.
+To view and interact with the application I included Spring Web MVC layer and JSP to create dynamically generated web pages.
+The pagination of news, contacts and messages was created to watch separated pages and simple navigation. 
  
 
