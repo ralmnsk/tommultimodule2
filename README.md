@@ -1,5 +1,5 @@
 # tommultimodule2
-There is a application with such technologies as Spring Boot, Spring MVC, Spring Security, Spring Data, Hibernate, mySQL, JSP.
+There is an application with such technologies as Spring Boot, Spring MVC, Spring Security, Spring Data, Hibernate, mySQL, JSP.
 
 The News portal project is a multi module web application. To simplify the process of the project development Maven was used. There are dao layer, model module, web and service modules in the application. News portal is connected to the mySQL database where users, news data, messages and other information are stored. 
 
